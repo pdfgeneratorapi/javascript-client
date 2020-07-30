@@ -318,7 +318,7 @@ This endpoint does not need any parameter.
 
 ## mergeTemplate
 
-> InlineResponse2004 mergeTemplate(template_id, body, opts)
+> InlineResponse2004 mergeTemplate(template_id, data, opts)
 
 Merge template
 
@@ -335,13 +335,13 @@ JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.TemplatesApi();
 let template_id = 19375; // Number | Template unique identifier
-let body = null; // Object | Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file.
+let data = new PDFGeneratorAPI.Data(); // Data | Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file.
 let opts = {
   'name': My document, // String | Document name, returned in the meta data.
   'format': pdf, // String | Document format. The zip option will return a ZIP file with PDF files.
   'output': base64 // String | Response format.
 };
-apiInstance.mergeTemplate(template_id, body, opts, (error, data, response) => {
+apiInstance.mergeTemplate(template_id, data, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -356,7 +356,7 @@ apiInstance.mergeTemplate(template_id, body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **template_id** | **Number**| Template unique identifier | 
- **body** | **Object**| Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file. | 
+ **data** | [**Data**](Data.md)| Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file. | 
  **name** | **String**| Document name, returned in the meta data. | [optional] 
  **format** | **String**| Document format. The zip option will return a ZIP file with PDF files. | [optional] [default to &#39;pdf&#39;]
  **output** | **String**| Response format. | [optional] [default to &#39;base64&#39;]

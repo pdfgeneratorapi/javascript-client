@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cls** | **String** | Defines component class/type | [optional] 
+**id** | **String** | Component id | [optional] 
 **width** | **Number** | Width in units | [optional] 
 **height** | **Number** | Height in units | [optional] 
 **top** | **Number** | Position from the page top in units | [optional] 
@@ -17,6 +18,8 @@ Name | Type | Description | Notes
 
 ## Enum: ClsEnum
 
+
+* `labelComponent` (value: `"labelComponent"`)
 
 * `numberComponent` (value: `"numberComponent"`)
 

@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The InlineResponse2004Meta model module.
- * @module model/InlineResponse2004Meta
+ * The Data model module.
+ * @module model/Data
  * @version 3.1.1
  */
-class InlineResponse2004Meta {
+class Data {
     /**
-     * Constructs a new <code>InlineResponse2004Meta</code>.
-     * @alias module:model/InlineResponse2004Meta
+     * Constructs a new <code>Data</code>.
+     * @alias module:model/Data
      */
     constructor() { 
         
-        InlineResponse2004Meta.initialize(this);
+        Data.initialize(this);
     }
 
     /**
@@ -37,27 +37,21 @@ class InlineResponse2004Meta {
     }
 
     /**
-     * Constructs a <code>InlineResponse2004Meta</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>Data</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InlineResponse2004Meta} obj Optional instance to populate.
-     * @return {module:model/InlineResponse2004Meta} The populated <code>InlineResponse2004Meta</code> instance.
+     * @param {module:model/Data} obj Optional instance to populate.
+     * @return {module:model/Data} The populated <code>Data</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InlineResponse2004Meta();
+            obj = obj || new Data();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('display_name')) {
-                obj['display_name'] = ApiClient.convertToType(data['display_name'], 'String');
-            }
-            if (data.hasOwnProperty('encoding')) {
-                obj['encoding'] = ApiClient.convertToType(data['encoding'], 'String');
-            }
-            if (data.hasOwnProperty('content-type')) {
-                obj['content-type'] = ApiClient.convertToType(data['content-type'], 'String');
             }
         }
         return obj;
@@ -67,33 +61,19 @@ class InlineResponse2004Meta {
 }
 
 /**
- * Document name. This value is automatically generated if name attribute is not defined in request.
+ * @member {Number} id
+ */
+Data.prototype['id'] = undefined;
+
+/**
  * @member {String} name
  */
-InlineResponse2004Meta.prototype['name'] = undefined;
-
-/**
- * Document name without the file extension.
- * @member {String} display_name
- */
-InlineResponse2004Meta.prototype['display_name'] = undefined;
-
-/**
- * Document encoding
- * @member {String} encoding
- */
-InlineResponse2004Meta.prototype['encoding'] = undefined;
-
-/**
- * Document content type.
- * @member {String} content-type
- */
-InlineResponse2004Meta.prototype['content-type'] = undefined;
+Data.prototype['name'] = undefined;
 
 
 
 
 
 
-export default InlineResponse2004Meta;
+export default Data;
 

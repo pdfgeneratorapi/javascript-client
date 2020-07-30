@@ -11,89 +11,61 @@
  *
  */
 
-import ApiClient from '../ApiClient';
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD.
+    define(['expect.js', process.cwd()+'/src/index'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
+  } else {
+    // Browser globals (root is window)
+    factory(root.expect, root.PDFGeneratorAPI);
+  }
+}(this, function(expect, PDFGeneratorAPI) {
+  'use strict';
 
-/**
- * The InlineResponse2004Meta model module.
- * @module model/InlineResponse2004Meta
- * @version 3.1.1
- */
-class InlineResponse2004Meta {
-    /**
-     * Constructs a new <code>InlineResponse2004Meta</code>.
-     * @alias module:model/InlineResponse2004Meta
-     */
-    constructor() { 
-        
-        InlineResponse2004Meta.initialize(this);
-    }
+  var instance;
 
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
-    }
+  beforeEach(function() {
+    instance = new PDFGeneratorAPI.Data();
+  });
 
-    /**
-     * Constructs a <code>InlineResponse2004Meta</code> from a plain JavaScript object, optionally creating a new instance.
-     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InlineResponse2004Meta} obj Optional instance to populate.
-     * @return {module:model/InlineResponse2004Meta} The populated <code>InlineResponse2004Meta</code> instance.
-     */
-    static constructFromObject(data, obj) {
-        if (data) {
-            obj = obj || new InlineResponse2004Meta();
+  var getProperty = function(object, getter, property) {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
+  }
 
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('display_name')) {
-                obj['display_name'] = ApiClient.convertToType(data['display_name'], 'String');
-            }
-            if (data.hasOwnProperty('encoding')) {
-                obj['encoding'] = ApiClient.convertToType(data['encoding'], 'String');
-            }
-            if (data.hasOwnProperty('content-type')) {
-                obj['content-type'] = ApiClient.convertToType(data['content-type'], 'String');
-            }
-        }
-        return obj;
-    }
+  var setProperty = function(object, setter, property, value) {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
+  }
 
+  describe('Data', function() {
+    it('should create an instance of Data', function() {
+      // uncomment below and update the code to test Data
+      //var instane = new PDFGeneratorAPI.Data();
+      //expect(instance).to.be.a(PDFGeneratorAPI.Data);
+    });
 
-}
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new PDFGeneratorAPI.Data();
+      //expect(instance).to.be();
+    });
 
-/**
- * Document name. This value is automatically generated if name attribute is not defined in request.
- * @member {String} name
- */
-InlineResponse2004Meta.prototype['name'] = undefined;
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new PDFGeneratorAPI.Data();
+      //expect(instance).to.be();
+    });
 
-/**
- * Document name without the file extension.
- * @member {String} display_name
- */
-InlineResponse2004Meta.prototype['display_name'] = undefined;
+  });
 
-/**
- * Document encoding
- * @member {String} encoding
- */
-InlineResponse2004Meta.prototype['encoding'] = undefined;
-
-/**
- * Document content type.
- * @member {String} content-type
- */
-InlineResponse2004Meta.prototype['content-type'] = undefined;
-
-
-
-
-
-
-export default InlineResponse2004Meta;
-
+}));
