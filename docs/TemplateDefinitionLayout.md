@@ -1,4 +1,4 @@
-# PDFGeneratorAPI.TemplateDefinitionNewLayout
+# PDFGeneratorAPI.TemplateDefinitionLayout
 
 ## Properties
 
@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **height** | **Number** | Page height in units | [optional] 
 **unit** | **String** | Measure unit | [optional] 
 **orientation** | **String** | Page orientation | [optional] 
-**rotaion** | **Number** | Page rotation in degrees | [optional] 
+**rotation** | **Number** | Page rotation in degrees | [optional] 
 **margins** | [**TemplateDefinitionNewLayoutMargins**](TemplateDefinitionNewLayoutMargins.md) |  | [optional] 
 **repeat_layout** | [**TemplateDefinitionNewLayoutRepeatLayout**](TemplateDefinitionNewLayoutRepeatLayout.md) |  | [optional] 
 **empty_labels** | **Number** | Defines how many pages or labels should be empty | [optional] 
@@ -51,7 +51,7 @@ Name | Type | Description | Notes
 
 
 
-## Enum: RotaionEnum
+## Enum: RotationEnum
 
 
 * `0` (value: `0`)

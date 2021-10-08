@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 
 * `Resource not found` (value: `"Resource not found"`)
 
+* `None of the templates is available for the workspace.` (value: `"None of the templates is available for the workspace."`)
+
 
 
 

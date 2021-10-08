@@ -12,254 +12,139 @@
  */
 
 
-import ApiClient from './ApiClient';
-import Component from './model/Component';
-import Data from './model/Data';
-import InlineResponse200 from './model/InlineResponse200';
-import InlineResponse2001 from './model/InlineResponse2001';
-import InlineResponse2002 from './model/InlineResponse2002';
-import InlineResponse2002Response from './model/InlineResponse2002Response';
-import InlineResponse2003 from './model/InlineResponse2003';
-import InlineResponse2004 from './model/InlineResponse2004';
-import InlineResponse2004Meta from './model/InlineResponse2004Meta';
-import InlineResponse2005 from './model/InlineResponse2005';
-import InlineResponse401 from './model/InlineResponse401';
-import InlineResponse403 from './model/InlineResponse403';
-import InlineResponse404 from './model/InlineResponse404';
-import InlineResponse422 from './model/InlineResponse422';
-import InlineResponse500 from './model/InlineResponse500';
-import Template from './model/Template';
-import TemplateDefinition from './model/TemplateDefinition';
-import TemplateDefinitionDataSettings from './model/TemplateDefinitionDataSettings';
-import TemplateDefinitionEditor from './model/TemplateDefinitionEditor';
-import TemplateDefinitionLayout from './model/TemplateDefinitionLayout';
-import TemplateDefinitionNew from './model/TemplateDefinitionNew';
-import TemplateDefinitionNewLayout from './model/TemplateDefinitionNewLayout';
-import TemplateDefinitionNewLayoutMargins from './model/TemplateDefinitionNewLayoutMargins';
-import TemplateDefinitionNewLayoutRepeatLayout from './model/TemplateDefinitionNewLayoutRepeatLayout';
-import TemplateDefinitionNewMargins from './model/TemplateDefinitionNewMargins';
-import TemplateDefinitionNewPages from './model/TemplateDefinitionNewPages';
-import Workspace from './model/Workspace';
-import DocumentsApi from './PDFGeneratorAPI/DocumentsApi';
-import TemplatesApi from './PDFGeneratorAPI/TemplatesApi';
-import WorkspacesApi from './PDFGeneratorAPI/WorkspacesApi';
-
+import ApiClient from "../ApiClient";
+import Data from '../model/Data';
+import InlineResponse2004 from '../model/InlineResponse2004';
+import InlineResponse401 from '../model/InlineResponse401';
+import InlineResponse403 from '../model/InlineResponse403';
+import InlineResponse404 from '../model/InlineResponse404';
+import InlineResponse422 from '../model/InlineResponse422';
+import InlineResponse500 from '../model/InlineResponse500';
 
 /**
-* Javascript wrapper for PDF Generator API.<br>
-* The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
-* <p>
-* An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
-* <pre>
-* var PDFGeneratorAPI = require('index'); // See note below*.
-* var xxxSvc = new PDFGeneratorAPI.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new PDFGeneratorAPI.Yyy(); // Construct a model instance.
-* yyyModel.someProperty = 'someValue';
-* ...
-* var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
-* ...
-* </pre>
-* <em>*NOTE: For a top-level AMD script, use require(['index'], function(){...})
-* and put the application logic within the callback function.</em>
-* </p>
-* <p>
-* A non-AMD browser application (discouraged) might do something like this:
-* <pre>
-* var xxxSvc = new PDFGeneratorAPI.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new PDFGeneratorAPI.Yyy(); // Construct a model instance.
-* yyyModel.someProperty = 'someValue';
-* ...
-* var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
-* ...
-* </pre>
-* </p>
-* @module index
+* Documents service.
+* @module PDFGeneratorAPI/DocumentsApi
 * @version 3.1.1
 */
-export {
-    /**
-     * The ApiClient constructor.
-     * @property {module:ApiClient}
-     */
-    ApiClient,
+export default class DocumentsApi {
 
     /**
-     * The Component model constructor.
-     * @property {module:model/Component}
-     */
-    Component,
-
-    /**
-     * The Data model constructor.
-     * @property {module:model/Data}
-     */
-    Data,
-
-    /**
-     * The InlineResponse200 model constructor.
-     * @property {module:model/InlineResponse200}
-     */
-    InlineResponse200,
-
-    /**
-     * The InlineResponse2001 model constructor.
-     * @property {module:model/InlineResponse2001}
-     */
-    InlineResponse2001,
-
-    /**
-     * The InlineResponse2002 model constructor.
-     * @property {module:model/InlineResponse2002}
-     */
-    InlineResponse2002,
-
-    /**
-     * The InlineResponse2002Response model constructor.
-     * @property {module:model/InlineResponse2002Response}
-     */
-    InlineResponse2002Response,
-
-    /**
-     * The InlineResponse2003 model constructor.
-     * @property {module:model/InlineResponse2003}
-     */
-    InlineResponse2003,
-
-    /**
-     * The InlineResponse2004 model constructor.
-     * @property {module:model/InlineResponse2004}
-     */
-    InlineResponse2004,
-
-    /**
-     * The InlineResponse2004Meta model constructor.
-     * @property {module:model/InlineResponse2004Meta}
-     */
-    InlineResponse2004Meta,
-
-    /**
-     * The InlineResponse2005 model constructor.
-     * @property {module:model/InlineResponse2005}
-     */
-    InlineResponse2005,
-
-    /**
-     * The InlineResponse401 model constructor.
-     * @property {module:model/InlineResponse401}
-     */
-    InlineResponse401,
-
-    /**
-     * The InlineResponse403 model constructor.
-     * @property {module:model/InlineResponse403}
-     */
-    InlineResponse403,
-
-    /**
-     * The InlineResponse404 model constructor.
-     * @property {module:model/InlineResponse404}
-     */
-    InlineResponse404,
-
-    /**
-     * The InlineResponse422 model constructor.
-     * @property {module:model/InlineResponse422}
-     */
-    InlineResponse422,
-
-    /**
-     * The InlineResponse500 model constructor.
-     * @property {module:model/InlineResponse500}
-     */
-    InlineResponse500,
-
-    /**
-     * The Template model constructor.
-     * @property {module:model/Template}
-     */
-    Template,
-
-    /**
-     * The TemplateDefinition model constructor.
-     * @property {module:model/TemplateDefinition}
-     */
-    TemplateDefinition,
-
-    /**
-     * The TemplateDefinitionDataSettings model constructor.
-     * @property {module:model/TemplateDefinitionDataSettings}
-     */
-    TemplateDefinitionDataSettings,
-
-    /**
-     * The TemplateDefinitionEditor model constructor.
-     * @property {module:model/TemplateDefinitionEditor}
-     */
-    TemplateDefinitionEditor,
-
-    /**
-     * The TemplateDefinitionLayout model constructor.
-     * @property {module:model/TemplateDefinitionLayout}
-     */
-    TemplateDefinitionLayout,
-
-    /**
-     * The TemplateDefinitionNew model constructor.
-     * @property {module:model/TemplateDefinitionNew}
-     */
-    TemplateDefinitionNew,
-
-    /**
-     * The TemplateDefinitionNewLayout model constructor.
-     * @property {module:model/TemplateDefinitionNewLayout}
-     */
-    TemplateDefinitionNewLayout,
-
-    /**
-     * The TemplateDefinitionNewLayoutMargins model constructor.
-     * @property {module:model/TemplateDefinitionNewLayoutMargins}
-     */
-    TemplateDefinitionNewLayoutMargins,
-
-    /**
-     * The TemplateDefinitionNewLayoutRepeatLayout model constructor.
-     * @property {module:model/TemplateDefinitionNewLayoutRepeatLayout}
-     */
-    TemplateDefinitionNewLayoutRepeatLayout,
-
-    /**
-     * The TemplateDefinitionNewMargins model constructor.
-     * @property {module:model/TemplateDefinitionNewMargins}
-     */
-    TemplateDefinitionNewMargins,
-
-    /**
-     * The TemplateDefinitionNewPages model constructor.
-     * @property {module:model/TemplateDefinitionNewPages}
-     */
-    TemplateDefinitionNewPages,
-
-    /**
-     * The Workspace model constructor.
-     * @property {module:model/Workspace}
-     */
-    Workspace,
-
-    /**
-    * The DocumentsApi service constructor.
-    * @property {module:PDFGeneratorAPI/DocumentsApi}
+    * Constructs a new DocumentsApi. 
+    * @alias module:PDFGeneratorAPI/DocumentsApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
     */
-    DocumentsApi,
+    constructor(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
+    }
+
 
     /**
-    * The TemplatesApi service constructor.
-    * @property {module:PDFGeneratorAPI/TemplatesApi}
-    */
-    TemplatesApi,
+     * Callback function to receive the result of the mergeTemplate operation.
+     * @callback module:PDFGeneratorAPI/DocumentsApi~mergeTemplateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse2004} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
 
     /**
-    * The WorkspacesApi service constructor.
-    * @property {module:PDFGeneratorAPI/WorkspacesApi}
-    */
-    WorkspacesApi
-};
+     * Generate document
+     * Merges template with data and returns base64 encoded document or a public URL to a document. You can send json encoded data in request body or a public URL to your json file as the data parameter. NB! When the public URL option is used, the document is stored for 30 days and automatically deleted.
+     * @param {Number} template_id Template unique identifier
+     * @param {module:model/Data} data Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Document name, returned in the meta data.
+     * @param {module:model/String} opts.format Document format. The zip option will return a ZIP file with PDF files. (default to 'pdf')
+     * @param {module:model/String} opts.output Response format. With the url option, the document is stored for 30 days and automatically deleted. (default to 'base64')
+     * @param {module:PDFGeneratorAPI/DocumentsApi~mergeTemplateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2004}
+     */
+    mergeTemplate(template_id, data, opts, callback) {
+      opts = opts || {};
+      let postBody = data;
+      // verify the required parameter 'template_id' is set
+      if (template_id === undefined || template_id === null) {
+        throw new Error("Missing the required parameter 'template_id' when calling mergeTemplate");
+      }
+      // verify the required parameter 'data' is set
+      if (data === undefined || data === null) {
+        throw new Error("Missing the required parameter 'data' when calling mergeTemplate");
+      }
+
+      let pathParams = {
+        'templateId': template_id
+      };
+      let queryParams = {
+        'name': opts['name'],
+        'format': opts['format'],
+        'output': opts['output']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['JSONWebTokenAuth'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2004;
+      return this.apiClient.callApi(
+        '/templates/templateId/output', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the mergeTemplates operation.
+     * @callback module:PDFGeneratorAPI/DocumentsApi~mergeTemplatesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse2004} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Generate document (multiple templates)
+     * Allows to merge multiples template with data and returns base64 encoded document or public URL to a document. NB! When the public URL option is used, the document is stored for 30 days and automatically deleted.
+     * @param {Array.<Object>} request_body Data used to specify templates and data objects which are used to merge the template
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Document name, returned in the meta data.
+     * @param {module:model/String} opts.format Document format. The zip option will return a ZIP file with PDF files. (default to 'pdf')
+     * @param {module:model/String} opts.output Response format. With the url option, the document is stored for 30 days and automatically deleted. (default to 'base64')
+     * @param {module:PDFGeneratorAPI/DocumentsApi~mergeTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2004}
+     */
+    mergeTemplates(request_body, opts, callback) {
+      opts = opts || {};
+      let postBody = request_body;
+      // verify the required parameter 'request_body' is set
+      if (request_body === undefined || request_body === null) {
+        throw new Error("Missing the required parameter 'request_body' when calling mergeTemplates");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'name': opts['name'],
+        'format': opts['format'],
+        'output': opts['output']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['JSONWebTokenAuth'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse2004;
+      return this.apiClient.callApi(
+        '/templates/output', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+
+}

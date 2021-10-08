@@ -4,15 +4,13 @@ All URIs are relative to *https://us1.pdfgeneratorapi.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**copyTemplate**](TemplatesApi.md#copyTemplate) | **POST** /templates/{templateId}/copy | Copy template
+[**copyTemplate**](TemplatesApi.md#copyTemplate) | **POST** /templates/templateId/copy | Copy template
 [**createTemplate**](TemplatesApi.md#createTemplate) | **POST** /templates | Create template
-[**deleteTemplate**](TemplatesApi.md#deleteTemplate) | **DELETE** /templates/{templateId} | Delete template
-[**getEditorUrl**](TemplatesApi.md#getEditorUrl) | **POST** /templates/{templateId}/editor | Open editor
-[**getTemplate**](TemplatesApi.md#getTemplate) | **GET** /templates/{templateId} | Get template
+[**deleteTemplate**](TemplatesApi.md#deleteTemplate) | **DELETE** /templates/templateId | Delete template
+[**getEditorUrl**](TemplatesApi.md#getEditorUrl) | **POST** /templates/templateId/editor | Open editor
+[**getTemplate**](TemplatesApi.md#getTemplate) | **GET** /templates/templateId | Get template
 [**getTemplates**](TemplatesApi.md#getTemplates) | **GET** /templates | Get templates
-[**mergeTemplate**](TemplatesApi.md#mergeTemplate) | **POST** /templates/{templateId}/output | Merge template
-[**mergeTemplates**](TemplatesApi.md#mergeTemplates) | **POST** /templates/output | Merge multiple templates
-[**updateTemplate**](TemplatesApi.md#updateTemplate) | **PUT** /templates/{templateId} | Update template
+[**updateTemplate**](TemplatesApi.md#updateTemplate) | **PUT** /templates/templateId | Update template
 
 
 
@@ -173,7 +171,7 @@ Name | Type | Description  | Notes
 
 Open editor
 
-Returns an unique URL which you can use to redirect your user to the editor form your application or use the generated URL as iframe source to show the editor within your application. 
+Returns an unique URL which you can use to redirect your user to the editor from your application or use the generated URL as iframe source to show the editor within your application. 
 
 ### Example
 
@@ -313,122 +311,6 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## mergeTemplate
-
-> InlineResponse2004 mergeTemplate(template_id, data, opts)
-
-Merge template
-
-Merges template with data and returns base64 encoded document or a public URL to a document. You can send json encoded data in request body or a public URL to your json file as the data parameter.
-
-### Example
-
-```javascript
-import PDFGeneratorAPI from 'pdf-generator-api-client';
-let defaultClient = PDFGeneratorAPI.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
-let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
-JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
-
-let apiInstance = new PDFGeneratorAPI.TemplatesApi();
-let template_id = 19375; // Number | Template unique identifier
-let data = new PDFGeneratorAPI.Data(); // Data | Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file.
-let opts = {
-  'name': My document, // String | Document name, returned in the meta data.
-  'format': pdf, // String | Document format. The zip option will return a ZIP file with PDF files.
-  'output': base64 // String | Response format.
-};
-apiInstance.mergeTemplate(template_id, data, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **template_id** | **Number**| Template unique identifier | 
- **data** | [**Data**](Data.md)| Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file. | 
- **name** | **String**| Document name, returned in the meta data. | [optional] 
- **format** | **String**| Document format. The zip option will return a ZIP file with PDF files. | [optional] [default to &#39;pdf&#39;]
- **output** | **String**| Response format. | [optional] [default to &#39;base64&#39;]
-
-### Return type
-
-[**InlineResponse2004**](InlineResponse2004.md)
-
-### Authorization
-
-[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## mergeTemplates
-
-> InlineResponse2004 mergeTemplates(request_body, opts)
-
-Merge multiple templates
-
-Allows to merge multiples template with data and returns base64 encoded document or public url to a document.
-
-### Example
-
-```javascript
-import PDFGeneratorAPI from 'pdf-generator-api-client';
-let defaultClient = PDFGeneratorAPI.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
-let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
-JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
-
-let apiInstance = new PDFGeneratorAPI.TemplatesApi();
-let request_body = [null]; // [Object] | Data used to specify templates and data objects which are used to merge the template
-let opts = {
-  'name': My document, // String | Document name, returned in the meta data.
-  'format': pdf, // String | Document format. The zip option will return a ZIP file with PDF files.
-  'output': base64 // String | Response format.
-};
-apiInstance.mergeTemplates(request_body, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request_body** | [**[Object]**](Object.md)| Data used to specify templates and data objects which are used to merge the template | 
- **name** | **String**| Document name, returned in the meta data. | [optional] 
- **format** | **String**| Document format. The zip option will return a ZIP file with PDF files. | [optional] [default to &#39;pdf&#39;]
- **output** | **String**| Response format. | [optional] [default to &#39;base64&#39;]
-
-### Return type
-
-[**InlineResponse2004**](InlineResponse2004.md)
-
-### Authorization
-
-[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 

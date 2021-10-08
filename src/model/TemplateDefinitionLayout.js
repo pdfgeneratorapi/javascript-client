@@ -11,255 +11,237 @@
  *
  */
 
+import ApiClient from '../ApiClient';
+import TemplateDefinitionNewLayoutMargins from './TemplateDefinitionNewLayoutMargins';
+import TemplateDefinitionNewLayoutRepeatLayout from './TemplateDefinitionNewLayoutRepeatLayout';
 
-import ApiClient from './ApiClient';
-import Component from './model/Component';
-import Data from './model/Data';
-import InlineResponse200 from './model/InlineResponse200';
-import InlineResponse2001 from './model/InlineResponse2001';
-import InlineResponse2002 from './model/InlineResponse2002';
-import InlineResponse2002Response from './model/InlineResponse2002Response';
-import InlineResponse2003 from './model/InlineResponse2003';
-import InlineResponse2004 from './model/InlineResponse2004';
-import InlineResponse2004Meta from './model/InlineResponse2004Meta';
-import InlineResponse2005 from './model/InlineResponse2005';
-import InlineResponse401 from './model/InlineResponse401';
-import InlineResponse403 from './model/InlineResponse403';
-import InlineResponse404 from './model/InlineResponse404';
-import InlineResponse422 from './model/InlineResponse422';
-import InlineResponse500 from './model/InlineResponse500';
-import Template from './model/Template';
-import TemplateDefinition from './model/TemplateDefinition';
-import TemplateDefinitionDataSettings from './model/TemplateDefinitionDataSettings';
-import TemplateDefinitionEditor from './model/TemplateDefinitionEditor';
-import TemplateDefinitionLayout from './model/TemplateDefinitionLayout';
-import TemplateDefinitionNew from './model/TemplateDefinitionNew';
-import TemplateDefinitionNewLayout from './model/TemplateDefinitionNewLayout';
-import TemplateDefinitionNewLayoutMargins from './model/TemplateDefinitionNewLayoutMargins';
-import TemplateDefinitionNewLayoutRepeatLayout from './model/TemplateDefinitionNewLayoutRepeatLayout';
-import TemplateDefinitionNewMargins from './model/TemplateDefinitionNewMargins';
-import TemplateDefinitionNewPages from './model/TemplateDefinitionNewPages';
-import Workspace from './model/Workspace';
-import DocumentsApi from './PDFGeneratorAPI/DocumentsApi';
-import TemplatesApi from './PDFGeneratorAPI/TemplatesApi';
-import WorkspacesApi from './PDFGeneratorAPI/WorkspacesApi';
+/**
+ * The TemplateDefinitionLayout model module.
+ * @module model/TemplateDefinitionLayout
+ * @version 3.1.1
+ */
+class TemplateDefinitionLayout {
+    /**
+     * Constructs a new <code>TemplateDefinitionLayout</code>.
+     * Defines template layout (e.g page format, margins).
+     * @alias module:model/TemplateDefinitionLayout
+     */
+    constructor() { 
+        
+        TemplateDefinitionLayout.initialize(this);
+    }
+
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
+
+    /**
+     * Constructs a <code>TemplateDefinitionLayout</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TemplateDefinitionLayout} obj Optional instance to populate.
+     * @return {module:model/TemplateDefinitionLayout} The populated <code>TemplateDefinitionLayout</code> instance.
+     */
+    static constructFromObject(data, obj) {
+        if (data) {
+            obj = obj || new TemplateDefinitionLayout();
+
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('width')) {
+                obj['width'] = ApiClient.convertToType(data['width'], 'Number');
+            }
+            if (data.hasOwnProperty('height')) {
+                obj['height'] = ApiClient.convertToType(data['height'], 'Number');
+            }
+            if (data.hasOwnProperty('unit')) {
+                obj['unit'] = ApiClient.convertToType(data['unit'], 'String');
+            }
+            if (data.hasOwnProperty('orientation')) {
+                obj['orientation'] = ApiClient.convertToType(data['orientation'], 'String');
+            }
+            if (data.hasOwnProperty('rotation')) {
+                obj['rotation'] = ApiClient.convertToType(data['rotation'], 'Number');
+            }
+            if (data.hasOwnProperty('margins')) {
+                obj['margins'] = TemplateDefinitionNewLayoutMargins.constructFromObject(data['margins']);
+            }
+            if (data.hasOwnProperty('repeatLayout')) {
+                obj['repeatLayout'] = TemplateDefinitionNewLayoutRepeatLayout.constructFromObject(data['repeatLayout']);
+            }
+            if (data.hasOwnProperty('emptyLabels')) {
+                obj['emptyLabels'] = ApiClient.convertToType(data['emptyLabels'], 'Number');
+            }
+        }
+        return obj;
+    }
+
+
+}
+
+/**
+ * Defines template page size
+ * @member {module:model/TemplateDefinitionLayout.FormatEnum} format
+ */
+TemplateDefinitionLayout.prototype['format'] = undefined;
+
+/**
+ * Page width in units
+ * @member {Number} width
+ */
+TemplateDefinitionLayout.prototype['width'] = undefined;
+
+/**
+ * Page height in units
+ * @member {Number} height
+ */
+TemplateDefinitionLayout.prototype['height'] = undefined;
+
+/**
+ * Measure unit
+ * @member {module:model/TemplateDefinitionLayout.UnitEnum} unit
+ */
+TemplateDefinitionLayout.prototype['unit'] = undefined;
+
+/**
+ * Page orientation
+ * @member {module:model/TemplateDefinitionLayout.OrientationEnum} orientation
+ */
+TemplateDefinitionLayout.prototype['orientation'] = undefined;
+
+/**
+ * Page rotation in degrees
+ * @member {module:model/TemplateDefinitionLayout.RotationEnum} rotation
+ */
+TemplateDefinitionLayout.prototype['rotation'] = undefined;
+
+/**
+ * @member {module:model/TemplateDefinitionNewLayoutMargins} margins
+ */
+TemplateDefinitionLayout.prototype['margins'] = undefined;
+
+/**
+ * @member {module:model/TemplateDefinitionNewLayoutRepeatLayout} repeatLayout
+ */
+TemplateDefinitionLayout.prototype['repeatLayout'] = undefined;
+
+/**
+ * Defines how many pages or labels should be empty
+ * @member {Number} emptyLabels
+ */
+TemplateDefinitionLayout.prototype['emptyLabels'] = undefined;
+
+
+
 
 
 /**
-* Javascript wrapper for PDF Generator API.<br>
-* The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
-* <p>
-* An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
-* <pre>
-* var PDFGeneratorAPI = require('index'); // See note below*.
-* var xxxSvc = new PDFGeneratorAPI.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new PDFGeneratorAPI.Yyy(); // Construct a model instance.
-* yyyModel.someProperty = 'someValue';
-* ...
-* var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
-* ...
-* </pre>
-* <em>*NOTE: For a top-level AMD script, use require(['index'], function(){...})
-* and put the application logic within the callback function.</em>
-* </p>
-* <p>
-* A non-AMD browser application (discouraged) might do something like this:
-* <pre>
-* var xxxSvc = new PDFGeneratorAPI.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new PDFGeneratorAPI.Yyy(); // Construct a model instance.
-* yyyModel.someProperty = 'someValue';
-* ...
-* var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
-* ...
-* </pre>
-* </p>
-* @module index
-* @version 3.1.1
-*/
-export {
+ * Allowed values for the <code>format</code> property.
+ * @enum {String}
+ * @readonly
+ */
+TemplateDefinitionLayout['FormatEnum'] = {
+
     /**
-     * The ApiClient constructor.
-     * @property {module:ApiClient}
+     * value: "A4"
+     * @const
      */
-    ApiClient,
+    "A4": "A4",
 
     /**
-     * The Component model constructor.
-     * @property {module:model/Component}
+     * value: "letter"
+     * @const
      */
-    Component,
+    "letter": "letter",
 
     /**
-     * The Data model constructor.
-     * @property {module:model/Data}
+     * value: "custom"
+     * @const
      */
-    Data,
-
-    /**
-     * The InlineResponse200 model constructor.
-     * @property {module:model/InlineResponse200}
-     */
-    InlineResponse200,
-
-    /**
-     * The InlineResponse2001 model constructor.
-     * @property {module:model/InlineResponse2001}
-     */
-    InlineResponse2001,
-
-    /**
-     * The InlineResponse2002 model constructor.
-     * @property {module:model/InlineResponse2002}
-     */
-    InlineResponse2002,
-
-    /**
-     * The InlineResponse2002Response model constructor.
-     * @property {module:model/InlineResponse2002Response}
-     */
-    InlineResponse2002Response,
-
-    /**
-     * The InlineResponse2003 model constructor.
-     * @property {module:model/InlineResponse2003}
-     */
-    InlineResponse2003,
-
-    /**
-     * The InlineResponse2004 model constructor.
-     * @property {module:model/InlineResponse2004}
-     */
-    InlineResponse2004,
-
-    /**
-     * The InlineResponse2004Meta model constructor.
-     * @property {module:model/InlineResponse2004Meta}
-     */
-    InlineResponse2004Meta,
-
-    /**
-     * The InlineResponse2005 model constructor.
-     * @property {module:model/InlineResponse2005}
-     */
-    InlineResponse2005,
-
-    /**
-     * The InlineResponse401 model constructor.
-     * @property {module:model/InlineResponse401}
-     */
-    InlineResponse401,
-
-    /**
-     * The InlineResponse403 model constructor.
-     * @property {module:model/InlineResponse403}
-     */
-    InlineResponse403,
-
-    /**
-     * The InlineResponse404 model constructor.
-     * @property {module:model/InlineResponse404}
-     */
-    InlineResponse404,
-
-    /**
-     * The InlineResponse422 model constructor.
-     * @property {module:model/InlineResponse422}
-     */
-    InlineResponse422,
-
-    /**
-     * The InlineResponse500 model constructor.
-     * @property {module:model/InlineResponse500}
-     */
-    InlineResponse500,
-
-    /**
-     * The Template model constructor.
-     * @property {module:model/Template}
-     */
-    Template,
-
-    /**
-     * The TemplateDefinition model constructor.
-     * @property {module:model/TemplateDefinition}
-     */
-    TemplateDefinition,
-
-    /**
-     * The TemplateDefinitionDataSettings model constructor.
-     * @property {module:model/TemplateDefinitionDataSettings}
-     */
-    TemplateDefinitionDataSettings,
-
-    /**
-     * The TemplateDefinitionEditor model constructor.
-     * @property {module:model/TemplateDefinitionEditor}
-     */
-    TemplateDefinitionEditor,
-
-    /**
-     * The TemplateDefinitionLayout model constructor.
-     * @property {module:model/TemplateDefinitionLayout}
-     */
-    TemplateDefinitionLayout,
-
-    /**
-     * The TemplateDefinitionNew model constructor.
-     * @property {module:model/TemplateDefinitionNew}
-     */
-    TemplateDefinitionNew,
-
-    /**
-     * The TemplateDefinitionNewLayout model constructor.
-     * @property {module:model/TemplateDefinitionNewLayout}
-     */
-    TemplateDefinitionNewLayout,
-
-    /**
-     * The TemplateDefinitionNewLayoutMargins model constructor.
-     * @property {module:model/TemplateDefinitionNewLayoutMargins}
-     */
-    TemplateDefinitionNewLayoutMargins,
-
-    /**
-     * The TemplateDefinitionNewLayoutRepeatLayout model constructor.
-     * @property {module:model/TemplateDefinitionNewLayoutRepeatLayout}
-     */
-    TemplateDefinitionNewLayoutRepeatLayout,
-
-    /**
-     * The TemplateDefinitionNewMargins model constructor.
-     * @property {module:model/TemplateDefinitionNewMargins}
-     */
-    TemplateDefinitionNewMargins,
-
-    /**
-     * The TemplateDefinitionNewPages model constructor.
-     * @property {module:model/TemplateDefinitionNewPages}
-     */
-    TemplateDefinitionNewPages,
-
-    /**
-     * The Workspace model constructor.
-     * @property {module:model/Workspace}
-     */
-    Workspace,
-
-    /**
-    * The DocumentsApi service constructor.
-    * @property {module:PDFGeneratorAPI/DocumentsApi}
-    */
-    DocumentsApi,
-
-    /**
-    * The TemplatesApi service constructor.
-    * @property {module:PDFGeneratorAPI/TemplatesApi}
-    */
-    TemplatesApi,
-
-    /**
-    * The WorkspacesApi service constructor.
-    * @property {module:PDFGeneratorAPI/WorkspacesApi}
-    */
-    WorkspacesApi
+    "custom": "custom"
 };
+
+
+/**
+ * Allowed values for the <code>unit</code> property.
+ * @enum {String}
+ * @readonly
+ */
+TemplateDefinitionLayout['UnitEnum'] = {
+
+    /**
+     * value: "cm"
+     * @const
+     */
+    "cm": "cm",
+
+    /**
+     * value: "in"
+     * @const
+     */
+    "in": "in"
+};
+
+
+/**
+ * Allowed values for the <code>orientation</code> property.
+ * @enum {String}
+ * @readonly
+ */
+TemplateDefinitionLayout['OrientationEnum'] = {
+
+    /**
+     * value: "portrait"
+     * @const
+     */
+    "portrait": "portrait",
+
+    /**
+     * value: "landscape"
+     * @const
+     */
+    "landscape": "landscape"
+};
+
+
+/**
+ * Allowed values for the <code>rotation</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+TemplateDefinitionLayout['RotationEnum'] = {
+
+    /**
+     * value: 0
+     * @const
+     */
+    "0": 0,
+
+    /**
+     * value: 90
+     * @const
+     */
+    "90": 90,
+
+    /**
+     * value: 180
+     * @const
+     */
+    "180": 180,
+
+    /**
+     * value: 270
+     * @const
+     */
+    "270": 270
+};
+
+
+
+export default TemplateDefinitionLayout;
+

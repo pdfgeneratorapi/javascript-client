@@ -11,255 +11,63 @@
  *
  */
 
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD.
+    define(['expect.js', process.cwd()+'/src/index'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
+  } else {
+    // Browser globals (root is window)
+    factory(root.expect, root.PDFGeneratorAPI);
+  }
+}(this, function(expect, PDFGeneratorAPI) {
+  'use strict';
 
-import ApiClient from './ApiClient';
-import Component from './model/Component';
-import Data from './model/Data';
-import InlineResponse200 from './model/InlineResponse200';
-import InlineResponse2001 from './model/InlineResponse2001';
-import InlineResponse2002 from './model/InlineResponse2002';
-import InlineResponse2002Response from './model/InlineResponse2002Response';
-import InlineResponse2003 from './model/InlineResponse2003';
-import InlineResponse2004 from './model/InlineResponse2004';
-import InlineResponse2004Meta from './model/InlineResponse2004Meta';
-import InlineResponse2005 from './model/InlineResponse2005';
-import InlineResponse401 from './model/InlineResponse401';
-import InlineResponse403 from './model/InlineResponse403';
-import InlineResponse404 from './model/InlineResponse404';
-import InlineResponse422 from './model/InlineResponse422';
-import InlineResponse500 from './model/InlineResponse500';
-import Template from './model/Template';
-import TemplateDefinition from './model/TemplateDefinition';
-import TemplateDefinitionDataSettings from './model/TemplateDefinitionDataSettings';
-import TemplateDefinitionEditor from './model/TemplateDefinitionEditor';
-import TemplateDefinitionLayout from './model/TemplateDefinitionLayout';
-import TemplateDefinitionNew from './model/TemplateDefinitionNew';
-import TemplateDefinitionNewLayout from './model/TemplateDefinitionNewLayout';
-import TemplateDefinitionNewLayoutMargins from './model/TemplateDefinitionNewLayoutMargins';
-import TemplateDefinitionNewLayoutRepeatLayout from './model/TemplateDefinitionNewLayoutRepeatLayout';
-import TemplateDefinitionNewMargins from './model/TemplateDefinitionNewMargins';
-import TemplateDefinitionNewPages from './model/TemplateDefinitionNewPages';
-import Workspace from './model/Workspace';
-import DocumentsApi from './PDFGeneratorAPI/DocumentsApi';
-import TemplatesApi from './PDFGeneratorAPI/TemplatesApi';
-import WorkspacesApi from './PDFGeneratorAPI/WorkspacesApi';
+  var instance;
 
+  beforeEach(function() {
+    instance = new PDFGeneratorAPI.DocumentsApi();
+  });
 
-/**
-* Javascript wrapper for PDF Generator API.<br>
-* The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
-* <p>
-* An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
-* <pre>
-* var PDFGeneratorAPI = require('index'); // See note below*.
-* var xxxSvc = new PDFGeneratorAPI.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new PDFGeneratorAPI.Yyy(); // Construct a model instance.
-* yyyModel.someProperty = 'someValue';
-* ...
-* var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
-* ...
-* </pre>
-* <em>*NOTE: For a top-level AMD script, use require(['index'], function(){...})
-* and put the application logic within the callback function.</em>
-* </p>
-* <p>
-* A non-AMD browser application (discouraged) might do something like this:
-* <pre>
-* var xxxSvc = new PDFGeneratorAPI.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new PDFGeneratorAPI.Yyy(); // Construct a model instance.
-* yyyModel.someProperty = 'someValue';
-* ...
-* var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
-* ...
-* </pre>
-* </p>
-* @module index
-* @version 3.1.1
-*/
-export {
-    /**
-     * The ApiClient constructor.
-     * @property {module:ApiClient}
-     */
-    ApiClient,
+  var getProperty = function(object, getter, property) {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
+  }
 
-    /**
-     * The Component model constructor.
-     * @property {module:model/Component}
-     */
-    Component,
+  var setProperty = function(object, setter, property, value) {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
+  }
 
-    /**
-     * The Data model constructor.
-     * @property {module:model/Data}
-     */
-    Data,
+  describe('DocumentsApi', function() {
+    describe('mergeTemplate', function() {
+      it('should call mergeTemplate successfully', function(done) {
+        //uncomment below and update the code to test mergeTemplate
+        //instance.mergeTemplate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('mergeTemplates', function() {
+      it('should call mergeTemplates successfully', function(done) {
+        //uncomment below and update the code to test mergeTemplates
+        //instance.mergeTemplates(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+  });
 
-    /**
-     * The InlineResponse200 model constructor.
-     * @property {module:model/InlineResponse200}
-     */
-    InlineResponse200,
-
-    /**
-     * The InlineResponse2001 model constructor.
-     * @property {module:model/InlineResponse2001}
-     */
-    InlineResponse2001,
-
-    /**
-     * The InlineResponse2002 model constructor.
-     * @property {module:model/InlineResponse2002}
-     */
-    InlineResponse2002,
-
-    /**
-     * The InlineResponse2002Response model constructor.
-     * @property {module:model/InlineResponse2002Response}
-     */
-    InlineResponse2002Response,
-
-    /**
-     * The InlineResponse2003 model constructor.
-     * @property {module:model/InlineResponse2003}
-     */
-    InlineResponse2003,
-
-    /**
-     * The InlineResponse2004 model constructor.
-     * @property {module:model/InlineResponse2004}
-     */
-    InlineResponse2004,
-
-    /**
-     * The InlineResponse2004Meta model constructor.
-     * @property {module:model/InlineResponse2004Meta}
-     */
-    InlineResponse2004Meta,
-
-    /**
-     * The InlineResponse2005 model constructor.
-     * @property {module:model/InlineResponse2005}
-     */
-    InlineResponse2005,
-
-    /**
-     * The InlineResponse401 model constructor.
-     * @property {module:model/InlineResponse401}
-     */
-    InlineResponse401,
-
-    /**
-     * The InlineResponse403 model constructor.
-     * @property {module:model/InlineResponse403}
-     */
-    InlineResponse403,
-
-    /**
-     * The InlineResponse404 model constructor.
-     * @property {module:model/InlineResponse404}
-     */
-    InlineResponse404,
-
-    /**
-     * The InlineResponse422 model constructor.
-     * @property {module:model/InlineResponse422}
-     */
-    InlineResponse422,
-
-    /**
-     * The InlineResponse500 model constructor.
-     * @property {module:model/InlineResponse500}
-     */
-    InlineResponse500,
-
-    /**
-     * The Template model constructor.
-     * @property {module:model/Template}
-     */
-    Template,
-
-    /**
-     * The TemplateDefinition model constructor.
-     * @property {module:model/TemplateDefinition}
-     */
-    TemplateDefinition,
-
-    /**
-     * The TemplateDefinitionDataSettings model constructor.
-     * @property {module:model/TemplateDefinitionDataSettings}
-     */
-    TemplateDefinitionDataSettings,
-
-    /**
-     * The TemplateDefinitionEditor model constructor.
-     * @property {module:model/TemplateDefinitionEditor}
-     */
-    TemplateDefinitionEditor,
-
-    /**
-     * The TemplateDefinitionLayout model constructor.
-     * @property {module:model/TemplateDefinitionLayout}
-     */
-    TemplateDefinitionLayout,
-
-    /**
-     * The TemplateDefinitionNew model constructor.
-     * @property {module:model/TemplateDefinitionNew}
-     */
-    TemplateDefinitionNew,
-
-    /**
-     * The TemplateDefinitionNewLayout model constructor.
-     * @property {module:model/TemplateDefinitionNewLayout}
-     */
-    TemplateDefinitionNewLayout,
-
-    /**
-     * The TemplateDefinitionNewLayoutMargins model constructor.
-     * @property {module:model/TemplateDefinitionNewLayoutMargins}
-     */
-    TemplateDefinitionNewLayoutMargins,
-
-    /**
-     * The TemplateDefinitionNewLayoutRepeatLayout model constructor.
-     * @property {module:model/TemplateDefinitionNewLayoutRepeatLayout}
-     */
-    TemplateDefinitionNewLayoutRepeatLayout,
-
-    /**
-     * The TemplateDefinitionNewMargins model constructor.
-     * @property {module:model/TemplateDefinitionNewMargins}
-     */
-    TemplateDefinitionNewMargins,
-
-    /**
-     * The TemplateDefinitionNewPages model constructor.
-     * @property {module:model/TemplateDefinitionNewPages}
-     */
-    TemplateDefinitionNewPages,
-
-    /**
-     * The Workspace model constructor.
-     * @property {module:model/Workspace}
-     */
-    Workspace,
-
-    /**
-    * The DocumentsApi service constructor.
-    * @property {module:PDFGeneratorAPI/DocumentsApi}
-    */
-    DocumentsApi,
-
-    /**
-    * The TemplatesApi service constructor.
-    * @property {module:PDFGeneratorAPI/TemplatesApi}
-    */
-    TemplatesApi,
-
-    /**
-    * The WorkspacesApi service constructor.
-    * @property {module:PDFGeneratorAPI/WorkspacesApi}
-    */
-    WorkspacesApi
-};
+}));
