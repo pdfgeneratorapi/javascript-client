@@ -90,7 +90,7 @@ export default class DocumentsApi {
       let accepts = ['application/json'];
       let returnType = InlineResponse2004;
       return this.apiClient.callApi(
-        '/templates/templateId/output', 'POST',
+        '/templates/{templateId}/output', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -106,7 +106,7 @@ export default class DocumentsApi {
 
     /**
      * Generate document (multiple templates)
-     * Allows to merge multiples template with data and returns base64 encoded document or public URL to a document. NB! When the public URL option is used, the document is stored for 30 days and automatically deleted.
+     * Allows to merge multiple templated with data and returns base64 encoded document or public URL to a document. NB! When the public URL option is used, the document is stored for 30 days and automatically deleted.
      * @param {Array.<Object>} request_body Data used to specify templates and data objects which are used to merge the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Document name, returned in the meta data.

@@ -84,7 +84,7 @@ export default class TemplatesApi {
       let accepts = ['application/json'];
       let returnType = InlineResponse2001;
       return this.apiClient.callApi(
-        '/templates/templateId/copy', 'POST',
+        '/templates/{templateId}/copy', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -169,7 +169,7 @@ export default class TemplatesApi {
       let accepts = ['application/json'];
       let returnType = InlineResponse2002;
       return this.apiClient.callApi(
-        '/templates/templateId', 'DELETE',
+        '/templates/{templateId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -221,7 +221,7 @@ export default class TemplatesApi {
       let accepts = ['application/json'];
       let returnType = InlineResponse2003;
       return this.apiClient.callApi(
-        '/templates/templateId/editor', 'POST',
+        '/templates/{templateId}/editor', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -264,7 +264,7 @@ export default class TemplatesApi {
       let accepts = ['application/json'];
       let returnType = InlineResponse2001;
       return this.apiClient.callApi(
-        '/templates/templateId', 'GET',
+        '/templates/{templateId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -349,7 +349,7 @@ export default class TemplatesApi {
       let accepts = ['application/json'];
       let returnType = InlineResponse2001;
       return this.apiClient.callApi(
-        '/templates/templateId', 'PUT',
+        '/templates/{templateId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

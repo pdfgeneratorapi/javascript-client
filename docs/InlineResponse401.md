@@ -20,13 +20,13 @@ Name | Type | Description | Notes
 
 * `failed: key missing` (value: `"Authentication failed: key missing"`)
 
-* `failed: property &#39;iss&#39; (issuer) missing in JWT` (value: `"Authentication failed: property 'iss' (issuer) missing in JWT"`)
+* `failed: property iss (issuer) missing in JWT` (value: `"Authentication failed: property iss (issuer) missing in JWT"`)
 
-* `failed: property &#39;sub&#39; (subject) missing in JWT` (value: `"Authentication failed: property 'sub' (subject) missing in JWT"`)
+* `failed: property sub (subject) missing in JWT` (value: `"Authentication failed: property sub (subject) missing in JWT"`)
 
-* `failed: property &#39;exp&#39; (expiration time) missing in JWT` (value: `"Authentication failed: property 'exp' (expiration time) missing in JWT"`)
+* `failed: property exp (expiration time) missing in JWT` (value: `"Authentication failed: property exp (expiration time) missing in JWT"`)
 
-* `failed: invalid &#39;iss&#39; (issuer)` (value: `"Authentication failed: invalid 'iss' (issuer)"`)
+* `failed: invalid iss (issuer)` (value: `"Authentication failed: invalid iss (issuer)"`)
 
 * `failed: incorrect signature` (value: `"Authentication failed: incorrect signature"`)
 

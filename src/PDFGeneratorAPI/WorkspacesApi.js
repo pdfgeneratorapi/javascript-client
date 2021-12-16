@@ -77,7 +77,7 @@ export default class WorkspacesApi {
       let accepts = ['application/json'];
       let returnType = InlineResponse2002;
       return this.apiClient.callApi(
-        '/workspaces/workspaceId', 'DELETE',
+        '/workspaces/{workspaceId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -120,7 +120,7 @@ export default class WorkspacesApi {
       let accepts = ['application/json'];
       let returnType = InlineResponse2005;
       return this.apiClient.callApi(
-        '/workspaces/workspaceId', 'GET',
+        '/workspaces/{workspaceId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
