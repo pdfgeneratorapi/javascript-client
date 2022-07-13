@@ -3,7 +3,6 @@
 .travis.yml
 README.md
 docs/Component.md
-docs/Data.md
 docs/DocumentsApi.md
 docs/InlineResponse200.md
 docs/InlineResponse2001.md
@@ -14,6 +13,7 @@ docs/InlineResponse2004.md
 docs/InlineResponse2004Meta.md
 docs/InlineResponse2005.md
 docs/InlineResponse401.md
+docs/InlineResponse402.md
 docs/InlineResponse403.md
 docs/InlineResponse404.md
 docs/InlineResponse422.md
@@ -41,7 +41,6 @@ src/PDFGeneratorAPI/TemplatesApi.js
 src/PDFGeneratorAPI/WorkspacesApi.js
 src/index.js
 src/model/Component.js
-src/model/Data.js
 src/model/InlineResponse200.js
 src/model/InlineResponse2001.js
 src/model/InlineResponse2002.js
@@ -51,6 +50,7 @@ src/model/InlineResponse2004.js
 src/model/InlineResponse2004Meta.js
 src/model/InlineResponse2005.js
 src/model/InlineResponse401.js
+src/model/InlineResponse402.js
 src/model/InlineResponse403.js
 src/model/InlineResponse404.js
 src/model/InlineResponse422.js
@@ -67,3 +67,4 @@ src/model/TemplateDefinitionNewLayoutRepeatLayout.js
 src/model/TemplateDefinitionNewMargins.js
 src/model/TemplateDefinitionNewPages.js
 src/model/Workspace.js
+test/model/InlineResponse402.spec.js

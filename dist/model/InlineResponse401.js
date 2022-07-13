@@ -114,28 +114,28 @@ InlineResponse401['ErrorEnum'] = {
   "failed: key missing": "Authentication failed: key missing",
 
   /**
-   * value: "Authentication failed: property 'iss' (issuer) missing in JWT"
+   * value: "Authentication failed: property iss (issuer) missing in JWT"
    * @const
    */
-  "failed: property &#39;iss&#39; (issuer) missing in JWT": "Authentication failed: property 'iss' (issuer) missing in JWT",
+  "failed: property iss (issuer) missing in JWT": "Authentication failed: property iss (issuer) missing in JWT",
 
   /**
-   * value: "Authentication failed: property 'sub' (subject) missing in JWT"
+   * value: "Authentication failed: property sub (subject) missing in JWT"
    * @const
    */
-  "failed: property &#39;sub&#39; (subject) missing in JWT": "Authentication failed: property 'sub' (subject) missing in JWT",
+  "failed: property sub (subject) missing in JWT": "Authentication failed: property sub (subject) missing in JWT",
 
   /**
-   * value: "Authentication failed: property 'exp' (expiration time) missing in JWT"
+   * value: "Authentication failed: property exp (expiration time) missing in JWT"
    * @const
    */
-  "failed: property &#39;exp&#39; (expiration time) missing in JWT": "Authentication failed: property 'exp' (expiration time) missing in JWT",
+  "failed: property exp (expiration time) missing in JWT": "Authentication failed: property exp (expiration time) missing in JWT",
 
   /**
-   * value: "Authentication failed: invalid 'iss' (issuer)"
+   * value: "Authentication failed: invalid iss (issuer)"
    * @const
    */
-  "failed: invalid &#39;iss&#39; (issuer)": "Authentication failed: invalid 'iss' (issuer)",
+  "failed: invalid iss (issuer)": "Authentication failed: invalid iss (issuer)",
 
   /**
    * value: "Authentication failed: incorrect signature"

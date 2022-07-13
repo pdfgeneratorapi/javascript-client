@@ -11,71 +11,61 @@
  *
  */
 
-import ApiClient from '../ApiClient';
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD.
+    define(['expect.js', process.cwd()+'/src/index'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
+  } else {
+    // Browser globals (root is window)
+    factory(root.expect, root.PDFGeneratorAPI);
+  }
+}(this, function(expect, PDFGeneratorAPI) {
+  'use strict';
 
-/**
- * The TemplateDefinitionNewMargins model module.
- * @module model/TemplateDefinitionNewMargins
- * @version 3.1.1
- */
-class TemplateDefinitionNewMargins {
-    /**
-     * Constructs a new <code>TemplateDefinitionNewMargins</code>.
-     * @alias module:model/TemplateDefinitionNewMargins
-     */
-    constructor() { 
-        
-        TemplateDefinitionNewMargins.initialize(this);
-    }
+  var instance;
 
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
-    }
+  beforeEach(function() {
+    instance = new PDFGeneratorAPI.InlineResponse402();
+  });
 
-    /**
-     * Constructs a <code>TemplateDefinitionNewMargins</code> from a plain JavaScript object, optionally creating a new instance.
-     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/TemplateDefinitionNewMargins} obj Optional instance to populate.
-     * @return {module:model/TemplateDefinitionNewMargins} The populated <code>TemplateDefinitionNewMargins</code> instance.
-     */
-    static constructFromObject(data, obj) {
-        if (data) {
-            obj = obj || new TemplateDefinitionNewMargins();
+  var getProperty = function(object, getter, property) {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
+  }
 
-            if (data.hasOwnProperty('right')) {
-                obj['right'] = ApiClient.convertToType(data['right'], 'Number');
-            }
-            if (data.hasOwnProperty('bottom')) {
-                obj['bottom'] = ApiClient.convertToType(data['bottom'], 'Number');
-            }
-        }
-        return obj;
-    }
+  var setProperty = function(object, setter, property, value) {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
+  }
 
+  describe('InlineResponse402', function() {
+    it('should create an instance of InlineResponse402', function() {
+      // uncomment below and update the code to test InlineResponse402
+      //var instane = new PDFGeneratorAPI.InlineResponse402();
+      //expect(instance).to.be.a(PDFGeneratorAPI.InlineResponse402);
+    });
 
-}
+    it('should have the property error (base name: "error")', function() {
+      // uncomment below and update the code to test the property error
+      //var instance = new PDFGeneratorAPI.InlineResponse402();
+      //expect(instance).to.be();
+    });
 
-/**
- * Page or label margin from right
- * @member {Number} right
- */
-TemplateDefinitionNewMargins.prototype['right'] = undefined;
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
+      //var instance = new PDFGeneratorAPI.InlineResponse402();
+      //expect(instance).to.be();
+    });
 
-/**
- * Page or label margin from bottom
- * @member {Number} bottom
- */
-TemplateDefinitionNewMargins.prototype['bottom'] = undefined;
+  });
 
-
-
-
-
-
-export default TemplateDefinitionNewMargins;
-
+}));

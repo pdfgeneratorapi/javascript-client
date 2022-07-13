@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The TemplateDefinitionNewMargins model module.
- * @module model/TemplateDefinitionNewMargins
+ * The InlineResponse402 model module.
+ * @module model/InlineResponse402
  * @version 3.1.1
  */
-class TemplateDefinitionNewMargins {
+class InlineResponse402 {
     /**
-     * Constructs a new <code>TemplateDefinitionNewMargins</code>.
-     * @alias module:model/TemplateDefinitionNewMargins
+     * Constructs a new <code>InlineResponse402</code>.
+     * @alias module:model/InlineResponse402
      */
     constructor() { 
         
-        TemplateDefinitionNewMargins.initialize(this);
+        InlineResponse402.initialize(this);
     }
 
     /**
@@ -37,21 +37,21 @@ class TemplateDefinitionNewMargins {
     }
 
     /**
-     * Constructs a <code>TemplateDefinitionNewMargins</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InlineResponse402</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/TemplateDefinitionNewMargins} obj Optional instance to populate.
-     * @return {module:model/TemplateDefinitionNewMargins} The populated <code>TemplateDefinitionNewMargins</code> instance.
+     * @param {module:model/InlineResponse402} obj Optional instance to populate.
+     * @return {module:model/InlineResponse402} The populated <code>InlineResponse402</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new TemplateDefinitionNewMargins();
+            obj = obj || new InlineResponse402();
 
-            if (data.hasOwnProperty('right')) {
-                obj['right'] = ApiClient.convertToType(data['right'], 'Number');
+            if (data.hasOwnProperty('error')) {
+                obj['error'] = ApiClient.convertToType(data['error'], 'String');
             }
-            if (data.hasOwnProperty('bottom')) {
-                obj['bottom'] = ApiClient.convertToType(data['bottom'], 'Number');
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'Number');
             }
         }
         return obj;
@@ -61,21 +61,36 @@ class TemplateDefinitionNewMargins {
 }
 
 /**
- * Page or label margin from right
- * @member {Number} right
+ * Error description
+ * @member {module:model/InlineResponse402.ErrorEnum} error
  */
-TemplateDefinitionNewMargins.prototype['right'] = undefined;
+InlineResponse402.prototype['error'] = undefined;
 
 /**
- * Page or label margin from bottom
- * @member {Number} bottom
+ * HTTP Error code
+ * @member {Number} status
  */
-TemplateDefinitionNewMargins.prototype['bottom'] = undefined;
+InlineResponse402.prototype['status'] = undefined;
 
 
 
 
 
+/**
+ * Allowed values for the <code>error</code> property.
+ * @enum {String}
+ * @readonly
+ */
+InlineResponse402['ErrorEnum'] = {
 
-export default TemplateDefinitionNewMargins;
+    /**
+     * value: "Your account is suspended, please upgrade your account or contact support@pdfgeneratorapi.com"
+     * @const
+     */
+    "Your account is suspended, please upgrade your account or contact support@pdfgeneratorapi.com": "Your account is suspended, please upgrade your account or contact support@pdfgeneratorapi.com"
+};
+
+
+
+export default InlineResponse402;
 

@@ -1,6 +1,6 @@
 {
   "name": "pdf-generator-api-client",
-  "version": "4.0.1",
+  "version": "3.1.1",
   "description": "Javascript wrapper for PDF Generator API",
   "license": "Unlicense",
   "main": "dist/index.js",
@@ -42,14 +42,5 @@
   },
   "files": [
     "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pdfgeneratorapi/javascript-client.git"
-  },
-  "author": "Actual Reports",
-  "bugs": {
-    "url": "https://github.com/pdfgeneratorapi/javascript-client/issues"
-  },
-  "homepage": "https://pdfgeneratorapi.com"
+  ]
 }

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## mergeTemplate
 
-> InlineResponse2004 mergeTemplate(template_id, data, opts)
+> InlineResponse2004 mergeTemplate(template_id, body, opts)
 
 Generate document
 
@@ -28,13 +28,13 @@ JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.DocumentsApi();
 let template_id = 19375; // Number | Template unique identifier
-let data = new PDFGeneratorAPI.Data(); // Data | Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file.
+let body = null; // Object | Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file.
 let opts = {
   'name': My document, // String | Document name, returned in the meta data.
   'format': pdf, // String | Document format. The zip option will return a ZIP file with PDF files.
-  'output': base64 // String | Response format. With the url option, the document is stored for 30 days and automatically deleted.
+  'output': base64 // String | Response format. \"I\" is used to return the file inline. With the url option, the document is stored for 30 days and automatically deleted.
 };
-apiInstance.mergeTemplate(template_id, data, opts, (error, data, response) => {
+apiInstance.mergeTemplate(template_id, body, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -49,10 +49,10 @@ apiInstance.mergeTemplate(template_id, data, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **template_id** | **Number**| Template unique identifier | 
- **data** | [**Data**](Data.md)| Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file. | 
+ **body** | **Object**| Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file. | 
  **name** | **String**| Document name, returned in the meta data. | [optional] 
  **format** | **String**| Document format. The zip option will return a ZIP file with PDF files. | [optional] [default to &#39;pdf&#39;]
- **output** | **String**| Response format. With the url option, the document is stored for 30 days and automatically deleted. | [optional] [default to &#39;base64&#39;]
+ **output** | **String**| Response format. \&quot;I\&quot; is used to return the file inline. With the url option, the document is stored for 30 days and automatically deleted. | [optional] [default to &#39;base64&#39;]
 
 ### Return type
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 Generate document (multiple templates)
 
-Allows to merge multiple templated with data and returns base64 encoded document or public URL to a document. NB! When the public URL option is used, the document is stored for 30 days and automatically deleted.
+Allows to merge multiple templates with data and returns base64 encoded document or public URL to a document. NB! When the public URL option is used, the document is stored for 30 days and automatically deleted.
 
 ### Example
 
@@ -90,7 +90,7 @@ let request_body = [null]; // [Object] | Data used to specify templates and data
 let opts = {
   'name': My document, // String | Document name, returned in the meta data.
   'format': pdf, // String | Document format. The zip option will return a ZIP file with PDF files.
-  'output': base64 // String | Response format. With the url option, the document is stored for 30 days and automatically deleted.
+  'output': base64 // String | Response format. \"I\" is used to return the file inline. With the url option, the document is stored for 30 days and automatically deleted.
 };
 apiInstance.mergeTemplates(request_body, opts, (error, data, response) => {
   if (error) {
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
  **request_body** | [**[Object]**](Object.md)| Data used to specify templates and data objects which are used to merge the template | 
  **name** | **String**| Document name, returned in the meta data. | [optional] 
  **format** | **String**| Document format. The zip option will return a ZIP file with PDF files. | [optional] [default to &#39;pdf&#39;]
- **output** | **String**| Response format. With the url option, the document is stored for 30 days and automatically deleted. | [optional] [default to &#39;base64&#39;]
+ **output** | **String**| Response format. \&quot;I\&quot; is used to return the file inline. With the url option, the document is stored for 30 days and automatically deleted. | [optional] [default to &#39;base64&#39;]
 
 ### Return type
 
