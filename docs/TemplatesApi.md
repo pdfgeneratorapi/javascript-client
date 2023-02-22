@@ -1,15 +1,16 @@
 # PDFGeneratorAPI.TemplatesApi
 
-All URIs are relative to *https://us1.pdfgeneratorapi.com/api/v3*
+All URIs are relative to *https://us1.pdfgeneratorapi.com/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**copyTemplate**](TemplatesApi.md#copyTemplate) | **POST** /templates/{templateId}/copy | Copy template
 [**createTemplate**](TemplatesApi.md#createTemplate) | **POST** /templates | Create template
 [**deleteTemplate**](TemplatesApi.md#deleteTemplate) | **DELETE** /templates/{templateId} | Delete template
-[**getEditorUrl**](TemplatesApi.md#getEditorUrl) | **POST** /templates/{templateId}/editor | Open editor
 [**getTemplate**](TemplatesApi.md#getTemplate) | **GET** /templates/{templateId} | Get template
+[**getTemplateData**](TemplatesApi.md#getTemplateData) | **GET** /templates/{templateId}/data | Get template data fields
 [**getTemplates**](TemplatesApi.md#getTemplates) | **GET** /templates | Get templates
+[**openEditor**](TemplatesApi.md#openEditor) | **POST** /templates/{templateId}/editor | Open editor
 [**updateTemplate**](TemplatesApi.md#updateTemplate) | **PUT** /templates/{templateId} | Update template
 
 
@@ -34,7 +35,7 @@ JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 let apiInstance = new PDFGeneratorAPI.TemplatesApi();
 let template_id = 19375; // Number | Template unique identifier
 let opts = {
-  'name': My copied template // String | Name for the copied template. If name is not specified then the original name is used.
+  'copy_template_request': new PDFGeneratorAPI.CopyTemplateRequest() // CopyTemplateRequest | 
 };
 apiInstance.copyTemplate(template_id, opts, (error, data, response) => {
   if (error) {
@@ -51,7 +52,7 @@ apiInstance.copyTemplate(template_id, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **template_id** | **Number**| Template unique identifier | 
- **name** | **String**| Name for the copied template. If name is not specified then the original name is used. | [optional] 
+ **copy_template_request** | [**CopyTemplateRequest**](CopyTemplateRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -63,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -118,7 +119,7 @@ Name | Type | Description  | Notes
 
 ## deleteTemplate
 
-> DeleteTemplate200Response deleteTemplate(template_id)
+> DeleteTemplate204Response deleteTemplate(template_id)
 
 Delete template
 
@@ -153,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteTemplate200Response**](DeleteTemplate200Response.md)
+[**DeleteTemplate204Response**](DeleteTemplate204Response.md)
 
 ### Authorization
 
@@ -162,61 +163,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getEditorUrl
-
-> GetEditorUrl200Response getEditorUrl(template_id, body, opts)
-
-Open editor
-
-Returns an unique URL which you can use to redirect your user to the editor from your application or use the generated URL as iframe source to show the editor within your application. When using iframe, make sure that your browser allows third-party cookies. 
-
-### Example
-
-```javascript
-import PDFGeneratorAPI from 'pdf-generator-api-client';
-let defaultClient = PDFGeneratorAPI.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
-let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
-JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
-
-let apiInstance = new PDFGeneratorAPI.TemplatesApi();
-let template_id = 19375; // Number | Template unique identifier
-let body = {key: null}; // Object | Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file.
-let opts = {
-  'language': en // String | Specify the editor UI language. Defaults to organization editor language.
-};
-apiInstance.getEditorUrl(template_id, body, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **template_id** | **Number**| Template unique identifier | 
- **body** | **Object**| Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file. | 
- **language** | **String**| Specify the editor UI language. Defaults to organization editor language. | [optional] 
-
-### Return type
-
-[**GetEditorUrl200Response**](GetEditorUrl200Response.md)
-
-### Authorization
-
-[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -269,9 +215,58 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getTemplateData
+
+> GetTemplateData200Response getTemplateData(template_id)
+
+Get template data fields
+
+Returns all data fields used in the template. Returns structured JSON data that can be used to check which data fields are used in template or autogenerate sample data. 
+
+### Example
+
+```javascript
+import PDFGeneratorAPI from 'pdf-generator-api-client';
+let defaultClient = PDFGeneratorAPI.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
+let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
+JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new PDFGeneratorAPI.TemplatesApi();
+let template_id = 19375; // Number | Template unique identifier
+apiInstance.getTemplateData(template_id, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **template_id** | **Number**| Template unique identifier | 
+
+### Return type
+
+[**GetTemplateData200Response**](GetTemplateData200Response.md)
+
+### Authorization
+
+[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getTemplates
 
-> GetTemplates200Response getTemplates()
+> GetTemplates200Response getTemplates(opts)
 
 Get templates
 
@@ -287,7 +282,12 @@ let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
 JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.TemplatesApi();
-apiInstance.getTemplates((error, data, response) => {
+let opts = {
+  'name': "name_example", // String | Filter template by name
+  'tags': "tags_example", // String | Filter template by tags
+  'access': private // String | Filter template by access type. No values returns all templates. private - returns only private templates, organization - returns only organization templates.
+};
+apiInstance.getTemplates(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -298,7 +298,12 @@ apiInstance.getTemplates((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| Filter template by name | [optional] 
+ **tags** | **String**| Filter template by tags | [optional] 
+ **access** | **String**| Filter template by access type. No values returns all templates. private - returns only private templates, organization - returns only organization templates. | [optional] [default to &#39;&#39;]
 
 ### Return type
 
@@ -311,6 +316,57 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## openEditor
+
+> OpenEditor200Response openEditor(template_id, open_editor_request)
+
+Open editor
+
+Returns an unique URL which you can use to redirect your user to the editor from your application or use the generated URL as iframe source to show the editor within your application. When using iframe, make sure that your browser allows third-party cookies. 
+
+### Example
+
+```javascript
+import PDFGeneratorAPI from 'pdf-generator-api-client';
+let defaultClient = PDFGeneratorAPI.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
+let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
+JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new PDFGeneratorAPI.TemplatesApi();
+let template_id = 19375; // Number | Template unique identifier
+let open_editor_request = new PDFGeneratorAPI.OpenEditorRequest(); // OpenEditorRequest | 
+apiInstance.openEditor(template_id, open_editor_request, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **template_id** | **Number**| Template unique identifier | 
+ **open_editor_request** | [**OpenEditorRequest**](OpenEditorRequest.md)|  | 
+
+### Return type
+
+[**OpenEditor200Response**](OpenEditor200Response.md)
+
+### Authorization
+
+[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

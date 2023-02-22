@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error** | **String** | Error description | [optional] 
-**status** | **Number** | HTTP Error code | [optional] 
+**message** | **String** | Error description | [optional] 
 
 
