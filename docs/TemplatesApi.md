@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## copyTemplate
 
-> InlineResponse2001 copyTemplate(template_id, opts)
+> CreateTemplate200Response copyTemplate(template_id, opts)
 
 Copy template
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**CreateTemplate200Response**](CreateTemplate200Response.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ## createTemplate
 
-> InlineResponse2001 createTemplate(template_definition_new)
+> CreateTemplate200Response createTemplate(template_definition_new)
 
 Create template
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**CreateTemplate200Response**](CreateTemplate200Response.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ## deleteTemplate
 
-> InlineResponse2002 deleteTemplate(template_id)
+> DeleteTemplate200Response deleteTemplate(template_id)
 
 Delete template
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**DeleteTemplate200Response**](DeleteTemplate200Response.md)
 
 ### Authorization
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ## getEditorUrl
 
-> InlineResponse2003 getEditorUrl(template_id, body, opts)
+> GetEditorUrl200Response getEditorUrl(template_id, body, opts)
 
 Open editor
 
@@ -184,7 +184,7 @@ JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.TemplatesApi();
 let template_id = 19375; // Number | Template unique identifier
-let body = null; // Object | Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file.
+let body = {key: null}; // Object | Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file.
 let opts = {
   'language': en // String | Specify the editor UI language. Defaults to organization editor language.
 };
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**GetEditorUrl200Response**](GetEditorUrl200Response.md)
 
 ### Authorization
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ## getTemplate
 
-> InlineResponse2001 getTemplate(template_id)
+> CreateTemplate200Response getTemplate(template_id)
 
 Get template
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**CreateTemplate200Response**](CreateTemplate200Response.md)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 ## getTemplates
 
-> InlineResponse200 getTemplates()
+> GetTemplates200Response getTemplates()
 
 Get templates
 
@@ -302,7 +302,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**GetTemplates200Response**](GetTemplates200Response.md)
 
 ### Authorization
 
@@ -316,7 +316,7 @@ This endpoint does not need any parameter.
 
 ## updateTemplate
 
-> InlineResponse2001 updateTemplate(template_id, template_definition_new)
+> CreateTemplate200Response updateTemplate(template_id, template_definition_new)
 
 Update template
 
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**CreateTemplate200Response**](CreateTemplate200Response.md)
 
 ### Authorization
 

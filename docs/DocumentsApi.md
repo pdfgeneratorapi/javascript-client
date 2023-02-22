@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## mergeTemplate
 
-> InlineResponse2004 mergeTemplate(template_id, body, opts)
+> MergeTemplate200Response mergeTemplate(template_id, body, opts)
 
 Generate document
 
@@ -28,7 +28,7 @@ JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.DocumentsApi();
 let template_id = 19375; // Number | Template unique identifier
-let body = null; // Object | Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file.
+let body = {key: null}; // Object | Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file.
 let opts = {
   'name': My document, // String | Document name, returned in the meta data.
   'format': pdf, // String | Document format. The zip option will return a ZIP file with PDF files.
@@ -51,12 +51,12 @@ Name | Type | Description  | Notes
  **template_id** | **Number**| Template unique identifier | 
  **body** | **Object**| Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file. | 
  **name** | **String**| Document name, returned in the meta data. | [optional] 
- **format** | **String**| Document format. The zip option will return a ZIP file with PDF files. | [optional] [default to &#39;pdf&#39;]
- **output** | **String**| Response format. \&quot;I\&quot; is used to return the file inline. With the url option, the document is stored for 30 days and automatically deleted. | [optional] [default to &#39;base64&#39;]
+ **format** | **String**| Document format. The zip option will return a ZIP file with PDF files. | [optional] 
+ **output** | **String**| Response format. \&quot;I\&quot; is used to return the file inline. With the url option, the document is stored for 30 days and automatically deleted. | [optional] 
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**MergeTemplate200Response**](MergeTemplate200Response.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ## mergeTemplates
 
-> InlineResponse2004 mergeTemplates(request_body, opts)
+> MergeTemplate200Response mergeTemplates(batch_data_inner, opts)
 
 Generate document (multiple templates)
 
@@ -86,13 +86,13 @@ let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
 JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.DocumentsApi();
-let request_body = [null]; // [Object] | Data used to specify templates and data objects which are used to merge the template
+let batch_data_inner = [new PDFGeneratorAPI.BatchDataInner()]; // [BatchDataInner] | Data used to specify templates and data objects which are used to merge the template
 let opts = {
   'name': My document, // String | Document name, returned in the meta data.
   'format': pdf, // String | Document format. The zip option will return a ZIP file with PDF files.
   'output': base64 // String | Response format. \"I\" is used to return the file inline. With the url option, the document is stored for 30 days and automatically deleted.
 };
-apiInstance.mergeTemplates(request_body, opts, (error, data, response) => {
+apiInstance.mergeTemplates(batch_data_inner, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -106,14 +106,14 @@ apiInstance.mergeTemplates(request_body, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request_body** | [**[Object]**](Object.md)| Data used to specify templates and data objects which are used to merge the template | 
+ **batch_data_inner** | [**[BatchDataInner]**](BatchDataInner.md)| Data used to specify templates and data objects which are used to merge the template | 
  **name** | **String**| Document name, returned in the meta data. | [optional] 
- **format** | **String**| Document format. The zip option will return a ZIP file with PDF files. | [optional] [default to &#39;pdf&#39;]
- **output** | **String**| Response format. \&quot;I\&quot; is used to return the file inline. With the url option, the document is stored for 30 days and automatically deleted. | [optional] [default to &#39;base64&#39;]
+ **format** | **String**| Document format. The zip option will return a ZIP file with PDF files. | [optional] 
+ **output** | **String**| Response format. \&quot;I\&quot; is used to return the file inline. With the url option, the document is stored for 30 days and automatically deleted. | [optional] 
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**MergeTemplate200Response**](MergeTemplate200Response.md)
 
 ### Authorization
 

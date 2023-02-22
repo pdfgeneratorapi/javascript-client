@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## deleteWorkspace
 
-> InlineResponse2002 deleteWorkspace(workspace_id)
+> DeleteTemplate200Response deleteWorkspace(workspace_id)
 
 Delete workspace
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**DeleteTemplate200Response**](DeleteTemplate200Response.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ## getWorkspace
 
-> InlineResponse2005 getWorkspace(workspace_id)
+> GetWorkspace200Response getWorkspace(workspace_id)
 
 Get workspace
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**GetWorkspace200Response**](GetWorkspace200Response.md)
 
 ### Authorization
 
