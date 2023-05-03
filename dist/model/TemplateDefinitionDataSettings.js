@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinitionDataSettings model module.
  * @module model/TemplateDefinitionDataSettings
- * @version 3.1.1
+ * @version 4.0.1
  */
 var TemplateDefinitionDataSettings = /*#__PURE__*/function () {
   /**
@@ -65,6 +65,27 @@ var TemplateDefinitionDataSettings = /*#__PURE__*/function () {
       }
 
       return obj;
+    }
+    /**
+     * Validates the JSON data with respect to <code>TemplateDefinitionDataSettings</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>TemplateDefinitionDataSettings</code>.
+     */
+
+  }, {
+    key: "validateJSON",
+    value: function validateJSON(data) {
+      // ensure the json data is an array
+      if (!Array.isArray(data['sortBy'])) {
+        throw new Error("Expected the field `sortBy` to be an array in the JSON data but got " + data['sortBy']);
+      } // ensure the json data is an array
+
+
+      if (!Array.isArray(data['filterBy'])) {
+        throw new Error("Expected the field `filterBy` to be an array in the JSON data but got " + data['filterBy']);
+      }
+
+      return true;
     }
   }]);
 

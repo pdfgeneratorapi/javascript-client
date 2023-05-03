@@ -7,19 +7,27 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _InlineResponse = _interopRequireDefault(require("../model/InlineResponse2002"));
+var _CreateWorkspace200Response = _interopRequireDefault(require("../model/CreateWorkspace200Response"));
 
-var _InlineResponse2 = _interopRequireDefault(require("../model/InlineResponse2005"));
+var _CreateWorkspaceRequest = _interopRequireDefault(require("../model/CreateWorkspaceRequest"));
 
-var _InlineResponse3 = _interopRequireDefault(require("../model/InlineResponse401"));
+var _DeleteTemplate204Response = _interopRequireDefault(require("../model/DeleteTemplate204Response"));
 
-var _InlineResponse4 = _interopRequireDefault(require("../model/InlineResponse403"));
+var _GetTemplates401Response = _interopRequireDefault(require("../model/GetTemplates401Response"));
 
-var _InlineResponse5 = _interopRequireDefault(require("../model/InlineResponse404"));
+var _GetTemplates402Response = _interopRequireDefault(require("../model/GetTemplates402Response"));
 
-var _InlineResponse6 = _interopRequireDefault(require("../model/InlineResponse422"));
+var _GetTemplates403Response = _interopRequireDefault(require("../model/GetTemplates403Response"));
 
-var _InlineResponse7 = _interopRequireDefault(require("../model/InlineResponse500"));
+var _GetTemplates404Response = _interopRequireDefault(require("../model/GetTemplates404Response"));
+
+var _GetTemplates422Response = _interopRequireDefault(require("../model/GetTemplates422Response"));
+
+var _GetTemplates429Response = _interopRequireDefault(require("../model/GetTemplates429Response"));
+
+var _GetTemplates500Response = _interopRequireDefault(require("../model/GetTemplates500Response"));
+
+var _GetWorkspaces200Response = _interopRequireDefault(require("../model/GetWorkspaces200Response"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -32,7 +40,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Workspaces service.
 * @module PDFGeneratorAPI/WorkspacesApi
-* @version 3.1.1
+* @version 4.0.1
 */
 var WorkspacesApi = /*#__PURE__*/function () {
   /**
@@ -48,33 +56,65 @@ var WorkspacesApi = /*#__PURE__*/function () {
     this.apiClient = apiClient || _ApiClient["default"].instance;
   }
   /**
-   * Callback function to receive the result of the deleteWorkspace operation.
-   * @callback module:PDFGeneratorAPI/WorkspacesApi~deleteWorkspaceCallback
+   * Callback function to receive the result of the createWorkspace operation.
+   * @callback module:PDFGeneratorAPI/WorkspacesApi~createWorkspaceCallback
    * @param {String} error Error message, if any.
-   * @param {module:model/InlineResponse2002} data The data returned by the service call.
+   * @param {module:model/CreateWorkspace200Response} data The data returned by the service call.
    * @param {String} response The complete HTTP response.
    */
 
   /**
-   * Delete workspace
-   * Deletes the workspace
-   * @param {String} workspace_id Workspace identifier
-   * @param {module:PDFGeneratorAPI/WorkspacesApi~deleteWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
-   * data is of type: {@link module:model/InlineResponse2002}
+   * Create workspace
+   * Creates a regular workspace with identifier specified in the request.
+   * @param {Object} opts Optional parameters
+   * @param {module:model/CreateWorkspaceRequest} opts.create_workspace_request 
+   * @param {module:PDFGeneratorAPI/WorkspacesApi~createWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
+   * data is of type: {@link module:model/CreateWorkspace200Response}
    */
 
 
   _createClass(WorkspacesApi, [{
-    key: "deleteWorkspace",
-    value: function deleteWorkspace(workspace_id, callback) {
-      var postBody = null; // verify the required parameter 'workspace_id' is set
+    key: "createWorkspace",
+    value: function createWorkspace(opts, callback) {
+      opts = opts || {};
+      var postBody = opts['create_workspace_request'];
+      var pathParams = {};
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['JSONWebTokenAuth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _CreateWorkspace200Response["default"];
+      return this.apiClient.callApi('/workspaces', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the deleteWorkspace operation.
+     * @callback module:PDFGeneratorAPI/WorkspacesApi~deleteWorkspaceCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DeleteTemplate204Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
 
-      if (workspace_id === undefined || workspace_id === null) {
-        throw new Error("Missing the required parameter 'workspace_id' when calling deleteWorkspace");
+    /**
+     * Delete workspace
+     * Delete workspace. Only regular workspaces can be deleted.
+     * @param {String} workspace_identifier Workspace identifier
+     * @param {module:PDFGeneratorAPI/WorkspacesApi~deleteWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DeleteTemplate204Response}
+     */
+
+  }, {
+    key: "deleteWorkspace",
+    value: function deleteWorkspace(workspace_identifier, callback) {
+      var postBody = null; // verify the required parameter 'workspace_identifier' is set
+
+      if (workspace_identifier === undefined || workspace_identifier === null) {
+        throw new Error("Missing the required parameter 'workspace_identifier' when calling deleteWorkspace");
       }
 
       var pathParams = {
-        'workspaceId': workspace_id
+        'workspaceIdentifier': workspace_identifier
       };
       var queryParams = {};
       var headerParams = {};
@@ -82,36 +122,36 @@ var WorkspacesApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse["default"];
-      return this.apiClient.callApi('/workspaces/{workspaceId}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      var returnType = _DeleteTemplate204Response["default"];
+      return this.apiClient.callApi('/workspaces/{workspaceIdentifier}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getWorkspace operation.
      * @callback module:PDFGeneratorAPI/WorkspacesApi~getWorkspaceCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2005} data The data returned by the service call.
+     * @param {module:model/CreateWorkspace200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Get workspace
-     * Returns workspace information
-     * @param {String} workspace_id Workspace identifier
+     * Returns workspace information for the workspace identifier specified in the request.
+     * @param {String} workspace_identifier Workspace identifier
      * @param {module:PDFGeneratorAPI/WorkspacesApi~getWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2005}
+     * data is of type: {@link module:model/CreateWorkspace200Response}
      */
 
   }, {
     key: "getWorkspace",
-    value: function getWorkspace(workspace_id, callback) {
-      var postBody = null; // verify the required parameter 'workspace_id' is set
+    value: function getWorkspace(workspace_identifier, callback) {
+      var postBody = null; // verify the required parameter 'workspace_identifier' is set
 
-      if (workspace_id === undefined || workspace_id === null) {
-        throw new Error("Missing the required parameter 'workspace_id' when calling getWorkspace");
+      if (workspace_identifier === undefined || workspace_identifier === null) {
+        throw new Error("Missing the required parameter 'workspace_identifier' when calling getWorkspace");
       }
 
       var pathParams = {
-        'workspaceId': workspace_id
+        'workspaceIdentifier': workspace_identifier
       };
       var queryParams = {};
       var headerParams = {};
@@ -119,8 +159,37 @@ var WorkspacesApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse2["default"];
-      return this.apiClient.callApi('/workspaces/{workspaceId}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      var returnType = _CreateWorkspace200Response["default"];
+      return this.apiClient.callApi('/workspaces/{workspaceIdentifier}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the getWorkspaces operation.
+     * @callback module:PDFGeneratorAPI/WorkspacesApi~getWorkspacesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/GetWorkspaces200Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get workspaces
+     * Returns all workspaces in the organization
+     * @param {module:PDFGeneratorAPI/WorkspacesApi~getWorkspacesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/GetWorkspaces200Response}
+     */
+
+  }, {
+    key: "getWorkspaces",
+    value: function getWorkspaces(callback) {
+      var postBody = null;
+      var pathParams = {};
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['JSONWebTokenAuth'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _GetWorkspaces200Response["default"];
+      return this.apiClient.callApi('/workspaces', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
   }]);
 

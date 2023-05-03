@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ## getWorkspaces
 
-> GetWorkspaces200Response getWorkspaces()
+> GetWorkspaces200Response getWorkspaces(opts)
 
 Get workspaces
 
@@ -178,7 +178,11 @@ let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
 JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.WorkspacesApi();
-apiInstance.getWorkspaces((error, data, response) => {
+let opts = {
+  'page': 1, // Number | Pagination: page to return
+  'per_page': 20 // Number | Pagination: How many records to return per page
+};
+apiInstance.getWorkspaces(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -189,7 +193,11 @@ apiInstance.getWorkspaces((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Number**| Pagination: page to return | [optional] [default to 1]
+ **per_page** | **Number**| Pagination: How many records to return per page | [optional] [default to 15]
 
 ### Return type
 

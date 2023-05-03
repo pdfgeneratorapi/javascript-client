@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinitionLayout model module.
  * @module model/TemplateDefinitionLayout
- * @version 3.1.1
+ * @version 4.0.1
  */
 var TemplateDefinitionLayout = /*#__PURE__*/function () {
   /**
@@ -97,6 +97,44 @@ var TemplateDefinitionLayout = /*#__PURE__*/function () {
       }
 
       return obj;
+    }
+    /**
+     * Validates the JSON data with respect to <code>TemplateDefinitionLayout</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>TemplateDefinitionLayout</code>.
+     */
+
+  }, {
+    key: "validateJSON",
+    value: function validateJSON(data) {
+      // ensure the json data is a string
+      if (data['format'] && !(typeof data['format'] === 'string' || data['format'] instanceof String)) {
+        throw new Error("Expected the field `format` to be a primitive type in the JSON string but got " + data['format']);
+      } // ensure the json data is a string
+
+
+      if (data['unit'] && !(typeof data['unit'] === 'string' || data['unit'] instanceof String)) {
+        throw new Error("Expected the field `unit` to be a primitive type in the JSON string but got " + data['unit']);
+      } // ensure the json data is a string
+
+
+      if (data['orientation'] && !(typeof data['orientation'] === 'string' || data['orientation'] instanceof String)) {
+        throw new Error("Expected the field `orientation` to be a primitive type in the JSON string but got " + data['orientation']);
+      } // validate the optional field `margins`
+
+
+      if (data['margins']) {
+        // data not null
+        _TemplateDefinitionNewLayoutMargins["default"].validateJSON(data['margins']);
+      } // validate the optional field `repeatLayout`
+
+
+      if (data['repeatLayout']) {
+        // data not null
+        _TemplateDefinitionNewLayoutRepeatLayout["default"].validateJSON(data['repeatLayout']);
+      }
+
+      return true;
     }
   }]);
 

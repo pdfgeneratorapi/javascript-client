@@ -7,23 +7,33 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _InlineResponse = _interopRequireDefault(require("../model/InlineResponse200"));
+var _CopyTemplateRequest = _interopRequireDefault(require("../model/CopyTemplateRequest"));
 
-var _InlineResponse2 = _interopRequireDefault(require("../model/InlineResponse2001"));
+var _CreateTemplate200Response = _interopRequireDefault(require("../model/CreateTemplate200Response"));
 
-var _InlineResponse3 = _interopRequireDefault(require("../model/InlineResponse2002"));
+var _DeleteTemplate204Response = _interopRequireDefault(require("../model/DeleteTemplate204Response"));
 
-var _InlineResponse4 = _interopRequireDefault(require("../model/InlineResponse2003"));
+var _GetTemplateData200Response = _interopRequireDefault(require("../model/GetTemplateData200Response"));
 
-var _InlineResponse5 = _interopRequireDefault(require("../model/InlineResponse401"));
+var _GetTemplates200Response = _interopRequireDefault(require("../model/GetTemplates200Response"));
 
-var _InlineResponse6 = _interopRequireDefault(require("../model/InlineResponse403"));
+var _GetTemplates401Response = _interopRequireDefault(require("../model/GetTemplates401Response"));
 
-var _InlineResponse7 = _interopRequireDefault(require("../model/InlineResponse404"));
+var _GetTemplates402Response = _interopRequireDefault(require("../model/GetTemplates402Response"));
 
-var _InlineResponse8 = _interopRequireDefault(require("../model/InlineResponse422"));
+var _GetTemplates403Response = _interopRequireDefault(require("../model/GetTemplates403Response"));
 
-var _InlineResponse9 = _interopRequireDefault(require("../model/InlineResponse500"));
+var _GetTemplates404Response = _interopRequireDefault(require("../model/GetTemplates404Response"));
+
+var _GetTemplates422Response = _interopRequireDefault(require("../model/GetTemplates422Response"));
+
+var _GetTemplates429Response = _interopRequireDefault(require("../model/GetTemplates429Response"));
+
+var _GetTemplates500Response = _interopRequireDefault(require("../model/GetTemplates500Response"));
+
+var _OpenEditor200Response = _interopRequireDefault(require("../model/OpenEditor200Response"));
+
+var _OpenEditorRequest = _interopRequireDefault(require("../model/OpenEditorRequest"));
 
 var _TemplateDefinitionNew = _interopRequireDefault(require("../model/TemplateDefinitionNew"));
 
@@ -38,7 +48,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Templates service.
 * @module PDFGeneratorAPI/TemplatesApi
-* @version 3.1.1
+* @version 4.0.1
 */
 var TemplatesApi = /*#__PURE__*/function () {
   /**
@@ -57,7 +67,7 @@ var TemplatesApi = /*#__PURE__*/function () {
    * Callback function to receive the result of the copyTemplate operation.
    * @callback module:PDFGeneratorAPI/TemplatesApi~copyTemplateCallback
    * @param {String} error Error message, if any.
-   * @param {module:model/InlineResponse2001} data The data returned by the service call.
+   * @param {module:model/CreateTemplate200Response} data The data returned by the service call.
    * @param {String} response The complete HTTP response.
    */
 
@@ -66,9 +76,9 @@ var TemplatesApi = /*#__PURE__*/function () {
    * Creates a copy of a template to the workspace specified in authentication parameters.
    * @param {Number} template_id Template unique identifier
    * @param {Object} opts Optional parameters
-   * @param {String} opts.name Name for the copied template. If name is not specified then the original name is used.
+   * @param {module:model/CopyTemplateRequest} opts.copy_template_request 
    * @param {module:PDFGeneratorAPI/TemplatesApi~copyTemplateCallback} callback The callback function, accepting three arguments: error, data, response
-   * data is of type: {@link module:model/InlineResponse2001}
+   * data is of type: {@link module:model/CreateTemplate200Response}
    */
 
 
@@ -76,7 +86,7 @@ var TemplatesApi = /*#__PURE__*/function () {
     key: "copyTemplate",
     value: function copyTemplate(template_id, opts, callback) {
       opts = opts || {};
-      var postBody = null; // verify the required parameter 'template_id' is set
+      var postBody = opts['copy_template_request']; // verify the required parameter 'template_id' is set
 
       if (template_id === undefined || template_id === null) {
         throw new Error("Missing the required parameter 'template_id' when calling copyTemplate");
@@ -85,22 +95,20 @@ var TemplatesApi = /*#__PURE__*/function () {
       var pathParams = {
         'templateId': template_id
       };
-      var queryParams = {
-        'name': opts['name']
-      };
+      var queryParams = {};
       var headerParams = {};
       var formParams = {};
       var authNames = ['JSONWebTokenAuth'];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse2["default"];
+      var returnType = _CreateTemplate200Response["default"];
       return this.apiClient.callApi('/templates/{templateId}/copy', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the createTemplate operation.
      * @callback module:PDFGeneratorAPI/TemplatesApi~createTemplateCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001} data The data returned by the service call.
+     * @param {module:model/CreateTemplate200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -109,7 +117,7 @@ var TemplatesApi = /*#__PURE__*/function () {
      * Creates a new template. If template configuration is not specified in the request body then an empty template is created. Template is placed to the workspace specified in authentication params. Template configuration must be sent in the request body.
      * @param {module:model/TemplateDefinitionNew} template_definition_new Template configuration as JSON string
      * @param {module:PDFGeneratorAPI/TemplatesApi~createTemplateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2001}
+     * data is of type: {@link module:model/CreateTemplate200Response}
      */
 
   }, {
@@ -128,14 +136,14 @@ var TemplatesApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse2["default"];
+      var returnType = _CreateTemplate200Response["default"];
       return this.apiClient.callApi('/templates', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the deleteTemplate operation.
      * @callback module:PDFGeneratorAPI/TemplatesApi~deleteTemplateCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2002} data The data returned by the service call.
+     * @param {module:model/DeleteTemplate204Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -144,7 +152,7 @@ var TemplatesApi = /*#__PURE__*/function () {
      * Deletes the template from workspace
      * @param {Number} template_id Template unique identifier
      * @param {module:PDFGeneratorAPI/TemplatesApi~deleteTemplateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2002}
+     * data is of type: {@link module:model/DeleteTemplate204Response}
      */
 
   }, {
@@ -165,62 +173,14 @@ var TemplatesApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse3["default"];
+      var returnType = _DeleteTemplate204Response["default"];
       return this.apiClient.callApi('/templates/{templateId}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
-     * Callback function to receive the result of the getEditorUrl operation.
-     * @callback module:PDFGeneratorAPI/TemplatesApi~getEditorUrlCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2003} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Open editor
-     * Returns an unique URL which you can use to redirect your user to the editor from your application or use the generated URL as iframe source to show the editor within your application. 
-     * @param {Number} template_id Template unique identifier
-     * @param {Object} body Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file.
-     * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.language Specify the editor UI language. Defaults to organization editor language.
-     * @param {module:PDFGeneratorAPI/TemplatesApi~getEditorUrlCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2003}
-     */
-
-  }, {
-    key: "getEditorUrl",
-    value: function getEditorUrl(template_id, body, opts, callback) {
-      opts = opts || {};
-      var postBody = body; // verify the required parameter 'template_id' is set
-
-      if (template_id === undefined || template_id === null) {
-        throw new Error("Missing the required parameter 'template_id' when calling getEditorUrl");
-      } // verify the required parameter 'body' is set
-
-
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling getEditorUrl");
-      }
-
-      var pathParams = {
-        'templateId': template_id
-      };
-      var queryParams = {
-        'language': opts['language']
-      };
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['JSONWebTokenAuth'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = _InlineResponse4["default"];
-      return this.apiClient.callApi('/templates/{templateId}/editor', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getTemplate operation.
      * @callback module:PDFGeneratorAPI/TemplatesApi~getTemplateCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001} data The data returned by the service call.
+     * @param {module:model/CreateTemplate200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -229,7 +189,7 @@ var TemplatesApi = /*#__PURE__*/function () {
      * Returns template configuration
      * @param {Number} template_id Template unique identifier
      * @param {module:PDFGeneratorAPI/TemplatesApi~getTemplateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2001}
+     * data is of type: {@link module:model/CreateTemplate200Response}
      */
 
   }, {
@@ -250,43 +210,132 @@ var TemplatesApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse2["default"];
+      var returnType = _CreateTemplate200Response["default"];
       return this.apiClient.callApi('/templates/{templateId}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the getTemplates operation.
-     * @callback module:PDFGeneratorAPI/TemplatesApi~getTemplatesCallback
+     * Callback function to receive the result of the getTemplateData operation.
+     * @callback module:PDFGeneratorAPI/TemplatesApi~getTemplateDataCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200} data The data returned by the service call.
+     * @param {module:model/GetTemplateData200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Get templates
-     * Returns a list of templates available for the authenticated workspace
-     * @param {module:PDFGeneratorAPI/TemplatesApi~getTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse200}
+     * Get template data fields
+     * Returns all data fields used in the template. Returns structured JSON data that can be used to check which data fields are used in template or autogenerate sample data. 
+     * @param {Number} template_id Template unique identifier
+     * @param {module:PDFGeneratorAPI/TemplatesApi~getTemplateDataCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/GetTemplateData200Response}
      */
 
   }, {
-    key: "getTemplates",
-    value: function getTemplates(callback) {
-      var postBody = null;
-      var pathParams = {};
+    key: "getTemplateData",
+    value: function getTemplateData(template_id, callback) {
+      var postBody = null; // verify the required parameter 'template_id' is set
+
+      if (template_id === undefined || template_id === null) {
+        throw new Error("Missing the required parameter 'template_id' when calling getTemplateData");
+      }
+
+      var pathParams = {
+        'templateId': template_id
+      };
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse["default"];
+      var returnType = _GetTemplateData200Response["default"];
+      return this.apiClient.callApi('/templates/{templateId}/data', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the getTemplates operation.
+     * @callback module:PDFGeneratorAPI/TemplatesApi~getTemplatesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/GetTemplates200Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get templates
+     * Returns a list of templates available for the authenticated workspace
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter template by name
+     * @param {String} opts.tags Filter template by tags
+     * @param {module:model/String} opts.access Filter template by access type. No values returns all templates. private - returns only private templates, organization - returns only organization templates. (default to '')
+     * @param {module:PDFGeneratorAPI/TemplatesApi~getTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/GetTemplates200Response}
+     */
+
+  }, {
+    key: "getTemplates",
+    value: function getTemplates(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+      var pathParams = {};
+      var queryParams = {
+        'name': opts['name'],
+        'tags': opts['tags'],
+        'access': opts['access']
+      };
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['JSONWebTokenAuth'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _GetTemplates200Response["default"];
       return this.apiClient.callApi('/templates', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the openEditor operation.
+     * @callback module:PDFGeneratorAPI/TemplatesApi~openEditorCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/OpenEditor200Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Open editor
+     * Returns an unique URL which you can use to redirect your user to the editor from your application or use the generated URL as iframe source to show the editor within your application. When using iframe, make sure that your browser allows third-party cookies. 
+     * @param {Number} template_id Template unique identifier
+     * @param {module:model/OpenEditorRequest} open_editor_request 
+     * @param {module:PDFGeneratorAPI/TemplatesApi~openEditorCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/OpenEditor200Response}
+     */
+
+  }, {
+    key: "openEditor",
+    value: function openEditor(template_id, open_editor_request, callback) {
+      var postBody = open_editor_request; // verify the required parameter 'template_id' is set
+
+      if (template_id === undefined || template_id === null) {
+        throw new Error("Missing the required parameter 'template_id' when calling openEditor");
+      } // verify the required parameter 'open_editor_request' is set
+
+
+      if (open_editor_request === undefined || open_editor_request === null) {
+        throw new Error("Missing the required parameter 'open_editor_request' when calling openEditor");
+      }
+
+      var pathParams = {
+        'templateId': template_id
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['JSONWebTokenAuth'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _OpenEditor200Response["default"];
+      return this.apiClient.callApi('/templates/{templateId}/editor', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the updateTemplate operation.
      * @callback module:PDFGeneratorAPI/TemplatesApi~updateTemplateCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001} data The data returned by the service call.
+     * @param {module:model/CreateTemplate200Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -296,7 +345,7 @@ var TemplatesApi = /*#__PURE__*/function () {
      * @param {Number} template_id Template unique identifier
      * @param {module:model/TemplateDefinitionNew} template_definition_new Template configuration as JSON string
      * @param {module:PDFGeneratorAPI/TemplatesApi~updateTemplateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2001}
+     * data is of type: {@link module:model/CreateTemplate200Response}
      */
 
   }, {
@@ -322,7 +371,7 @@ var TemplatesApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _InlineResponse2["default"];
+      var returnType = _CreateTemplate200Response["default"];
       return this.apiClient.callApi('/templates/{templateId}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
   }]);

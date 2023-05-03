@@ -1,6 +1,6 @@
 {
   "name": "pdf-generator-api-client",
-  "version": "4.0.1",
+  "version": "5.0.1",
   "description": "Javascript wrapper for PDF Generator API",
   "license": "Unlicense",
   "main": "dist/index.js",

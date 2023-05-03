@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinitionNewLayoutRepeatLayout model module.
  * @module model/TemplateDefinitionNewLayoutRepeatLayout
- * @version 3.1.1
+ * @version 4.0.1
  */
 var TemplateDefinitionNewLayoutRepeatLayout = /*#__PURE__*/function () {
   /**
@@ -69,6 +69,22 @@ var TemplateDefinitionNewLayoutRepeatLayout = /*#__PURE__*/function () {
       }
 
       return obj;
+    }
+    /**
+     * Validates the JSON data with respect to <code>TemplateDefinitionNewLayoutRepeatLayout</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>TemplateDefinitionNewLayoutRepeatLayout</code>.
+     */
+
+  }, {
+    key: "validateJSON",
+    value: function validateJSON(data) {
+      // ensure the json data is a string
+      if (data['format'] && !(typeof data['format'] === 'string' || data['format'] instanceof String)) {
+        throw new Error("Expected the field `format` to be a primitive type in the JSON string but got " + data['format']);
+      }
+
+      return true;
     }
   }]);
 

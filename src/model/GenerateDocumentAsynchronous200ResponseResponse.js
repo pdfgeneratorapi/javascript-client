@@ -12,22 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import Document from './Document';
-import PaginationMeta from './PaginationMeta';
 
 /**
- * The GetDocuments200Response model module.
- * @module model/GetDocuments200Response
+ * The GenerateDocumentAsynchronous200ResponseResponse model module.
+ * @module model/GenerateDocumentAsynchronous200ResponseResponse
  * @version 4.0.2
  */
-class GetDocuments200Response {
+class GenerateDocumentAsynchronous200ResponseResponse {
     /**
-     * Constructs a new <code>GetDocuments200Response</code>.
-     * @alias module:model/GetDocuments200Response
+     * Constructs a new <code>GenerateDocumentAsynchronous200ResponseResponse</code>.
+     * @alias module:model/GenerateDocumentAsynchronous200ResponseResponse
      */
     constructor() { 
         
-        GetDocuments200Response.initialize(this);
+        GenerateDocumentAsynchronous200ResponseResponse.initialize(this);
     }
 
     /**
@@ -39,45 +37,32 @@ class GetDocuments200Response {
     }
 
     /**
-     * Constructs a <code>GetDocuments200Response</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>GenerateDocumentAsynchronous200ResponseResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/GetDocuments200Response} obj Optional instance to populate.
-     * @return {module:model/GetDocuments200Response} The populated <code>GetDocuments200Response</code> instance.
+     * @param {module:model/GenerateDocumentAsynchronous200ResponseResponse} obj Optional instance to populate.
+     * @return {module:model/GenerateDocumentAsynchronous200ResponseResponse} The populated <code>GenerateDocumentAsynchronous200ResponseResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new GetDocuments200Response();
+            obj = obj || new GenerateDocumentAsynchronous200ResponseResponse();
 
-            if (data.hasOwnProperty('response')) {
-                obj['response'] = ApiClient.convertToType(data['response'], [Document]);
-            }
-            if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
+            if (data.hasOwnProperty('job_id')) {
+                obj['job_id'] = ApiClient.convertToType(data['job_id'], 'String');
             }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>GetDocuments200Response</code>.
+     * Validates the JSON data with respect to <code>GenerateDocumentAsynchronous200ResponseResponse</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>GetDocuments200Response</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>GenerateDocumentAsynchronous200ResponseResponse</code>.
      */
     static validateJSON(data) {
-        if (data['response']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['response'])) {
-                throw new Error("Expected the field `response` to be an array in the JSON data but got " + data['response']);
-            }
-            // validate the optional field `response` (array)
-            for (const item of data['response']) {
-                Document.validateJSON(item);
-            };
-        }
-        // validate the optional field `meta`
-        if (data['meta']) { // data not null
-          PaginationMeta.validateJSON(data['meta']);
+        // ensure the json data is a string
+        if (data['job_id'] && !(typeof data['job_id'] === 'string' || data['job_id'] instanceof String)) {
+            throw new Error("Expected the field `job_id` to be a primitive type in the JSON string but got " + data['job_id']);
         }
 
         return true;
@@ -89,19 +74,15 @@ class GetDocuments200Response {
 
 
 /**
- * @member {Array.<module:model/Document>} response
+ * Unique job id which is also added to the callback request as header PDF-API-Job-Id
+ * @member {String} job_id
  */
-GetDocuments200Response.prototype['response'] = undefined;
-
-/**
- * @member {module:model/PaginationMeta} meta
- */
-GetDocuments200Response.prototype['meta'] = undefined;
+GenerateDocumentAsynchronous200ResponseResponse.prototype['job_id'] = undefined;
 
 
 
 
 
 
-export default GetDocuments200Response;
+export default GenerateDocumentAsynchronous200ResponseResponse;
 

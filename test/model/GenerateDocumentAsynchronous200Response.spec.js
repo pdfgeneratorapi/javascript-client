@@ -11,97 +11,55 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Document from './Document';
-import PaginationMeta from './PaginationMeta';
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD.
+    define(['expect.js', process.cwd()+'/src/index'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
+  } else {
+    // Browser globals (root is window)
+    factory(root.expect, root.PDFGeneratorAPI);
+  }
+}(this, function(expect, PDFGeneratorAPI) {
+  'use strict';
 
-/**
- * The GetDocuments200Response model module.
- * @module model/GetDocuments200Response
- * @version 4.0.2
- */
-class GetDocuments200Response {
-    /**
-     * Constructs a new <code>GetDocuments200Response</code>.
-     * @alias module:model/GetDocuments200Response
-     */
-    constructor() { 
-        
-        GetDocuments200Response.initialize(this);
-    }
+  var instance;
 
-    /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
-     */
-    static initialize(obj) { 
-    }
+  beforeEach(function() {
+    instance = new PDFGeneratorAPI.GenerateDocumentAsynchronous200Response();
+  });
 
-    /**
-     * Constructs a <code>GetDocuments200Response</code> from a plain JavaScript object, optionally creating a new instance.
-     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/GetDocuments200Response} obj Optional instance to populate.
-     * @return {module:model/GetDocuments200Response} The populated <code>GetDocuments200Response</code> instance.
-     */
-    static constructFromObject(data, obj) {
-        if (data) {
-            obj = obj || new GetDocuments200Response();
+  var getProperty = function(object, getter, property) {
+    // Use getter method if present; otherwise, get the property directly.
+    if (typeof object[getter] === 'function')
+      return object[getter]();
+    else
+      return object[property];
+  }
 
-            if (data.hasOwnProperty('response')) {
-                obj['response'] = ApiClient.convertToType(data['response'], [Document]);
-            }
-            if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
-            }
-        }
-        return obj;
-    }
+  var setProperty = function(object, setter, property, value) {
+    // Use setter method if present; otherwise, set the property directly.
+    if (typeof object[setter] === 'function')
+      object[setter](value);
+    else
+      object[property] = value;
+  }
 
-    /**
-     * Validates the JSON data with respect to <code>GetDocuments200Response</code>.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>GetDocuments200Response</code>.
-     */
-    static validateJSON(data) {
-        if (data['response']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['response'])) {
-                throw new Error("Expected the field `response` to be an array in the JSON data but got " + data['response']);
-            }
-            // validate the optional field `response` (array)
-            for (const item of data['response']) {
-                Document.validateJSON(item);
-            };
-        }
-        // validate the optional field `meta`
-        if (data['meta']) { // data not null
-          PaginationMeta.validateJSON(data['meta']);
-        }
+  describe('GenerateDocumentAsynchronous200Response', function() {
+    it('should create an instance of GenerateDocumentAsynchronous200Response', function() {
+      // uncomment below and update the code to test GenerateDocumentAsynchronous200Response
+      //var instance = new PDFGeneratorAPI.GenerateDocumentAsynchronous200Response();
+      //expect(instance).to.be.a(PDFGeneratorAPI.GenerateDocumentAsynchronous200Response);
+    });
 
-        return true;
-    }
+    it('should have the property response (base name: "response")', function() {
+      // uncomment below and update the code to test the property response
+      //var instance = new PDFGeneratorAPI.GenerateDocumentAsynchronous200Response();
+      //expect(instance).to.be();
+    });
 
+  });
 
-}
-
-
-
-/**
- * @member {Array.<module:model/Document>} response
- */
-GetDocuments200Response.prototype['response'] = undefined;
-
-/**
- * @member {module:model/PaginationMeta} meta
- */
-GetDocuments200Response.prototype['meta'] = undefined;
-
-
-
-
-
-
-export default GetDocuments200Response;
-
+}));

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Template model module.
  * @module model/Template
- * @version 3.1.1
+ * @version 4.0.1
  */
 var Template = /*#__PURE__*/function () {
   /**
@@ -67,8 +67,12 @@ var Template = /*#__PURE__*/function () {
           obj['owner'] = _ApiClient["default"].convertToType(data['owner'], 'Boolean');
         }
 
-        if (data.hasOwnProperty('modified')) {
-          obj['modified'] = _ApiClient["default"].convertToType(data['modified'], 'String');
+        if (data.hasOwnProperty('created_at')) {
+          obj['created_at'] = _ApiClient["default"].convertToType(data['created_at'], 'String');
+        }
+
+        if (data.hasOwnProperty('updated_at')) {
+          obj['updated_at'] = _ApiClient["default"].convertToType(data['updated_at'], 'String');
         }
 
         if (data.hasOwnProperty('tags')) {
@@ -77,6 +81,37 @@ var Template = /*#__PURE__*/function () {
       }
 
       return obj;
+    }
+    /**
+     * Validates the JSON data with respect to <code>Template</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Template</code>.
+     */
+
+  }, {
+    key: "validateJSON",
+    value: function validateJSON(data) {
+      // ensure the json data is a string
+      if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
+        throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
+      } // ensure the json data is a string
+
+
+      if (data['created_at'] && !(typeof data['created_at'] === 'string' || data['created_at'] instanceof String)) {
+        throw new Error("Expected the field `created_at` to be a primitive type in the JSON string but got " + data['created_at']);
+      } // ensure the json data is a string
+
+
+      if (data['updated_at'] && !(typeof data['updated_at'] === 'string' || data['updated_at'] instanceof String)) {
+        throw new Error("Expected the field `updated_at` to be a primitive type in the JSON string but got " + data['updated_at']);
+      } // ensure the json data is an array
+
+
+      if (!Array.isArray(data['tags'])) {
+        throw new Error("Expected the field `tags` to be an array in the JSON data but got " + data['tags']);
+      }
+
+      return true;
     }
   }]);
 
@@ -102,11 +137,17 @@ Template.prototype['name'] = undefined;
 
 Template.prototype['owner'] = undefined;
 /**
- * Timestamp when the template was modified
- * @member {String} modified
+ * Timestamp when the template was created
+ * @member {String} created_at
  */
 
-Template.prototype['modified'] = undefined;
+Template.prototype['created_at'] = undefined;
+/**
+ * Timestamp when the template was updated
+ * @member {String} updated_at
+ */
+
+Template.prototype['updated_at'] = undefined;
 /**
  * A list of tags assigned to a template
  * @member {Array.<String>} tags

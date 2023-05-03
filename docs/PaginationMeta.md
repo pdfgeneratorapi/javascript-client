@@ -5,8 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **current_page** | **Number** |  | [optional] 
-**per_page** | **Number** |  | [optional] 
-**total** | **Number** |  | [optional] 
 **last_page** | **Number** |  | [optional] 
+**per_page** | **Number** |  | [optional] 
 
 

@@ -285,7 +285,9 @@ let apiInstance = new PDFGeneratorAPI.TemplatesApi();
 let opts = {
   'name': "name_example", // String | Filter template by name
   'tags': "tags_example", // String | Filter template by tags
-  'access': private // String | Filter template by access type. No values returns all templates. private - returns only private templates, organization - returns only organization templates.
+  'access': private, // String | Filter template by access type. No values returns all templates. private - returns only private templates, organization - returns only organization templates.
+  'page': 1, // Number | Pagination: page to return
+  'per_page': 20 // Number | Pagination: How many records to return per page
 };
 apiInstance.getTemplates(opts, (error, data, response) => {
   if (error) {
@@ -304,6 +306,8 @@ Name | Type | Description  | Notes
  **name** | **String**| Filter template by name | [optional] 
  **tags** | **String**| Filter template by tags | [optional] 
  **access** | **String**| Filter template by access type. No values returns all templates. private - returns only private templates, organization - returns only organization templates. | [optional] [default to &#39;&#39;]
+ **page** | **Number**| Pagination: page to return | [optional] [default to 1]
+ **per_page** | **Number**| Pagination: How many records to return per page | [optional] [default to 15]
 
 ### Return type
 

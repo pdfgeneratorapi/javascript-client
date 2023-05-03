@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Component model module.
  * @module model/Component
- * @version 3.1.1
+ * @version 4.0.1
  */
 var Component = /*#__PURE__*/function () {
   /**
@@ -93,6 +93,37 @@ var Component = /*#__PURE__*/function () {
       }
 
       return obj;
+    }
+    /**
+     * Validates the JSON data with respect to <code>Component</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Component</code>.
+     */
+
+  }, {
+    key: "validateJSON",
+    value: function validateJSON(data) {
+      // ensure the json data is a string
+      if (data['cls'] && !(typeof data['cls'] === 'string' || data['cls'] instanceof String)) {
+        throw new Error("Expected the field `cls` to be a primitive type in the JSON string but got " + data['cls']);
+      } // ensure the json data is a string
+
+
+      if (data['id'] && !(typeof data['id'] === 'string' || data['id'] instanceof String)) {
+        throw new Error("Expected the field `id` to be a primitive type in the JSON string but got " + data['id']);
+      } // ensure the json data is a string
+
+
+      if (data['value'] && !(typeof data['value'] === 'string' || data['value'] instanceof String)) {
+        throw new Error("Expected the field `value` to be a primitive type in the JSON string but got " + data['value']);
+      } // ensure the json data is a string
+
+
+      if (data['dataIndex'] && !(typeof data['dataIndex'] === 'string' || data['dataIndex'] instanceof String)) {
+        throw new Error("Expected the field `dataIndex` to be a primitive type in the JSON string but got " + data['dataIndex']);
+      }
+
+      return true;
     }
   }]);
 

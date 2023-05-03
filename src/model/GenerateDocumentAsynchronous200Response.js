@@ -12,22 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import Document from './Document';
-import PaginationMeta from './PaginationMeta';
+import GenerateDocumentAsynchronous200ResponseResponse from './GenerateDocumentAsynchronous200ResponseResponse';
 
 /**
- * The GetDocuments200Response model module.
- * @module model/GetDocuments200Response
+ * The GenerateDocumentAsynchronous200Response model module.
+ * @module model/GenerateDocumentAsynchronous200Response
  * @version 4.0.2
  */
-class GetDocuments200Response {
+class GenerateDocumentAsynchronous200Response {
     /**
-     * Constructs a new <code>GetDocuments200Response</code>.
-     * @alias module:model/GetDocuments200Response
+     * Constructs a new <code>GenerateDocumentAsynchronous200Response</code>.
+     * @alias module:model/GenerateDocumentAsynchronous200Response
      */
     constructor() { 
         
-        GetDocuments200Response.initialize(this);
+        GenerateDocumentAsynchronous200Response.initialize(this);
     }
 
     /**
@@ -39,45 +38,32 @@ class GetDocuments200Response {
     }
 
     /**
-     * Constructs a <code>GetDocuments200Response</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>GenerateDocumentAsynchronous200Response</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/GetDocuments200Response} obj Optional instance to populate.
-     * @return {module:model/GetDocuments200Response} The populated <code>GetDocuments200Response</code> instance.
+     * @param {module:model/GenerateDocumentAsynchronous200Response} obj Optional instance to populate.
+     * @return {module:model/GenerateDocumentAsynchronous200Response} The populated <code>GenerateDocumentAsynchronous200Response</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new GetDocuments200Response();
+            obj = obj || new GenerateDocumentAsynchronous200Response();
 
             if (data.hasOwnProperty('response')) {
-                obj['response'] = ApiClient.convertToType(data['response'], [Document]);
-            }
-            if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
+                obj['response'] = GenerateDocumentAsynchronous200ResponseResponse.constructFromObject(data['response']);
             }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>GetDocuments200Response</code>.
+     * Validates the JSON data with respect to <code>GenerateDocumentAsynchronous200Response</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>GetDocuments200Response</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>GenerateDocumentAsynchronous200Response</code>.
      */
     static validateJSON(data) {
+        // validate the optional field `response`
         if (data['response']) { // data not null
-            // ensure the json data is an array
-            if (!Array.isArray(data['response'])) {
-                throw new Error("Expected the field `response` to be an array in the JSON data but got " + data['response']);
-            }
-            // validate the optional field `response` (array)
-            for (const item of data['response']) {
-                Document.validateJSON(item);
-            };
-        }
-        // validate the optional field `meta`
-        if (data['meta']) { // data not null
-          PaginationMeta.validateJSON(data['meta']);
+          GenerateDocumentAsynchronous200ResponseResponse.validateJSON(data['response']);
         }
 
         return true;
@@ -89,19 +75,14 @@ class GetDocuments200Response {
 
 
 /**
- * @member {Array.<module:model/Document>} response
+ * @member {module:model/GenerateDocumentAsynchronous200ResponseResponse} response
  */
-GetDocuments200Response.prototype['response'] = undefined;
-
-/**
- * @member {module:model/PaginationMeta} meta
- */
-GetDocuments200Response.prototype['meta'] = undefined;
+GenerateDocumentAsynchronous200Response.prototype['response'] = undefined;
 
 
 
 
 
 
-export default GetDocuments200Response;
+export default GenerateDocumentAsynchronous200Response;
 

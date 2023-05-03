@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Workspace model module.
  * @module model/Workspace
- * @version 3.1.1
+ * @version 4.0.1
  */
 var Workspace = /*#__PURE__*/function () {
   /**
@@ -72,6 +72,27 @@ var Workspace = /*#__PURE__*/function () {
       }
 
       return obj;
+    }
+    /**
+     * Validates the JSON data with respect to <code>Workspace</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>Workspace</code>.
+     */
+
+  }, {
+    key: "validateJSON",
+    value: function validateJSON(data) {
+      // ensure the json data is a string
+      if (data['identifier'] && !(typeof data['identifier'] === 'string' || data['identifier'] instanceof String)) {
+        throw new Error("Expected the field `identifier` to be a primitive type in the JSON string but got " + data['identifier']);
+      } // ensure the json data is a string
+
+
+      if (data['created_at'] && !(typeof data['created_at'] === 'string' || data['created_at'] instanceof String)) {
+        throw new Error("Expected the field `created_at` to be a primitive type in the JSON string but got " + data['created_at']);
+      }
+
+      return true;
     }
   }]);
 

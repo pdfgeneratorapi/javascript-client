@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinitionNewLayoutMargins model module.
  * @module model/TemplateDefinitionNewLayoutMargins
- * @version 3.1.1
+ * @version 4.0.1
  */
 var TemplateDefinitionNewLayoutMargins = /*#__PURE__*/function () {
   /**
@@ -73,6 +73,17 @@ var TemplateDefinitionNewLayoutMargins = /*#__PURE__*/function () {
       }
 
       return obj;
+    }
+    /**
+     * Validates the JSON data with respect to <code>TemplateDefinitionNewLayoutMargins</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>TemplateDefinitionNewLayoutMargins</code>.
+     */
+
+  }, {
+    key: "validateJSON",
+    value: function validateJSON(data) {
+      return true;
     }
   }]);
 

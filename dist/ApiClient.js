@@ -21,7 +21,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 /**
 * @module ApiClient
-* @version 3.1.1
+* @version 4.0.1
 */
 
 /**
@@ -32,15 +32,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 * @class
 */
 var ApiClient = /*#__PURE__*/function () {
+  /**
+   * The base URL against which to resolve every API call's (relative) path.
+   * Overrides the default value set in spec file if present
+   * @param {String} basePath
+   */
   function ApiClient() {
+    var basePath = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'https://us1.pdfgeneratorapi.com/api/v4';
+
     _classCallCheck(this, ApiClient);
 
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default https://us1.pdfgeneratorapi.com/api/v3
+     * @default https://us1.pdfgeneratorapi.com/api/v4
      */
-    this.basePath = 'https://us1.pdfgeneratorapi.com/api/v3'.replace(/\/+$/, '');
+    this.basePath = basePath.replace(/\/+$/, '');
     /**
      * The authentication methods to be included for all API calls.
      * @type {Array.<String>}
@@ -59,7 +66,7 @@ var ApiClient = /*#__PURE__*/function () {
      */
 
     this.defaultHeaders = {
-      'User-Agent': 'OpenAPI-Generator/3.1.1/Javascript'
+      'User-Agent': 'OpenAPI-Generator/4.0.1/Javascript'
     };
     /**
      * The default HTTP timeout for all API calls.
@@ -513,7 +520,7 @@ var ApiClient = /*#__PURE__*/function () {
       if (returnType === 'Blob') {
         request.responseType('blob');
       } else if (returnType === 'String') {
-        request.responseType('string');
+        request.responseType('text');
       } // Attach previously saved cookies, if enabled
 
 
@@ -561,7 +568,7 @@ var ApiClient = /*#__PURE__*/function () {
       */
     function hostSettings() {
       return [{
-        'url': "https://us1.pdfgeneratorapi.com/api/v3",
+        'url': "https://us1.pdfgeneratorapi.com/api/v4",
         'description': "No description provided"
       }];
     }

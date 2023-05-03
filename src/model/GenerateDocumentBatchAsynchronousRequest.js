@@ -12,22 +12,24 @@
  */
 
 import ApiClient from '../ApiClient';
-import Document from './Document';
-import PaginationMeta from './PaginationMeta';
+import AsyncOutputParam from './AsyncOutputParam';
+import CallbackParam from './CallbackParam';
+import FormatParam from './FormatParam';
+import TemplateParam from './TemplateParam';
 
 /**
- * The GetDocuments200Response model module.
- * @module model/GetDocuments200Response
+ * The GenerateDocumentBatchAsynchronousRequest model module.
+ * @module model/GenerateDocumentBatchAsynchronousRequest
  * @version 4.0.2
  */
-class GetDocuments200Response {
+class GenerateDocumentBatchAsynchronousRequest {
     /**
-     * Constructs a new <code>GetDocuments200Response</code>.
-     * @alias module:model/GetDocuments200Response
+     * Constructs a new <code>GenerateDocumentBatchAsynchronousRequest</code>.
+     * @alias module:model/GenerateDocumentBatchAsynchronousRequest
      */
     constructor() { 
         
-        GetDocuments200Response.initialize(this);
+        GenerateDocumentBatchAsynchronousRequest.initialize(this);
     }
 
     /**
@@ -39,45 +41,58 @@ class GetDocuments200Response {
     }
 
     /**
-     * Constructs a <code>GetDocuments200Response</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>GenerateDocumentBatchAsynchronousRequest</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/GetDocuments200Response} obj Optional instance to populate.
-     * @return {module:model/GetDocuments200Response} The populated <code>GetDocuments200Response</code> instance.
+     * @param {module:model/GenerateDocumentBatchAsynchronousRequest} obj Optional instance to populate.
+     * @return {module:model/GenerateDocumentBatchAsynchronousRequest} The populated <code>GenerateDocumentBatchAsynchronousRequest</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new GetDocuments200Response();
+            obj = obj || new GenerateDocumentBatchAsynchronousRequest();
 
-            if (data.hasOwnProperty('response')) {
-                obj['response'] = ApiClient.convertToType(data['response'], [Document]);
+            if (data.hasOwnProperty('template')) {
+                obj['template'] = ApiClient.convertToType(data['template'], [TemplateParam]);
             }
-            if (data.hasOwnProperty('meta')) {
-                obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
+            if (data.hasOwnProperty('callback')) {
+                obj['callback'] = CallbackParam.constructFromObject(data['callback']);
+            }
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = FormatParam.constructFromObject(data['format']);
+            }
+            if (data.hasOwnProperty('output')) {
+                obj['output'] = AsyncOutputParam.constructFromObject(data['output']);
+            }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>GetDocuments200Response</code>.
+     * Validates the JSON data with respect to <code>GenerateDocumentBatchAsynchronousRequest</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>GetDocuments200Response</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>GenerateDocumentBatchAsynchronousRequest</code>.
      */
     static validateJSON(data) {
-        if (data['response']) { // data not null
+        if (data['template']) { // data not null
             // ensure the json data is an array
-            if (!Array.isArray(data['response'])) {
-                throw new Error("Expected the field `response` to be an array in the JSON data but got " + data['response']);
+            if (!Array.isArray(data['template'])) {
+                throw new Error("Expected the field `template` to be an array in the JSON data but got " + data['template']);
             }
-            // validate the optional field `response` (array)
-            for (const item of data['response']) {
-                Document.validateJSON(item);
+            // validate the optional field `template` (array)
+            for (const item of data['template']) {
+                TemplateParam.validateJSON(item);
             };
         }
-        // validate the optional field `meta`
-        if (data['meta']) { // data not null
-          PaginationMeta.validateJSON(data['meta']);
+        // validate the optional field `callback`
+        if (data['callback']) { // data not null
+          CallbackParam.validateJSON(data['callback']);
+        }
+        // ensure the json data is a string
+        if (data['name'] && !(typeof data['name'] === 'string' || data['name'] instanceof String)) {
+            throw new Error("Expected the field `name` to be a primitive type in the JSON string but got " + data['name']);
         }
 
         return true;
@@ -89,19 +104,36 @@ class GetDocuments200Response {
 
 
 /**
- * @member {Array.<module:model/Document>} response
+ * @member {Array.<module:model/TemplateParam>} template
  */
-GetDocuments200Response.prototype['response'] = undefined;
+GenerateDocumentBatchAsynchronousRequest.prototype['template'] = undefined;
 
 /**
- * @member {module:model/PaginationMeta} meta
+ * @member {module:model/CallbackParam} callback
  */
-GetDocuments200Response.prototype['meta'] = undefined;
+GenerateDocumentBatchAsynchronousRequest.prototype['callback'] = undefined;
+
+/**
+ * @member {module:model/FormatParam} format
+ */
+GenerateDocumentBatchAsynchronousRequest.prototype['format'] = undefined;
+
+/**
+ * @member {module:model/AsyncOutputParam} output
+ */
+GenerateDocumentBatchAsynchronousRequest.prototype['output'] = undefined;
+
+/**
+ * Generated document name (optional)
+ * @member {String} name
+ * @default ''
+ */
+GenerateDocumentBatchAsynchronousRequest.prototype['name'] = '';
 
 
 
 
 
 
-export default GetDocuments200Response;
+export default GenerateDocumentBatchAsynchronousRequest;
 

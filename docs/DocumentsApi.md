@@ -5,9 +5,9 @@ All URIs are relative to *https://us1.pdfgeneratorapi.com/api/v4*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**generateDocument**](DocumentsApi.md#generateDocument) | **POST** /documents/generate | Generate document
-[**generateDocumentAsync**](DocumentsApi.md#generateDocumentAsync) | **POST** /documents/generate/async | Generate document (async)
+[**generateDocumentAsynchronous**](DocumentsApi.md#generateDocumentAsynchronous) | **POST** /documents/generate/async | Generate document (async)
 [**generateDocumentBatch**](DocumentsApi.md#generateDocumentBatch) | **POST** /documents/generate/batch | Generate document (batch)
-[**generateDocumentBatchAsync**](DocumentsApi.md#generateDocumentBatchAsync) | **POST** /documents/generate/batch/async | Generate document (batch + async)
+[**generateDocumentBatchAsynchronous**](DocumentsApi.md#generateDocumentBatchAsynchronous) | **POST** /documents/generate/batch/async | Generate document (batch + async)
 [**getDocuments**](DocumentsApi.md#getDocuments) | **GET** /documents | Get documents
 
 
@@ -61,9 +61,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## generateDocumentAsync
+## generateDocumentAsynchronous
 
-> GenerateDocumentAsync200Response generateDocumentAsync(generate_document_async_request)
+> GenerateDocumentAsynchronous200Response generateDocumentAsynchronous(generate_document_asynchronous_request)
 
 Generate document (async)
 
@@ -79,8 +79,8 @@ let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
 JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.DocumentsApi();
-let generate_document_async_request = new PDFGeneratorAPI.GenerateDocumentAsyncRequest(); // GenerateDocumentAsyncRequest | Request parameters, including template id, data and formats.
-apiInstance.generateDocumentAsync(generate_document_async_request, (error, data, response) => {
+let generate_document_asynchronous_request = new PDFGeneratorAPI.GenerateDocumentAsynchronousRequest(); // GenerateDocumentAsynchronousRequest | Request parameters, including template id, data and formats.
+apiInstance.generateDocumentAsynchronous(generate_document_asynchronous_request, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -94,11 +94,11 @@ apiInstance.generateDocumentAsync(generate_document_async_request, (error, data,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **generate_document_async_request** | [**GenerateDocumentAsyncRequest**](GenerateDocumentAsyncRequest.md)| Request parameters, including template id, data and formats. | 
+ **generate_document_asynchronous_request** | [**GenerateDocumentAsynchronousRequest**](GenerateDocumentAsynchronousRequest.md)| Request parameters, including template id, data and formats. | 
 
 ### Return type
 
-[**GenerateDocumentAsync200Response**](GenerateDocumentAsync200Response.md)
+[**GenerateDocumentAsynchronous200Response**](GenerateDocumentAsynchronous200Response.md)
 
 ### Authorization
 
@@ -159,9 +159,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## generateDocumentBatchAsync
+## generateDocumentBatchAsynchronous
 
-> GenerateDocumentAsync200Response generateDocumentBatchAsync(generate_document_batch_async_request)
+> GenerateDocumentAsynchronous200Response generateDocumentBatchAsynchronous(generate_document_batch_asynchronous_request)
 
 Generate document (batch + async)
 
@@ -177,8 +177,8 @@ let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
 JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.DocumentsApi();
-let generate_document_batch_async_request = new PDFGeneratorAPI.GenerateDocumentBatchAsyncRequest(); // GenerateDocumentBatchAsyncRequest | Request parameters, including template id, data and formats.
-apiInstance.generateDocumentBatchAsync(generate_document_batch_async_request, (error, data, response) => {
+let generate_document_batch_asynchronous_request = new PDFGeneratorAPI.GenerateDocumentBatchAsynchronousRequest(); // GenerateDocumentBatchAsynchronousRequest | Request parameters, including template id, data and formats.
+apiInstance.generateDocumentBatchAsynchronous(generate_document_batch_asynchronous_request, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -192,11 +192,11 @@ apiInstance.generateDocumentBatchAsync(generate_document_batch_async_request, (e
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **generate_document_batch_async_request** | [**GenerateDocumentBatchAsyncRequest**](GenerateDocumentBatchAsyncRequest.md)| Request parameters, including template id, data and formats. | 
+ **generate_document_batch_asynchronous_request** | [**GenerateDocumentBatchAsynchronousRequest**](GenerateDocumentBatchAsynchronousRequest.md)| Request parameters, including template id, data and formats. | 
 
 ### Return type
 
-[**GenerateDocumentAsync200Response**](GenerateDocumentAsync200Response.md)
+[**GenerateDocumentAsynchronous200Response**](GenerateDocumentAsynchronous200Response.md)
 
 ### Authorization
 
@@ -228,7 +228,9 @@ JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 let apiInstance = new PDFGeneratorAPI.DocumentsApi();
 let opts = {
   'start_date': 2022-08-01 12:00:00, // String | Start date. Format: Y-m-d H:i:s
-  'end_date': 2022-08-05 12:00:00 // String | End date. Format: Y-m-d H:i:s. Defaults to current timestamp
+  'end_date': 2022-08-05 12:00:00, // String | End date. Format: Y-m-d H:i:s. Defaults to current timestamp
+  'page': 1, // Number | Pagination: page to return
+  'per_page': 20 // Number | Pagination: How many records to return per page
 };
 apiInstance.getDocuments(opts, (error, data, response) => {
   if (error) {
@@ -246,6 +248,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start_date** | **String**| Start date. Format: Y-m-d H:i:s | [optional] 
  **end_date** | **String**| End date. Format: Y-m-d H:i:s. Defaults to current timestamp | [optional] 
+ **page** | **Number**| Pagination: page to return | [optional] [default to 1]
+ **per_page** | **Number**| Pagination: How many records to return per page | [optional] [default to 15]
 
 ### Return type
 

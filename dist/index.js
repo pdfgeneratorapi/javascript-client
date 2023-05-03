@@ -9,16 +9,88 @@ Object.defineProperty(exports, "ApiClient", {
     return _ApiClient["default"];
   }
 });
+Object.defineProperty(exports, "AsyncOutputParam", {
+  enumerable: true,
+  get: function get() {
+    return _AsyncOutputParam["default"];
+  }
+});
+Object.defineProperty(exports, "CallbackParam", {
+  enumerable: true,
+  get: function get() {
+    return _CallbackParam["default"];
+  }
+});
 Object.defineProperty(exports, "Component", {
   enumerable: true,
   get: function get() {
     return _Component["default"];
   }
 });
-Object.defineProperty(exports, "Data", {
+Object.defineProperty(exports, "ConversionApi", {
   enumerable: true,
   get: function get() {
-    return _Data["default"];
+    return _ConversionApi["default"];
+  }
+});
+Object.defineProperty(exports, "ConvertHTML2PDFRequest", {
+  enumerable: true,
+  get: function get() {
+    return _ConvertHTML2PDFRequest["default"];
+  }
+});
+Object.defineProperty(exports, "ConvertURL2PDFRequest", {
+  enumerable: true,
+  get: function get() {
+    return _ConvertURL2PDFRequest["default"];
+  }
+});
+Object.defineProperty(exports, "CopyTemplateRequest", {
+  enumerable: true,
+  get: function get() {
+    return _CopyTemplateRequest["default"];
+  }
+});
+Object.defineProperty(exports, "CreateTemplate200Response", {
+  enumerable: true,
+  get: function get() {
+    return _CreateTemplate200Response["default"];
+  }
+});
+Object.defineProperty(exports, "CreateWorkspace200Response", {
+  enumerable: true,
+  get: function get() {
+    return _CreateWorkspace200Response["default"];
+  }
+});
+Object.defineProperty(exports, "CreateWorkspaceRequest", {
+  enumerable: true,
+  get: function get() {
+    return _CreateWorkspaceRequest["default"];
+  }
+});
+Object.defineProperty(exports, "DataBatchInner", {
+  enumerable: true,
+  get: function get() {
+    return _DataBatchInner["default"];
+  }
+});
+Object.defineProperty(exports, "DeleteTemplate204Response", {
+  enumerable: true,
+  get: function get() {
+    return _DeleteTemplate204Response["default"];
+  }
+});
+Object.defineProperty(exports, "DeleteTemplate204ResponseResponse", {
+  enumerable: true,
+  get: function get() {
+    return _DeleteTemplate204ResponseResponse["default"];
+  }
+});
+Object.defineProperty(exports, "Document", {
+  enumerable: true,
+  get: function get() {
+    return _Document["default"];
   }
 });
 Object.defineProperty(exports, "DocumentsApi", {
@@ -27,82 +99,154 @@ Object.defineProperty(exports, "DocumentsApi", {
     return _DocumentsApi["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse200", {
+Object.defineProperty(exports, "FormatParam", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse["default"];
+    return _FormatParam["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2001", {
+Object.defineProperty(exports, "GenerateDocument200Response", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2["default"];
+    return _GenerateDocument200Response["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2002", {
+Object.defineProperty(exports, "GenerateDocument200ResponseMeta", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse3["default"];
+    return _GenerateDocument200ResponseMeta["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2002Response", {
+Object.defineProperty(exports, "GenerateDocumentAsync200Response", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2002Response["default"];
+    return _GenerateDocumentAsync200Response["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2003", {
+Object.defineProperty(exports, "GenerateDocumentAsync200ResponseResponse", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse4["default"];
+    return _GenerateDocumentAsync200ResponseResponse["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2004", {
+Object.defineProperty(exports, "GenerateDocumentAsyncRequest", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse5["default"];
+    return _GenerateDocumentAsyncRequest["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2004Meta", {
+Object.defineProperty(exports, "GenerateDocumentBatchAsyncRequest", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2004Meta["default"];
+    return _GenerateDocumentBatchAsyncRequest["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2005", {
+Object.defineProperty(exports, "GenerateDocumentBatchRequest", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse6["default"];
+    return _GenerateDocumentBatchRequest["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse401", {
+Object.defineProperty(exports, "GenerateDocumentRequest", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse7["default"];
+    return _GenerateDocumentRequest["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse403", {
+Object.defineProperty(exports, "GetDocuments200Response", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse8["default"];
+    return _GetDocuments200Response["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse404", {
+Object.defineProperty(exports, "GetTemplateData200Response", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse9["default"];
+    return _GetTemplateData200Response["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse422", {
+Object.defineProperty(exports, "GetTemplates200Response", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse10["default"];
+    return _GetTemplates200Response["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse500", {
+Object.defineProperty(exports, "GetTemplates401Response", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse11["default"];
+    return _GetTemplates401Response["default"];
+  }
+});
+Object.defineProperty(exports, "GetTemplates402Response", {
+  enumerable: true,
+  get: function get() {
+    return _GetTemplates402Response["default"];
+  }
+});
+Object.defineProperty(exports, "GetTemplates403Response", {
+  enumerable: true,
+  get: function get() {
+    return _GetTemplates403Response["default"];
+  }
+});
+Object.defineProperty(exports, "GetTemplates404Response", {
+  enumerable: true,
+  get: function get() {
+    return _GetTemplates404Response["default"];
+  }
+});
+Object.defineProperty(exports, "GetTemplates422Response", {
+  enumerable: true,
+  get: function get() {
+    return _GetTemplates422Response["default"];
+  }
+});
+Object.defineProperty(exports, "GetTemplates429Response", {
+  enumerable: true,
+  get: function get() {
+    return _GetTemplates429Response["default"];
+  }
+});
+Object.defineProperty(exports, "GetTemplates500Response", {
+  enumerable: true,
+  get: function get() {
+    return _GetTemplates500Response["default"];
+  }
+});
+Object.defineProperty(exports, "GetWorkspaces200Response", {
+  enumerable: true,
+  get: function get() {
+    return _GetWorkspaces200Response["default"];
+  }
+});
+Object.defineProperty(exports, "OpenEditor200Response", {
+  enumerable: true,
+  get: function get() {
+    return _OpenEditor200Response["default"];
+  }
+});
+Object.defineProperty(exports, "OpenEditorRequest", {
+  enumerable: true,
+  get: function get() {
+    return _OpenEditorRequest["default"];
+  }
+});
+Object.defineProperty(exports, "OpenEditorRequestData", {
+  enumerable: true,
+  get: function get() {
+    return _OpenEditorRequestData["default"];
+  }
+});
+Object.defineProperty(exports, "OutputParam", {
+  enumerable: true,
+  get: function get() {
+    return _OutputParam["default"];
+  }
+});
+Object.defineProperty(exports, "PaginationMeta", {
+  enumerable: true,
+  get: function get() {
+    return _PaginationMeta["default"];
   }
 });
 Object.defineProperty(exports, "Template", {
@@ -159,16 +303,28 @@ Object.defineProperty(exports, "TemplateDefinitionNewLayoutRepeatLayout", {
     return _TemplateDefinitionNewLayoutRepeatLayout["default"];
   }
 });
-Object.defineProperty(exports, "TemplateDefinitionNewMargins", {
+Object.defineProperty(exports, "TemplateDefinitionNewPagesInner", {
   enumerable: true,
   get: function get() {
-    return _TemplateDefinitionNewMargins["default"];
+    return _TemplateDefinitionNewPagesInner["default"];
   }
 });
-Object.defineProperty(exports, "TemplateDefinitionNewPages", {
+Object.defineProperty(exports, "TemplateDefinitionNewPagesInnerMargins", {
   enumerable: true,
   get: function get() {
-    return _TemplateDefinitionNewPages["default"];
+    return _TemplateDefinitionNewPagesInnerMargins["default"];
+  }
+});
+Object.defineProperty(exports, "TemplateParam", {
+  enumerable: true,
+  get: function get() {
+    return _TemplateParam["default"];
+  }
+});
+Object.defineProperty(exports, "TemplateParamData", {
+  enumerable: true,
+  get: function get() {
+    return _TemplateParamData["default"];
   }
 });
 Object.defineProperty(exports, "TemplatesApi", {
@@ -192,35 +348,81 @@ Object.defineProperty(exports, "WorkspacesApi", {
 
 var _ApiClient = _interopRequireDefault(require("./ApiClient"));
 
+var _AsyncOutputParam = _interopRequireDefault(require("./model/AsyncOutputParam"));
+
+var _CallbackParam = _interopRequireDefault(require("./model/CallbackParam"));
+
 var _Component = _interopRequireDefault(require("./model/Component"));
 
-var _Data = _interopRequireDefault(require("./model/Data"));
+var _ConvertHTML2PDFRequest = _interopRequireDefault(require("./model/ConvertHTML2PDFRequest"));
 
-var _InlineResponse = _interopRequireDefault(require("./model/InlineResponse200"));
+var _ConvertURL2PDFRequest = _interopRequireDefault(require("./model/ConvertURL2PDFRequest"));
 
-var _InlineResponse2 = _interopRequireDefault(require("./model/InlineResponse2001"));
+var _CopyTemplateRequest = _interopRequireDefault(require("./model/CopyTemplateRequest"));
 
-var _InlineResponse3 = _interopRequireDefault(require("./model/InlineResponse2002"));
+var _CreateTemplate200Response = _interopRequireDefault(require("./model/CreateTemplate200Response"));
 
-var _InlineResponse2002Response = _interopRequireDefault(require("./model/InlineResponse2002Response"));
+var _CreateWorkspace200Response = _interopRequireDefault(require("./model/CreateWorkspace200Response"));
 
-var _InlineResponse4 = _interopRequireDefault(require("./model/InlineResponse2003"));
+var _CreateWorkspaceRequest = _interopRequireDefault(require("./model/CreateWorkspaceRequest"));
 
-var _InlineResponse5 = _interopRequireDefault(require("./model/InlineResponse2004"));
+var _DataBatchInner = _interopRequireDefault(require("./model/DataBatchInner"));
 
-var _InlineResponse2004Meta = _interopRequireDefault(require("./model/InlineResponse2004Meta"));
+var _DeleteTemplate204Response = _interopRequireDefault(require("./model/DeleteTemplate204Response"));
 
-var _InlineResponse6 = _interopRequireDefault(require("./model/InlineResponse2005"));
+var _DeleteTemplate204ResponseResponse = _interopRequireDefault(require("./model/DeleteTemplate204ResponseResponse"));
 
-var _InlineResponse7 = _interopRequireDefault(require("./model/InlineResponse401"));
+var _Document = _interopRequireDefault(require("./model/Document"));
 
-var _InlineResponse8 = _interopRequireDefault(require("./model/InlineResponse403"));
+var _FormatParam = _interopRequireDefault(require("./model/FormatParam"));
 
-var _InlineResponse9 = _interopRequireDefault(require("./model/InlineResponse404"));
+var _GenerateDocument200Response = _interopRequireDefault(require("./model/GenerateDocument200Response"));
 
-var _InlineResponse10 = _interopRequireDefault(require("./model/InlineResponse422"));
+var _GenerateDocument200ResponseMeta = _interopRequireDefault(require("./model/GenerateDocument200ResponseMeta"));
 
-var _InlineResponse11 = _interopRequireDefault(require("./model/InlineResponse500"));
+var _GenerateDocumentAsync200Response = _interopRequireDefault(require("./model/GenerateDocumentAsync200Response"));
+
+var _GenerateDocumentAsync200ResponseResponse = _interopRequireDefault(require("./model/GenerateDocumentAsync200ResponseResponse"));
+
+var _GenerateDocumentAsyncRequest = _interopRequireDefault(require("./model/GenerateDocumentAsyncRequest"));
+
+var _GenerateDocumentBatchAsyncRequest = _interopRequireDefault(require("./model/GenerateDocumentBatchAsyncRequest"));
+
+var _GenerateDocumentBatchRequest = _interopRequireDefault(require("./model/GenerateDocumentBatchRequest"));
+
+var _GenerateDocumentRequest = _interopRequireDefault(require("./model/GenerateDocumentRequest"));
+
+var _GetDocuments200Response = _interopRequireDefault(require("./model/GetDocuments200Response"));
+
+var _GetTemplateData200Response = _interopRequireDefault(require("./model/GetTemplateData200Response"));
+
+var _GetTemplates200Response = _interopRequireDefault(require("./model/GetTemplates200Response"));
+
+var _GetTemplates401Response = _interopRequireDefault(require("./model/GetTemplates401Response"));
+
+var _GetTemplates402Response = _interopRequireDefault(require("./model/GetTemplates402Response"));
+
+var _GetTemplates403Response = _interopRequireDefault(require("./model/GetTemplates403Response"));
+
+var _GetTemplates404Response = _interopRequireDefault(require("./model/GetTemplates404Response"));
+
+var _GetTemplates422Response = _interopRequireDefault(require("./model/GetTemplates422Response"));
+
+var _GetTemplates429Response = _interopRequireDefault(require("./model/GetTemplates429Response"));
+
+var _GetTemplates500Response = _interopRequireDefault(require("./model/GetTemplates500Response"));
+
+var _GetWorkspaces200Response = _interopRequireDefault(require("./model/GetWorkspaces200Response"));
+
+var _OpenEditor200Response = _interopRequireDefault(require("./model/OpenEditor200Response"));
+
+var _OpenEditorRequest = _interopRequireDefault(require("./model/OpenEditorRequest"));
+
+var _OpenEditorRequestData = _interopRequireDefault(require("./model/OpenEditorRequestData"));
+
+var _OutputParam = _interopRequireDefault(require("./model/OutputParam"));
+
+var _PaginationMeta = _interopRequireDefault(require("./model/PaginationMeta"));
 
 var _Template = _interopRequireDefault(require("./model/Template"));
 
@@ -240,11 +442,17 @@ var _TemplateDefinitionNewLayoutMargins = _interopRequireDefault(require("./mode
 
 var _TemplateDefinitionNewLayoutRepeatLayout = _interopRequireDefault(require("./model/TemplateDefinitionNewLayoutRepeatLayout"));
 
-var _TemplateDefinitionNewMargins = _interopRequireDefault(require("./model/TemplateDefinitionNewMargins"));
+var _TemplateDefinitionNewPagesInner = _interopRequireDefault(require("./model/TemplateDefinitionNewPagesInner"));
 
-var _TemplateDefinitionNewPages = _interopRequireDefault(require("./model/TemplateDefinitionNewPages"));
+var _TemplateDefinitionNewPagesInnerMargins = _interopRequireDefault(require("./model/TemplateDefinitionNewPagesInnerMargins"));
+
+var _TemplateParam = _interopRequireDefault(require("./model/TemplateParam"));
+
+var _TemplateParamData = _interopRequireDefault(require("./model/TemplateParamData"));
 
 var _Workspace = _interopRequireDefault(require("./model/Workspace"));
+
+var _ConversionApi = _interopRequireDefault(require("./PDFGeneratorAPI/ConversionApi"));
 
 var _DocumentsApi = _interopRequireDefault(require("./PDFGeneratorAPI/DocumentsApi"));
 

@@ -21,37 +21,37 @@ Name | Type | Description | Notes
 
 * `labelComponent` (value: `"labelComponent"`)
 
-* `numberComponent` (value: `"numberComponent"`)
-
-* `textComponent` (value: `"textComponent"`)
-
-* `imageComponent` (value: `"imageComponent"`)
-
-* `dateComponent` (value: `"dateComponent"`)
-
-* `hlineComponent` (value: `"hlineComponent"`)
-
-* `vlineComponent` (value: `"vlineComponent"`)
-
 * `tableComponent` (value: `"tableComponent"`)
 
 * `compositeComponent` (value: `"compositeComponent"`)
+
+* `chartComponent` (value: `"chartComponent"`)
 
 * `barcodeComponent` (value: `"barcodeComponent"`)
 
 * `qrcodeComponent` (value: `"qrcodeComponent"`)
 
-* `chartComponent` (value: `"chartComponent"`)
-
-* `rectangleComponent` (value: `"rectangleComponent"`)
+* `imageComponent` (value: `"imageComponent"`)
 
 * `headerComponent` (value: `"headerComponent"`)
 
 * `footerComponent` (value: `"footerComponent"`)
 
+* `rectangleComponent` (value: `"rectangleComponent"`)
+
+* `vlineComponent` (value: `"vlineComponent"`)
+
+* `hlineComponent` (value: `"hlineComponent"`)
+
+* `pagenumberComponent` (value: `"pagenumberComponent"`)
+
+* `symbolComponent` (value: `"symbolComponent"`)
+
 * `checkboxComponent` (value: `"checkboxComponent"`)
 
 * `radioComponent` (value: `"radioComponent"`)
+
+* `signatureComponent` (value: `"signatureComponent"`)
 
 
 
