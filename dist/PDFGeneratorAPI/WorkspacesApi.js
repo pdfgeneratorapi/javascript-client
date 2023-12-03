@@ -40,7 +40,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Workspaces service.
 * @module PDFGeneratorAPI/WorkspacesApi
-* @version 4.0.1
+* @version 4.0.2
 */
 var WorkspacesApi = /*#__PURE__*/function () {
   /**
@@ -67,7 +67,7 @@ var WorkspacesApi = /*#__PURE__*/function () {
    * Create workspace
    * Creates a regular workspace with identifier specified in the request.
    * @param {Object} opts Optional parameters
-   * @param {module:model/CreateWorkspaceRequest} opts.create_workspace_request 
+   * @param {module:model/CreateWorkspaceRequest} [create_workspace_request] 
    * @param {module:PDFGeneratorAPI/WorkspacesApi~createWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link module:model/CreateWorkspace200Response}
    */
@@ -173,16 +173,23 @@ var WorkspacesApi = /*#__PURE__*/function () {
     /**
      * Get workspaces
      * Returns all workspaces in the organization
+     * @param {Object} opts Optional parameters
+     * @param {Number} [page = 1)] Pagination: page to return
+     * @param {Number} [per_page = 15)] Pagination: How many records to return per page
      * @param {module:PDFGeneratorAPI/WorkspacesApi~getWorkspacesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetWorkspaces200Response}
      */
 
   }, {
     key: "getWorkspaces",
-    value: function getWorkspaces(callback) {
+    value: function getWorkspaces(opts, callback) {
+      opts = opts || {};
       var postBody = null;
       var pathParams = {};
-      var queryParams = {};
+      var queryParams = {
+        'page': opts['page'],
+        'per_page': opts['per_page']
+      };
       var headerParams = {};
       var formParams = {};
       var authNames = ['JSONWebTokenAuth'];

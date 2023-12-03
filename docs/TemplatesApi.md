@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## copyTemplate
 
-> CreateTemplate200Response copyTemplate(template_id, opts)
+> CreateTemplate201Response copyTemplate(template_id, opts)
 
 Copy template
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateTemplate200Response**](CreateTemplate200Response.md)
+[**CreateTemplate201Response**](CreateTemplate201Response.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ## createTemplate
 
-> CreateTemplate200Response createTemplate(template_definition_new)
+> CreateTemplate201Response createTemplate(template_definition_new)
 
 Create template
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateTemplate200Response**](CreateTemplate200Response.md)
+[**CreateTemplate201Response**](CreateTemplate201Response.md)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ## getTemplate
 
-> CreateTemplate200Response getTemplate(template_id)
+> CreateTemplate201Response getTemplate(template_id)
 
 Get template
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateTemplate200Response**](CreateTemplate200Response.md)
+[**CreateTemplate201Response**](CreateTemplate201Response.md)
 
 ### Authorization
 
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 ## updateTemplate
 
-> CreateTemplate200Response updateTemplate(template_id, template_definition_new)
+> CreateTemplate201Response updateTemplate(template_id, template_definition_new)
 
 Update template
 
@@ -413,7 +413,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateTemplate200Response**](CreateTemplate200Response.md)
+[**CreateTemplate201Response**](CreateTemplate201Response.md)
 
 ### Authorization
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## convertHTML2PDF
 
-> GenerateDocument200Response convertHTML2PDF(convert_html2_pdf_request)
+> GenerateDocument201Response convertHTML2PDF(convert_html2_pdf_request)
 
 HTML to PDF
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenerateDocument200Response**](GenerateDocument200Response.md)
+[**GenerateDocument201Response**](GenerateDocument201Response.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ## convertURL2PDF
 
-> GenerateDocument200Response convertURL2PDF(convert_url2_pdf_request)
+> GenerateDocument201Response convertURL2PDF(convert_url2_pdf_request)
 
 URL to PDF
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenerateDocument200Response**](GenerateDocument200Response.md)
+[**GenerateDocument201Response**](GenerateDocument201Response.md)
 
 ### Authorization
 

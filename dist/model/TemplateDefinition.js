@@ -11,7 +11,7 @@ var _TemplateDefinitionDataSettings = _interopRequireDefault(require("./Template
 
 var _TemplateDefinitionEditor = _interopRequireDefault(require("./TemplateDefinitionEditor"));
 
-var _TemplateDefinitionLayout = _interopRequireDefault(require("./TemplateDefinitionLayout"));
+var _TemplateDefinitionNewLayout = _interopRequireDefault(require("./TemplateDefinitionNewLayout"));
 
 var _TemplateDefinitionNewPagesInner = _interopRequireDefault(require("./TemplateDefinitionNewPagesInner"));
 
@@ -32,7 +32,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinition model module.
  * @module model/TemplateDefinition
- * @version 4.0.1
+ * @version 4.0.2
  */
 var TemplateDefinition = /*#__PURE__*/function () {
   /**
@@ -85,7 +85,7 @@ var TemplateDefinition = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('layout')) {
-          obj['layout'] = _TemplateDefinitionLayout["default"].constructFromObject(data['layout']);
+          obj['layout'] = _TemplateDefinitionNewLayout["default"].constructFromObject(data['layout']);
         }
 
         if (data.hasOwnProperty('pages')) {
@@ -125,7 +125,7 @@ var TemplateDefinition = /*#__PURE__*/function () {
 
       if (data['layout']) {
         // data not null
-        _TemplateDefinitionLayout["default"].validateJSON(data['layout']);
+        _TemplateDefinitionNewLayout["default"].validateJSON(data['layout']);
       }
 
       if (data['pages']) {
@@ -143,7 +143,7 @@ var TemplateDefinition = /*#__PURE__*/function () {
           for (_iterator.s(); !(_step = _iterator.n()).done;) {
             var item = _step.value;
 
-            _TemplateDefinitionNewPagesInner["default"].validateJsonObject(item);
+            _TemplateDefinitionNewPagesInner["default"].validateJSON(item);
           }
         } catch (err) {
           _iterator.e(err);
@@ -198,7 +198,7 @@ TemplateDefinition.prototype['tags'] = undefined;
 
 TemplateDefinition.prototype['isDraft'] = undefined;
 /**
- * @member {module:model/TemplateDefinitionLayout} layout
+ * @member {module:model/TemplateDefinitionNewLayout} layout
  */
 
 TemplateDefinition.prototype['layout'] = undefined;

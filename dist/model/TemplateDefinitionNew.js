@@ -28,7 +28,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinitionNew model module.
  * @module model/TemplateDefinitionNew
- * @version 4.0.1
+ * @version 4.0.2
  */
 var TemplateDefinitionNew = /*#__PURE__*/function () {
   /**
@@ -149,7 +149,7 @@ var TemplateDefinitionNew = /*#__PURE__*/function () {
           for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
             var item = _step2.value;
 
-            _TemplateDefinitionNewPagesInner["default"].validateJsonObject(item);
+            _TemplateDefinitionNewPagesInner["default"].validateJSON(item);
           }
         } catch (err) {
           _iterator2.e(err);

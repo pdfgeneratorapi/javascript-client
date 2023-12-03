@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## generateDocument
 
-> GenerateDocument200Response generateDocument(generate_document_request)
+> GenerateDocument201Response generateDocument(generate_document_request)
 
 Generate document
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenerateDocument200Response**](GenerateDocument200Response.md)
+[**GenerateDocument201Response**](GenerateDocument201Response.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ## generateDocumentAsynchronous
 
-> GenerateDocumentAsynchronous200Response generateDocumentAsynchronous(generate_document_asynchronous_request)
+> GenerateDocumentAsynchronous201Response generateDocumentAsynchronous(generate_document_asynchronous_request)
 
 Generate document (async)
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenerateDocumentAsynchronous200Response**](GenerateDocumentAsynchronous200Response.md)
+[**GenerateDocumentAsynchronous201Response**](GenerateDocumentAsynchronous201Response.md)
 
 ### Authorization
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ## generateDocumentBatch
 
-> GenerateDocument200Response generateDocumentBatch(generate_document_batch_request)
+> GenerateDocument201Response generateDocumentBatch(generate_document_batch_request)
 
 Generate document (batch)
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenerateDocument200Response**](GenerateDocument200Response.md)
+[**GenerateDocument201Response**](GenerateDocument201Response.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ## generateDocumentBatchAsynchronous
 
-> GenerateDocumentAsynchronous200Response generateDocumentBatchAsynchronous(generate_document_batch_asynchronous_request)
+> GenerateDocumentAsynchronous201Response generateDocumentBatchAsynchronous(generate_document_batch_asynchronous_request)
 
 Generate document (batch + async)
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenerateDocumentAsynchronous200Response**](GenerateDocumentAsynchronous200Response.md)
+[**GenerateDocumentAsynchronous201Response**](GenerateDocumentAsynchronous201Response.md)
 
 ### Authorization
 

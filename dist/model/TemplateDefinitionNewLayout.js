@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinitionNewLayout model module.
  * @module model/TemplateDefinitionNewLayout
- * @version 4.0.1
+ * @version 4.0.2
  */
 var TemplateDefinitionNewLayout = /*#__PURE__*/function () {
   /**
@@ -79,8 +79,8 @@ var TemplateDefinitionNewLayout = /*#__PURE__*/function () {
           obj['orientation'] = _ApiClient["default"].convertToType(data['orientation'], 'String');
         }
 
-        if (data.hasOwnProperty('rotaion')) {
-          obj['rotaion'] = _ApiClient["default"].convertToType(data['rotaion'], 'Number');
+        if (data.hasOwnProperty('rotation')) {
+          obj['rotation'] = _ApiClient["default"].convertToType(data['rotation'], 'Number');
         }
 
         if (data.hasOwnProperty('margins')) {
@@ -173,10 +173,10 @@ TemplateDefinitionNewLayout.prototype['unit'] = undefined;
 TemplateDefinitionNewLayout.prototype['orientation'] = undefined;
 /**
  * Page rotation in degrees
- * @member {module:model/TemplateDefinitionNewLayout.RotaionEnum} rotaion
+ * @member {module:model/TemplateDefinitionNewLayout.RotationEnum} rotation
  */
 
-TemplateDefinitionNewLayout.prototype['rotaion'] = undefined;
+TemplateDefinitionNewLayout.prototype['rotation'] = undefined;
 /**
  * @member {module:model/TemplateDefinitionNewLayoutMargins} margins
  */
@@ -257,12 +257,12 @@ TemplateDefinitionNewLayout['OrientationEnum'] = {
   "landscape": "landscape"
 };
 /**
- * Allowed values for the <code>rotaion</code> property.
+ * Allowed values for the <code>rotation</code> property.
  * @enum {Number}
  * @readonly
  */
 
-TemplateDefinitionNewLayout['RotaionEnum'] = {
+TemplateDefinitionNewLayout['RotationEnum'] = {
   /**
    * value: 0
    * @const

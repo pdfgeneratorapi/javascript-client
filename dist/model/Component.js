@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Component model module.
  * @module model/Component
- * @version 4.0.1
+ * @version 4.0.2
  */
 var Component = /*#__PURE__*/function () {
   /**
@@ -198,42 +198,6 @@ Component['ClsEnum'] = {
   "labelComponent": "labelComponent",
 
   /**
-   * value: "numberComponent"
-   * @const
-   */
-  "numberComponent": "numberComponent",
-
-  /**
-   * value: "textComponent"
-   * @const
-   */
-  "textComponent": "textComponent",
-
-  /**
-   * value: "imageComponent"
-   * @const
-   */
-  "imageComponent": "imageComponent",
-
-  /**
-   * value: "dateComponent"
-   * @const
-   */
-  "dateComponent": "dateComponent",
-
-  /**
-   * value: "hlineComponent"
-   * @const
-   */
-  "hlineComponent": "hlineComponent",
-
-  /**
-   * value: "vlineComponent"
-   * @const
-   */
-  "vlineComponent": "vlineComponent",
-
-  /**
    * value: "tableComponent"
    * @const
    */
@@ -244,6 +208,12 @@ Component['ClsEnum'] = {
    * @const
    */
   "compositeComponent": "compositeComponent",
+
+  /**
+   * value: "chartComponent"
+   * @const
+   */
+  "chartComponent": "chartComponent",
 
   /**
    * value: "barcodeComponent"
@@ -258,16 +228,10 @@ Component['ClsEnum'] = {
   "qrcodeComponent": "qrcodeComponent",
 
   /**
-   * value: "chartComponent"
+   * value: "imageComponent"
    * @const
    */
-  "chartComponent": "chartComponent",
-
-  /**
-   * value: "rectangleComponent"
-   * @const
-   */
-  "rectangleComponent": "rectangleComponent",
+  "imageComponent": "imageComponent",
 
   /**
    * value: "headerComponent"
@@ -282,6 +246,36 @@ Component['ClsEnum'] = {
   "footerComponent": "footerComponent",
 
   /**
+   * value: "rectangleComponent"
+   * @const
+   */
+  "rectangleComponent": "rectangleComponent",
+
+  /**
+   * value: "vlineComponent"
+   * @const
+   */
+  "vlineComponent": "vlineComponent",
+
+  /**
+   * value: "hlineComponent"
+   * @const
+   */
+  "hlineComponent": "hlineComponent",
+
+  /**
+   * value: "pagenumberComponent"
+   * @const
+   */
+  "pagenumberComponent": "pagenumberComponent",
+
+  /**
+   * value: "symbolComponent"
+   * @const
+   */
+  "symbolComponent": "symbolComponent",
+
+  /**
    * value: "checkboxComponent"
    * @const
    */
@@ -291,7 +285,13 @@ Component['ClsEnum'] = {
    * value: "radioComponent"
    * @const
    */
-  "radioComponent": "radioComponent"
+  "radioComponent": "radioComponent",
+
+  /**
+   * value: "signatureComponent"
+   * @const
+   */
+  "signatureComponent": "signatureComponent"
 };
 var _default = Component;
 exports["default"] = _default;

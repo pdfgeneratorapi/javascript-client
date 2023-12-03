@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinitionNewLayoutRepeatLayout model module.
  * @module model/TemplateDefinitionNewLayoutRepeatLayout
- * @version 4.0.1
+ * @version 4.0.2
  */
 var TemplateDefinitionNewLayoutRepeatLayout = /*#__PURE__*/function () {
   /**

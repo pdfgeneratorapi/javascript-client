@@ -21,6 +21,14 @@ Name | Type | Description | Notes
 
 * `labelComponent` (value: `"labelComponent"`)
 
+* `textComponent` (value: `"textComponent"`)
+
+* `dateComponent` (value: `"dateComponent"`)
+
+* `numberComponent` (value: `"numberComponent"`)
+
+* `htmlblockComponent` (value: `"htmlblockComponent"`)
+
 * `tableComponent` (value: `"tableComponent"`)
 
 * `compositeComponent` (value: `"compositeComponent"`)

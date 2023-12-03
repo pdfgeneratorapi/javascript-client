@@ -117,28 +117,28 @@ Object.defineProperty(exports, "GenerateDocument200ResponseMeta", {
     return _GenerateDocument200ResponseMeta["default"];
   }
 });
-Object.defineProperty(exports, "GenerateDocumentAsync200Response", {
+Object.defineProperty(exports, "GenerateDocumentAsynchronous200Response", {
   enumerable: true,
   get: function get() {
-    return _GenerateDocumentAsync200Response["default"];
+    return _GenerateDocumentAsynchronous200Response["default"];
   }
 });
-Object.defineProperty(exports, "GenerateDocumentAsync200ResponseResponse", {
+Object.defineProperty(exports, "GenerateDocumentAsynchronous200ResponseResponse", {
   enumerable: true,
   get: function get() {
-    return _GenerateDocumentAsync200ResponseResponse["default"];
+    return _GenerateDocumentAsynchronous200ResponseResponse["default"];
   }
 });
-Object.defineProperty(exports, "GenerateDocumentAsyncRequest", {
+Object.defineProperty(exports, "GenerateDocumentAsynchronousRequest", {
   enumerable: true,
   get: function get() {
-    return _GenerateDocumentAsyncRequest["default"];
+    return _GenerateDocumentAsynchronousRequest["default"];
   }
 });
-Object.defineProperty(exports, "GenerateDocumentBatchAsyncRequest", {
+Object.defineProperty(exports, "GenerateDocumentBatchAsynchronousRequest", {
   enumerable: true,
   get: function get() {
-    return _GenerateDocumentBatchAsyncRequest["default"];
+    return _GenerateDocumentBatchAsynchronousRequest["default"];
   }
 });
 Object.defineProperty(exports, "GenerateDocumentBatchRequest", {
@@ -273,12 +273,6 @@ Object.defineProperty(exports, "TemplateDefinitionEditor", {
     return _TemplateDefinitionEditor["default"];
   }
 });
-Object.defineProperty(exports, "TemplateDefinitionLayout", {
-  enumerable: true,
-  get: function get() {
-    return _TemplateDefinitionLayout["default"];
-  }
-});
 Object.defineProperty(exports, "TemplateDefinitionNew", {
   enumerable: true,
   get: function get() {
@@ -380,13 +374,13 @@ var _GenerateDocument200Response = _interopRequireDefault(require("./model/Gener
 
 var _GenerateDocument200ResponseMeta = _interopRequireDefault(require("./model/GenerateDocument200ResponseMeta"));
 
-var _GenerateDocumentAsync200Response = _interopRequireDefault(require("./model/GenerateDocumentAsync200Response"));
+var _GenerateDocumentAsynchronous200Response = _interopRequireDefault(require("./model/GenerateDocumentAsynchronous200Response"));
 
-var _GenerateDocumentAsync200ResponseResponse = _interopRequireDefault(require("./model/GenerateDocumentAsync200ResponseResponse"));
+var _GenerateDocumentAsynchronous200ResponseResponse = _interopRequireDefault(require("./model/GenerateDocumentAsynchronous200ResponseResponse"));
 
-var _GenerateDocumentAsyncRequest = _interopRequireDefault(require("./model/GenerateDocumentAsyncRequest"));
+var _GenerateDocumentAsynchronousRequest = _interopRequireDefault(require("./model/GenerateDocumentAsynchronousRequest"));
 
-var _GenerateDocumentBatchAsyncRequest = _interopRequireDefault(require("./model/GenerateDocumentBatchAsyncRequest"));
+var _GenerateDocumentBatchAsynchronousRequest = _interopRequireDefault(require("./model/GenerateDocumentBatchAsynchronousRequest"));
 
 var _GenerateDocumentBatchRequest = _interopRequireDefault(require("./model/GenerateDocumentBatchRequest"));
 
@@ -431,8 +425,6 @@ var _TemplateDefinition = _interopRequireDefault(require("./model/TemplateDefini
 var _TemplateDefinitionDataSettings = _interopRequireDefault(require("./model/TemplateDefinitionDataSettings"));
 
 var _TemplateDefinitionEditor = _interopRequireDefault(require("./model/TemplateDefinitionEditor"));
-
-var _TemplateDefinitionLayout = _interopRequireDefault(require("./model/TemplateDefinitionLayout"));
 
 var _TemplateDefinitionNew = _interopRequireDefault(require("./model/TemplateDefinitionNew"));
 

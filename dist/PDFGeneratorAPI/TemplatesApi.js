@@ -48,7 +48,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Templates service.
 * @module PDFGeneratorAPI/TemplatesApi
-* @version 4.0.1
+* @version 4.0.2
 */
 var TemplatesApi = /*#__PURE__*/function () {
   /**
@@ -76,7 +76,7 @@ var TemplatesApi = /*#__PURE__*/function () {
    * Creates a copy of a template to the workspace specified in authentication parameters.
    * @param {Number} template_id Template unique identifier
    * @param {Object} opts Optional parameters
-   * @param {module:model/CopyTemplateRequest} opts.copy_template_request 
+   * @param {module:model/CopyTemplateRequest} [copy_template_request] 
    * @param {module:PDFGeneratorAPI/TemplatesApi~copyTemplateCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link module:model/CreateTemplate200Response}
    */
@@ -262,9 +262,11 @@ var TemplatesApi = /*#__PURE__*/function () {
      * Get templates
      * Returns a list of templates available for the authenticated workspace
      * @param {Object} opts Optional parameters
-     * @param {String} opts.name Filter template by name
-     * @param {String} opts.tags Filter template by tags
-     * @param {module:model/String} opts.access Filter template by access type. No values returns all templates. private - returns only private templates, organization - returns only organization templates. (default to '')
+     * @param {String} [name] Filter template by name
+     * @param {String} [tags] Filter template by tags
+     * @param {module:model/String} [access = '')] Filter template by access type. No values returns all templates. private - returns only private templates, organization - returns only organization templates.
+     * @param {Number} [page = 1)] Pagination: page to return
+     * @param {Number} [per_page = 15)] Pagination: How many records to return per page
      * @param {module:PDFGeneratorAPI/TemplatesApi~getTemplatesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetTemplates200Response}
      */
@@ -278,7 +280,9 @@ var TemplatesApi = /*#__PURE__*/function () {
       var queryParams = {
         'name': opts['name'],
         'tags': opts['tags'],
-        'access': opts['access']
+        'access': opts['access'],
+        'page': opts['page'],
+        'per_page': opts['per_page']
       };
       var headerParams = {};
       var formParams = {};

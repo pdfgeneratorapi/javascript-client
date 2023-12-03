@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## createWorkspace
 
-> CreateWorkspace200Response createWorkspace(opts)
+> CreateWorkspace201Response createWorkspace(opts)
 
 Create workspace
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateWorkspace200Response**](CreateWorkspace200Response.md)
+[**CreateWorkspace201Response**](CreateWorkspace201Response.md)
 
 ### Authorization
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ## getWorkspace
 
-> CreateWorkspace200Response getWorkspace(workspace_identifier)
+> CreateWorkspace201Response getWorkspace(workspace_identifier)
 
 Get workspace
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateWorkspace200Response**](CreateWorkspace200Response.md)
+[**CreateWorkspace201Response**](CreateWorkspace201Response.md)
 
 ### Authorization
 
