@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Component model module.
  * @module model/Component
- * @version 4.0.2
+ * @version 4.0.3
  */
 var Component = /*#__PURE__*/function () {
   /**
@@ -196,6 +196,30 @@ Component['ClsEnum'] = {
    * @const
    */
   "labelComponent": "labelComponent",
+
+  /**
+   * value: "textComponent"
+   * @const
+   */
+  "textComponent": "textComponent",
+
+  /**
+   * value: "dateComponent"
+   * @const
+   */
+  "dateComponent": "dateComponent",
+
+  /**
+   * value: "numberComponent"
+   * @const
+   */
+  "numberComponent": "numberComponent",
+
+  /**
+   * value: "htmlblockComponent"
+   * @const
+   */
+  "htmlblockComponent": "htmlblockComponent",
 
   /**
    * value: "tableComponent"

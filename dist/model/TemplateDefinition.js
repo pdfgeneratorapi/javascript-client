@@ -32,7 +32,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinition model module.
  * @module model/TemplateDefinition
- * @version 4.0.2
+ * @version 4.0.3
  */
 var TemplateDefinition = /*#__PURE__*/function () {
   /**

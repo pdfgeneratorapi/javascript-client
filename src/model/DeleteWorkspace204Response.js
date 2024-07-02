@@ -12,20 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
+import DeleteWorkspace204ResponseResponse from './DeleteWorkspace204ResponseResponse';
 
 /**
- * The ConvertHTML2PDFRequest model module.
- * @module model/ConvertHTML2PDFRequest
+ * The DeleteWorkspace204Response model module.
+ * @module model/DeleteWorkspace204Response
  * @version 4.0.4
  */
-class ConvertHTML2PDFRequest {
+class DeleteWorkspace204Response {
     /**
-     * Constructs a new <code>ConvertHTML2PDFRequest</code>.
-     * @alias module:model/ConvertHTML2PDFRequest
+     * Constructs a new <code>DeleteWorkspace204Response</code>.
+     * @alias module:model/DeleteWorkspace204Response
      */
     constructor() { 
         
-        ConvertHTML2PDFRequest.initialize(this);
+        DeleteWorkspace204Response.initialize(this);
     }
 
     /**
@@ -37,60 +38,32 @@ class ConvertHTML2PDFRequest {
     }
 
     /**
-     * Constructs a <code>ConvertHTML2PDFRequest</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>DeleteWorkspace204Response</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ConvertHTML2PDFRequest} obj Optional instance to populate.
-     * @return {module:model/ConvertHTML2PDFRequest} The populated <code>ConvertHTML2PDFRequest</code> instance.
+     * @param {module:model/DeleteWorkspace204Response} obj Optional instance to populate.
+     * @return {module:model/DeleteWorkspace204Response} The populated <code>DeleteWorkspace204Response</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ConvertHTML2PDFRequest();
+            obj = obj || new DeleteWorkspace204Response();
 
-            if (data.hasOwnProperty('content')) {
-                obj['content'] = ApiClient.convertToType(data['content'], 'String');
-            }
-            if (data.hasOwnProperty('paper_size')) {
-                obj['paper_size'] = ApiClient.convertToType(data['paper_size'], 'String');
-            }
-            if (data.hasOwnProperty('orientation')) {
-                obj['orientation'] = ApiClient.convertToType(data['orientation'], 'String');
-            }
-            if (data.hasOwnProperty('output')) {
-                obj['output'] = ApiClient.convertToType(data['output'], 'String');
-            }
-            if (data.hasOwnProperty('filename')) {
-                obj['filename'] = ApiClient.convertToType(data['filename'], 'String');
+            if (data.hasOwnProperty('response')) {
+                obj['response'] = DeleteWorkspace204ResponseResponse.constructFromObject(data['response']);
             }
         }
         return obj;
     }
 
     /**
-     * Validates the JSON data with respect to <code>ConvertHTML2PDFRequest</code>.
+     * Validates the JSON data with respect to <code>DeleteWorkspace204Response</code>.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ConvertHTML2PDFRequest</code>.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>DeleteWorkspace204Response</code>.
      */
     static validateJSON(data) {
-        // ensure the json data is a string
-        if (data['content'] && !(typeof data['content'] === 'string' || data['content'] instanceof String)) {
-            throw new Error("Expected the field `content` to be a primitive type in the JSON string but got " + data['content']);
-        }
-        // ensure the json data is a string
-        if (data['paper_size'] && !(typeof data['paper_size'] === 'string' || data['paper_size'] instanceof String)) {
-            throw new Error("Expected the field `paper_size` to be a primitive type in the JSON string but got " + data['paper_size']);
-        }
-        // ensure the json data is a string
-        if (data['orientation'] && !(typeof data['orientation'] === 'string' || data['orientation'] instanceof String)) {
-            throw new Error("Expected the field `orientation` to be a primitive type in the JSON string but got " + data['orientation']);
-        }
-        // ensure the json data is a string
-        if (data['output'] && !(typeof data['output'] === 'string' || data['output'] instanceof String)) {
-            throw new Error("Expected the field `output` to be a primitive type in the JSON string but got " + data['output']);
-        }
-        // ensure the json data is a string
-        if (data['filename'] && !(typeof data['filename'] === 'string' || data['filename'] instanceof String)) {
-            throw new Error("Expected the field `filename` to be a primitive type in the JSON string but got " + data['filename']);
+        // validate the optional field `response`
+        if (data['response']) { // data not null
+          DeleteWorkspace204ResponseResponse.validateJSON(data['response']);
         }
 
         return true;
@@ -102,140 +75,14 @@ class ConvertHTML2PDFRequest {
 
 
 /**
- * HTML content
- * @member {String} content
+ * @member {module:model/DeleteWorkspace204ResponseResponse} response
  */
-ConvertHTML2PDFRequest.prototype['content'] = undefined;
-
-/**
- * PDF page size
- * @member {module:model/ConvertHTML2PDFRequest.PaperSizeEnum} paper_size
- * @default 'a4'
- */
-ConvertHTML2PDFRequest.prototype['paper_size'] = 'a4';
-
-/**
- * @member {module:model/ConvertHTML2PDFRequest.OrientationEnum} orientation
- * @default 'portrait'
- */
-ConvertHTML2PDFRequest.prototype['orientation'] = 'portrait';
-
-/**
- * Output
- * @member {module:model/ConvertHTML2PDFRequest.OutputEnum} output
- * @default 'base64'
- */
-ConvertHTML2PDFRequest.prototype['output'] = 'base64';
-
-/**
- * Document name
- * @member {String} filename
- */
-ConvertHTML2PDFRequest.prototype['filename'] = undefined;
+DeleteWorkspace204Response.prototype['response'] = undefined;
 
 
 
 
 
-/**
- * Allowed values for the <code>paper_size</code> property.
- * @enum {String}
- * @readonly
- */
-ConvertHTML2PDFRequest['PaperSizeEnum'] = {
 
-    /**
-     * value: "a0"
-     * @const
-     */
-    "a0": "a0",
-
-    /**
-     * value: "a1"
-     * @const
-     */
-    "a1": "a1",
-
-    /**
-     * value: "a2"
-     * @const
-     */
-    "a2": "a2",
-
-    /**
-     * value: "a3"
-     * @const
-     */
-    "a3": "a3",
-
-    /**
-     * value: "a4"
-     * @const
-     */
-    "a4": "a4",
-
-    /**
-     * value: "legal"
-     * @const
-     */
-    "legal": "legal",
-
-    /**
-     * value: "tabloid"
-     * @const
-     */
-    "tabloid": "tabloid",
-
-    /**
-     * value: "letter"
-     * @const
-     */
-    "letter": "letter"
-};
-
-
-/**
- * Allowed values for the <code>orientation</code> property.
- * @enum {String}
- * @readonly
- */
-ConvertHTML2PDFRequest['OrientationEnum'] = {
-
-    /**
-     * value: "portrait"
-     * @const
-     */
-    "portrait": "portrait",
-
-    /**
-     * value: "landscape"
-     * @const
-     */
-    "landscape": "landscape"
-};
-
-
-/**
- * Allowed values for the <code>output</code> property.
- * @enum {String}
- * @readonly
- */
-ConvertHTML2PDFRequest['OutputEnum'] = {
-
-    /**
-     * value: "base64"
-     * @const
-     */
-    "base64": "base64",
-
-    /**
-     * value: "file"
-     * @const
-     */
-    "file": "file"
-};
-
-
-
-export default ConvertHTML2PDFRequest;
+export default DeleteWorkspace204Response;
 

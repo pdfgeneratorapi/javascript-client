@@ -86,7 +86,7 @@ let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
 JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.TemplatesApi();
-let template_definition_new = new PDFGeneratorAPI.TemplateDefinitionNew(); // TemplateDefinitionNew | Template configuration as JSON string
+let template_definition_new = new PDFGeneratorAPI.TemplateDefinitionNew(); // TemplateDefinitionNew | Template configuration
 apiInstance.createTemplate(template_definition_new, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -101,7 +101,7 @@ apiInstance.createTemplate(template_definition_new, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **template_definition_new** | [**TemplateDefinitionNew**](TemplateDefinitionNew.md)| Template configuration as JSON string | 
+ **template_definition_new** | [**TemplateDefinitionNew**](TemplateDefinitionNew.md)| Template configuration | 
 
 ### Return type
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ## deleteTemplate
 
-> DeleteTemplate204Response deleteTemplate(template_id)
+> deleteTemplate(template_id)
 
 Delete template
 
@@ -140,7 +140,7 @@ apiInstance.deleteTemplate(template_id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteTemplate204Response**](DeleteTemplate204Response.md)
+null (empty response body)
 
 ### Authorization
 
@@ -393,7 +393,7 @@ JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.TemplatesApi();
 let template_id = 19375; // Number | Template unique identifier
-let template_definition_new = new PDFGeneratorAPI.TemplateDefinitionNew(); // TemplateDefinitionNew | Template configuration as JSON string
+let template_definition_new = new PDFGeneratorAPI.TemplateDefinitionNew(); // TemplateDefinitionNew | Template configuration
 apiInstance.updateTemplate(template_id, template_definition_new, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -409,7 +409,7 @@ apiInstance.updateTemplate(template_id, template_definition_new, (error, data, r
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **template_id** | **Number**| Template unique identifier | 
- **template_definition_new** | [**TemplateDefinitionNew**](TemplateDefinitionNew.md)| Template configuration as JSON string | 
+ **template_definition_new** | [**TemplateDefinitionNew**](TemplateDefinitionNew.md)| Template configuration | 
 
 ### Return type
 

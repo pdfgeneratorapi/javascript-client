@@ -28,7 +28,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinitionNew model module.
  * @module model/TemplateDefinitionNew
- * @version 4.0.2
+ * @version 4.0.3
  */
 var TemplateDefinitionNew = /*#__PURE__*/function () {
   /**

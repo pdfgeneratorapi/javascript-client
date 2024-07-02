@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinitionNewLayoutMargins model module.
  * @module model/TemplateDefinitionNewLayoutMargins
- * @version 4.0.2
+ * @version 4.0.3
  */
 var TemplateDefinitionNewLayoutMargins = /*#__PURE__*/function () {
   /**

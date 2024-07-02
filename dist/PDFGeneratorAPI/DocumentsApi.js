@@ -7,9 +7,9 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _GenerateDocument200Response = _interopRequireDefault(require("../model/GenerateDocument200Response"));
+var _GenerateDocument201Response = _interopRequireDefault(require("../model/GenerateDocument201Response"));
 
-var _GenerateDocumentAsynchronous200Response = _interopRequireDefault(require("../model/GenerateDocumentAsynchronous200Response"));
+var _GenerateDocumentAsynchronous201Response = _interopRequireDefault(require("../model/GenerateDocumentAsynchronous201Response"));
 
 var _GenerateDocumentAsynchronousRequest = _interopRequireDefault(require("../model/GenerateDocumentAsynchronousRequest"));
 
@@ -46,7 +46,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Documents service.
 * @module PDFGeneratorAPI/DocumentsApi
-* @version 4.0.2
+* @version 4.0.3
 */
 var DocumentsApi = /*#__PURE__*/function () {
   /**
@@ -65,7 +65,7 @@ var DocumentsApi = /*#__PURE__*/function () {
    * Callback function to receive the result of the generateDocument operation.
    * @callback module:PDFGeneratorAPI/DocumentsApi~generateDocumentCallback
    * @param {String} error Error message, if any.
-   * @param {module:model/GenerateDocument200Response} data The data returned by the service call.
+   * @param {module:model/GenerateDocument201Response} data The data returned by the service call.
    * @param {String} response The complete HTTP response.
    */
 
@@ -74,7 +74,7 @@ var DocumentsApi = /*#__PURE__*/function () {
    * Merges template with data and returns base64 encoded document or a public URL to a document. NB! When the public URL option is used, the document is stored for 30 days and automatically deleted.
    * @param {module:model/GenerateDocumentRequest} generate_document_request Request parameters, including template id, data and formats.
    * @param {module:PDFGeneratorAPI/DocumentsApi~generateDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-   * data is of type: {@link module:model/GenerateDocument200Response}
+   * data is of type: {@link module:model/GenerateDocument201Response}
    */
 
 
@@ -94,14 +94,14 @@ var DocumentsApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _GenerateDocument200Response["default"];
+      var returnType = _GenerateDocument201Response["default"];
       return this.apiClient.callApi('/documents/generate', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the generateDocumentAsynchronous operation.
      * @callback module:PDFGeneratorAPI/DocumentsApi~generateDocumentAsynchronousCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/GenerateDocumentAsynchronous200Response} data The data returned by the service call.
+     * @param {module:model/GenerateDocumentAsynchronous201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -110,7 +110,7 @@ var DocumentsApi = /*#__PURE__*/function () {
      * Merges template with data as asynchronous job and makes POST request to callback URL defined in the request. Request uses the same format as response of synchronous generation endpoint. The job id is also added to the callback request as header PDF-API-Job-Id  *Example payload for callback URL:* ``` {   \"response\": \"https://us1.pdfgeneratorapi.com/share/12821/VBERi0xLjcKJeLjz9MKNyAwIG9i\",   \"meta\": {     \"name\": \"a2bd25b8921f3dc7a440fd7f427f90a4.pdf\",     \"display_name\": \"a2bd25b8921f3dc7a440fd7f427f90a4\",     \"encoding\": \"binary\",     \"content-type\": \"application/pdf\"   } } ``` 
      * @param {module:model/GenerateDocumentAsynchronousRequest} generate_document_asynchronous_request Request parameters, including template id, data and formats.
      * @param {module:PDFGeneratorAPI/DocumentsApi~generateDocumentAsynchronousCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GenerateDocumentAsynchronous200Response}
+     * data is of type: {@link module:model/GenerateDocumentAsynchronous201Response}
      */
 
   }, {
@@ -129,14 +129,14 @@ var DocumentsApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _GenerateDocumentAsynchronous200Response["default"];
+      var returnType = _GenerateDocumentAsynchronous201Response["default"];
       return this.apiClient.callApi('/documents/generate/async', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the generateDocumentBatch operation.
      * @callback module:PDFGeneratorAPI/DocumentsApi~generateDocumentBatchCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/GenerateDocument200Response} data The data returned by the service call.
+     * @param {module:model/GenerateDocument201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -145,7 +145,7 @@ var DocumentsApi = /*#__PURE__*/function () {
      * Allows to merge multiple templates with data and returns base64 encoded document or public URL to a document. NB! When the public URL option is used, the document is stored for 30 days and automatically deleted.
      * @param {module:model/GenerateDocumentBatchRequest} generate_document_batch_request Request parameters, including template id, data and formats.
      * @param {module:PDFGeneratorAPI/DocumentsApi~generateDocumentBatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GenerateDocument200Response}
+     * data is of type: {@link module:model/GenerateDocument201Response}
      */
 
   }, {
@@ -164,14 +164,14 @@ var DocumentsApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _GenerateDocument200Response["default"];
+      var returnType = _GenerateDocument201Response["default"];
       return this.apiClient.callApi('/documents/generate/batch', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the generateDocumentBatchAsynchronous operation.
      * @callback module:PDFGeneratorAPI/DocumentsApi~generateDocumentBatchAsynchronousCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/GenerateDocumentAsynchronous200Response} data The data returned by the service call.
+     * @param {module:model/GenerateDocumentAsynchronous201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -180,7 +180,7 @@ var DocumentsApi = /*#__PURE__*/function () {
      * Merges template with data as asynchronous job and makes POST request to callback URL defined in the request. Request uses the same format as response of synchronous generation endpoint. The job id is also added to the callback request as header PDF-API-Job-Id  *Example payload for callback URL:* ``` {   \"response\": \"https://us1.pdfgeneratorapi.com/share/12821/VBERi0xLjcKJeLjz9MKNyAwIG9i\",   \"meta\": {     \"name\": \"a2bd25b8921f3dc7a440fd7f427f90a4.pdf\",     \"display_name\": \"a2bd25b8921f3dc7a440fd7f427f90a4\",     \"encoding\": \"binary\",     \"content-type\": \"application/pdf\"   } } ``` 
      * @param {module:model/GenerateDocumentBatchAsynchronousRequest} generate_document_batch_asynchronous_request Request parameters, including template id, data and formats.
      * @param {module:PDFGeneratorAPI/DocumentsApi~generateDocumentBatchAsynchronousCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GenerateDocumentAsynchronous200Response}
+     * data is of type: {@link module:model/GenerateDocumentAsynchronous201Response}
      */
 
   }, {
@@ -199,7 +199,7 @@ var DocumentsApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _GenerateDocumentAsynchronous200Response["default"];
+      var returnType = _GenerateDocumentAsynchronous201Response["default"];
       return this.apiClient.callApi('/documents/generate/batch/async', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**

@@ -51,16 +51,16 @@ Object.defineProperty(exports, "CopyTemplateRequest", {
     return _CopyTemplateRequest["default"];
   }
 });
-Object.defineProperty(exports, "CreateTemplate200Response", {
+Object.defineProperty(exports, "CreateTemplate201Response", {
   enumerable: true,
   get: function get() {
-    return _CreateTemplate200Response["default"];
+    return _CreateTemplate201Response["default"];
   }
 });
-Object.defineProperty(exports, "CreateWorkspace200Response", {
+Object.defineProperty(exports, "CreateWorkspace201Response", {
   enumerable: true,
   get: function get() {
-    return _CreateWorkspace200Response["default"];
+    return _CreateWorkspace201Response["default"];
   }
 });
 Object.defineProperty(exports, "CreateWorkspaceRequest", {
@@ -105,28 +105,28 @@ Object.defineProperty(exports, "FormatParam", {
     return _FormatParam["default"];
   }
 });
-Object.defineProperty(exports, "GenerateDocument200Response", {
+Object.defineProperty(exports, "GenerateDocument201Response", {
   enumerable: true,
   get: function get() {
-    return _GenerateDocument200Response["default"];
+    return _GenerateDocument201Response["default"];
   }
 });
-Object.defineProperty(exports, "GenerateDocument200ResponseMeta", {
+Object.defineProperty(exports, "GenerateDocument201ResponseMeta", {
   enumerable: true,
   get: function get() {
-    return _GenerateDocument200ResponseMeta["default"];
+    return _GenerateDocument201ResponseMeta["default"];
   }
 });
-Object.defineProperty(exports, "GenerateDocumentAsynchronous200Response", {
+Object.defineProperty(exports, "GenerateDocumentAsynchronous201Response", {
   enumerable: true,
   get: function get() {
-    return _GenerateDocumentAsynchronous200Response["default"];
+    return _GenerateDocumentAsynchronous201Response["default"];
   }
 });
-Object.defineProperty(exports, "GenerateDocumentAsynchronous200ResponseResponse", {
+Object.defineProperty(exports, "GenerateDocumentAsynchronous201ResponseResponse", {
   enumerable: true,
   get: function get() {
-    return _GenerateDocumentAsynchronous200ResponseResponse["default"];
+    return _GenerateDocumentAsynchronous201ResponseResponse["default"];
   }
 });
 Object.defineProperty(exports, "GenerateDocumentAsynchronousRequest", {
@@ -354,9 +354,9 @@ var _ConvertURL2PDFRequest = _interopRequireDefault(require("./model/ConvertURL2
 
 var _CopyTemplateRequest = _interopRequireDefault(require("./model/CopyTemplateRequest"));
 
-var _CreateTemplate200Response = _interopRequireDefault(require("./model/CreateTemplate200Response"));
+var _CreateTemplate201Response = _interopRequireDefault(require("./model/CreateTemplate201Response"));
 
-var _CreateWorkspace200Response = _interopRequireDefault(require("./model/CreateWorkspace200Response"));
+var _CreateWorkspace201Response = _interopRequireDefault(require("./model/CreateWorkspace201Response"));
 
 var _CreateWorkspaceRequest = _interopRequireDefault(require("./model/CreateWorkspaceRequest"));
 
@@ -370,13 +370,13 @@ var _Document = _interopRequireDefault(require("./model/Document"));
 
 var _FormatParam = _interopRequireDefault(require("./model/FormatParam"));
 
-var _GenerateDocument200Response = _interopRequireDefault(require("./model/GenerateDocument200Response"));
+var _GenerateDocument201Response = _interopRequireDefault(require("./model/GenerateDocument201Response"));
 
-var _GenerateDocument200ResponseMeta = _interopRequireDefault(require("./model/GenerateDocument200ResponseMeta"));
+var _GenerateDocument201ResponseMeta = _interopRequireDefault(require("./model/GenerateDocument201ResponseMeta"));
 
-var _GenerateDocumentAsynchronous200Response = _interopRequireDefault(require("./model/GenerateDocumentAsynchronous200Response"));
+var _GenerateDocumentAsynchronous201Response = _interopRequireDefault(require("./model/GenerateDocumentAsynchronous201Response"));
 
-var _GenerateDocumentAsynchronous200ResponseResponse = _interopRequireDefault(require("./model/GenerateDocumentAsynchronous200ResponseResponse"));
+var _GenerateDocumentAsynchronous201ResponseResponse = _interopRequireDefault(require("./model/GenerateDocumentAsynchronous201ResponseResponse"));
 
 var _GenerateDocumentAsynchronousRequest = _interopRequireDefault(require("./model/GenerateDocumentAsynchronousRequest"));
 

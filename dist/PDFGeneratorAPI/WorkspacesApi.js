@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CreateWorkspace200Response = _interopRequireDefault(require("../model/CreateWorkspace200Response"));
+var _CreateWorkspace201Response = _interopRequireDefault(require("../model/CreateWorkspace201Response"));
 
 var _CreateWorkspaceRequest = _interopRequireDefault(require("../model/CreateWorkspaceRequest"));
 
@@ -40,7 +40,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Workspaces service.
 * @module PDFGeneratorAPI/WorkspacesApi
-* @version 4.0.2
+* @version 4.0.3
 */
 var WorkspacesApi = /*#__PURE__*/function () {
   /**
@@ -59,7 +59,7 @@ var WorkspacesApi = /*#__PURE__*/function () {
    * Callback function to receive the result of the createWorkspace operation.
    * @callback module:PDFGeneratorAPI/WorkspacesApi~createWorkspaceCallback
    * @param {String} error Error message, if any.
-   * @param {module:model/CreateWorkspace200Response} data The data returned by the service call.
+   * @param {module:model/CreateWorkspace201Response} data The data returned by the service call.
    * @param {String} response The complete HTTP response.
    */
 
@@ -69,7 +69,7 @@ var WorkspacesApi = /*#__PURE__*/function () {
    * @param {Object} opts Optional parameters
    * @param {module:model/CreateWorkspaceRequest} [create_workspace_request] 
    * @param {module:PDFGeneratorAPI/WorkspacesApi~createWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
-   * data is of type: {@link module:model/CreateWorkspace200Response}
+   * data is of type: {@link module:model/CreateWorkspace201Response}
    */
 
 
@@ -85,7 +85,7 @@ var WorkspacesApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _CreateWorkspace200Response["default"];
+      var returnType = _CreateWorkspace201Response["default"];
       return this.apiClient.callApi('/workspaces', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
@@ -129,7 +129,7 @@ var WorkspacesApi = /*#__PURE__*/function () {
      * Callback function to receive the result of the getWorkspace operation.
      * @callback module:PDFGeneratorAPI/WorkspacesApi~getWorkspaceCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/CreateWorkspace200Response} data The data returned by the service call.
+     * @param {module:model/CreateWorkspace201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -138,7 +138,7 @@ var WorkspacesApi = /*#__PURE__*/function () {
      * Returns workspace information for the workspace identifier specified in the request.
      * @param {String} workspace_identifier Workspace identifier
      * @param {module:PDFGeneratorAPI/WorkspacesApi~getWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateWorkspace200Response}
+     * data is of type: {@link module:model/CreateWorkspace201Response}
      */
 
   }, {
@@ -159,7 +159,7 @@ var WorkspacesApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _CreateWorkspace200Response["default"];
+      var returnType = _CreateWorkspace201Response["default"];
       return this.apiClient.callApi('/workspaces/{workspaceIdentifier}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**

@@ -9,7 +9,7 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _CopyTemplateRequest = _interopRequireDefault(require("../model/CopyTemplateRequest"));
 
-var _CreateTemplate200Response = _interopRequireDefault(require("../model/CreateTemplate200Response"));
+var _CreateTemplate201Response = _interopRequireDefault(require("../model/CreateTemplate201Response"));
 
 var _DeleteTemplate204Response = _interopRequireDefault(require("../model/DeleteTemplate204Response"));
 
@@ -48,7 +48,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Templates service.
 * @module PDFGeneratorAPI/TemplatesApi
-* @version 4.0.2
+* @version 4.0.3
 */
 var TemplatesApi = /*#__PURE__*/function () {
   /**
@@ -67,7 +67,7 @@ var TemplatesApi = /*#__PURE__*/function () {
    * Callback function to receive the result of the copyTemplate operation.
    * @callback module:PDFGeneratorAPI/TemplatesApi~copyTemplateCallback
    * @param {String} error Error message, if any.
-   * @param {module:model/CreateTemplate200Response} data The data returned by the service call.
+   * @param {module:model/CreateTemplate201Response} data The data returned by the service call.
    * @param {String} response The complete HTTP response.
    */
 
@@ -78,7 +78,7 @@ var TemplatesApi = /*#__PURE__*/function () {
    * @param {Object} opts Optional parameters
    * @param {module:model/CopyTemplateRequest} [copy_template_request] 
    * @param {module:PDFGeneratorAPI/TemplatesApi~copyTemplateCallback} callback The callback function, accepting three arguments: error, data, response
-   * data is of type: {@link module:model/CreateTemplate200Response}
+   * data is of type: {@link module:model/CreateTemplate201Response}
    */
 
 
@@ -101,14 +101,14 @@ var TemplatesApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _CreateTemplate200Response["default"];
+      var returnType = _CreateTemplate201Response["default"];
       return this.apiClient.callApi('/templates/{templateId}/copy', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the createTemplate operation.
      * @callback module:PDFGeneratorAPI/TemplatesApi~createTemplateCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/CreateTemplate200Response} data The data returned by the service call.
+     * @param {module:model/CreateTemplate201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -117,7 +117,7 @@ var TemplatesApi = /*#__PURE__*/function () {
      * Creates a new template. If template configuration is not specified in the request body then an empty template is created. Template is placed to the workspace specified in authentication params. Template configuration must be sent in the request body.
      * @param {module:model/TemplateDefinitionNew} template_definition_new Template configuration as JSON string
      * @param {module:PDFGeneratorAPI/TemplatesApi~createTemplateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateTemplate200Response}
+     * data is of type: {@link module:model/CreateTemplate201Response}
      */
 
   }, {
@@ -136,7 +136,7 @@ var TemplatesApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _CreateTemplate200Response["default"];
+      var returnType = _CreateTemplate201Response["default"];
       return this.apiClient.callApi('/templates', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
@@ -180,7 +180,7 @@ var TemplatesApi = /*#__PURE__*/function () {
      * Callback function to receive the result of the getTemplate operation.
      * @callback module:PDFGeneratorAPI/TemplatesApi~getTemplateCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/CreateTemplate200Response} data The data returned by the service call.
+     * @param {module:model/CreateTemplate201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -189,7 +189,7 @@ var TemplatesApi = /*#__PURE__*/function () {
      * Returns template configuration
      * @param {Number} template_id Template unique identifier
      * @param {module:PDFGeneratorAPI/TemplatesApi~getTemplateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateTemplate200Response}
+     * data is of type: {@link module:model/CreateTemplate201Response}
      */
 
   }, {
@@ -210,7 +210,7 @@ var TemplatesApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _CreateTemplate200Response["default"];
+      var returnType = _CreateTemplate201Response["default"];
       return this.apiClient.callApi('/templates/{templateId}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
@@ -339,7 +339,7 @@ var TemplatesApi = /*#__PURE__*/function () {
      * Callback function to receive the result of the updateTemplate operation.
      * @callback module:PDFGeneratorAPI/TemplatesApi~updateTemplateCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/CreateTemplate200Response} data The data returned by the service call.
+     * @param {module:model/CreateTemplate201Response} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -349,7 +349,7 @@ var TemplatesApi = /*#__PURE__*/function () {
      * @param {Number} template_id Template unique identifier
      * @param {module:model/TemplateDefinitionNew} template_definition_new Template configuration as JSON string
      * @param {module:PDFGeneratorAPI/TemplatesApi~updateTemplateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CreateTemplate200Response}
+     * data is of type: {@link module:model/CreateTemplate201Response}
      */
 
   }, {
@@ -375,7 +375,7 @@ var TemplatesApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = _CreateTemplate200Response["default"];
+      var returnType = _CreateTemplate201Response["default"];
       return this.apiClient.callApi('/templates/{templateId}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
   }]);

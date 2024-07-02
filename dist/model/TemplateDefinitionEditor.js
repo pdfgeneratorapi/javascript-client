@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinitionEditor model module.
  * @module model/TemplateDefinitionEditor
- * @version 4.0.2
+ * @version 4.0.3
  */
 var TemplateDefinitionEditor = /*#__PURE__*/function () {
   /**

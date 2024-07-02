@@ -29,6 +29,8 @@ Name | Type | Description | Notes
 
 * `tabloid` (value: `"tabloid"`)
 
+* `letter` (value: `"letter"`)
+
 
 
 

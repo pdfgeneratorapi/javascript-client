@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ## deleteWorkspace
 
-> DeleteTemplate204Response deleteWorkspace(workspace_identifier)
+> DeleteWorkspace204Response deleteWorkspace(workspace_identifier)
 
 Delete workspace
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteTemplate204Response**](DeleteTemplate204Response.md)
+[**DeleteWorkspace204Response**](DeleteWorkspace204Response.md)
 
 ### Authorization
 

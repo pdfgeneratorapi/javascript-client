@@ -13,8 +13,8 @@ docs/CreateTemplate201Response.md
 docs/CreateWorkspace201Response.md
 docs/CreateWorkspaceRequest.md
 docs/DataBatchInner.md
-docs/DeleteTemplate204Response.md
-docs/DeleteTemplate204ResponseResponse.md
+docs/DeleteWorkspace204Response.md
+docs/DeleteWorkspace204ResponseResponse.md
 docs/Document.md
 docs/DocumentsApi.md
 docs/FormatParam.md
@@ -44,9 +44,9 @@ docs/OutputParam.md
 docs/PaginationMeta.md
 docs/Template.md
 docs/TemplateDefinition.md
-docs/TemplateDefinitionDataSettings.md
-docs/TemplateDefinitionEditor.md
 docs/TemplateDefinitionNew.md
+docs/TemplateDefinitionNewDataSettings.md
+docs/TemplateDefinitionNewEditor.md
 docs/TemplateDefinitionNewLayout.md
 docs/TemplateDefinitionNewLayoutMargins.md
 docs/TemplateDefinitionNewLayoutRepeatLayout.md
@@ -76,8 +76,8 @@ src/model/CreateTemplate201Response.js
 src/model/CreateWorkspace201Response.js
 src/model/CreateWorkspaceRequest.js
 src/model/DataBatchInner.js
-src/model/DeleteTemplate204Response.js
-src/model/DeleteTemplate204ResponseResponse.js
+src/model/DeleteWorkspace204Response.js
+src/model/DeleteWorkspace204ResponseResponse.js
 src/model/Document.js
 src/model/FormatParam.js
 src/model/GenerateDocument201Response.js
@@ -106,9 +106,9 @@ src/model/OutputParam.js
 src/model/PaginationMeta.js
 src/model/Template.js
 src/model/TemplateDefinition.js
-src/model/TemplateDefinitionDataSettings.js
-src/model/TemplateDefinitionEditor.js
 src/model/TemplateDefinitionNew.js
+src/model/TemplateDefinitionNewDataSettings.js
+src/model/TemplateDefinitionNewEditor.js
 src/model/TemplateDefinitionNewLayout.js
 src/model/TemplateDefinitionNewLayoutMargins.js
 src/model/TemplateDefinitionNewLayoutRepeatLayout.js
@@ -117,9 +117,3 @@ src/model/TemplateDefinitionNewPagesInnerMargins.js
 src/model/TemplateParam.js
 src/model/TemplateParamData.js
 src/model/Workspace.js
-test/model/CreateTemplate201Response.spec.js
-test/model/CreateWorkspace201Response.spec.js
-test/model/GenerateDocument201Response.spec.js
-test/model/GenerateDocument201ResponseMeta.spec.js
-test/model/GenerateDocumentAsynchronous201Response.spec.js
-test/model/GenerateDocumentAsynchronous201ResponseResponse.spec.js

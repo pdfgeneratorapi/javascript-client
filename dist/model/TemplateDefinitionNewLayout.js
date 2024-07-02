@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinitionNewLayout model module.
  * @module model/TemplateDefinitionNewLayout
- * @version 4.0.2
+ * @version 4.0.3
  */
 var TemplateDefinitionNewLayout = /*#__PURE__*/function () {
   /**
