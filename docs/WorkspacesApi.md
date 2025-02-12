@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ## deleteWorkspace
 
-> DeleteWorkspace204Response deleteWorkspace(workspace_identifier)
+> deleteWorkspace(workspace_identifier)
 
 Delete workspace
 
@@ -80,12 +80,12 @@ let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
 JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.WorkspacesApi();
-let workspace_identifier = demo.example@actualreports.com; // String | Workspace identifier
+let workspace_identifier = "demo.example@actualreports.com"; // String | Workspace identifier
 apiInstance.deleteWorkspace(workspace_identifier, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteWorkspace204Response**](DeleteWorkspace204Response.md)
+null (empty response body)
 
 ### Authorization
 
@@ -129,7 +129,7 @@ let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
 JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.WorkspacesApi();
-let workspace_identifier = demo.example@actualreports.com; // String | Workspace identifier
+let workspace_identifier = "demo.example@actualreports.com"; // String | Workspace identifier
 apiInstance.getWorkspace(workspace_identifier, (error, data, response) => {
   if (error) {
     console.error(error);

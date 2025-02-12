@@ -285,7 +285,7 @@ let apiInstance = new PDFGeneratorAPI.TemplatesApi();
 let opts = {
   'name': "name_example", // String | Filter template by name
   'tags': "tags_example", // String | Filter template by tags
-  'access': private, // String | Filter template by access type. No values returns all templates. private - returns only private templates, organization - returns only organization templates.
+  'access': "private", // String | Filter template by access type. No values returns all templates. private - returns only private templates, organization - returns only organization templates.
   'page': 1, // Number | Pagination: page to return
   'per_page': 20 // Number | Pagination: How many records to return per page
 };

@@ -4,12 +4,63 @@ All URIs are relative to *https://us1.pdfgeneratorapi.com/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**deleteDocument**](DocumentsApi.md#deleteDocument) | **DELETE** /documents/{publicId} | Delete document
 [**generateDocument**](DocumentsApi.md#generateDocument) | **POST** /documents/generate | Generate document
 [**generateDocumentAsynchronous**](DocumentsApi.md#generateDocumentAsynchronous) | **POST** /documents/generate/async | Generate document (async)
 [**generateDocumentBatch**](DocumentsApi.md#generateDocumentBatch) | **POST** /documents/generate/batch | Generate document (batch)
 [**generateDocumentBatchAsynchronous**](DocumentsApi.md#generateDocumentBatchAsynchronous) | **POST** /documents/generate/batch/async | Generate document (batch + async)
+[**getDocument**](DocumentsApi.md#getDocument) | **GET** /documents/{publicId} | Get document
 [**getDocuments**](DocumentsApi.md#getDocuments) | **GET** /documents | Get documents
 
+
+
+## deleteDocument
+
+> deleteDocument(public_id)
+
+Delete document
+
+Delete document from the Document Storage
+
+### Example
+
+```javascript
+import PDFGeneratorAPI from 'pdf-generator-api-client';
+let defaultClient = PDFGeneratorAPI.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
+let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
+JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new PDFGeneratorAPI.DocumentsApi();
+let public_id = "bac8381bce1982e5f6957a0f52371336"; // String | Resource public id
+apiInstance.deleteDocument(public_id, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **public_id** | **String**| Resource public id | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## generateDocument
@@ -208,6 +259,55 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getDocument
+
+> GetDocument200Response getDocument(public_id)
+
+Get document
+
+Returns document stored in the Document Storage
+
+### Example
+
+```javascript
+import PDFGeneratorAPI from 'pdf-generator-api-client';
+let defaultClient = PDFGeneratorAPI.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
+let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
+JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new PDFGeneratorAPI.DocumentsApi();
+let public_id = "bac8381bce1982e5f6957a0f52371336"; // String | Resource public id
+apiInstance.getDocument(public_id, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **public_id** | **String**| Resource public id | 
+
+### Return type
+
+[**GetDocument200Response**](GetDocument200Response.md)
+
+### Authorization
+
+[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getDocuments
 
 > GetDocuments200Response getDocuments(opts)
@@ -227,8 +327,9 @@ JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.DocumentsApi();
 let opts = {
-  'start_date': 2022-08-01 12:00:00, // String | Start date. Format: Y-m-d H:i:s
-  'end_date': 2022-08-05 12:00:00, // String | End date. Format: Y-m-d H:i:s. Defaults to current timestamp
+  'template_id': 19375, // Number | Template unique identifier
+  'start_date': "2022-08-01 12:00:00", // String | Start date. Format: Y-m-d H:i:s
+  'end_date': "2022-08-05 12:00:00", // String | End date. Format: Y-m-d H:i:s. Defaults to current timestamp
   'page': 1, // Number | Pagination: page to return
   'per_page': 20 // Number | Pagination: How many records to return per page
 };
@@ -246,6 +347,7 @@ apiInstance.getDocuments(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **template_id** | **Number**| Template unique identifier | [optional] 
  **start_date** | **String**| Start date. Format: Y-m-d H:i:s | [optional] 
  **end_date** | **String**| End date. Format: Y-m-d H:i:s. Defaults to current timestamp | [optional] 
  **page** | **Number**| Pagination: page to return | [optional] [default to 1]
