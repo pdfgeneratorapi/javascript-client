@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## convertHTML2PDF
 
-> GenerateDocument201Response convertHTML2PDF(convert_html2_pdf_request)
+> AddWatermark201Response convertHTML2PDF(convert_html2_pdf_request)
 
 HTML to PDF
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenerateDocument201Response**](GenerateDocument201Response.md)
+[**AddWatermark201Response**](AddWatermark201Response.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ## convertURL2PDF
 
-> GenerateDocument201Response convertURL2PDF(convert_url2_pdf_request)
+> AddWatermark201Response convertURL2PDF(convert_url2_pdf_request)
 
 URL to PDF
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenerateDocument201Response**](GenerateDocument201Response.md)
+[**AddWatermark201Response**](AddWatermark201Response.md)
 
 ### Authorization
 
