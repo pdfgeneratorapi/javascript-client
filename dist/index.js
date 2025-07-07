@@ -51,6 +51,12 @@ Object.defineProperty(exports, "CopyTemplateRequest", {
     return _CopyTemplateRequest["default"];
   }
 });
+Object.defineProperty(exports, "CreateFrom201Response", {
+  enumerable: true,
+  get: function get() {
+    return _CreateFrom201Response["default"];
+  }
+});
 Object.defineProperty(exports, "CreateTemplate201Response", {
   enumerable: true,
   get: function get() {
@@ -75,18 +81,6 @@ Object.defineProperty(exports, "DataBatchInner", {
     return _DataBatchInner["default"];
   }
 });
-Object.defineProperty(exports, "DeleteTemplate204Response", {
-  enumerable: true,
-  get: function get() {
-    return _DeleteTemplate204Response["default"];
-  }
-});
-Object.defineProperty(exports, "DeleteTemplate204ResponseResponse", {
-  enumerable: true,
-  get: function get() {
-    return _DeleteTemplate204ResponseResponse["default"];
-  }
-});
 Object.defineProperty(exports, "Document", {
   enumerable: true,
   get: function get() {
@@ -99,10 +93,52 @@ Object.defineProperty(exports, "DocumentsApi", {
     return _DocumentsApi["default"];
   }
 });
+Object.defineProperty(exports, "FormActionDownload", {
+  enumerable: true,
+  get: function get() {
+    return _FormActionDownload["default"];
+  }
+});
+Object.defineProperty(exports, "FormActionStore", {
+  enumerable: true,
+  get: function get() {
+    return _FormActionStore["default"];
+  }
+});
+Object.defineProperty(exports, "FormConfiguration", {
+  enumerable: true,
+  get: function get() {
+    return _FormConfiguration["default"];
+  }
+});
+Object.defineProperty(exports, "FormConfigurationNew", {
+  enumerable: true,
+  get: function get() {
+    return _FormConfigurationNew["default"];
+  }
+});
+Object.defineProperty(exports, "FormConfigurationNewActionsInner", {
+  enumerable: true,
+  get: function get() {
+    return _FormConfigurationNewActionsInner["default"];
+  }
+});
+Object.defineProperty(exports, "FormFieldsInner", {
+  enumerable: true,
+  get: function get() {
+    return _FormFieldsInner["default"];
+  }
+});
 Object.defineProperty(exports, "FormatParam", {
   enumerable: true,
   get: function get() {
     return _FormatParam["default"];
+  }
+});
+Object.defineProperty(exports, "FormsApi", {
+  enumerable: true,
+  get: function get() {
+    return _FormsApi["default"];
   }
 });
 Object.defineProperty(exports, "GenerateDocument201Response", {
@@ -153,10 +189,28 @@ Object.defineProperty(exports, "GenerateDocumentRequest", {
     return _GenerateDocumentRequest["default"];
   }
 });
+Object.defineProperty(exports, "GetDocument200Response", {
+  enumerable: true,
+  get: function get() {
+    return _GetDocument200Response["default"];
+  }
+});
+Object.defineProperty(exports, "GetDocument200ResponseMeta", {
+  enumerable: true,
+  get: function get() {
+    return _GetDocument200ResponseMeta["default"];
+  }
+});
 Object.defineProperty(exports, "GetDocuments200Response", {
   enumerable: true,
   get: function get() {
     return _GetDocuments200Response["default"];
+  }
+});
+Object.defineProperty(exports, "GetForms200Response", {
+  enumerable: true,
+  get: function get() {
+    return _GetForms200Response["default"];
   }
 });
 Object.defineProperty(exports, "GetTemplateData200Response", {
@@ -219,6 +273,18 @@ Object.defineProperty(exports, "GetWorkspaces200Response", {
     return _GetWorkspaces200Response["default"];
   }
 });
+Object.defineProperty(exports, "InlineObject", {
+  enumerable: true,
+  get: function get() {
+    return _InlineObject["default"];
+  }
+});
+Object.defineProperty(exports, "InlineObjectResponse", {
+  enumerable: true,
+  get: function get() {
+    return _InlineObjectResponse["default"];
+  }
+});
 Object.defineProperty(exports, "OpenEditor200Response", {
   enumerable: true,
   get: function get() {
@@ -247,6 +313,18 @@ Object.defineProperty(exports, "PaginationMeta", {
   enumerable: true,
   get: function get() {
     return _PaginationMeta["default"];
+  }
+});
+Object.defineProperty(exports, "ShareForm201Response", {
+  enumerable: true,
+  get: function get() {
+    return _ShareForm201Response["default"];
+  }
+});
+Object.defineProperty(exports, "ShareForm201ResponseMeta", {
+  enumerable: true,
+  get: function get() {
+    return _ShareForm201ResponseMeta["default"];
   }
 });
 Object.defineProperty(exports, "Template", {
@@ -279,6 +357,18 @@ Object.defineProperty(exports, "TemplateDefinitionNew", {
     return _TemplateDefinitionNew["default"];
   }
 });
+Object.defineProperty(exports, "TemplateDefinitionNewDataSettings", {
+  enumerable: true,
+  get: function get() {
+    return _TemplateDefinitionNewDataSettings["default"];
+  }
+});
+Object.defineProperty(exports, "TemplateDefinitionNewEditor", {
+  enumerable: true,
+  get: function get() {
+    return _TemplateDefinitionNewEditor["default"];
+  }
+});
 Object.defineProperty(exports, "TemplateDefinitionNewLayout", {
   enumerable: true,
   get: function get() {
@@ -307,6 +397,12 @@ Object.defineProperty(exports, "TemplateDefinitionNewPagesInnerMargins", {
   enumerable: true,
   get: function get() {
     return _TemplateDefinitionNewPagesInnerMargins["default"];
+  }
+});
+Object.defineProperty(exports, "TemplateDefinitionPagesInner", {
+  enumerable: true,
+  get: function get() {
+    return _TemplateDefinitionPagesInner["default"];
   }
 });
 Object.defineProperty(exports, "TemplateParam", {
@@ -354,6 +450,8 @@ var _ConvertURL2PDFRequest = _interopRequireDefault(require("./model/ConvertURL2
 
 var _CopyTemplateRequest = _interopRequireDefault(require("./model/CopyTemplateRequest"));
 
+var _CreateFrom201Response = _interopRequireDefault(require("./model/CreateFrom201Response"));
+
 var _CreateTemplate201Response = _interopRequireDefault(require("./model/CreateTemplate201Response"));
 
 var _CreateWorkspace201Response = _interopRequireDefault(require("./model/CreateWorkspace201Response"));
@@ -362,11 +460,19 @@ var _CreateWorkspaceRequest = _interopRequireDefault(require("./model/CreateWork
 
 var _DataBatchInner = _interopRequireDefault(require("./model/DataBatchInner"));
 
-var _DeleteTemplate204Response = _interopRequireDefault(require("./model/DeleteTemplate204Response"));
-
-var _DeleteTemplate204ResponseResponse = _interopRequireDefault(require("./model/DeleteTemplate204ResponseResponse"));
-
 var _Document = _interopRequireDefault(require("./model/Document"));
+
+var _FormActionDownload = _interopRequireDefault(require("./model/FormActionDownload"));
+
+var _FormActionStore = _interopRequireDefault(require("./model/FormActionStore"));
+
+var _FormConfiguration = _interopRequireDefault(require("./model/FormConfiguration"));
+
+var _FormConfigurationNew = _interopRequireDefault(require("./model/FormConfigurationNew"));
+
+var _FormConfigurationNewActionsInner = _interopRequireDefault(require("./model/FormConfigurationNewActionsInner"));
+
+var _FormFieldsInner = _interopRequireDefault(require("./model/FormFieldsInner"));
 
 var _FormatParam = _interopRequireDefault(require("./model/FormatParam"));
 
@@ -386,7 +492,13 @@ var _GenerateDocumentBatchRequest = _interopRequireDefault(require("./model/Gene
 
 var _GenerateDocumentRequest = _interopRequireDefault(require("./model/GenerateDocumentRequest"));
 
+var _GetDocument200Response = _interopRequireDefault(require("./model/GetDocument200Response"));
+
+var _GetDocument200ResponseMeta = _interopRequireDefault(require("./model/GetDocument200ResponseMeta"));
+
 var _GetDocuments200Response = _interopRequireDefault(require("./model/GetDocuments200Response"));
+
+var _GetForms200Response = _interopRequireDefault(require("./model/GetForms200Response"));
 
 var _GetTemplateData200Response = _interopRequireDefault(require("./model/GetTemplateData200Response"));
 
@@ -408,6 +520,10 @@ var _GetTemplates500Response = _interopRequireDefault(require("./model/GetTempla
 
 var _GetWorkspaces200Response = _interopRequireDefault(require("./model/GetWorkspaces200Response"));
 
+var _InlineObject = _interopRequireDefault(require("./model/InlineObject"));
+
+var _InlineObjectResponse = _interopRequireDefault(require("./model/InlineObjectResponse"));
+
 var _OpenEditor200Response = _interopRequireDefault(require("./model/OpenEditor200Response"));
 
 var _OpenEditorRequest = _interopRequireDefault(require("./model/OpenEditorRequest"));
@@ -417,6 +533,10 @@ var _OpenEditorRequestData = _interopRequireDefault(require("./model/OpenEditorR
 var _OutputParam = _interopRequireDefault(require("./model/OutputParam"));
 
 var _PaginationMeta = _interopRequireDefault(require("./model/PaginationMeta"));
+
+var _ShareForm201Response = _interopRequireDefault(require("./model/ShareForm201Response"));
+
+var _ShareForm201ResponseMeta = _interopRequireDefault(require("./model/ShareForm201ResponseMeta"));
 
 var _Template = _interopRequireDefault(require("./model/Template"));
 
@@ -428,6 +548,10 @@ var _TemplateDefinitionEditor = _interopRequireDefault(require("./model/Template
 
 var _TemplateDefinitionNew = _interopRequireDefault(require("./model/TemplateDefinitionNew"));
 
+var _TemplateDefinitionNewDataSettings = _interopRequireDefault(require("./model/TemplateDefinitionNewDataSettings"));
+
+var _TemplateDefinitionNewEditor = _interopRequireDefault(require("./model/TemplateDefinitionNewEditor"));
+
 var _TemplateDefinitionNewLayout = _interopRequireDefault(require("./model/TemplateDefinitionNewLayout"));
 
 var _TemplateDefinitionNewLayoutMargins = _interopRequireDefault(require("./model/TemplateDefinitionNewLayoutMargins"));
@@ -438,6 +562,8 @@ var _TemplateDefinitionNewPagesInner = _interopRequireDefault(require("./model/T
 
 var _TemplateDefinitionNewPagesInnerMargins = _interopRequireDefault(require("./model/TemplateDefinitionNewPagesInnerMargins"));
 
+var _TemplateDefinitionPagesInner = _interopRequireDefault(require("./model/TemplateDefinitionPagesInner"));
+
 var _TemplateParam = _interopRequireDefault(require("./model/TemplateParam"));
 
 var _TemplateParamData = _interopRequireDefault(require("./model/TemplateParamData"));
@@ -447,6 +573,8 @@ var _Workspace = _interopRequireDefault(require("./model/Workspace"));
 var _ConversionApi = _interopRequireDefault(require("./PDFGeneratorAPI/ConversionApi"));
 
 var _DocumentsApi = _interopRequireDefault(require("./PDFGeneratorAPI/DocumentsApi"));
+
+var _FormsApi = _interopRequireDefault(require("./PDFGeneratorAPI/FormsApi"));
 
 var _TemplatesApi = _interopRequireDefault(require("./PDFGeneratorAPI/TemplatesApi"));
 

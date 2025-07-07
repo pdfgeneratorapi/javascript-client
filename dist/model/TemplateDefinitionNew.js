@@ -7,6 +7,10 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _TemplateDefinitionNewDataSettings = _interopRequireDefault(require("./TemplateDefinitionNewDataSettings"));
+
+var _TemplateDefinitionNewEditor = _interopRequireDefault(require("./TemplateDefinitionNewEditor"));
+
 var _TemplateDefinitionNewLayout = _interopRequireDefault(require("./TemplateDefinitionNewLayout"));
 
 var _TemplateDefinitionNewPagesInner = _interopRequireDefault(require("./TemplateDefinitionNewPagesInner"));
@@ -28,7 +32,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinitionNew model module.
  * @module model/TemplateDefinitionNew
- * @version 4.0.3
+ * @version 4.0.8
  */
 var TemplateDefinitionNew = /*#__PURE__*/function () {
   /**
@@ -53,6 +57,8 @@ var TemplateDefinitionNew = /*#__PURE__*/function () {
     key: "initialize",
     value: function initialize(obj, name) {
       obj['name'] = name;
+      obj['fontSubsetting'] = false;
+      obj['barcodeAsImage'] = false;
     }
     /**
      * Constructs a <code>TemplateDefinitionNew</code> from a plain JavaScript object, optionally creating a new instance.
@@ -87,6 +93,22 @@ var TemplateDefinitionNew = /*#__PURE__*/function () {
         if (data.hasOwnProperty('pages')) {
           obj['pages'] = _ApiClient["default"].convertToType(data['pages'], [_TemplateDefinitionNewPagesInner["default"]]);
         }
+
+        if (data.hasOwnProperty('dataSettings')) {
+          obj['dataSettings'] = _TemplateDefinitionNewDataSettings["default"].constructFromObject(data['dataSettings']);
+        }
+
+        if (data.hasOwnProperty('editor')) {
+          obj['editor'] = _TemplateDefinitionNewEditor["default"].constructFromObject(data['editor']);
+        }
+
+        if (data.hasOwnProperty('fontSubsetting')) {
+          obj['fontSubsetting'] = _ApiClient["default"].convertToType(data['fontSubsetting'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('barcodeAsImage')) {
+          obj['barcodeAsImage'] = _ApiClient["default"].convertToType(data['barcodeAsImage'], 'Boolean');
+        }
       }
 
       return obj;
@@ -108,7 +130,7 @@ var TemplateDefinitionNew = /*#__PURE__*/function () {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
           var property = _step.value;
 
-          if (!data[property]) {
+          if (!data.hasOwnProperty(property)) {
             throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
           }
         } // ensure the json data is a string
@@ -158,6 +180,18 @@ var TemplateDefinitionNew = /*#__PURE__*/function () {
         }
 
         ;
+      } // validate the optional field `dataSettings`
+
+
+      if (data['dataSettings']) {
+        // data not null
+        _TemplateDefinitionNewDataSettings["default"].validateJSON(data['dataSettings']);
+      } // validate the optional field `editor`
+
+
+      if (data['editor']) {
+        // data not null
+        _TemplateDefinitionNewEditor["default"].validateJSON(data['editor']);
       }
 
       return true;
@@ -197,5 +231,29 @@ TemplateDefinitionNew.prototype['layout'] = undefined;
  */
 
 TemplateDefinitionNew.prototype['pages'] = undefined;
+/**
+ * @member {module:model/TemplateDefinitionNewDataSettings} dataSettings
+ */
+
+TemplateDefinitionNew.prototype['dataSettings'] = undefined;
+/**
+ * @member {module:model/TemplateDefinitionNewEditor} editor
+ */
+
+TemplateDefinitionNew.prototype['editor'] = undefined;
+/**
+ * If font-subsetting is applied to document when generated
+ * @member {Boolean} fontSubsetting
+ * @default false
+ */
+
+TemplateDefinitionNew.prototype['fontSubsetting'] = false;
+/**
+ * Defines if barcodes are rendered as raster images instead of vector graphics.
+ * @member {Boolean} barcodeAsImage
+ * @default false
+ */
+
+TemplateDefinitionNew.prototype['barcodeAsImage'] = false;
 var _default = TemplateDefinitionNew;
 exports["default"] = _default;

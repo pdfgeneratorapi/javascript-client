@@ -19,6 +19,8 @@ var _GenerateDocumentBatchRequest = _interopRequireDefault(require("../model/Gen
 
 var _GenerateDocumentRequest = _interopRequireDefault(require("../model/GenerateDocumentRequest"));
 
+var _GetDocument200Response = _interopRequireDefault(require("../model/GetDocument200Response"));
+
 var _GetDocuments200Response = _interopRequireDefault(require("../model/GetDocuments200Response"));
 
 var _GetTemplates401Response = _interopRequireDefault(require("../model/GetTemplates401Response"));
@@ -46,7 +48,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Documents service.
 * @module PDFGeneratorAPI/DocumentsApi
-* @version 4.0.3
+* @version 4.0.8
 */
 var DocumentsApi = /*#__PURE__*/function () {
   /**
@@ -62,23 +64,59 @@ var DocumentsApi = /*#__PURE__*/function () {
     this.apiClient = apiClient || _ApiClient["default"].instance;
   }
   /**
-   * Callback function to receive the result of the generateDocument operation.
-   * @callback module:PDFGeneratorAPI/DocumentsApi~generateDocumentCallback
+   * Callback function to receive the result of the deleteDocument operation.
+   * @callback module:PDFGeneratorAPI/DocumentsApi~deleteDocumentCallback
    * @param {String} error Error message, if any.
-   * @param {module:model/GenerateDocument201Response} data The data returned by the service call.
+   * @param data This operation does not return a value.
    * @param {String} response The complete HTTP response.
    */
 
   /**
-   * Generate document
-   * Merges template with data and returns base64 encoded document or a public URL to a document. NB! When the public URL option is used, the document is stored for 30 days and automatically deleted.
-   * @param {module:model/GenerateDocumentRequest} generate_document_request Request parameters, including template id, data and formats.
-   * @param {module:PDFGeneratorAPI/DocumentsApi~generateDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-   * data is of type: {@link module:model/GenerateDocument201Response}
+   * Delete document
+   * Delete document from the Document Storage
+   * @param {String} public_id Resource public id
+   * @param {module:PDFGeneratorAPI/DocumentsApi~deleteDocumentCallback} callback The callback function, accepting three arguments: error, data, response
    */
 
 
   _createClass(DocumentsApi, [{
+    key: "deleteDocument",
+    value: function deleteDocument(public_id, callback) {
+      var postBody = null; // verify the required parameter 'public_id' is set
+
+      if (public_id === undefined || public_id === null) {
+        throw new Error("Missing the required parameter 'public_id' when calling deleteDocument");
+      }
+
+      var pathParams = {
+        'publicId': public_id
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['JSONWebTokenAuth'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+      return this.apiClient.callApi('/documents/{publicId}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the generateDocument operation.
+     * @callback module:PDFGeneratorAPI/DocumentsApi~generateDocumentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/GenerateDocument201Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Generate document
+     * Merges template with data and returns base64 encoded document or a public URL to a document. NB! When the public URL option is used, the document is stored for 30 days and automatically deleted.
+     * @param {module:model/GenerateDocumentRequest} generate_document_request Request parameters, including template id, data and formats.
+     * @param {module:PDFGeneratorAPI/DocumentsApi~generateDocumentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/GenerateDocument201Response}
+     */
+
+  }, {
     key: "generateDocument",
     value: function generateDocument(generate_document_request, callback) {
       var postBody = generate_document_request; // verify the required parameter 'generate_document_request' is set
@@ -203,6 +241,43 @@ var DocumentsApi = /*#__PURE__*/function () {
       return this.apiClient.callApi('/documents/generate/batch/async', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
+     * Callback function to receive the result of the getDocument operation.
+     * @callback module:PDFGeneratorAPI/DocumentsApi~getDocumentCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/GetDocument200Response} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get document
+     * Returns document stored in the Document Storage
+     * @param {String} public_id Resource public id
+     * @param {module:PDFGeneratorAPI/DocumentsApi~getDocumentCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/GetDocument200Response}
+     */
+
+  }, {
+    key: "getDocument",
+    value: function getDocument(public_id, callback) {
+      var postBody = null; // verify the required parameter 'public_id' is set
+
+      if (public_id === undefined || public_id === null) {
+        throw new Error("Missing the required parameter 'public_id' when calling getDocument");
+      }
+
+      var pathParams = {
+        'publicId': public_id
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['JSONWebTokenAuth'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _GetDocument200Response["default"];
+      return this.apiClient.callApi('/documents/{publicId}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
      * Callback function to receive the result of the getDocuments operation.
      * @callback module:PDFGeneratorAPI/DocumentsApi~getDocumentsCallback
      * @param {String} error Error message, if any.
@@ -214,6 +289,7 @@ var DocumentsApi = /*#__PURE__*/function () {
      * Get documents
      * Returns a list of generated documents created by authorized workspace and stored in PDF Generator API. If master user is specified as workspace in JWT then all documents created in the organization are returned. NB! This endpoint returns only documents generated using the output=url option.
      * @param {Object} opts Optional parameters
+     * @param {Number} [template_id] Template unique identifier
      * @param {String} [start_date] Start date. Format: Y-m-d H:i:s
      * @param {String} [end_date] End date. Format: Y-m-d H:i:s. Defaults to current timestamp
      * @param {Number} [page = 1)] Pagination: page to return
@@ -229,6 +305,7 @@ var DocumentsApi = /*#__PURE__*/function () {
       var postBody = null;
       var pathParams = {};
       var queryParams = {
+        'template_id': opts['template_id'],
         'start_date': opts['start_date'],
         'end_date': opts['end_date'],
         'page': opts['page'],

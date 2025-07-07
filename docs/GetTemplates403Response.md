@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **String** | Error description | [optional] 
+**error** | **String** | Error description | [optional] 
+**status** | **Number** | HTTP Error code | [optional] 
 
 
 
-## Enum: MessageEnum
+## Enum: ErrorEnum
 
 
 * `Your account has exceeded the monthly document generation limit.` (value: `"Your account has exceeded the monthly document generation limit."`)

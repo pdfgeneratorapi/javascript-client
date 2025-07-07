@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **String** | Error description | [optional] 
+**error** | **String** | Error description | [optional] 
+**status** | **Number** | HTTP Error code | [optional] 
 
 
 
-## Enum: MessageEnum
+## Enum: ErrorEnum
 
 
 * `Authentication failed: request expired` (value: `"Authentication failed: request expired"`)

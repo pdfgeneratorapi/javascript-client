@@ -7,8 +7,6 @@ exports["default"] = void 0;
 
 var _superagent = _interopRequireDefault(require("superagent"));
 
-var _querystring = _interopRequireDefault(require("querystring"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -21,7 +19,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 /**
 * @module ApiClient
-* @version 4.0.3
+* @version 4.0.8
 */
 
 /**
@@ -60,13 +58,13 @@ var ApiClient = /*#__PURE__*/function () {
 
     };
     /**
-     * The default HTTP headers to be included for all API calls.
-     * @type {Array.<String>}
-     * @default {}
-     */
+            * The default HTTP headers to be included for all API calls.
+            * @type {Array.<String>}
+            * @default {}
+            */
 
     this.defaultHeaders = {
-      'User-Agent': 'OpenAPI-Generator/4.0.3/Javascript'
+      'User-Agent': 'OpenAPI-Generator/4.0.8/Javascript'
     };
     /**
      * The default HTTP timeout for all API calls.
@@ -84,10 +82,10 @@ var ApiClient = /*#__PURE__*/function () {
 
     this.cache = true;
     /**
-     * If set to true, the client will save the cookies from each server
-     * response, and return them in the next request.
-     * @default false
-     */
+            * If set to true, the client will save the cookies from each server
+            * response, and return them in the next request.
+            * @default false
+            */
 
     this.enableCookies = false;
     /*
@@ -164,7 +162,7 @@ var ApiClient = /*#__PURE__*/function () {
         url = apiBasePath + path;
       }
 
-      url = url.replace(/\{([\w-\.]+)\}/g, function (fullMatch, key) {
+      url = url.replace(/\{([\w-\.#]+)\}/g, function (fullMatch, key) {
         var value;
 
         if (pathParams.hasOwnProperty(key)) {
@@ -482,7 +480,10 @@ var ApiClient = /*#__PURE__*/function () {
       }
 
       if (contentType === 'application/x-www-form-urlencoded') {
-        request.send(_querystring["default"].stringify(this.normalizeParams(formParams)));
+        var normalizedParams = this.normalizeParams(formParams);
+        var urlSearchParams = new URLSearchParams(normalizedParams);
+        var queryString = urlSearchParams.toString();
+        request.send(queryString);
       } else if (contentType == 'multipart/form-data') {
         var _formParams = this.normalizeParams(formParams);
 

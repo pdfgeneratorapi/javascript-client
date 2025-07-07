@@ -11,8 +11,6 @@ var _CopyTemplateRequest = _interopRequireDefault(require("../model/CopyTemplate
 
 var _CreateTemplate201Response = _interopRequireDefault(require("../model/CreateTemplate201Response"));
 
-var _DeleteTemplate204Response = _interopRequireDefault(require("../model/DeleteTemplate204Response"));
-
 var _GetTemplateData200Response = _interopRequireDefault(require("../model/GetTemplateData200Response"));
 
 var _GetTemplates200Response = _interopRequireDefault(require("../model/GetTemplates200Response"));
@@ -48,7 +46,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Templates service.
 * @module PDFGeneratorAPI/TemplatesApi
-* @version 4.0.3
+* @version 4.0.8
 */
 var TemplatesApi = /*#__PURE__*/function () {
   /**
@@ -115,7 +113,7 @@ var TemplatesApi = /*#__PURE__*/function () {
     /**
      * Create template
      * Creates a new template. If template configuration is not specified in the request body then an empty template is created. Template is placed to the workspace specified in authentication params. Template configuration must be sent in the request body.
-     * @param {module:model/TemplateDefinitionNew} template_definition_new Template configuration as JSON string
+     * @param {module:model/TemplateDefinitionNew} template_definition_new Template configuration
      * @param {module:PDFGeneratorAPI/TemplatesApi~createTemplateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CreateTemplate201Response}
      */
@@ -143,7 +141,7 @@ var TemplatesApi = /*#__PURE__*/function () {
      * Callback function to receive the result of the deleteTemplate operation.
      * @callback module:PDFGeneratorAPI/TemplatesApi~deleteTemplateCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/DeleteTemplate204Response} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -152,7 +150,6 @@ var TemplatesApi = /*#__PURE__*/function () {
      * Deletes the template from workspace
      * @param {Number} template_id Template unique identifier
      * @param {module:PDFGeneratorAPI/TemplatesApi~deleteTemplateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DeleteTemplate204Response}
      */
 
   }, {
@@ -173,7 +170,7 @@ var TemplatesApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _DeleteTemplate204Response["default"];
+      var returnType = null;
       return this.apiClient.callApi('/templates/{templateId}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
@@ -347,7 +344,7 @@ var TemplatesApi = /*#__PURE__*/function () {
      * Update template
      * Updates template configuration. The template configuration for pages and layout must be complete as the entire configuration is replaced and not merged.
      * @param {Number} template_id Template unique identifier
-     * @param {module:model/TemplateDefinitionNew} template_definition_new Template configuration as JSON string
+     * @param {module:model/TemplateDefinitionNew} template_definition_new Template configuration
      * @param {module:PDFGeneratorAPI/TemplatesApi~updateTemplateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CreateTemplate201Response}
      */

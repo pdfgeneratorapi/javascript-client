@@ -11,8 +11,6 @@ var _CreateWorkspace201Response = _interopRequireDefault(require("../model/Creat
 
 var _CreateWorkspaceRequest = _interopRequireDefault(require("../model/CreateWorkspaceRequest"));
 
-var _DeleteTemplate204Response = _interopRequireDefault(require("../model/DeleteTemplate204Response"));
-
 var _GetTemplates401Response = _interopRequireDefault(require("../model/GetTemplates401Response"));
 
 var _GetTemplates402Response = _interopRequireDefault(require("../model/GetTemplates402Response"));
@@ -40,7 +38,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Workspaces service.
 * @module PDFGeneratorAPI/WorkspacesApi
-* @version 4.0.3
+* @version 4.0.8
 */
 var WorkspacesApi = /*#__PURE__*/function () {
   /**
@@ -92,7 +90,7 @@ var WorkspacesApi = /*#__PURE__*/function () {
      * Callback function to receive the result of the deleteWorkspace operation.
      * @callback module:PDFGeneratorAPI/WorkspacesApi~deleteWorkspaceCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/DeleteTemplate204Response} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -101,7 +99,6 @@ var WorkspacesApi = /*#__PURE__*/function () {
      * Delete workspace. Only regular workspaces can be deleted.
      * @param {String} workspace_identifier Workspace identifier
      * @param {module:PDFGeneratorAPI/WorkspacesApi~deleteWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/DeleteTemplate204Response}
      */
 
   }, {
@@ -122,7 +119,7 @@ var WorkspacesApi = /*#__PURE__*/function () {
       var authNames = ['JSONWebTokenAuth'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _DeleteTemplate204Response["default"];
+      var returnType = null;
       return this.apiClient.callApi('/workspaces/{workspaceIdentifier}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**

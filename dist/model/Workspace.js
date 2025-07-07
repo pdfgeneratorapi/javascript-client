@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Workspace model module.
  * @module model/Workspace
- * @version 4.0.3
+ * @version 4.0.8
  */
 var Workspace = /*#__PURE__*/function () {
   /**

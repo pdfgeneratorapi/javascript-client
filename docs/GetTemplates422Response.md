@@ -4,7 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **String** | Error description | [optional] 
-**errors** | **Object** | Details about validation errors | [optional] 
+**error** | **String** | Error description | [optional] 
+**status** | **Number** | HTTP Error code | [optional] 
+
+
+
+## Enum: ErrorEnum
+
+
+* `Unable to parse JSON, please check formatting` (value: `"Unable to parse JSON, please check formatting"`)
+
+* `Required parameter missing` (value: `"Required parameter missing"`)
+
+* `Required parameter missing: template definition not defined` (value: `"Required parameter missing: template definition not defined"`)
+
+* `Required parameter missing: template not defined` (value: `"Required parameter missing: template not defined"`)
+
+
 
 

@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinitionNewLayout model module.
  * @module model/TemplateDefinitionNewLayout
- * @version 4.0.3
+ * @version 4.0.8
  */
 var TemplateDefinitionNewLayout = /*#__PURE__*/function () {
   /**
@@ -44,7 +44,11 @@ var TemplateDefinitionNewLayout = /*#__PURE__*/function () {
 
   _createClass(TemplateDefinitionNewLayout, null, [{
     key: "initialize",
-    value: function initialize(obj) {}
+    value: function initialize(obj) {
+      obj['format'] = 'A4';
+      obj['unit'] = 'cm';
+      obj['emptyLabels'] = 0;
+    }
     /**
      * Constructs a <code>TemplateDefinitionNewLayout</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
@@ -143,10 +147,11 @@ var TemplateDefinitionNewLayout = /*#__PURE__*/function () {
 /**
  * Defines template page size
  * @member {module:model/TemplateDefinitionNewLayout.FormatEnum} format
+ * @default 'A4'
  */
 
 
-TemplateDefinitionNewLayout.prototype['format'] = undefined;
+TemplateDefinitionNewLayout.prototype['format'] = 'A4';
 /**
  * Page width in units
  * @member {Number} width
@@ -162,9 +167,10 @@ TemplateDefinitionNewLayout.prototype['height'] = undefined;
 /**
  * Measure unit
  * @member {module:model/TemplateDefinitionNewLayout.UnitEnum} unit
+ * @default 'cm'
  */
 
-TemplateDefinitionNewLayout.prototype['unit'] = undefined;
+TemplateDefinitionNewLayout.prototype['unit'] = 'cm';
 /**
  * Page orientation
  * @member {module:model/TemplateDefinitionNewLayout.OrientationEnum} orientation
@@ -188,11 +194,12 @@ TemplateDefinitionNewLayout.prototype['margins'] = undefined;
 
 TemplateDefinitionNewLayout.prototype['repeatLayout'] = undefined;
 /**
- * Defines how many pages or labels should be empty
+ * Specifies how many blank lables to add to sheet label.
  * @member {Number} emptyLabels
+ * @default 0
  */
 
-TemplateDefinitionNewLayout.prototype['emptyLabels'] = undefined;
+TemplateDefinitionNewLayout.prototype['emptyLabels'] = 0;
 /**
  * Allowed values for the <code>format</code> property.
  * @enum {String}

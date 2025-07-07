@@ -4,6 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **String** | Error description | [optional] 
+**error** | **String** | Error description | [optional] 
+**status** | **Number** | HTTP Error code | [optional] 
+
+
+
+## Enum: ErrorEnum
+
+
+* `You can make up to 5 requests per second and 120 requests per minute.` (value: `"You can make up to 5 requests per second and 120 requests per minute."`)
+
+
 
 

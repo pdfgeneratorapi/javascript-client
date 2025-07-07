@@ -13,7 +13,7 @@ var _TemplateDefinitionEditor = _interopRequireDefault(require("./TemplateDefini
 
 var _TemplateDefinitionNewLayout = _interopRequireDefault(require("./TemplateDefinitionNewLayout"));
 
-var _TemplateDefinitionNewPagesInner = _interopRequireDefault(require("./TemplateDefinitionNewPagesInner"));
+var _TemplateDefinitionPagesInner = _interopRequireDefault(require("./TemplateDefinitionPagesInner"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -32,7 +32,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinition model module.
  * @module model/TemplateDefinition
- * @version 4.0.3
+ * @version 4.0.8
  */
 var TemplateDefinition = /*#__PURE__*/function () {
   /**
@@ -89,7 +89,7 @@ var TemplateDefinition = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('pages')) {
-          obj['pages'] = _ApiClient["default"].convertToType(data['pages'], [_TemplateDefinitionNewPagesInner["default"]]);
+          obj['pages'] = _ApiClient["default"].convertToType(data['pages'], [_TemplateDefinitionPagesInner["default"]]);
         }
 
         if (data.hasOwnProperty('dataSettings')) {
@@ -143,7 +143,7 @@ var TemplateDefinition = /*#__PURE__*/function () {
           for (_iterator.s(); !(_step = _iterator.n()).done;) {
             var item = _step.value;
 
-            _TemplateDefinitionNewPagesInner["default"].validateJSON(item);
+            _TemplateDefinitionPagesInner["default"].validateJSON(item);
           }
         } catch (err) {
           _iterator.e(err);
@@ -204,7 +204,7 @@ TemplateDefinition.prototype['isDraft'] = undefined;
 TemplateDefinition.prototype['layout'] = undefined;
 /**
  * Defines page or label size, margins and components on page or label
- * @member {Array.<module:model/TemplateDefinitionNewPagesInner>} pages
+ * @member {Array.<module:model/TemplateDefinitionPagesInner>} pages
  */
 
 TemplateDefinition.prototype['pages'] = undefined;

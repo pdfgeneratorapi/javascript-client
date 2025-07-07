@@ -4,16 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **String** | Error description | [optional] 
+**error** | **String** | Error description | [optional] 
+**status** | **Number** | HTTP Error code | [optional] 
 
 
 
-## Enum: MessageEnum
+## Enum: ErrorEnum
 
 
 * `Entity not found` (value: `"Entity not found"`)
-
-* `Template not found` (value: `"Template not found"`)
 
 * `Resource not found` (value: `"Resource not found"`)
 

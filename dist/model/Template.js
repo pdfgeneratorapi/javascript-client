@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Template model module.
  * @module model/Template
- * @version 4.0.3
+ * @version 4.0.8
  */
 var Template = /*#__PURE__*/function () {
   /**

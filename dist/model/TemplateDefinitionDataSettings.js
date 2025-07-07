@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TemplateDefinitionDataSettings model module.
  * @module model/TemplateDefinitionDataSettings
- * @version 4.0.3
+ * @version 4.0.8
  */
 var TemplateDefinitionDataSettings = /*#__PURE__*/function () {
   /**
