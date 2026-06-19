@@ -9,4 +9,6 @@
 
 * `file` (value: `"file"`)
 
+* `viewer` (value: `"viewer"`)
+
 

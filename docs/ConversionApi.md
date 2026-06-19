@@ -5,13 +5,14 @@ All URIs are relative to *https://us1.pdfgeneratorapi.com/api/v4*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**convertHTML2PDF**](ConversionApi.md#convertHTML2PDF) | **POST** /conversion/html2pdf | HTML to PDF
+[**convertPDF2Image**](ConversionApi.md#convertPDF2Image) | **POST** /conversion/pdf2image | PDF to Image
 [**convertURL2PDF**](ConversionApi.md#convertURL2PDF) | **POST** /conversion/url2pdf | URL to PDF
 
 
 
 ## convertHTML2PDF
 
-> AddWatermark201Response convertHTML2PDF(convert_html2_pdf_request)
+> InlineObject9 convertHTML2PDF(convert_html2_pdf_request)
 
 HTML to PDF
 
@@ -46,7 +47,56 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddWatermark201Response**](AddWatermark201Response.md)
+[**InlineObject9**](InlineObject9.md)
+
+### Authorization
+
+[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## convertPDF2Image
+
+> InlineObject10 convertPDF2Image(convert_pdf2_image_request)
+
+PDF to Image
+
+Converts PDF document to images. Provide either a base64 encoded PDF or a public URL to a PDF file.
+
+### Example
+
+```javascript
+import PDFGeneratorAPI from 'pdf-generator-api-client';
+let defaultClient = PDFGeneratorAPI.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
+let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
+JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new PDFGeneratorAPI.ConversionApi();
+let convert_pdf2_image_request = new PDFGeneratorAPI.ConvertPDF2ImageRequest(); // ConvertPDF2ImageRequest | 
+apiInstance.convertPDF2Image(convert_pdf2_image_request, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **convert_pdf2_image_request** | [**ConvertPDF2ImageRequest**](ConvertPDF2ImageRequest.md)|  | 
+
+### Return type
+
+[**InlineObject10**](InlineObject10.md)
 
 ### Authorization
 
@@ -60,7 +110,7 @@ Name | Type | Description  | Notes
 
 ## convertURL2PDF
 
-> AddWatermark201Response convertURL2PDF(convert_url2_pdf_request)
+> InlineObject9 convertURL2PDF(convert_url2_pdf_request)
 
 URL to PDF
 
@@ -95,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddWatermark201Response**](AddWatermark201Response.md)
+[**InlineObject9**](InlineObject9.md)
 
 ### Authorization
 

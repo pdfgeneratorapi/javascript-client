@@ -9,13 +9,14 @@ Method | HTTP request | Description
 [**encryptDocument**](ServicesApi.md#encryptDocument) | **POST** /pdfservices/encrypt | Encrypt document
 [**extractFormFields**](ServicesApi.md#extractFormFields) | **POST** /pdfservices/form/fields | Extract form fields
 [**fillFormFields**](ServicesApi.md#fillFormFields) | **POST** /pdfservices/form/fill | Fill form fields
+[**makeAccessible**](ServicesApi.md#makeAccessible) | **POST** /pdfservices/make-accessible | Make accessible
 [**optimizeDocument**](ServicesApi.md#optimizeDocument) | **POST** /pdfservices/optimize | Optimize document
 
 
 
 ## addWatermark
 
-> AddWatermark201Response addWatermark(add_watermark_request)
+> InlineObject9 addWatermark(add_watermark_request)
 
 Add watermark
 
@@ -50,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddWatermark201Response**](AddWatermark201Response.md)
+[**InlineObject9**](InlineObject9.md)
 
 ### Authorization
 
@@ -64,7 +65,7 @@ Name | Type | Description  | Notes
 
 ## decryptDocument
 
-> AddWatermark201Response decryptDocument(encrypt_document_request)
+> InlineObject9 decryptDocument(encrypt_document_request)
 
 Decrypt document
 
@@ -99,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddWatermark201Response**](AddWatermark201Response.md)
+[**InlineObject9**](InlineObject9.md)
 
 ### Authorization
 
@@ -113,7 +114,7 @@ Name | Type | Description  | Notes
 
 ## encryptDocument
 
-> AddWatermark201Response encryptDocument(encrypt_document_request)
+> InlineObject9 encryptDocument(encrypt_document_request)
 
 Encrypt document
 
@@ -148,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddWatermark201Response**](AddWatermark201Response.md)
+[**InlineObject9**](InlineObject9.md)
 
 ### Authorization
 
@@ -162,7 +163,7 @@ Name | Type | Description  | Notes
 
 ## extractFormFields
 
-> ExtractFormFields200Response extractFormFields(extract_form_fields_request)
+> InlineObject14 extractFormFields(extract_form_fields_request)
 
 Extract form fields
 
@@ -197,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExtractFormFields200Response**](ExtractFormFields200Response.md)
+[**InlineObject14**](InlineObject14.md)
 
 ### Authorization
 
@@ -211,7 +212,7 @@ Name | Type | Description  | Notes
 
 ## fillFormFields
 
-> AddWatermark201Response fillFormFields(fill_form_fields_request)
+> InlineObject9 fillFormFields(fill_form_fields_request)
 
 Fill form fields
 
@@ -246,7 +247,56 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddWatermark201Response**](AddWatermark201Response.md)
+[**InlineObject9**](InlineObject9.md)
+
+### Authorization
+
+[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## makeAccessible
+
+> InlineObject9 makeAccessible(make_accessible_request)
+
+Make accessible
+
+Tags a PDF document for accessibility from base64 string or a remote URL.
+
+### Example
+
+```javascript
+import PDFGeneratorAPI from 'pdf-generator-api-client';
+let defaultClient = PDFGeneratorAPI.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
+let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
+JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new PDFGeneratorAPI.ServicesApi();
+let make_accessible_request = new PDFGeneratorAPI.MakeAccessibleRequest(); // MakeAccessibleRequest | 
+apiInstance.makeAccessible(make_accessible_request, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **make_accessible_request** | [**MakeAccessibleRequest**](MakeAccessibleRequest.md)|  | 
+
+### Return type
+
+[**InlineObject9**](InlineObject9.md)
 
 ### Authorization
 
@@ -260,7 +310,7 @@ Name | Type | Description  | Notes
 
 ## optimizeDocument
 
-> OptimizeDocument201Response optimizeDocument(optimize_document_request)
+> InlineObject12 optimizeDocument(optimize_document_request)
 
 Optimize document
 
@@ -295,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OptimizeDocument201Response**](OptimizeDocument201Response.md)
+[**InlineObject12**](InlineObject12.md)
 
 ### Authorization
 

@@ -9,8 +9,10 @@ Method | HTTP request | Description
 [**generateDocumentAsynchronous**](DocumentsApi.md#generateDocumentAsynchronous) | **POST** /documents/generate/async | Generate document (async)
 [**generateDocumentBatch**](DocumentsApi.md#generateDocumentBatch) | **POST** /documents/generate/batch | Generate document (batch)
 [**generateDocumentBatchAsynchronous**](DocumentsApi.md#generateDocumentBatchAsynchronous) | **POST** /documents/generate/batch/async | Generate document (batch + async)
+[**getAsyncJobStatus**](DocumentsApi.md#getAsyncJobStatus) | **GET** /documents/async/{jobId} | Get job status
 [**getDocument**](DocumentsApi.md#getDocument) | **GET** /documents/{publicId} | Get document
 [**getDocuments**](DocumentsApi.md#getDocuments) | **GET** /documents | Get documents
+[**storeDocument**](DocumentsApi.md#storeDocument) | **POST** /documents | Store document
 
 
 
@@ -65,7 +67,7 @@ null (empty response body)
 
 ## generateDocument
 
-> AddWatermark201Response generateDocument(generate_document_request)
+> InlineObject9 generateDocument(generate_document_request)
 
 Generate document
 
@@ -100,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddWatermark201Response**](AddWatermark201Response.md)
+[**InlineObject9**](InlineObject9.md)
 
 ### Authorization
 
@@ -114,11 +116,11 @@ Name | Type | Description  | Notes
 
 ## generateDocumentAsynchronous
 
-> GenerateDocumentAsynchronous201Response generateDocumentAsynchronous(generate_document_asynchronous_request)
+> InlineObject20 generateDocumentAsynchronous(generate_document_asynchronous_request)
 
 Generate document (async)
 
-Merges template with data as asynchronous job and makes POST request to callback URL defined in the request. Request uses the same format as response of synchronous generation endpoint. The job id is also added to the callback request as header PDF-API-Job-Id  *Example payload for callback URL:* &#x60;&#x60;&#x60; {   \&quot;response\&quot;: \&quot;https://us1.pdfgeneratorapi.com/share/12821/VBERi0xLjcKJeLjz9MKNyAwIG9i\&quot;,   \&quot;meta\&quot;: {     \&quot;name\&quot;: \&quot;a2bd25b8921f3dc7a440fd7f427f90a4.pdf\&quot;,     \&quot;display_name\&quot;: \&quot;a2bd25b8921f3dc7a440fd7f427f90a4\&quot;,     \&quot;encoding\&quot;: \&quot;binary\&quot;,     \&quot;content-type\&quot;: \&quot;application/pdf\&quot;   } } &#x60;&#x60;&#x60; 
+Merges template with data as asynchronous job and makes POST request to callback URL defined in the request. Request uses the same format as response of synchronous generation endpoint. The job id is also added to the callback request as header PDF-API-Job-Id  *Example response from callback URL:* &#x60;&#x60;&#x60; {   \&quot;response\&quot;: \&quot;https://us1.pdfgeneratorapi.com/share/12821/VBERi0xLjcKJeLjz9MKNyAwIG9i\&quot;,   \&quot;meta\&quot;: {     \&quot;name\&quot;: \&quot;a2bd25b8921f3dc7a440fd7f427f90a4.pdf\&quot;,     \&quot;display_name\&quot;: \&quot;a2bd25b8921f3dc7a440fd7f427f90a4\&quot;,     \&quot;encoding\&quot;: \&quot;binary\&quot;,     \&quot;content-type\&quot;: \&quot;application/pdf\&quot;   } } &#x60;&#x60;&#x60; 
 
 ### Example
 
@@ -149,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenerateDocumentAsynchronous201Response**](GenerateDocumentAsynchronous201Response.md)
+[**InlineObject20**](InlineObject20.md)
 
 ### Authorization
 
@@ -163,7 +165,7 @@ Name | Type | Description  | Notes
 
 ## generateDocumentBatch
 
-> AddWatermark201Response generateDocumentBatch(generate_document_batch_request)
+> InlineObject9 generateDocumentBatch(generate_document_batch_request)
 
 Generate document (batch)
 
@@ -198,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddWatermark201Response**](AddWatermark201Response.md)
+[**InlineObject9**](InlineObject9.md)
 
 ### Authorization
 
@@ -212,11 +214,11 @@ Name | Type | Description  | Notes
 
 ## generateDocumentBatchAsynchronous
 
-> GenerateDocumentAsynchronous201Response generateDocumentBatchAsynchronous(generate_document_batch_asynchronous_request)
+> InlineObject20 generateDocumentBatchAsynchronous(generate_document_batch_asynchronous_request)
 
 Generate document (batch + async)
 
-Merges template with data as asynchronous job and makes POST request to callback URL defined in the request. Request uses the same format as response of synchronous generation endpoint. The job id is also added to the callback request as header PDF-API-Job-Id  *Example payload for callback URL:* &#x60;&#x60;&#x60; {   \&quot;response\&quot;: \&quot;https://us1.pdfgeneratorapi.com/share/12821/VBERi0xLjcKJeLjz9MKNyAwIG9i\&quot;,   \&quot;meta\&quot;: {     \&quot;name\&quot;: \&quot;a2bd25b8921f3dc7a440fd7f427f90a4.pdf\&quot;,     \&quot;display_name\&quot;: \&quot;a2bd25b8921f3dc7a440fd7f427f90a4\&quot;,     \&quot;encoding\&quot;: \&quot;binary\&quot;,     \&quot;content-type\&quot;: \&quot;application/pdf\&quot;   } } &#x60;&#x60;&#x60; 
+Merges template with data as asynchronous job and makes POST request to callback URL defined in the request. Request uses the same format as response of synchronous generation endpoint. The job id is also added to the callback request as header PDF-API-Job-Id  *Example response from callback URL:* &#x60;&#x60;&#x60; {   \&quot;response\&quot;: \&quot;https://us1.pdfgeneratorapi.com/share/12821/VBERi0xLjcKJeLjz9MKNyAwIG9i\&quot;,   \&quot;meta\&quot;: {     \&quot;name\&quot;: \&quot;a2bd25b8921f3dc7a440fd7f427f90a4.pdf\&quot;,     \&quot;display_name\&quot;: \&quot;a2bd25b8921f3dc7a440fd7f427f90a4\&quot;,     \&quot;encoding\&quot;: \&quot;binary\&quot;,     \&quot;content-type\&quot;: \&quot;application/pdf\&quot;   } } &#x60;&#x60;&#x60; 
 
 ### Example
 
@@ -247,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenerateDocumentAsynchronous201Response**](GenerateDocumentAsynchronous201Response.md)
+[**InlineObject20**](InlineObject20.md)
 
 ### Authorization
 
@@ -259,9 +261,58 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getAsyncJobStatus
+
+> InlineObject13 getAsyncJobStatus(job_id)
+
+Get job status
+
+Returns status of an async job
+
+### Example
+
+```javascript
+import PDFGeneratorAPI from 'pdf-generator-api-client';
+let defaultClient = PDFGeneratorAPI.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
+let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
+JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new PDFGeneratorAPI.DocumentsApi();
+let job_id = "968b8a3a-e8ac-49cc-a670-25db545813ed"; // String | Job id
+apiInstance.getAsyncJobStatus(job_id, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **job_id** | **String**| Job id | 
+
+### Return type
+
+[**InlineObject13**](InlineObject13.md)
+
+### Authorization
+
+[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getDocument
 
-> GetDocument200Response getDocument(public_id)
+> InlineObject11 getDocument(public_id)
 
 Get document
 
@@ -296,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDocument200Response**](GetDocument200Response.md)
+[**InlineObject11**](InlineObject11.md)
 
 ### Authorization
 
@@ -310,7 +361,7 @@ Name | Type | Description  | Notes
 
 ## getDocuments
 
-> GetDocuments200Response getDocuments(opts)
+> InlineObject15 getDocuments(opts)
 
 Get documents
 
@@ -355,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDocuments200Response**](GetDocuments200Response.md)
+[**InlineObject15**](InlineObject15.md)
 
 ### Authorization
 
@@ -364,5 +415,54 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## storeDocument
+
+> InlineObject11 storeDocument(store_document_request)
+
+Store document
+
+Uploads a PDF as a URL or a base64 encoded string.
+
+### Example
+
+```javascript
+import PDFGeneratorAPI from 'pdf-generator-api-client';
+let defaultClient = PDFGeneratorAPI.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
+let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
+JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new PDFGeneratorAPI.DocumentsApi();
+let store_document_request = new PDFGeneratorAPI.StoreDocumentRequest(); // StoreDocumentRequest | Document source and optional metadata. Exactly one of `file_base64` or `file_url` is required.
+apiInstance.storeDocument(store_document_request, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **store_document_request** | [**StoreDocumentRequest**](StoreDocumentRequest.md)| Document source and optional metadata. Exactly one of &#x60;file_base64&#x60; or &#x60;file_url&#x60; is required. | 
+
+### Return type
+
+[**InlineObject11**](InlineObject11.md)
+
+### Authorization
+
+[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 

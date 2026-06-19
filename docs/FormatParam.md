@@ -7,8 +7,4 @@
 
 * `html` (value: `"html"`)
 
-* `zip` (value: `"zip"`)
-
-* `xlsx` (value: `"xlsx"`)
-
 

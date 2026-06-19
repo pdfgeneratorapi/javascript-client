@@ -5,5 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **file_url** | **String** | Public URL to a PDF document | 
+**key_field** | [**KeyFieldParam**](KeyFieldParam.md) |  | [optional] 
 
 

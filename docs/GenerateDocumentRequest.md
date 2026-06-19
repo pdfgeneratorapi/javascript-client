@@ -9,5 +9,7 @@ Name | Type | Description | Notes
 **output** | [**OutputParam**](OutputParam.md) |  | [optional] 
 **name** | **String** | Generated document name (optional) | [optional] [default to &#39;&#39;]
 **testing** | **Boolean** | When set to true the generation is not counted as merge (monthly usage), but a large PREVIEW stamp is added. | [optional] [default to false]
+**make_accessible** | **Boolean** | Enables semantic document tagging. When enabled, a separate Make Accessible action is executed, which consumes additional credits. | [optional] [default to false]
+**metadata** | [**MetadataParam**](MetadataParam.md) |  | [optional] 
 
 

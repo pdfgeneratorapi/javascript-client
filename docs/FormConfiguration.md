@@ -4,10 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Unique identifier | [optional] 
-**template_id** | **Number** | Template ID which is connected to the form | [optional] 
-**name** | **String** | Form name | [optional] 
-**actions** | [**[FormConfigurationNewActionsInner]**](FormConfigurationNewActionsInner.md) | Array of action configurations | [optional] 
-**fields** | [**[FormFieldsInner]**](FormFieldsInner.md) | A list of form field objects | [optional] 
+**title** | **String** | Form title displayed above the form | [optional] 
+**intro** | **String** | Introductory text displayed above the form fields. Supports rich text. | [optional] 
+**outro** | **String** | Closing text displayed below the form fields. Supports rich text. | [optional] 
 
 

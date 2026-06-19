@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** | Template ID | [optional] 
+**id** | [**TemplateParamId**](TemplateParamId.md) |  | [optional] 
+**version_id** | **Number** | Template version ID | [optional] 
 **data** | [**TemplateParamData**](TemplateParamData.md) |  | [optional] 
 
 

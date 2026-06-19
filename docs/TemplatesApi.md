@@ -9,7 +9,9 @@ Method | HTTP request | Description
 [**deleteTemplate**](TemplatesApi.md#deleteTemplate) | **DELETE** /templates/{templateId} | Delete template
 [**getTemplate**](TemplatesApi.md#getTemplate) | **GET** /templates/{templateId} | Get template
 [**getTemplateData**](TemplatesApi.md#getTemplateData) | **GET** /templates/{templateId}/data | Get template data fields
+[**getTemplateSchema**](TemplatesApi.md#getTemplateSchema) | **GET** /templates/schema | Get schema
 [**getTemplates**](TemplatesApi.md#getTemplates) | **GET** /templates | Get templates
+[**importTemplate**](TemplatesApi.md#importTemplate) | **POST** /templates/import | Import template
 [**openEditor**](TemplatesApi.md#openEditor) | **POST** /templates/{templateId}/editor | Open editor
 [**updateTemplate**](TemplatesApi.md#updateTemplate) | **PUT** /templates/{templateId} | Update template
 [**validateTemplate**](TemplatesApi.md#validateTemplate) | **POST** /templates/validate | Validate template
@@ -18,7 +20,7 @@ Method | HTTP request | Description
 
 ## copyTemplate
 
-> CreateTemplate201Response copyTemplate(template_id, opts)
+> InlineObject16 copyTemplate(template_id, opts)
 
 Copy template
 
@@ -57,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateTemplate201Response**](CreateTemplate201Response.md)
+[**InlineObject16**](InlineObject16.md)
 
 ### Authorization
 
@@ -71,7 +73,7 @@ Name | Type | Description  | Notes
 
 ## createTemplate
 
-> CreateTemplate201Response createTemplate(template_definition_new)
+> InlineObject16 createTemplate(template_definition_new)
 
 Create template
 
@@ -106,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateTemplate201Response**](CreateTemplate201Response.md)
+[**InlineObject16**](InlineObject16.md)
 
 ### Authorization
 
@@ -169,7 +171,7 @@ null (empty response body)
 
 ## getTemplate
 
-> CreateTemplate201Response getTemplate(template_id)
+> InlineObject16 getTemplate(template_id)
 
 Get template
 
@@ -204,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateTemplate201Response**](CreateTemplate201Response.md)
+[**InlineObject16**](InlineObject16.md)
 
 ### Authorization
 
@@ -218,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## getTemplateData
 
-> GetTemplateData200Response getTemplateData(template_id)
+> InlineObject2 getTemplateData(template_id)
 
 Get template data fields
 
@@ -253,7 +255,52 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetTemplateData200Response**](GetTemplateData200Response.md)
+[**InlineObject2**](InlineObject2.md)
+
+### Authorization
+
+[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getTemplateSchema
+
+> Object getTemplateSchema()
+
+Get schema
+
+Returns Template JSON Schema which defines the structure of the Template Definition.
+
+### Example
+
+```javascript
+import PDFGeneratorAPI from 'pdf-generator-api-client';
+let defaultClient = PDFGeneratorAPI.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
+let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
+JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new PDFGeneratorAPI.TemplatesApi();
+apiInstance.getTemplateSchema((error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**Object**
 
 ### Authorization
 
@@ -267,7 +314,7 @@ Name | Type | Description  | Notes
 
 ## getTemplates
 
-> GetTemplates200Response getTemplates(opts)
+> InlineObject4 getTemplates(opts)
 
 Get templates
 
@@ -312,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetTemplates200Response**](GetTemplates200Response.md)
+[**InlineObject4**](InlineObject4.md)
 
 ### Authorization
 
@@ -324,9 +371,58 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## importTemplate
+
+> InlineObject16 importTemplate(import_template_request)
+
+Import template
+
+Creates a template from existing PDF
+
+### Example
+
+```javascript
+import PDFGeneratorAPI from 'pdf-generator-api-client';
+let defaultClient = PDFGeneratorAPI.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
+let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
+JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new PDFGeneratorAPI.TemplatesApi();
+let import_template_request = new PDFGeneratorAPI.ImportTemplateRequest(); // ImportTemplateRequest | Import a PDF via URL or base64 string as template
+apiInstance.importTemplate(import_template_request, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **import_template_request** | [**ImportTemplateRequest**](ImportTemplateRequest.md)| Import a PDF via URL or base64 string as template | 
+
+### Return type
+
+[**InlineObject16**](InlineObject16.md)
+
+### Authorization
+
+[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## openEditor
 
-> OpenEditor200Response openEditor(template_id, open_editor_request)
+> InlineObject3 openEditor(template_id, open_editor_request)
 
 Open editor
 
@@ -363,7 +459,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OpenEditor200Response**](OpenEditor200Response.md)
+[**InlineObject3**](InlineObject3.md)
 
 ### Authorization
 
@@ -377,7 +473,7 @@ Name | Type | Description  | Notes
 
 ## updateTemplate
 
-> CreateTemplate201Response updateTemplate(template_id, template_definition_new)
+> InlineObject16 updateTemplate(template_id, template_definition_new)
 
 Update template
 
@@ -414,7 +510,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateTemplate201Response**](CreateTemplate201Response.md)
+[**InlineObject16**](InlineObject16.md)
 
 ### Authorization
 
@@ -428,7 +524,7 @@ Name | Type | Description  | Notes
 
 ## validateTemplate
 
-> ValidateTemplate200Response validateTemplate(template_definition_new)
+> InlineObject1 validateTemplate(template_definition_new)
 
 Validate template
 
@@ -463,7 +559,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ValidateTemplate200Response**](ValidateTemplate200Response.md)
+[**InlineObject1**](InlineObject1.md)
 
 ### Authorization
 
