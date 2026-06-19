@@ -27,7 +27,7 @@ import TemplateVersionCollection from '../model/TemplateVersionCollection';
 /**
 * TemplateVersions service.
 * @module PDFGeneratorAPI/TemplateVersionsApi
-* @version 4.0.25
+* @version 8.0.25
 */
 export default class TemplateVersionsApi {
 

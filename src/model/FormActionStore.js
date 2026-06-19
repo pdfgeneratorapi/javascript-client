@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FormActionStore model module.
  * @module model/FormActionStore
- * @version 4.0.25
+ * @version 8.0.25
  */
 class FormActionStore {
     /**

@@ -20,7 +20,7 @@ import TemplateParam from './TemplateParam';
 /**
  * The GenerateDocumentBatchRequest model module.
  * @module model/GenerateDocumentBatchRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class GenerateDocumentBatchRequest {
     /**

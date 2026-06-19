@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplateDefinitionNewPagesInnerMargins model module.
  * @module model/TemplateDefinitionNewPagesInnerMargins
- * @version 4.0.25
+ * @version 8.0.25
  */
 class TemplateDefinitionNewPagesInnerMargins {
     /**

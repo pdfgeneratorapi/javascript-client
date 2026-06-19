@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConvertPDF2ImageRequest model module.
  * @module model/ConvertPDF2ImageRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class ConvertPDF2ImageRequest {
     /**

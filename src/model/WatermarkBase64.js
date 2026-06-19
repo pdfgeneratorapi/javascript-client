@@ -17,7 +17,7 @@ import WatermarkFileUrlWatermark from './WatermarkFileUrlWatermark';
 /**
  * The WatermarkBase64 model module.
  * @module model/WatermarkBase64
- * @version 4.0.25
+ * @version 8.0.25
  */
 class WatermarkBase64 {
     /**

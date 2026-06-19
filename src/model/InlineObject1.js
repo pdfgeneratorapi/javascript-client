@@ -17,7 +17,7 @@ import InlineObject1Response from './InlineObject1Response';
 /**
  * The InlineObject1 model module.
  * @module model/InlineObject1
- * @version 4.0.25
+ * @version 8.0.25
  */
 class InlineObject1 {
     /**

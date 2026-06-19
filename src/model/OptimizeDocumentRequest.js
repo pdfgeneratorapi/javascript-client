@@ -18,7 +18,7 @@ import OptimizeUrl from './OptimizeUrl';
 /**
  * The OptimizeDocumentRequest model module.
  * @module model/OptimizeDocumentRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class OptimizeDocumentRequest {
     /**

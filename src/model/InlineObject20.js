@@ -17,7 +17,7 @@ import InlineObject20Response from './InlineObject20Response';
 /**
  * The InlineObject20 model module.
  * @module model/InlineObject20
- * @version 4.0.25
+ * @version 8.0.25
  */
 class InlineObject20 {
     /**

@@ -17,7 +17,7 @@ import KeyFieldParam from './KeyFieldParam';
 /**
  * The FormFieldsUrl model module.
  * @module model/FormFieldsUrl
- * @version 4.0.25
+ * @version 8.0.25
  */
 class FormFieldsUrl {
     /**

@@ -20,7 +20,7 @@ import TemplateParam from './TemplateParam';
 /**
  * The GenerateDocumentRequest model module.
  * @module model/GenerateDocumentRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class GenerateDocumentRequest {
     /**

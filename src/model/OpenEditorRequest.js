@@ -17,7 +17,7 @@ import OpenEditorRequestData from './OpenEditorRequestData';
 /**
  * The OpenEditorRequest model module.
  * @module model/OpenEditorRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class OpenEditorRequest {
     /**

@@ -20,7 +20,7 @@ import MetadataParam from './MetadataParam';
 /**
  * The MakeAccessibleRequest model module.
  * @module model/MakeAccessibleRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class MakeAccessibleRequest {
     /**

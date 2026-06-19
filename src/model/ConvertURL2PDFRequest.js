@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConvertURL2PDFRequest model module.
  * @module model/ConvertURL2PDFRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class ConvertURL2PDFRequest {
     /**

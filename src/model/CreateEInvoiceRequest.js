@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateEInvoiceRequest model module.
  * @module model/CreateEInvoiceRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class CreateEInvoiceRequest {
     /**

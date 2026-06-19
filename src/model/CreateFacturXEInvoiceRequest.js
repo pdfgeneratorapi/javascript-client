@@ -19,7 +19,7 @@ import OutputParam from './OutputParam';
 /**
  * The CreateFacturXEInvoiceRequest model module.
  * @module model/CreateFacturXEInvoiceRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class CreateFacturXEInvoiceRequest {
     /**

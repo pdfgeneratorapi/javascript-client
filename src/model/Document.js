@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Document model module.
  * @module model/Document
- * @version 4.0.25
+ * @version 8.0.25
  */
 class Document {
     /**

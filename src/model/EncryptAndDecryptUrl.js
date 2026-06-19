@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EncryptAndDecryptUrl model module.
  * @module model/EncryptAndDecryptUrl
- * @version 4.0.25
+ * @version 8.0.25
  */
 class EncryptAndDecryptUrl {
     /**

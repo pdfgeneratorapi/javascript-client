@@ -17,7 +17,7 @@ import InlineObject9Meta from './InlineObject9Meta';
 /**
  * The InlineObject9 model module.
  * @module model/InlineObject9
- * @version 4.0.25
+ * @version 8.0.25
  */
 class InlineObject9 {
     /**

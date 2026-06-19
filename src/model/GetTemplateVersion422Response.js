@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetTemplateVersion422Response model module.
  * @module model/GetTemplateVersion422Response
- * @version 4.0.25
+ * @version 8.0.25
  */
 class GetTemplateVersion422Response {
     /**

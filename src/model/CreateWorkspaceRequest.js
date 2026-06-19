@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateWorkspaceRequest model module.
  * @module model/CreateWorkspaceRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class CreateWorkspaceRequest {
     /**

@@ -25,7 +25,7 @@ import InlineObject27 from '../model/InlineObject27';
 /**
 * TemplateLibrary service.
 * @module PDFGeneratorAPI/TemplateLibraryApi
-* @version 4.0.25
+* @version 8.0.25
 */
 export default class TemplateLibraryApi {
 

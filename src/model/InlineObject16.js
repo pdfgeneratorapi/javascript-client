@@ -17,7 +17,7 @@ import TemplateDefinition from './TemplateDefinition';
 /**
  * The InlineObject16 model module.
  * @module model/InlineObject16
- * @version 4.0.25
+ * @version 8.0.25
  */
 class InlineObject16 {
     /**

@@ -17,7 +17,7 @@ import FormConfigurationNew from './FormConfigurationNew';
 /**
  * The ImportFormUrl model module.
  * @module model/ImportFormUrl
- * @version 4.0.25
+ * @version 8.0.25
  */
 class ImportFormUrl {
     /**

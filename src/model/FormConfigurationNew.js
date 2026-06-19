@@ -19,7 +19,7 @@ import FormFieldsInner from './FormFieldsInner';
 /**
  * The FormConfigurationNew model module.
  * @module model/FormConfigurationNew
- * @version 4.0.25
+ * @version 8.0.25
  */
 class FormConfigurationNew {
     /**

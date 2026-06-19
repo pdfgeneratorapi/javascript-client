@@ -18,7 +18,7 @@ import PaginationMeta from './PaginationMeta';
 /**
  * The InlineObject6 model module.
  * @module model/InlineObject6
- * @version 4.0.25
+ * @version 8.0.25
  */
 class InlineObject6 {
     /**

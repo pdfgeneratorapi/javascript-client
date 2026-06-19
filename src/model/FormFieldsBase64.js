@@ -17,7 +17,7 @@ import KeyFieldParam from './KeyFieldParam';
 /**
  * The FormFieldsBase64 model module.
  * @module model/FormFieldsBase64
- * @version 4.0.25
+ * @version 8.0.25
  */
 class FormFieldsBase64 {
     /**

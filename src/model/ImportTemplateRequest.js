@@ -19,7 +19,7 @@ import ImportTemplateUrlTemplate from './ImportTemplateUrlTemplate';
 /**
  * The ImportTemplateRequest model module.
  * @module model/ImportTemplateRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class ImportTemplateRequest {
     /**

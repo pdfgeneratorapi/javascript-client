@@ -17,7 +17,7 @@ import FormActionSendSendDocument from './FormActionSendSendDocument';
 /**
  * The FormActionSend model module.
  * @module model/FormActionSend
- * @version 4.0.25
+ * @version 8.0.25
  */
 class FormActionSend {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FormConfiguration model module.
  * @module model/FormConfiguration
- * @version 4.0.25
+ * @version 8.0.25
  */
 class FormConfiguration {
     /**

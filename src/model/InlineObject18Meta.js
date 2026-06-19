@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineObject18Meta model module.
  * @module model/InlineObject18Meta
- * @version 4.0.25
+ * @version 8.0.25
  */
 class InlineObject18Meta {
     /**

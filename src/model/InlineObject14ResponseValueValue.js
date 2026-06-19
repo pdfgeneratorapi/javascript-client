@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineObject14ResponseValueValue model module.
  * @module model/InlineObject14ResponseValueValue
- * @version 4.0.25
+ * @version 8.0.25
  */
 class InlineObject14ResponseValueValue {
     /**

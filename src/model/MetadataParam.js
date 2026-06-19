@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MetadataParam model module.
  * @module model/MetadataParam
- * @version 4.0.25
+ * @version 8.0.25
  */
 class MetadataParam {
     /**

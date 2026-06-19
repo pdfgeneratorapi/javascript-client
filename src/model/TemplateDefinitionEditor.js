@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplateDefinitionEditor model module.
  * @module model/TemplateDefinitionEditor
- * @version 4.0.25
+ * @version 8.0.25
  */
 class TemplateDefinitionEditor {
     /**

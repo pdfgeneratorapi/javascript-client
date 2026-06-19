@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OpenEditorRequestData model module.
  * @module model/OpenEditorRequestData
- * @version 4.0.25
+ * @version 8.0.25
  */
 class OpenEditorRequestData {
     /**

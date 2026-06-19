@@ -19,7 +19,7 @@ import KeyFieldParam from './KeyFieldParam';
 /**
  * The ExtractFormFieldsRequest model module.
  * @module model/ExtractFormFieldsRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class ExtractFormFieldsRequest {
     /**

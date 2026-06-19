@@ -18,7 +18,7 @@ import TemplateParamId from './TemplateParamId';
 /**
  * The TemplateParam model module.
  * @module model/TemplateParam
- * @version 4.0.25
+ * @version 8.0.25
  */
 class TemplateParam {
     /**

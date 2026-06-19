@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FormFillBase64 model module.
  * @module model/FormFillBase64
- * @version 4.0.25
+ * @version 8.0.25
  */
 class FormFillBase64 {
     /**

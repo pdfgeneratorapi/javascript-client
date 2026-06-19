@@ -20,7 +20,7 @@ import TemplateDefinitionPagesInner from './TemplateDefinitionPagesInner';
 /**
  * The TemplateDefinition model module.
  * @module model/TemplateDefinition
- * @version 4.0.25
+ * @version 8.0.25
  */
 class TemplateDefinition {
     /**

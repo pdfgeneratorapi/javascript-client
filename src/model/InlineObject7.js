@@ -17,7 +17,7 @@ import InlineObject7Response from './InlineObject7Response';
 /**
  * The InlineObject7 model module.
  * @module model/InlineObject7
- * @version 4.0.25
+ * @version 8.0.25
  */
 class InlineObject7 {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ImportTemplateUrlTemplate model module.
  * @module model/ImportTemplateUrlTemplate
- * @version 4.0.25
+ * @version 8.0.25
  */
 class ImportTemplateUrlTemplate {
     /**

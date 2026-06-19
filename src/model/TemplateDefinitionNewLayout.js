@@ -18,7 +18,7 @@ import TemplateDefinitionNewLayoutRepeatLayout from './TemplateDefinitionNewLayo
 /**
  * The TemplateDefinitionNewLayout model module.
  * @module model/TemplateDefinitionNewLayout
- * @version 4.0.25
+ * @version 8.0.25
  */
 class TemplateDefinitionNewLayout {
     /**

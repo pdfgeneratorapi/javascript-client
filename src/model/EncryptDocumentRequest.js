@@ -18,7 +18,7 @@ import EncryptAndDecryptUrl from './EncryptAndDecryptUrl';
 /**
  * The EncryptDocumentRequest model module.
  * @module model/EncryptDocumentRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class EncryptDocumentRequest {
     /**

@@ -19,7 +19,7 @@ import ImportFormUrl from './ImportFormUrl';
 /**
  * The ImportFormRequest model module.
  * @module model/ImportFormRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class ImportFormRequest {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PublicTemplateLibraryItem model module.
  * @module model/PublicTemplateLibraryItem
- * @version 4.0.25
+ * @version 8.0.25
  */
 class PublicTemplateLibraryItem {
     /**

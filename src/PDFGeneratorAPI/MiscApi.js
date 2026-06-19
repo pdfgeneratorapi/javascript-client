@@ -18,7 +18,7 @@ import GetStatus200Response from '../model/GetStatus200Response';
 /**
 * Misc service.
 * @module PDFGeneratorAPI/MiscApi
-* @version 4.0.25
+* @version 8.0.25
 */
 export default class MiscApi {
 

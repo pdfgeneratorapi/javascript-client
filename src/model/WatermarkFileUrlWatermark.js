@@ -18,7 +18,7 @@ import WatermarkText from './WatermarkText';
 /**
  * The WatermarkFileUrlWatermark model module.
  * @module model/WatermarkFileUrlWatermark
- * @version 4.0.25
+ * @version 8.0.25
  */
 class WatermarkFileUrlWatermark {
     /**

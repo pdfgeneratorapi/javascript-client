@@ -17,7 +17,7 @@ import InlineObject14ResponseValue from './InlineObject14ResponseValue';
 /**
  * The InlineObject14 model module.
  * @module model/InlineObject14
- * @version 4.0.25
+ * @version 8.0.25
  */
 class InlineObject14 {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplateDefinitionNewLayoutMargins model module.
  * @module model/TemplateDefinitionNewLayoutMargins
- * @version 4.0.25
+ * @version 8.0.25
  */
 class TemplateDefinitionNewLayoutMargins {
     /**

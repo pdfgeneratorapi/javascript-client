@@ -190,7 +190,7 @@ import WorkspacesApi from './PDFGeneratorAPI/WorkspacesApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.0.25
+* @version 8.0.25
 */
 export {
     /**

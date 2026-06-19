@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DataBatchInner model module.
  * @module model/DataBatchInner
- * @version 4.0.25
+ * @version 8.0.25
  */
 class DataBatchInner {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FormActionSendSendDocumentHeadersInner model module.
  * @module model/FormActionSendSendDocumentHeadersInner
- * @version 4.0.25
+ * @version 8.0.25
  */
 class FormActionSendSendDocumentHeadersInner {
     /**

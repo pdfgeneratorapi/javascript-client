@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Workspace model module.
  * @module model/Workspace
- * @version 4.0.25
+ * @version 8.0.25
  */
 class Workspace {
     /**

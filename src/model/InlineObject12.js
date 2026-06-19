@@ -17,7 +17,7 @@ import InlineObject12Meta from './InlineObject12Meta';
 /**
  * The InlineObject12 model module.
  * @module model/InlineObject12
- * @version 4.0.25
+ * @version 8.0.25
  */
 class InlineObject12 {
     /**

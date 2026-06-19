@@ -17,7 +17,7 @@ import ImportTemplateUrlTemplate from './ImportTemplateUrlTemplate';
 /**
  * The ImportTemplateBase64 model module.
  * @module model/ImportTemplateBase64
- * @version 4.0.25
+ * @version 8.0.25
  */
 class ImportTemplateBase64 {
     /**

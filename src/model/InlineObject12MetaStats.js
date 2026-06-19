@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineObject12MetaStats model module.
  * @module model/InlineObject12MetaStats
- * @version 4.0.25
+ * @version 8.0.25
  */
 class InlineObject12MetaStats {
     /**

@@ -17,7 +17,7 @@ import WatermarkPosition from './WatermarkPosition';
 /**
  * The WatermarkText model module.
  * @module model/WatermarkText
- * @version 4.0.25
+ * @version 8.0.25
  */
 class WatermarkText {
     /**

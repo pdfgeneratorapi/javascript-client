@@ -17,7 +17,7 @@ import PublicTemplateLibraryItem from './PublicTemplateLibraryItem';
 /**
  * The GetTemplateLibrary200Response model module.
  * @module model/GetTemplateLibrary200Response
- * @version 4.0.25
+ * @version 8.0.25
  */
 class GetTemplateLibrary200Response {
     /**

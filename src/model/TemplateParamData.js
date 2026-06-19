@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplateParamData model module.
  * @module model/TemplateParamData
- * @version 4.0.25
+ * @version 8.0.25
  */
 class TemplateParamData {
     /**

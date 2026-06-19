@@ -17,7 +17,7 @@ import StatusParam from './StatusParam';
 /**
  * The GetStatus200Response model module.
  * @module model/GetStatus200Response
- * @version 4.0.25
+ * @version 8.0.25
  */
 class GetStatus200Response {
     /**

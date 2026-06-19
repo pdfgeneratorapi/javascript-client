@@ -18,7 +18,7 @@ import MetadataParam from './MetadataParam';
 /**
  * The MakeAccessibleUrl model module.
  * @module model/MakeAccessibleUrl
- * @version 4.0.25
+ * @version 8.0.25
  */
 class MakeAccessibleUrl {
     /**

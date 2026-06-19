@@ -18,7 +18,7 @@ import Template from './Template';
 /**
  * The InlineObject4 model module.
  * @module model/InlineObject4
- * @version 4.0.25
+ * @version 8.0.25
  */
 class InlineObject4 {
     /**

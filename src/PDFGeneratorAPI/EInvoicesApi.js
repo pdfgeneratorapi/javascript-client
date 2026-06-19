@@ -28,7 +28,7 @@ import InlineObject9 from '../model/InlineObject9';
 /**
 * EInvoices service.
 * @module PDFGeneratorAPI/EInvoicesApi
-* @version 4.0.25
+* @version 8.0.25
 */
 export default class EInvoicesApi {
 

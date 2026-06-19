@@ -18,7 +18,7 @@ import TemplateVersionCollectionMeta from './TemplateVersionCollectionMeta';
 /**
  * The TemplateVersionCollection model module.
  * @module model/TemplateVersionCollection
- * @version 4.0.25
+ * @version 8.0.25
  */
 class TemplateVersionCollection {
     /**

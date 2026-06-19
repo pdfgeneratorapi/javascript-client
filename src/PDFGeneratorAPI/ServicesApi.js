@@ -33,7 +33,7 @@ import OptimizeDocumentRequest from '../model/OptimizeDocumentRequest';
 /**
 * Services service.
 * @module PDFGeneratorAPI/ServicesApi
-* @version 4.0.25
+* @version 8.0.25
 */
 export default class ServicesApi {
 

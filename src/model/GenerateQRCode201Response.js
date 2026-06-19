@@ -17,7 +17,7 @@ import GenerateQRCode201ResponseMeta from './GenerateQRCode201ResponseMeta';
 /**
  * The GenerateQRCode201Response model module.
  * @module model/GenerateQRCode201Response
- * @version 4.0.25
+ * @version 8.0.25
  */
 class GenerateQRCode201Response {
     /**

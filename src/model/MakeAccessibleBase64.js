@@ -18,7 +18,7 @@ import MetadataParam from './MetadataParam';
 /**
  * The MakeAccessibleBase64 model module.
  * @module model/MakeAccessibleBase64
- * @version 4.0.25
+ * @version 8.0.25
  */
 class MakeAccessibleBase64 {
     /**

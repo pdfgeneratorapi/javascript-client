@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TemplateDefinitionNewDataSettings model module.
  * @module model/TemplateDefinitionNewDataSettings
- * @version 4.0.25
+ * @version 8.0.25
  */
 class TemplateDefinitionNewDataSettings {
     /**

@@ -17,7 +17,7 @@ import FormConfigurationNew from './FormConfigurationNew';
 /**
  * The ImportFormBase64 model module.
  * @module model/ImportFormBase64
- * @version 4.0.25
+ * @version 8.0.25
  */
 class ImportFormBase64 {
     /**

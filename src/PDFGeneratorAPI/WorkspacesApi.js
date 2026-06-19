@@ -27,7 +27,7 @@ import InlineObject8 from '../model/InlineObject8';
 /**
 * Workspaces service.
 * @module PDFGeneratorAPI/WorkspacesApi
-* @version 4.0.25
+* @version 8.0.25
 */
 export default class WorkspacesApi {
 

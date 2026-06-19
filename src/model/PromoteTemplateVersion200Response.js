@@ -17,7 +17,7 @@ import TemplateVersion from './TemplateVersion';
 /**
  * The PromoteTemplateVersion200Response model module.
  * @module model/PromoteTemplateVersion200Response
- * @version 4.0.25
+ * @version 8.0.25
  */
 class PromoteTemplateVersion200Response {
     /**

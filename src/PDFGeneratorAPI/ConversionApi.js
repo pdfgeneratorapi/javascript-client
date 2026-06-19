@@ -29,7 +29,7 @@ import InlineObject9 from '../model/InlineObject9';
 /**
 * Conversion service.
 * @module PDFGeneratorAPI/ConversionApi
-* @version 4.0.25
+* @version 8.0.25
 */
 export default class ConversionApi {
 

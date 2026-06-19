@@ -21,7 +21,7 @@ import TemplateParam from './TemplateParam';
 /**
  * The GenerateDocumentAsynchronousRequest model module.
  * @module model/GenerateDocumentAsynchronousRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class GenerateDocumentAsynchronousRequest {
     /**

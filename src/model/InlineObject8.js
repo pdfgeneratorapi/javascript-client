@@ -17,7 +17,7 @@ import Workspace from './Workspace';
 /**
  * The InlineObject8 model module.
  * @module model/InlineObject8
- * @version 4.0.25
+ * @version 8.0.25
  */
 class InlineObject8 {
     /**

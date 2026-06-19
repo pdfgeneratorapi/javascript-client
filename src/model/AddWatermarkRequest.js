@@ -19,7 +19,7 @@ import WatermarkFileUrlWatermark from './WatermarkFileUrlWatermark';
 /**
  * The AddWatermarkRequest model module.
  * @module model/AddWatermarkRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class AddWatermarkRequest {
     /**

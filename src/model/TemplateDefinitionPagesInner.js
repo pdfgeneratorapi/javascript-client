@@ -17,7 +17,7 @@ import TemplateDefinitionNewPagesInnerMargins from './TemplateDefinitionNewPages
 /**
  * The TemplateDefinitionPagesInner model module.
  * @module model/TemplateDefinitionPagesInner
- * @version 4.0.25
+ * @version 8.0.25
  */
 class TemplateDefinitionPagesInner {
     /**

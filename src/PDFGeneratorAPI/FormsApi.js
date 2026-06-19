@@ -30,7 +30,7 @@ import InlineObject6 from '../model/InlineObject6';
 /**
 * Forms service.
 * @module PDFGeneratorAPI/FormsApi
-* @version 4.0.25
+* @version 8.0.25
 */
 export default class FormsApi {
 

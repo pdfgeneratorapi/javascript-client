@@ -26,7 +26,7 @@ import InlineObject27 from '../model/InlineObject27';
 /**
 * Assets service.
 * @module PDFGeneratorAPI/AssetsApi
-* @version 4.0.25
+* @version 8.0.25
 */
 export default class AssetsApi {
 

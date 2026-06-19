@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateFacturXEInvoiceRequestTemplate model module.
  * @module model/CreateFacturXEInvoiceRequestTemplate
- * @version 4.0.25
+ * @version 8.0.25
  */
 class CreateFacturXEInvoiceRequestTemplate {
     /**

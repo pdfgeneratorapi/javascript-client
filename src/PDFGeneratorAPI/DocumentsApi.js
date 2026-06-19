@@ -34,7 +34,7 @@ import StoreDocumentRequest from '../model/StoreDocumentRequest';
 /**
 * Documents service.
 * @module PDFGeneratorAPI/DocumentsApi
-* @version 4.0.25
+* @version 8.0.25
 */
 export default class DocumentsApi {
 

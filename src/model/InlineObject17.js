@@ -17,7 +17,7 @@ import FormConfiguration from './FormConfiguration';
 /**
  * The InlineObject17 model module.
  * @module model/InlineObject17
- * @version 4.0.25
+ * @version 8.0.25
  */
 class InlineObject17 {
     /**

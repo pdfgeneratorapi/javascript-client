@@ -33,7 +33,7 @@ import TemplateDefinitionNew from '../model/TemplateDefinitionNew';
 /**
 * Templates service.
 * @module PDFGeneratorAPI/TemplatesApi
-* @version 4.0.25
+* @version 8.0.25
 */
 export default class TemplatesApi {
 

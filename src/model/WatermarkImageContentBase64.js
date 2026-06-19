@@ -17,7 +17,7 @@ import WatermarkPosition from './WatermarkPosition';
 /**
  * The WatermarkImageContentBase64 model module.
  * @module model/WatermarkImageContentBase64
- * @version 4.0.25
+ * @version 8.0.25
  */
 class WatermarkImageContentBase64 {
     /**

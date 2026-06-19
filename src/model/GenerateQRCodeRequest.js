@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenerateQRCodeRequest model module.
  * @module model/GenerateQRCodeRequest
- * @version 4.0.25
+ * @version 8.0.25
  */
 class GenerateQRCodeRequest {
     /**
