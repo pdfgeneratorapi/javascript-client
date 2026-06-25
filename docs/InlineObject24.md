@@ -11,13 +11,7 @@ Name | Type | Description | Notes
 ## Enum: MessageEnum
 
 
-* `Entity not found` (value: `"Entity not found"`)
-
-* `Template not found` (value: `"Template not found"`)
-
-* `Resource not found` (value: `"Resource not found"`)
-
-* `None of the templates is available for the workspace.` (value: `"None of the templates is available for the workspace."`)
+* `Your account is suspended, please upgrade your account or contact support@pdfgeneratorapi.com` (value: `"Your account is suspended, please upgrade your account or contact support@pdfgeneratorapi.com"`)
 
 
 

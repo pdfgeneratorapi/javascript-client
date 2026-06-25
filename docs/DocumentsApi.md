@@ -4,13 +4,15 @@ All URIs are relative to *https://us1.pdfgeneratorapi.com/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteDocument**](DocumentsApi.md#deleteDocument) | **DELETE** /documents/{publicId} | Delete document
+[**deleteDocument**](DocumentsApi.md#deleteDocument) | **DELETE** /documents/{publicId}/actions | Delete document
 [**generateDocument**](DocumentsApi.md#generateDocument) | **POST** /documents/generate | Generate document
 [**generateDocumentAsynchronous**](DocumentsApi.md#generateDocumentAsynchronous) | **POST** /documents/generate/async | Generate document (async)
 [**generateDocumentBatch**](DocumentsApi.md#generateDocumentBatch) | **POST** /documents/generate/batch | Generate document (batch)
 [**generateDocumentBatchAsynchronous**](DocumentsApi.md#generateDocumentBatchAsynchronous) | **POST** /documents/generate/batch/async | Generate document (batch + async)
 [**getAsyncJobStatus**](DocumentsApi.md#getAsyncJobStatus) | **GET** /documents/async/{jobId} | Get job status
 [**getDocument**](DocumentsApi.md#getDocument) | **GET** /documents/{publicId} | Get document
+[**getDocumentActions**](DocumentsApi.md#getDocumentActions) | **GET** /documents/{publicId}/actions | Get document actions
+[**getDocumentVersions**](DocumentsApi.md#getDocumentVersions) | **GET** /documents/{publicId}/versions | Get document versions
 [**getDocuments**](DocumentsApi.md#getDocuments) | **GET** /documents | Get documents
 [**storeDocument**](DocumentsApi.md#storeDocument) | **POST** /documents | Store document
 
@@ -116,7 +118,7 @@ Name | Type | Description  | Notes
 
 ## generateDocumentAsynchronous
 
-> InlineObject20 generateDocumentAsynchronous(generate_document_asynchronous_request)
+> InlineObject22 generateDocumentAsynchronous(generate_document_asynchronous_request)
 
 Generate document (async)
 
@@ -151,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject20**](InlineObject20.md)
+[**InlineObject22**](InlineObject22.md)
 
 ### Authorization
 
@@ -214,7 +216,7 @@ Name | Type | Description  | Notes
 
 ## generateDocumentBatchAsynchronous
 
-> InlineObject20 generateDocumentBatchAsynchronous(generate_document_batch_asynchronous_request)
+> InlineObject22 generateDocumentBatchAsynchronous(generate_document_batch_asynchronous_request)
 
 Generate document (batch + async)
 
@@ -249,7 +251,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject20**](InlineObject20.md)
+[**InlineObject22**](InlineObject22.md)
 
 ### Authorization
 
@@ -348,6 +350,104 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineObject11**](InlineObject11.md)
+
+### Authorization
+
+[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getDocumentActions
+
+> InlineObject17 getDocumentActions(public_id)
+
+Get document actions
+
+Returns a list of actions performed on a stored document
+
+### Example
+
+```javascript
+import PDFGeneratorAPI from 'pdf-generator-api-client';
+let defaultClient = PDFGeneratorAPI.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
+let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
+JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new PDFGeneratorAPI.DocumentsApi();
+let public_id = "bac8381bce1982e5f6957a0f52371336"; // String | Resource public id
+apiInstance.getDocumentActions(public_id, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **public_id** | **String**| Resource public id | 
+
+### Return type
+
+[**InlineObject17**](InlineObject17.md)
+
+### Authorization
+
+[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getDocumentVersions
+
+> InlineObject16 getDocumentVersions(public_id)
+
+Get document versions
+
+Returns a list of versions for a stored document
+
+### Example
+
+```javascript
+import PDFGeneratorAPI from 'pdf-generator-api-client';
+let defaultClient = PDFGeneratorAPI.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
+let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
+JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new PDFGeneratorAPI.DocumentsApi();
+let public_id = "bac8381bce1982e5f6957a0f52371336"; // String | Resource public id
+apiInstance.getDocumentVersions(public_id, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **public_id** | **String**| Resource public id | 
+
+### Return type
+
+[**InlineObject16**](InlineObject16.md)
 
 ### Authorization
 

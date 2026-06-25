@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**response** | **String** | URL to open the embeddable Form Builder | [optional] 
+**response** | [**FormConfiguration**](FormConfiguration.md) |  | [optional] 
 
 

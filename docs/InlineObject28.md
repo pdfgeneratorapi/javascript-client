@@ -1,9 +1,9 @@
-# PDFGeneratorAPI.InlineObject18Meta
+# PDFGeneratorAPI.InlineObject28
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**public_id** | **String** | Form sharing unique identifier | [optional] 
+**message** | **String** | Error description | [optional] 
 
 
