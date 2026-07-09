@@ -52,6 +52,9 @@ docs/GenerateDocumentRequest.md
 docs/GenerateQRCode201Response.md
 docs/GenerateQRCode201ResponseMeta.md
 docs/GenerateQRCodeRequest.md
+docs/GenerateViewerUrl200Response.md
+docs/GenerateViewerUrl200ResponseMeta.md
+docs/GenerateViewerUrlRequest.md
 docs/GetStatus200Response.md
 docs/GetTemplateLibrary200Response.md
 docs/GetTemplateVersion422Response.md
@@ -118,6 +121,7 @@ docs/OptimizeDocumentRequest.md
 docs/OptimizeUrl.md
 docs/OutputParam.md
 docs/PaginationMeta.md
+docs/PrefillParam.md
 docs/PromoteTemplateVersion200Response.md
 docs/PublicTemplateLibraryItem.md
 docs/ServicesApi.md
@@ -214,6 +218,9 @@ src/model/GenerateDocumentRequest.js
 src/model/GenerateQRCode201Response.js
 src/model/GenerateQRCode201ResponseMeta.js
 src/model/GenerateQRCodeRequest.js
+src/model/GenerateViewerUrl200Response.js
+src/model/GenerateViewerUrl200ResponseMeta.js
+src/model/GenerateViewerUrlRequest.js
 src/model/GetStatus200Response.js
 src/model/GetTemplateLibrary200Response.js
 src/model/GetTemplateVersion422Response.js
@@ -279,6 +286,7 @@ src/model/OptimizeDocumentRequest.js
 src/model/OptimizeUrl.js
 src/model/OutputParam.js
 src/model/PaginationMeta.js
+src/model/PrefillParam.js
 src/model/PromoteTemplateVersion200Response.js
 src/model/PublicTemplateLibraryItem.js
 src/model/StatusParam.js
@@ -365,6 +373,9 @@ test/model/GenerateDocumentRequest.spec.js
 test/model/GenerateQRCode201Response.spec.js
 test/model/GenerateQRCode201ResponseMeta.spec.js
 test/model/GenerateQRCodeRequest.spec.js
+test/model/GenerateViewerUrl200Response.spec.js
+test/model/GenerateViewerUrl200ResponseMeta.spec.js
+test/model/GenerateViewerUrlRequest.spec.js
 test/model/GetStatus200Response.spec.js
 test/model/GetTemplateLibrary200Response.spec.js
 test/model/GetTemplateVersion422Response.spec.js
@@ -430,6 +441,7 @@ test/model/OptimizeDocumentRequest.spec.js
 test/model/OptimizeUrl.spec.js
 test/model/OutputParam.spec.js
 test/model/PaginationMeta.spec.js
+test/model/PrefillParam.spec.js
 test/model/PromoteTemplateVersion200Response.spec.js
 test/model/PublicTemplateLibraryItem.spec.js
 test/model/StatusParam.spec.js

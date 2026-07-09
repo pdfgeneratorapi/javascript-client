@@ -4,11 +4,12 @@ All URIs are relative to *https://us1.pdfgeneratorapi.com/api/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteDocument**](DocumentsApi.md#deleteDocument) | **DELETE** /documents/{publicId}/actions | Delete document
+[**deleteDocument**](DocumentsApi.md#deleteDocument) | **DELETE** /documents/{publicId} | Delete document
 [**generateDocument**](DocumentsApi.md#generateDocument) | **POST** /documents/generate | Generate document
 [**generateDocumentAsynchronous**](DocumentsApi.md#generateDocumentAsynchronous) | **POST** /documents/generate/async | Generate document (async)
 [**generateDocumentBatch**](DocumentsApi.md#generateDocumentBatch) | **POST** /documents/generate/batch | Generate document (batch)
 [**generateDocumentBatchAsynchronous**](DocumentsApi.md#generateDocumentBatchAsynchronous) | **POST** /documents/generate/batch/async | Generate document (batch + async)
+[**generateViewerUrl**](DocumentsApi.md#generateViewerUrl) | **POST** /documents/{publicId} | Get document with prefill
 [**getAsyncJobStatus**](DocumentsApi.md#getAsyncJobStatus) | **GET** /documents/async/{jobId} | Get job status
 [**getDocument**](DocumentsApi.md#getDocument) | **GET** /documents/{publicId} | Get document
 [**getDocumentActions**](DocumentsApi.md#getDocumentActions) | **GET** /documents/{publicId}/actions | Get document actions
@@ -252,6 +253,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineObject22**](InlineObject22.md)
+
+### Authorization
+
+[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## generateViewerUrl
+
+> GenerateViewerUrl200Response generateViewerUrl(public_id, opts)
+
+Get document with prefill
+
+Returns a URL for a stored document, optionally with viewer prefill data. The prefill is encrypted server-side and embedded in the viewer URL, so the caller does not have to handle encryption. Prefill is only applied when &#x60;output&#x60; is &#x60;viewer&#x60;. 
+
+### Example
+
+```javascript
+import PDFGeneratorAPI from 'pdf-generator-api-client';
+let defaultClient = PDFGeneratorAPI.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
+let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
+JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new PDFGeneratorAPI.DocumentsApi();
+let public_id = "bac8381bce1982e5f6957a0f52371336"; // String | Resource public id
+let opts = {
+  'generate_viewer_url_request': new PDFGeneratorAPI.GenerateViewerUrlRequest() // GenerateViewerUrlRequest | Optional response format and viewer prefill data.
+};
+apiInstance.generateViewerUrl(public_id, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **public_id** | **String**| Resource public id | 
+ **generate_viewer_url_request** | [**GenerateViewerUrlRequest**](GenerateViewerUrlRequest.md)| Optional response format and viewer prefill data. | [optional] 
+
+### Return type
+
+[**GenerateViewerUrl200Response**](GenerateViewerUrl200Response.md)
 
 ### Authorization
 
