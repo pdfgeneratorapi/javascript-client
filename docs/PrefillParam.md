@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **first_name** | **String** |  | [optional] 
 **last_name** | **String** |  | [optional] 
 **email** | **String** |  | [optional] 
+**signature_id** | **String** |  | [optional] 
 **editable** | **Boolean** |  | [optional] [default to true]
 
 
