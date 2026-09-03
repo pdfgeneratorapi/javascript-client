@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**getAsyncJobStatus**](DocumentsApi.md#getAsyncJobStatus) | **GET** /documents/async/{jobId} | Get job status
 [**getDocument**](DocumentsApi.md#getDocument) | **GET** /documents/{publicId} | Get document
 [**getDocumentActions**](DocumentsApi.md#getDocumentActions) | **GET** /documents/{publicId}/actions | Get document actions
+[**getDocumentSignatures**](DocumentsApi.md#getDocumentSignatures) | **GET** /documents/{publicId}/signatures | Validate document signatures
 [**getDocumentVersions**](DocumentsApi.md#getDocumentVersions) | **GET** /documents/{publicId}/versions | Get document versions
 [**getDocuments**](DocumentsApi.md#getDocuments) | **GET** /documents | Get documents
 [**storeDocument**](DocumentsApi.md#storeDocument) | **POST** /documents | Store document
@@ -119,7 +120,7 @@ Name | Type | Description  | Notes
 
 ## generateDocumentAsynchronous
 
-> InlineObject22 generateDocumentAsynchronous(generate_document_asynchronous_request)
+> InlineObject23 generateDocumentAsynchronous(generate_document_asynchronous_request)
 
 Generate document (async)
 
@@ -154,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject22**](InlineObject22.md)
+[**InlineObject23**](InlineObject23.md)
 
 ### Authorization
 
@@ -217,7 +218,7 @@ Name | Type | Description  | Notes
 
 ## generateDocumentBatchAsynchronous
 
-> InlineObject22 generateDocumentBatchAsynchronous(generate_document_batch_asynchronous_request)
+> InlineObject23 generateDocumentBatchAsynchronous(generate_document_batch_asynchronous_request)
 
 Generate document (batch + async)
 
@@ -252,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject22**](InlineObject22.md)
+[**InlineObject23**](InlineObject23.md)
 
 ### Authorization
 
@@ -417,7 +418,7 @@ Name | Type | Description  | Notes
 
 ## getDocumentActions
 
-> InlineObject17 getDocumentActions(public_id)
+> InlineObject18 getDocumentActions(public_id)
 
 Get document actions
 
@@ -449,6 +450,59 @@ apiInstance.getDocumentActions(public_id, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **public_id** | **String**| Resource public id | 
+
+### Return type
+
+[**InlineObject18**](InlineObject18.md)
+
+### Authorization
+
+[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getDocumentSignatures
+
+> InlineObject17 getDocumentSignatures(public_id, opts)
+
+Validate document signatures
+
+Reports on every digital signature a stored document carries: who signed, when a timestamp authority attested it, whether the signed bytes are unchanged and whether the certificate chains to a trusted root.  Facts are reported separately from the verdict, because a reader and a validation library can disagree in both directions. &#x60;status&#x60; reduces them to one answer, worst case first.  Each request consumes one credit. A request that reports &#x60;unavailable&#x60; — signature validation not being enabled on the deployment — validates nothing and is not charged. 
+
+### Example
+
+```javascript
+import PDFGeneratorAPI from 'pdf-generator-api-client';
+let defaultClient = PDFGeneratorAPI.ApiClient.instance;
+// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
+let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
+JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new PDFGeneratorAPI.DocumentsApi();
+let public_id = "bac8381bce1982e5f6957a0f52371336"; // String | Resource public id
+let opts = {
+  'version': "5f3c2b1a9d8e7f6a" // String | Which stored version to report on. A version identifier reports on that version, `initial` on the document as first generated. Defaults to the latest version. A version is always reported on as itself: reporting the latest would describe bytes the caller is not holding. 
+};
+apiInstance.getDocumentSignatures(public_id, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **public_id** | **String**| Resource public id | 
+ **version** | **String**| Which stored version to report on. A version identifier reports on that version, &#x60;initial&#x60; on the document as first generated. Defaults to the latest version. A version is always reported on as itself: reporting the latest would describe bytes the caller is not holding.  | [optional] 
 
 ### Return type
 

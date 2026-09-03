@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**response** | [**FormConfiguration**](FormConfiguration.md) |  | [optional] 
+**response** | [**TemplateDefinition**](TemplateDefinition.md) |  | [optional] 
+**meta** | **Object** |  | [optional] 
 
 

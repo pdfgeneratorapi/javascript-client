@@ -21,6 +21,8 @@ docs/CreateWorkspaceRequest.md
 docs/DataBatchInner.md
 docs/Document.md
 docs/DocumentAction.md
+docs/DocumentSignature.md
+docs/DocumentSignatures.md
 docs/DocumentUser.md
 docs/DocumentVersion.md
 docs/DocumentsApi.md
@@ -87,11 +89,11 @@ docs/InlineObject19.md
 docs/InlineObject1Response.md
 docs/InlineObject2.md
 docs/InlineObject20.md
-docs/InlineObject20Meta.md
 docs/InlineObject21.md
+docs/InlineObject21Meta.md
 docs/InlineObject22.md
-docs/InlineObject22Response.md
 docs/InlineObject23.md
+docs/InlineObject23Response.md
 docs/InlineObject24.md
 docs/InlineObject25.md
 docs/InlineObject26.md
@@ -99,6 +101,8 @@ docs/InlineObject27.md
 docs/InlineObject28.md
 docs/InlineObject29.md
 docs/InlineObject3.md
+docs/InlineObject30.md
+docs/InlineObject31.md
 docs/InlineObject4.md
 docs/InlineObject5.md
 docs/InlineObject6.md
@@ -190,6 +194,8 @@ src/model/CreateWorkspaceRequest.js
 src/model/DataBatchInner.js
 src/model/Document.js
 src/model/DocumentAction.js
+src/model/DocumentSignature.js
+src/model/DocumentSignatures.js
 src/model/DocumentUser.js
 src/model/DocumentVersion.js
 src/model/EncryptAndDecryptBase64.js
@@ -253,11 +259,11 @@ src/model/InlineObject19.js
 src/model/InlineObject1Response.js
 src/model/InlineObject2.js
 src/model/InlineObject20.js
-src/model/InlineObject20Meta.js
 src/model/InlineObject21.js
+src/model/InlineObject21Meta.js
 src/model/InlineObject22.js
-src/model/InlineObject22Response.js
 src/model/InlineObject23.js
+src/model/InlineObject23Response.js
 src/model/InlineObject24.js
 src/model/InlineObject25.js
 src/model/InlineObject26.js
@@ -265,6 +271,8 @@ src/model/InlineObject27.js
 src/model/InlineObject28.js
 src/model/InlineObject29.js
 src/model/InlineObject3.js
+src/model/InlineObject30.js
+src/model/InlineObject31.js
 src/model/InlineObject4.js
 src/model/InlineObject5.js
 src/model/InlineObject6.js
@@ -345,6 +353,8 @@ test/model/CreateWorkspaceRequest.spec.js
 test/model/DataBatchInner.spec.js
 test/model/Document.spec.js
 test/model/DocumentAction.spec.js
+test/model/DocumentSignature.spec.js
+test/model/DocumentSignatures.spec.js
 test/model/DocumentUser.spec.js
 test/model/DocumentVersion.spec.js
 test/model/EncryptAndDecryptBase64.spec.js
@@ -408,11 +418,11 @@ test/model/InlineObject19.spec.js
 test/model/InlineObject1Response.spec.js
 test/model/InlineObject2.spec.js
 test/model/InlineObject20.spec.js
-test/model/InlineObject20Meta.spec.js
 test/model/InlineObject21.spec.js
+test/model/InlineObject21Meta.spec.js
 test/model/InlineObject22.spec.js
-test/model/InlineObject22Response.spec.js
 test/model/InlineObject23.spec.js
+test/model/InlineObject23Response.spec.js
 test/model/InlineObject24.spec.js
 test/model/InlineObject25.spec.js
 test/model/InlineObject26.spec.js
@@ -420,6 +430,8 @@ test/model/InlineObject27.spec.js
 test/model/InlineObject28.spec.js
 test/model/InlineObject29.spec.js
 test/model/InlineObject3.spec.js
+test/model/InlineObject30.spec.js
+test/model/InlineObject31.spec.js
 test/model/InlineObject4.spec.js
 test/model/InlineObject5.spec.js
 test/model/InlineObject6.spec.js

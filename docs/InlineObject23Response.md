@@ -1,4 +1,4 @@
-# PDFGeneratorAPI.InlineObject22Response
+# PDFGeneratorAPI.InlineObject23Response
 
 ## Properties
 

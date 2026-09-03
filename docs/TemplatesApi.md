@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## copyTemplate
 
-> InlineObject18 copyTemplate(template_id, opts)
+> InlineObject19 copyTemplate(template_id, opts)
 
 Copy template
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject18**](InlineObject18.md)
+[**InlineObject19**](InlineObject19.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ## createTemplate
 
-> InlineObject18 createTemplate(template_definition_new)
+> InlineObject19 createTemplate(template_definition_new)
 
 Create template
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject18**](InlineObject18.md)
+[**InlineObject19**](InlineObject19.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ null (empty response body)
 
 ## getTemplate
 
-> InlineObject18 getTemplate(template_id)
+> InlineObject19 getTemplate(template_id)
 
 Get template
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject18**](InlineObject18.md)
+[**InlineObject19**](InlineObject19.md)
 
 ### Authorization
 
@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 
 ## importTemplate
 
-> InlineObject18 importTemplate(import_template_request)
+> InlineObject19 importTemplate(import_template_request)
 
 Import template
 
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject18**](InlineObject18.md)
+[**InlineObject19**](InlineObject19.md)
 
 ### Authorization
 
@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
 
 ## updateTemplate
 
-> InlineObject18 updateTemplate(template_id, template_definition_new)
+> InlineObject19 updateTemplate(template_id, template_definition_new)
 
 Update template
 
@@ -510,7 +510,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject18**](InlineObject18.md)
+[**InlineObject19**](InlineObject19.md)
 
 ### Authorization
 

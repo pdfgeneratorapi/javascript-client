@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Enum: MessageEnum
 
 
-* `Your account has exceeded the monthly document generation limit.` (value: `"Your account has exceeded the monthly document generation limit."`)
+* `Your account is suspended, please upgrade your account or contact support@pdfgeneratorapi.com` (value: `"Your account is suspended, please upgrade your account or contact support@pdfgeneratorapi.com"`)
 
 
 

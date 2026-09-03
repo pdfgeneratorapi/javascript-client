@@ -58,7 +58,7 @@ No authorization required
 
 ## getTemplateLibraryItem
 
-> InlineObject18 getTemplateLibraryItem(public_id)
+> InlineObject19 getTemplateLibraryItem(public_id)
 
 Open template from the library
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject18**](InlineObject18.md)
+[**InlineObject19**](InlineObject19.md)
 
 ### Authorization
 

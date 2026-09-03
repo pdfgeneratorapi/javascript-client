@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**response** | [**[DocumentAction]**](DocumentAction.md) |  | [optional] 
+**response** | [**DocumentSignatures**](DocumentSignatures.md) |  | [optional] 
 
 

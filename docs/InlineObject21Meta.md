@@ -1,4 +1,4 @@
-# PDFGeneratorAPI.InlineObject20Meta
+# PDFGeneratorAPI.InlineObject21Meta
 
 ## Properties
 
