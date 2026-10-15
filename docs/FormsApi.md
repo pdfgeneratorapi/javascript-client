@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createForm**](FormsApi.md#createForm) | **POST** /forms | Create form
 [**deleteForm**](FormsApi.md#deleteForm) | **DELETE** /forms/{formId} | Delete form
 [**getForm**](FormsApi.md#getForm) | **GET** /forms/{formId} | Get form
+[**getFormSchema**](FormsApi.md#getFormSchema) | **GET** /forms/schema | Get schema
 [**getForms**](FormsApi.md#getForms) | **GET** /forms | Get forms
 [**importForm**](FormsApi.md#importForm) | **POST** /forms/import | Import Form
 [**openFormBuilder**](FormsApi.md#openFormBuilder) | **POST** /forms/open | Open new form builder
@@ -163,6 +164,47 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getFormSchema
+
+> Object getFormSchema()
+
+Get schema
+
+Returns Form JSON Schema which defines the structure of the Form Definition.
+
+### Example
+
+```javascript
+import PDFGeneratorAPI from 'pdf-generator-api-client';
+
+let apiInstance = new PDFGeneratorAPI.FormsApi();
+apiInstance.getFormSchema((error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getForms
 
 > InlineObject6 getForms(opts)
@@ -183,7 +225,10 @@ JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 let apiInstance = new PDFGeneratorAPI.FormsApi();
 let opts = {
   'page': 1, // Number | Pagination: page to return
-  'per_page': 20 // Number | Pagination: How many records to return per page
+  'per_page': 20, // Number | Pagination: How many records to return per page
+  'order_by': "name", // String | Field to sort the forms by
+  'order_direction': "asc", // String | Sort direction
+  'search': "Certificate" // String | Returns forms whose name or ID contains the search value
 };
 apiInstance.getForms(opts, (error, data, response) => {
   if (error) {
@@ -201,6 +246,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Number**| Pagination: page to return | [optional] [default to 1]
  **per_page** | **Number**| Pagination: How many records to return per page | [optional] [default to 15]
+ **order_by** | **String**| Field to sort the forms by | [optional] [default to &#39;id&#39;]
+ **order_direction** | **String**| Sort direction | [optional] [default to &#39;desc&#39;]
+ **search** | **String**| Returns forms whose name or ID contains the search value | [optional] 
 
 ### Return type
 
@@ -222,7 +270,7 @@ Name | Type | Description  | Notes
 
 Import Form
 
-Creates a new form based on editable PDF
+Creates a new form based on editable PDF. Form fields are created from the editable fields of the PDF. The optional &#x60;form&#x60; object sets the form name, template, actions and configuration.
 
 ### Example
 
