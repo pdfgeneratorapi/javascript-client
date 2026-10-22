@@ -22,7 +22,7 @@ import FormActionSendSendDocument from './FormActionSendSendDocument';
 class FormActionSend {
     /**
      * Constructs a new <code>FormActionSend</code>.
-     * Sends the generated document via HTTP POST request to the specified URL.
+     * Posts the submitted answers as JSON to the specified HTTPS URL. When the form also stores the document (store_document) and has a template, the request includes the generated document as well; otherwise only the answers are sent.
      * @alias module:model/FormActionSend
      */
     constructor() { 

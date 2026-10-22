@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class FormActionDownload {
     /**
      * Constructs a new <code>FormActionDownload</code>.
-     * Key-value pair of action configuration.
+     * Lets the person who fills in the form download the generated document.
      * @alias module:model/FormActionDownload
      */
     constructor() { 

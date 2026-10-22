@@ -23,7 +23,7 @@ class FormActionSendSendDocument {
     /**
      * Constructs a new <code>FormActionSendSendDocument</code>.
      * @alias module:model/FormActionSendSendDocument
-     * @param url {String} URL where the generated document will be delivered. Must use HTTPS.
+     * @param url {String} URL that receives the submitted answers as JSON, and the generated document when the form also stores it. Must use HTTPS.
      */
     constructor(url) { 
         
@@ -96,7 +96,7 @@ class FormActionSendSendDocument {
 FormActionSendSendDocument.RequiredProperties = ["url"];
 
 /**
- * URL where the generated document will be delivered. Must use HTTPS.
+ * URL that receives the submitted answers as JSON, and the generated document when the form also stores it. Must use HTTPS.
  * @member {String} url
  */
 FormActionSendSendDocument.prototype['url'] = undefined;

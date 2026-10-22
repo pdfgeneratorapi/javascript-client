@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class FormActionStore {
     /**
      * Constructs a new <code>FormActionStore</code>.
-     * Key-value pair of action configuration.
+     * Saves the generated document to Document Storage.
      * @alias module:model/FormActionStore
      */
     constructor() { 
