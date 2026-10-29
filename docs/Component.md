@@ -47,6 +47,8 @@ Name | Type | Description | Notes
 
 * `rectangleComponent` (value: `"rectangleComponent"`)
 
+* `ellipseComponent` (value: `"ellipseComponent"`)
+
 * `vlineComponent` (value: `"vlineComponent"`)
 
 * `hlineComponent` (value: `"hlineComponent"`)

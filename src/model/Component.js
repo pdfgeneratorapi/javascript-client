@@ -260,6 +260,12 @@ Component['ClsEnum'] = {
     "rectangleComponent": "rectangleComponent",
 
     /**
+     * value: "ellipseComponent"
+     * @const
+     */
+    "ellipseComponent": "ellipseComponent",
+
+    /**
      * value: "vlineComponent"
      * @const
      */
