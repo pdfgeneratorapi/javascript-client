@@ -64,7 +64,7 @@ null (empty response body)
 
 ## getTemplateVersion
 
-> InlineObject19 getTemplateVersion(template_id, template_version)
+> InlineObject18 getTemplateVersion(template_id, template_version)
 
 Get template version
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject19**](InlineObject19.md)
+[**InlineObject18**](InlineObject18.md)
 
 ### Authorization
 

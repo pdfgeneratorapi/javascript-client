@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **created_at** | **String** | Timestamp when the template was created | [optional] 
 **updated_at** | **String** | Timestamp when the template was updated | [optional] 
 **tags** | **[String]** | A list of tags assigned to a template | [optional] 
+**is_draft** | **Boolean** | True if the template is a draft | [optional] 
 
 

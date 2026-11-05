@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## addWatermark
 
-> InlineObject9 addWatermark(add_watermark_request)
+> InlineObject8 addWatermark(add_watermark_request)
 
 Add watermark
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject9**](InlineObject9.md)
+[**InlineObject8**](InlineObject8.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ## decryptDocument
 
-> InlineObject9 decryptDocument(encrypt_document_request)
+> InlineObject8 decryptDocument(encrypt_document_request)
 
 Decrypt document
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject9**](InlineObject9.md)
+[**InlineObject8**](InlineObject8.md)
 
 ### Authorization
 
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ## encryptDocument
 
-> InlineObject9 encryptDocument(encrypt_document_request)
+> InlineObject8 encryptDocument(encrypt_document_request)
 
 Encrypt document
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject9**](InlineObject9.md)
+[**InlineObject8**](InlineObject8.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ## extractFormFields
 
-> InlineObject14 extractFormFields(extract_form_fields_request)
+> InlineObject13 extractFormFields(extract_form_fields_request)
 
 Extract form fields
 
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject14**](InlineObject14.md)
+[**InlineObject13**](InlineObject13.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ## fillFormFields
 
-> InlineObject9 fillFormFields(fill_form_fields_request)
+> InlineObject8 fillFormFields(fill_form_fields_request)
 
 Fill form fields
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject9**](InlineObject9.md)
+[**InlineObject8**](InlineObject8.md)
 
 ### Authorization
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ## makeAccessible
 
-> InlineObject9 makeAccessible(make_accessible_request)
+> InlineObject8 makeAccessible(make_accessible_request)
 
 Make accessible
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject9**](InlineObject9.md)
+[**InlineObject8**](InlineObject8.md)
 
 ### Authorization
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ## optimizeDocument
 
-> InlineObject12 optimizeDocument(optimize_document_request)
+> InlineObject11 optimizeDocument(optimize_document_request)
 
 Optimize document
 
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject12**](InlineObject12.md)
+[**InlineObject11**](InlineObject11.md)
 
 ### Authorization
 

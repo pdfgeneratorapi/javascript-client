@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## generateQRCode
 
-> GenerateQRCode201Response generateQRCode(generate_qr_code_request)
+> File generateQRCode(generate_qr_code_request)
 
 Generate QR Code
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenerateQRCode201Response**](GenerateQRCode201Response.md)
+**File**
 
 ### Authorization
 
@@ -54,5 +54,5 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: image/png, application/json
 

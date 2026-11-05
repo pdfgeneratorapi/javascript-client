@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**response** | [**[DocumentVersion]**](DocumentVersion.md) |  | [optional] 
+**response** | [**DocumentSignatures**](DocumentSignatures.md) |  | [optional] 
 
 

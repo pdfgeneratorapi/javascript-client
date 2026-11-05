@@ -71,7 +71,7 @@ null (empty response body)
 
 ## generateDocument
 
-> InlineObject9 generateDocument(generate_document_request)
+> InlineObject8 generateDocument(generate_document_request)
 
 Generate document
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject9**](InlineObject9.md)
+[**InlineObject8**](InlineObject8.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ## generateDocumentAsynchronous
 
-> InlineObject23 generateDocumentAsynchronous(generate_document_asynchronous_request)
+> InlineObject22 generateDocumentAsynchronous(generate_document_asynchronous_request)
 
 Generate document (async)
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject23**](InlineObject23.md)
+[**InlineObject22**](InlineObject22.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ## generateDocumentBatch
 
-> InlineObject9 generateDocumentBatch(generate_document_batch_request)
+> InlineObject8 generateDocumentBatch(generate_document_batch_request)
 
 Generate document (batch)
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject9**](InlineObject9.md)
+[**InlineObject8**](InlineObject8.md)
 
 ### Authorization
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ## generateDocumentBatchAsynchronous
 
-> InlineObject23 generateDocumentBatchAsynchronous(generate_document_batch_asynchronous_request)
+> InlineObject22 generateDocumentBatchAsynchronous(generate_document_batch_asynchronous_request)
 
 Generate document (batch + async)
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject23**](InlineObject23.md)
+[**InlineObject22**](InlineObject22.md)
 
 ### Authorization
 
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ## getAsyncJobStatus
 
-> InlineObject13 getAsyncJobStatus(job_id)
+> InlineObject12 getAsyncJobStatus(job_id)
 
 Get job status
 
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject13**](InlineObject13.md)
+[**InlineObject12**](InlineObject12.md)
 
 ### Authorization
 
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 ## getDocument
 
-> InlineObject11 getDocument(public_id)
+> InlineObject10 getDocument(public_id)
 
 Get document
 
@@ -404,7 +404,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject11**](InlineObject11.md)
+[**InlineObject10**](InlineObject10.md)
 
 ### Authorization
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 
 ## getDocumentActions
 
-> InlineObject18 getDocumentActions(public_id)
+> InlineObject17 getDocumentActions(public_id)
 
 Get document actions
 
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject18**](InlineObject18.md)
+[**InlineObject17**](InlineObject17.md)
 
 ### Authorization
 
@@ -467,7 +467,7 @@ Name | Type | Description  | Notes
 
 ## getDocumentSignatures
 
-> InlineObject17 getDocumentSignatures(public_id, opts)
+> InlineObject16 getDocumentSignatures(public_id, opts)
 
 Validate document signatures
 
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject17**](InlineObject17.md)
+[**InlineObject16**](InlineObject16.md)
 
 ### Authorization
 
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 
 ## getDocumentVersions
 
-> InlineObject16 getDocumentVersions(public_id)
+> InlineObject15 getDocumentVersions(public_id)
 
 Get document versions
 
@@ -555,7 +555,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject16**](InlineObject16.md)
+[**InlineObject15**](InlineObject15.md)
 
 ### Authorization
 
@@ -569,7 +569,7 @@ Name | Type | Description  | Notes
 
 ## getDocuments
 
-> InlineObject15 getDocuments(opts)
+> InlineObject14 getDocuments(opts)
 
 Get documents
 
@@ -590,7 +590,9 @@ let opts = {
   'start_date': "2022-08-01 12:00:00", // String | Start date. Format: Y-m-d H:i:s
   'end_date': "2022-08-05 12:00:00", // String | End date. Format: Y-m-d H:i:s. Defaults to current timestamp
   'page': 1, // Number | Pagination: page to return
-  'per_page': 20 // Number | Pagination: How many records to return per page
+  'per_page': 20, // Number | Pagination: How many records to return per page
+  'search': "Invoice", // String | Returns documents whose name contains the search value. A numeric value also matches the template ID.
+  'format': "pdf" // String | Returns only documents in this format
 };
 apiInstance.getDocuments(opts, (error, data, response) => {
   if (error) {
@@ -611,10 +613,12 @@ Name | Type | Description  | Notes
  **end_date** | **String**| End date. Format: Y-m-d H:i:s. Defaults to current timestamp | [optional] 
  **page** | **Number**| Pagination: page to return | [optional] [default to 1]
  **per_page** | **Number**| Pagination: How many records to return per page | [optional] [default to 15]
+ **search** | **String**| Returns documents whose name contains the search value. A numeric value also matches the template ID. | [optional] 
+ **format** | **String**| Returns only documents in this format | [optional] 
 
 ### Return type
 
-[**InlineObject15**](InlineObject15.md)
+[**InlineObject14**](InlineObject14.md)
 
 ### Authorization
 
@@ -628,7 +632,7 @@ Name | Type | Description  | Notes
 
 ## storeDocument
 
-> InlineObject11 storeDocument(store_document_request)
+> InlineObject10 storeDocument(store_document_request)
 
 Store document
 
@@ -663,7 +667,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject11**](InlineObject11.md)
+[**InlineObject10**](InlineObject10.md)
 
 ### Authorization
 

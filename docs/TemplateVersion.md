@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **checksum** | **String** |  | [optional] 
 **user_id** | **Number** |  | [optional] 
 **user_name** | **String** |  | [optional] 
+**user_email** | **String** | Identifier of the workspace that created the version | [optional] 
 **is_production** | **Boolean** |  | [optional] 
 **created_at** | **String** |  | [optional] 
 **updated_at** | **String** |  | [optional] 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**TemplateParamId**](TemplateParamId.md) |  | [optional] 
+**id** | [**CreateFacturXEInvoiceRequestTemplateId**](CreateFacturXEInvoiceRequestTemplateId.md) |  | [optional] 
 **version_id** | **Number** | Template version ID | [optional] 
 **data** | [**TemplateParamData**](TemplateParamData.md) |  | [optional] 
 

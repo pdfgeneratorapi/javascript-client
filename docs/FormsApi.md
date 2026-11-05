@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## createForm
 
-> InlineObject20 createForm(form_configuration_new)
+> InlineObject19 createForm(form_configuration_new)
 
 Create form
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject20**](InlineObject20.md)
+[**InlineObject19**](InlineObject19.md)
 
 ### Authorization
 
@@ -117,7 +117,7 @@ null (empty response body)
 
 ## getForm
 
-> InlineObject20 getForm(form_id)
+> InlineObject19 getForm(form_id)
 
 Get form
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject20**](InlineObject20.md)
+[**InlineObject19**](InlineObject19.md)
 
 ### Authorization
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ## getFormSchema
 
-> Object getFormSchema()
+> GetFormSchema200Response getFormSchema()
 
 Get schema
 
@@ -193,7 +193,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**GetFormSchema200Response**](GetFormSchema200Response.md)
 
 ### Authorization
 
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ## importForm
 
-> InlineObject20 importForm(import_form_request)
+> InlineObject19 importForm(import_form_request)
 
 Import Form
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject20**](InlineObject20.md)
+[**InlineObject19**](InlineObject19.md)
 
 ### Authorization
 
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 ## openFormBuilder
 
-> InlineObject22 openFormBuilder()
+> InlineObject21 openFormBuilder()
 
 Open new form builder
 
@@ -346,7 +346,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineObject22**](InlineObject22.md)
+[**InlineObject21**](InlineObject21.md)
 
 ### Authorization
 
@@ -360,7 +360,7 @@ This endpoint does not need any parameter.
 
 ## openFormBuilderForExistingForm
 
-> InlineObject22 openFormBuilderForExistingForm(form_id)
+> InlineObject21 openFormBuilderForExistingForm(form_id)
 
 Open existing form builder
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject22**](InlineObject22.md)
+[**InlineObject21**](InlineObject21.md)
 
 ### Authorization
 
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 
 ## shareForm
 
-> InlineObject21 shareForm(form_id)
+> InlineObject20 shareForm(form_id)
 
 Share form
 
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject21**](InlineObject21.md)
+[**InlineObject20**](InlineObject20.md)
 
 ### Authorization
 
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ## updateForm
 
-> InlineObject20 updateForm(form_id, form_configuration_new)
+> InlineObject19 updateForm(form_id, form_configuration_new)
 
 Update form
 
@@ -495,7 +495,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject20**](InlineObject20.md)
+[**InlineObject19**](InlineObject19.md)
 
 ### Authorization
 

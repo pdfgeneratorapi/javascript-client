@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**response** | [**InlineObject7Response**](InlineObject7Response.md) |  | [optional] 
+**response** | [**Workspace**](Workspace.md) |  | [optional] 
 
 

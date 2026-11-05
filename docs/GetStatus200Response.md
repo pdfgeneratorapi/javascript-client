@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **conversion_api** | [**StatusParam**](StatusParam.md) |  | [optional] 
 **generator_api_sync** | [**StatusParam**](StatusParam.md) |  | [optional] 
 **generator_api_async** | [**StatusParam**](StatusParam.md) |  | [optional] 
+**pdf_services** | [**StatusParam**](StatusParam.md) |  | [optional] 
 **e_invoice** | [**StatusParam**](StatusParam.md) |  | [optional] 
 
 

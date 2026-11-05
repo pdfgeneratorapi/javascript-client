@@ -24,6 +24,8 @@ Name | Type | Description | Notes
 
 * `de` (value: `"de"`)
 
+* `ja` (value: `"ja"`)
+
 
 
 

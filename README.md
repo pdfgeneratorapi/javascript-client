@@ -174,66 +174,84 @@ You can also use [jwt.io](https://jwt.io/) to generate test tokens for your API 
 
 # Error codes
 
+Every error response is a JSON object with a `message` string. Request validation failures (422) also include an `errors` object keyed by the field that failed.
+
+```json
+{
+  "message": "The identifier field is required.",
+  "errors": {
+    "identifier": ["The identifier field is required."]
+  }
+}
+```
+
 | Code   | Description                    |
 |--------|--------------------------------|
+| 400    | Bad Request                    |
 | 401    | Unauthorized                   |
 | 402    | Payment Required               |
 | 403    | Forbidden                      |
 | 404    | Not Found                      |
+| 405    | Method Not Allowed             |
+| 409    | Conflict                       |
+| 410    | Gone                           |
 | 422    | Unprocessable Entity           |
 | 429    | Too Many Requests              |
 | 500    | Internal Server Error          |
+| 503    | Service Unavailable            |
 
 ## 401 Unauthorized
-| Description                                                             |
-|-------------------------------------------------------------------------|
-| Authentication failed: request expired                                  |
-| Authentication failed: workspace missing                                |
-| Authentication failed: key missing                                      |
-| Authentication failed: property 'iss' (issuer) missing in JWT           |
-| Authentication failed: property 'sub' (subject) missing in JWT          |
-| Authentication failed: property 'exp' (expiration time) missing in JWT  |
-| Authentication failed: incorrect signature                              |
+| Description                                                                       |
+|-----------------------------------------------------------------------------------|
+| Authentication failed: JWT Token missing.                                         |
+| Authentication failed: Malformed JWT Token.                                       |
+| Authentication failed: Expired JWT Token.                                         |
+| Authentication failed: Invalid workspace.                                         |
+| Authentication failed: Invalid organization.                                      |
+| Authentication failed: This application no longer has access to the workspace.   |
+| Authentication failed: The sub field is required. (also `iss` and `exp`)          |
 
 ## 402 Payment Required
-| Description                                                             |
-|-------------------------------------------------------------------------|
-| Your account is suspended, please upgrade your account                  |
+| Description                                                                       |
+|-----------------------------------------------------------------------------------|
+| Your account is suspended, please upgrade your account or contact support@pdfgeneratorapi.com. |
 
 ## 403 Forbidden
-| Description                                                             |
-|-------------------------------------------------------------------------|
-| Your account has exceeded the monthly document generation limit.        |
-| Access not granted: You cannot delete master workspace via API          |
-| Access not granted: Template is not accessible by this organization     |
-| Your session has expired, please close and reopen the editor.           |
+| Description                                                                       |
+|-----------------------------------------------------------------------------------|
+| You don't have permission to access this content. Please get in touch with your organization administrator to update your access permissions. |
+| This application was not granted permission for this request.                    |
+| Deleting own user is not allowed.                                                 |
+| Deleting organization owner is not allowed.                                       |
 
-## 404 Entity not found
-| Description                                                             |
-|-------------------------------------------------------------------------|
-| Entity not found                                                        |
-| Resource not found                                                      |
-| None of the templates is available for the workspace.                   |
+## 404 Not Found
+| Description                                                                       |
+|-----------------------------------------------------------------------------------|
+| Entity not found.                                                                 |
+| Route not found.                                                                  |
+| Workspace doesn’t have access to read the template.                               |
 
 ## 422 Unprocessable Entity
-| Description                                                             |
-|-------------------------------------------------------------------------|
-| Unable to parse JSON, please check formatting                           |
-| Required parameter missing                                              |
-| Required parameter missing: template definition not defined             |
-| Required parameter missing: template not defined                        |
+| Description                                                                       |
+|-----------------------------------------------------------------------------------|
+| Unable to parse JSON, please check formatting.                                    |
+| Template id should be a numeric value.                                            |
+| The per page must be at least 1. (with `errors.per_page`)                         |
 
 ## 429 Too Many Requests
-| Description                                                             |
-|-------------------------------------------------------------------------|
-| You can make up to 2 requests per second and 60 requests per minute.   |
+| Description                                                                       |
+|-----------------------------------------------------------------------------------|
+| Per-second rate limit exceeded. Please slow down your requests.                   |
+| Per-minute rate limit exceeded. Please try again in a minute.                     |
+| Global per-second rate limit exceeded. Please slow down your requests.            |
+| Global per-minute rate limit exceeded. Please try again in a minute.              |
 
 *  *  *  *  *
 
 This SDK is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: 4.0.31
-- Package version: 8.0.31
+- API version: 4.0.34
+- Package version: 8.0.34
 - Generator version: 7.14.0
 - Build package: org.openapitools.codegen.languages.JavascriptClientCodegen
 For more information, please visit [https://support.pdfgeneratorapi.com](https://support.pdfgeneratorapi.com)
@@ -375,6 +393,7 @@ Class | Method | HTTP request | Description
 *PDFGeneratorAPI.EInvoicesApi* | [**createFacturXEInvoice**](docs/EInvoicesApi.md#createFacturXEInvoice) | **POST** /einvoice/facturx | Create Factur-X eInvoice
 *PDFGeneratorAPI.EInvoicesApi* | [**createXRechnungEInvoice**](docs/EInvoicesApi.md#createXRechnungEInvoice) | **POST** /einvoice/xrechnung | Create XRechnung eInvoice
 *PDFGeneratorAPI.EInvoicesApi* | [**getEInvoiceSchema**](docs/EInvoicesApi.md#getEInvoiceSchema) | **GET** /einvoice/schema | Get schema
+*PDFGeneratorAPI.FontsApi* | [**getFonts**](docs/FontsApi.md#getFonts) | **GET** /fonts | Get fonts
 *PDFGeneratorAPI.FormsApi* | [**createForm**](docs/FormsApi.md#createForm) | **POST** /forms | Create form
 *PDFGeneratorAPI.FormsApi* | [**deleteForm**](docs/FormsApi.md#deleteForm) | **DELETE** /forms/{formId} | Delete form
 *PDFGeneratorAPI.FormsApi* | [**getForm**](docs/FormsApi.md#getForm) | **GET** /forms/{formId} | Get form
@@ -421,8 +440,8 @@ Class | Method | HTTP request | Description
  - [PDFGeneratorAPI.AccessibilityOption](docs/AccessibilityOption.md)
  - [PDFGeneratorAPI.AddWatermarkRequest](docs/AddWatermarkRequest.md)
  - [PDFGeneratorAPI.AsyncOutputParam](docs/AsyncOutputParam.md)
+ - [PDFGeneratorAPI.AttachmentsParamInner](docs/AttachmentsParamInner.md)
  - [PDFGeneratorAPI.CallbackParam](docs/CallbackParam.md)
- - [PDFGeneratorAPI.Component](docs/Component.md)
  - [PDFGeneratorAPI.ConvertHTML2PDFRequest](docs/ConvertHTML2PDFRequest.md)
  - [PDFGeneratorAPI.ConvertPDF2ImageRequest](docs/ConvertPDF2ImageRequest.md)
  - [PDFGeneratorAPI.ConvertURL2PDFRequest](docs/ConvertURL2PDFRequest.md)
@@ -430,19 +449,23 @@ Class | Method | HTTP request | Description
  - [PDFGeneratorAPI.CreateEInvoiceRequest](docs/CreateEInvoiceRequest.md)
  - [PDFGeneratorAPI.CreateFacturXEInvoiceRequest](docs/CreateFacturXEInvoiceRequest.md)
  - [PDFGeneratorAPI.CreateFacturXEInvoiceRequestTemplate](docs/CreateFacturXEInvoiceRequestTemplate.md)
+ - [PDFGeneratorAPI.CreateFacturXEInvoiceRequestTemplateId](docs/CreateFacturXEInvoiceRequestTemplateId.md)
  - [PDFGeneratorAPI.CreateWorkspaceRequest](docs/CreateWorkspaceRequest.md)
- - [PDFGeneratorAPI.DataBatchInner](docs/DataBatchInner.md)
+ - [PDFGeneratorAPI.CreateXRechnungEInvoiceRequest](docs/CreateXRechnungEInvoiceRequest.md)
  - [PDFGeneratorAPI.Document](docs/Document.md)
  - [PDFGeneratorAPI.DocumentAction](docs/DocumentAction.md)
  - [PDFGeneratorAPI.DocumentSignature](docs/DocumentSignature.md)
  - [PDFGeneratorAPI.DocumentSignatures](docs/DocumentSignatures.md)
  - [PDFGeneratorAPI.DocumentUser](docs/DocumentUser.md)
  - [PDFGeneratorAPI.DocumentVersion](docs/DocumentVersion.md)
+ - [PDFGeneratorAPI.EInvoiceType](docs/EInvoiceType.md)
  - [PDFGeneratorAPI.EncryptAndDecryptBase64](docs/EncryptAndDecryptBase64.md)
  - [PDFGeneratorAPI.EncryptAndDecryptUrl](docs/EncryptAndDecryptUrl.md)
  - [PDFGeneratorAPI.EncryptDocumentRequest](docs/EncryptDocumentRequest.md)
+ - [PDFGeneratorAPI.Error](docs/Error.md)
  - [PDFGeneratorAPI.ExtractFormFieldsRequest](docs/ExtractFormFieldsRequest.md)
  - [PDFGeneratorAPI.FillFormFieldsRequest](docs/FillFormFieldsRequest.md)
+ - [PDFGeneratorAPI.Font](docs/Font.md)
  - [PDFGeneratorAPI.FormActionDownload](docs/FormActionDownload.md)
  - [PDFGeneratorAPI.FormActionSend](docs/FormActionSend.md)
  - [PDFGeneratorAPI.FormActionSendSendDocument](docs/FormActionSendSendDocument.md)
@@ -466,15 +489,18 @@ Class | Method | HTTP request | Description
  - [PDFGeneratorAPI.GenerateDocumentBatchAsynchronousRequest](docs/GenerateDocumentBatchAsynchronousRequest.md)
  - [PDFGeneratorAPI.GenerateDocumentBatchRequest](docs/GenerateDocumentBatchRequest.md)
  - [PDFGeneratorAPI.GenerateDocumentRequest](docs/GenerateDocumentRequest.md)
- - [PDFGeneratorAPI.GenerateQRCode201Response](docs/GenerateQRCode201Response.md)
- - [PDFGeneratorAPI.GenerateQRCode201ResponseMeta](docs/GenerateQRCode201ResponseMeta.md)
+ - [PDFGeneratorAPI.GenerateQRCode200Response](docs/GenerateQRCode200Response.md)
+ - [PDFGeneratorAPI.GenerateQRCode200ResponseMeta](docs/GenerateQRCode200ResponseMeta.md)
  - [PDFGeneratorAPI.GenerateQRCodeRequest](docs/GenerateQRCodeRequest.md)
  - [PDFGeneratorAPI.GenerateViewerUrl200Response](docs/GenerateViewerUrl200Response.md)
  - [PDFGeneratorAPI.GenerateViewerUrl200ResponseMeta](docs/GenerateViewerUrl200ResponseMeta.md)
  - [PDFGeneratorAPI.GenerateViewerUrlRequest](docs/GenerateViewerUrlRequest.md)
+ - [PDFGeneratorAPI.GetEInvoiceSchema200Response](docs/GetEInvoiceSchema200Response.md)
+ - [PDFGeneratorAPI.GetFonts200Response](docs/GetFonts200Response.md)
+ - [PDFGeneratorAPI.GetFormSchema200Response](docs/GetFormSchema200Response.md)
  - [PDFGeneratorAPI.GetStatus200Response](docs/GetStatus200Response.md)
  - [PDFGeneratorAPI.GetTemplateLibrary200Response](docs/GetTemplateLibrary200Response.md)
- - [PDFGeneratorAPI.GetTemplateVersion422Response](docs/GetTemplateVersion422Response.md)
+ - [PDFGeneratorAPI.GetTemplateSchema200Response](docs/GetTemplateSchema200Response.md)
  - [PDFGeneratorAPI.ImportFormBase64](docs/ImportFormBase64.md)
  - [PDFGeneratorAPI.ImportFormRequest](docs/ImportFormRequest.md)
  - [PDFGeneratorAPI.ImportFormUrl](docs/ImportFormUrl.md)
@@ -488,14 +514,14 @@ Class | Method | HTTP request | Description
  - [PDFGeneratorAPI.InlineObject10Meta](docs/InlineObject10Meta.md)
  - [PDFGeneratorAPI.InlineObject11](docs/InlineObject11.md)
  - [PDFGeneratorAPI.InlineObject11Meta](docs/InlineObject11Meta.md)
+ - [PDFGeneratorAPI.InlineObject11MetaStats](docs/InlineObject11MetaStats.md)
  - [PDFGeneratorAPI.InlineObject12](docs/InlineObject12.md)
- - [PDFGeneratorAPI.InlineObject12Meta](docs/InlineObject12Meta.md)
- - [PDFGeneratorAPI.InlineObject12MetaStats](docs/InlineObject12MetaStats.md)
+ - [PDFGeneratorAPI.InlineObject12Response](docs/InlineObject12Response.md)
  - [PDFGeneratorAPI.InlineObject13](docs/InlineObject13.md)
+ - [PDFGeneratorAPI.InlineObject13ResponseValue](docs/InlineObject13ResponseValue.md)
+ - [PDFGeneratorAPI.InlineObject13ResponseValueDefault](docs/InlineObject13ResponseValueDefault.md)
+ - [PDFGeneratorAPI.InlineObject13ResponseValueValue](docs/InlineObject13ResponseValueValue.md)
  - [PDFGeneratorAPI.InlineObject14](docs/InlineObject14.md)
- - [PDFGeneratorAPI.InlineObject14ResponseValue](docs/InlineObject14ResponseValue.md)
- - [PDFGeneratorAPI.InlineObject14ResponseValueDefault](docs/InlineObject14ResponseValueDefault.md)
- - [PDFGeneratorAPI.InlineObject14ResponseValueValue](docs/InlineObject14ResponseValueValue.md)
  - [PDFGeneratorAPI.InlineObject15](docs/InlineObject15.md)
  - [PDFGeneratorAPI.InlineObject16](docs/InlineObject16.md)
  - [PDFGeneratorAPI.InlineObject17](docs/InlineObject17.md)
@@ -504,26 +530,17 @@ Class | Method | HTTP request | Description
  - [PDFGeneratorAPI.InlineObject1Response](docs/InlineObject1Response.md)
  - [PDFGeneratorAPI.InlineObject2](docs/InlineObject2.md)
  - [PDFGeneratorAPI.InlineObject20](docs/InlineObject20.md)
+ - [PDFGeneratorAPI.InlineObject20Meta](docs/InlineObject20Meta.md)
  - [PDFGeneratorAPI.InlineObject21](docs/InlineObject21.md)
- - [PDFGeneratorAPI.InlineObject21Meta](docs/InlineObject21Meta.md)
  - [PDFGeneratorAPI.InlineObject22](docs/InlineObject22.md)
- - [PDFGeneratorAPI.InlineObject23](docs/InlineObject23.md)
- - [PDFGeneratorAPI.InlineObject23Response](docs/InlineObject23Response.md)
- - [PDFGeneratorAPI.InlineObject24](docs/InlineObject24.md)
- - [PDFGeneratorAPI.InlineObject25](docs/InlineObject25.md)
- - [PDFGeneratorAPI.InlineObject26](docs/InlineObject26.md)
- - [PDFGeneratorAPI.InlineObject27](docs/InlineObject27.md)
- - [PDFGeneratorAPI.InlineObject28](docs/InlineObject28.md)
- - [PDFGeneratorAPI.InlineObject29](docs/InlineObject29.md)
+ - [PDFGeneratorAPI.InlineObject22Response](docs/InlineObject22Response.md)
  - [PDFGeneratorAPI.InlineObject3](docs/InlineObject3.md)
- - [PDFGeneratorAPI.InlineObject30](docs/InlineObject30.md)
- - [PDFGeneratorAPI.InlineObject31](docs/InlineObject31.md)
  - [PDFGeneratorAPI.InlineObject4](docs/InlineObject4.md)
  - [PDFGeneratorAPI.InlineObject5](docs/InlineObject5.md)
  - [PDFGeneratorAPI.InlineObject6](docs/InlineObject6.md)
  - [PDFGeneratorAPI.InlineObject7](docs/InlineObject7.md)
- - [PDFGeneratorAPI.InlineObject7Response](docs/InlineObject7Response.md)
  - [PDFGeneratorAPI.InlineObject8](docs/InlineObject8.md)
+ - [PDFGeneratorAPI.InlineObject8Meta](docs/InlineObject8Meta.md)
  - [PDFGeneratorAPI.InlineObject9](docs/InlineObject9.md)
  - [PDFGeneratorAPI.InlineObject9Meta](docs/InlineObject9Meta.md)
  - [PDFGeneratorAPI.InlineObjectMeta](docs/InlineObjectMeta.md)
@@ -546,8 +563,6 @@ Class | Method | HTTP request | Description
  - [PDFGeneratorAPI.StoreDocumentRequest](docs/StoreDocumentRequest.md)
  - [PDFGeneratorAPI.Template](docs/Template.md)
  - [PDFGeneratorAPI.TemplateDefinition](docs/TemplateDefinition.md)
- - [PDFGeneratorAPI.TemplateDefinitionDataSettings](docs/TemplateDefinitionDataSettings.md)
- - [PDFGeneratorAPI.TemplateDefinitionEditor](docs/TemplateDefinitionEditor.md)
  - [PDFGeneratorAPI.TemplateDefinitionNew](docs/TemplateDefinitionNew.md)
  - [PDFGeneratorAPI.TemplateDefinitionNewDataSettings](docs/TemplateDefinitionNewDataSettings.md)
  - [PDFGeneratorAPI.TemplateDefinitionNewEditor](docs/TemplateDefinitionNewEditor.md)
@@ -555,15 +570,17 @@ Class | Method | HTTP request | Description
  - [PDFGeneratorAPI.TemplateDefinitionNewLayoutMargins](docs/TemplateDefinitionNewLayoutMargins.md)
  - [PDFGeneratorAPI.TemplateDefinitionNewLayoutRepeatLayout](docs/TemplateDefinitionNewLayoutRepeatLayout.md)
  - [PDFGeneratorAPI.TemplateDefinitionNewPagesInner](docs/TemplateDefinitionNewPagesInner.md)
+ - [PDFGeneratorAPI.TemplateDefinitionNewPagesInnerLayout](docs/TemplateDefinitionNewPagesInnerLayout.md)
  - [PDFGeneratorAPI.TemplateDefinitionNewPagesInnerMargins](docs/TemplateDefinitionNewPagesInnerMargins.md)
- - [PDFGeneratorAPI.TemplateDefinitionPagesInner](docs/TemplateDefinitionPagesInner.md)
+ - [PDFGeneratorAPI.TemplateDefinitionUpdate](docs/TemplateDefinitionUpdate.md)
  - [PDFGeneratorAPI.TemplateParam](docs/TemplateParam.md)
  - [PDFGeneratorAPI.TemplateParamData](docs/TemplateParamData.md)
- - [PDFGeneratorAPI.TemplateParamId](docs/TemplateParamId.md)
  - [PDFGeneratorAPI.TemplateVersion](docs/TemplateVersion.md)
  - [PDFGeneratorAPI.TemplateVersionCollection](docs/TemplateVersionCollection.md)
  - [PDFGeneratorAPI.TemplateVersionCollectionMeta](docs/TemplateVersionCollectionMeta.md)
+ - [PDFGeneratorAPI.ValidationError](docs/ValidationError.md)
  - [PDFGeneratorAPI.WatermarkBase64](docs/WatermarkBase64.md)
+ - [PDFGeneratorAPI.WatermarkFileUrl](docs/WatermarkFileUrl.md)
  - [PDFGeneratorAPI.WatermarkFileUrlWatermark](docs/WatermarkFileUrlWatermark.md)
  - [PDFGeneratorAPI.WatermarkImage](docs/WatermarkImage.md)
  - [PDFGeneratorAPI.WatermarkImageContentBase64](docs/WatermarkImageContentBase64.md)

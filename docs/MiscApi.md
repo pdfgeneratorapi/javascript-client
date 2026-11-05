@@ -20,10 +20,6 @@ Returns service status / health
 
 ```javascript
 import PDFGeneratorAPI from 'pdf-generator-api-client';
-let defaultClient = PDFGeneratorAPI.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
-let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
-JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.MiscApi();
 apiInstance.getStatus((error, data, response) => {
@@ -45,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+No authorization required
 
 ### HTTP request headers
 

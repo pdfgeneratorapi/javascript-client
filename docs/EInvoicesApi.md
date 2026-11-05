@@ -62,11 +62,11 @@ Name | Type | Description  | Notes
 
 ## createFacturXEInvoice
 
-> InlineObject9 createFacturXEInvoice(create_factur_xe_invoice_request)
+> InlineObject8 createFacturXEInvoice(create_factur_xe_invoice_request)
 
 Create Factur-X eInvoice
 
-This endpoint transforms a JSON payload a Factur-X e-invoice that is fully compliant with the European EN 16931 standard. The generated output is always a PDF document, embedding a structured CII (Cross-Industry Invoice) XML according to the Factur-X format into a human-readable invoice, ensuring interoperability across B2B and B2G platforms. The JSON payload follows Peppol BIS Billing 3.0 UBL Invoice described here: https://docs.peppol.eu/poacc/billing/3.0/
+This endpoint transforms a JSON payload a Factur-X e-invoice that is fully compliant with the European EN 16931 standard. The generated output is always a PDF document, embedding a structured CII (Cross-Industry Invoice) XML according to the Factur-X format into a human-readable invoice, ensuring interoperability across B2B and B2G platforms. The JSON payload follows Peppol BIS Billing 3.0 UBL Invoice described here: https://docs.peppol.eu/poacc/billing/3.0/ Preview mode (&#x60;testing: true&#x60;) is not available for Factur-X.
 
 ### Example
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject9**](InlineObject9.md)
+[**InlineObject8**](InlineObject8.md)
 
 ### Authorization
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ## createXRechnungEInvoice
 
-> InlineObject createXRechnungEInvoice(create_e_invoice_request)
+> InlineObject createXRechnungEInvoice(create_x_rechnung_e_invoice_request)
 
 Create XRechnung eInvoice
 
@@ -127,8 +127,8 @@ let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
 JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.EInvoicesApi();
-let create_e_invoice_request = new PDFGeneratorAPI.CreateEInvoiceRequest(); // CreateEInvoiceRequest | eInvoice conversion
-apiInstance.createXRechnungEInvoice(create_e_invoice_request, (error, data, response) => {
+let create_x_rechnung_e_invoice_request = new PDFGeneratorAPI.CreateXRechnungEInvoiceRequest(); // CreateXRechnungEInvoiceRequest | eInvoice conversion
+apiInstance.createXRechnungEInvoice(create_x_rechnung_e_invoice_request, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -142,7 +142,7 @@ apiInstance.createXRechnungEInvoice(create_e_invoice_request, (error, data, resp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_e_invoice_request** | [**CreateEInvoiceRequest**](CreateEInvoiceRequest.md)| eInvoice conversion | 
+ **create_x_rechnung_e_invoice_request** | [**CreateXRechnungEInvoiceRequest**](CreateXRechnungEInvoiceRequest.md)| eInvoice conversion | 
 
 ### Return type
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ## getEInvoiceSchema
 
-> Object getEInvoiceSchema()
+> GetEInvoiceSchema200Response getEInvoiceSchema()
 
 Get schema
 
@@ -170,10 +170,6 @@ Returns e-invoice JSON schema which defines the structure of the e-invoice.
 
 ```javascript
 import PDFGeneratorAPI from 'pdf-generator-api-client';
-let defaultClient = PDFGeneratorAPI.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
-let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
-JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.EInvoicesApi();
 apiInstance.getEInvoiceSchema((error, data, response) => {
@@ -191,11 +187,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**GetEInvoiceSchema200Response**](GetEInvoiceSchema200Response.md)
 
 ### Authorization
 
-[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+No authorization required
 
 ### HTTP request headers
 

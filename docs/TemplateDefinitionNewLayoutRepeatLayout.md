@@ -13,11 +13,19 @@ Name | Type | Description | Notes
 ## Enum: FormatEnum
 
 
+* `A2` (value: `"A2"`)
+
+* `A3` (value: `"A3"`)
+
 * `A4` (value: `"A4"`)
+
+* `A5` (value: `"A5"`)
 
 * `letter` (value: `"letter"`)
 
 * `custom` (value: `"custom"`)
+
+* `label` (value: `"label"`)
 
 
 

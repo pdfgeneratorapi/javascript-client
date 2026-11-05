@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**response** | [**[DocumentAction]**](DocumentAction.md) |  | [optional] 
+**response** | [**TemplateDefinition**](TemplateDefinition.md) |  | [optional] 
+**meta** | **Object** |  | [optional] 
 
 

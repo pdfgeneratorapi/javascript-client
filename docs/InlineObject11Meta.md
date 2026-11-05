@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **display_name** | **String** | Document name without the file extension. | [optional] 
 **encoding** | **String** | Document encoding | [optional] 
 **content_type** | **String** | Document content type. | [optional] 
-**public_id** | **String** | Document public id | [optional] 
+**stats** | [**InlineObject11MetaStats**](InlineObject11MetaStats.md) |  | [optional] 
+**public_id** | **String** | Document public id, if output&#x3D;url was used for document storage | [optional] 
 
 

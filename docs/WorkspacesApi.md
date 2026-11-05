@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## createWorkspace
 
-> InlineObject8 createWorkspace(opts)
+> InlineObject7 createWorkspace(create_workspace_request)
 
 Create workspace
 
@@ -29,10 +29,8 @@ let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
 JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.WorkspacesApi();
-let opts = {
-  'create_workspace_request': new PDFGeneratorAPI.CreateWorkspaceRequest() // CreateWorkspaceRequest | 
-};
-apiInstance.createWorkspace(opts, (error, data, response) => {
+let create_workspace_request = new PDFGeneratorAPI.CreateWorkspaceRequest(); // CreateWorkspaceRequest | 
+apiInstance.createWorkspace(create_workspace_request, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -46,11 +44,11 @@ apiInstance.createWorkspace(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_workspace_request** | [**CreateWorkspaceRequest**](CreateWorkspaceRequest.md)|  | [optional] 
+ **create_workspace_request** | [**CreateWorkspaceRequest**](CreateWorkspaceRequest.md)|  | 
 
 ### Return type
 
-[**InlineObject8**](InlineObject8.md)
+[**InlineObject7**](InlineObject7.md)
 
 ### Authorization
 
@@ -113,7 +111,7 @@ null (empty response body)
 
 ## getWorkspace
 
-> InlineObject8 getWorkspace(workspace_identifier)
+> InlineObject7 getWorkspace(workspace_identifier)
 
 Get workspace
 
@@ -148,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject8**](InlineObject8.md)
+[**InlineObject7**](InlineObject7.md)
 
 ### Authorization
 
@@ -180,7 +178,11 @@ JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 let apiInstance = new PDFGeneratorAPI.WorkspacesApi();
 let opts = {
   'page': 1, // Number | Pagination: page to return
-  'per_page': 20 // Number | Pagination: How many records to return per page
+  'per_page': 20, // Number | Pagination: How many records to return per page
+  'order_by': "identifier", // String | Field to sort the workspaces by
+  'order_direction': "asc", // String | Sort direction
+  'activated': 1, // Number | Returns only active (`1`) or deactivated (`0`) workspaces
+  'search': "demo.example" // String | Returns workspaces whose ID, name or identifier contains the search value
 };
 apiInstance.getWorkspaces(opts, (error, data, response) => {
   if (error) {
@@ -198,6 +200,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Number**| Pagination: page to return | [optional] [default to 1]
  **per_page** | **Number**| Pagination: How many records to return per page | [optional] [default to 15]
+ **order_by** | **String**| Field to sort the workspaces by | [optional] [default to &#39;id&#39;]
+ **order_direction** | **String**| Sort direction | [optional] [default to &#39;desc&#39;]
+ **activated** | **Number**| Returns only active (&#x60;1&#x60;) or deactivated (&#x60;0&#x60;) workspaces | [optional] 
+ **search** | **String**| Returns workspaces whose ID, name or identifier contains the search value | [optional] 
 
 ### Return type
 

@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**response** | **String** | URL to open the embeddable Form Builder | [optional] 
+**response** | [**InlineObject22Response**](InlineObject22Response.md) |  | [optional] 
 
 

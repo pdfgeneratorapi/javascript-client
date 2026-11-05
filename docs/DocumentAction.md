@@ -27,6 +27,8 @@ Name | Type | Description | Notes
 
 * `acknowledged` (value: `"acknowledged"`)
 
+* `storage_delete` (value: `"storage_delete"`)
+
 
 
 

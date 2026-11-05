@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## convertHTML2PDF
 
-> InlineObject9 convertHTML2PDF(convert_html2_pdf_request)
+> InlineObject8 convertHTML2PDF(convert_html2_pdf_request)
 
 HTML to PDF
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject9**](InlineObject9.md)
+[**InlineObject8**](InlineObject8.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ## convertPDF2Image
 
-> InlineObject10 convertPDF2Image(convert_pdf2_image_request)
+> File convertPDF2Image(convert_pdf2_image_request)
 
 PDF to Image
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject10**](InlineObject10.md)
+**File**
 
 ### Authorization
 
@@ -105,12 +105,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: application/zip, application/json
 
 
 ## convertURL2PDF
 
-> InlineObject9 convertURL2PDF(convert_url2_pdf_request)
+> InlineObject8 convertURL2PDF(convert_url2_pdf_request)
 
 URL to PDF
 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject9**](InlineObject9.md)
+[**InlineObject8**](InlineObject8.md)
 
 ### Authorization
 

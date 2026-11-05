@@ -1,8 +1,8 @@
 /**
  * PDF Generator API
- * # Introduction [PDF Generator API](https://pdfgeneratorapi.com) allows you easily generate transactional PDF documents and reduce the development and support costs by enabling your users to create and manage their document templates using a browser-based drag-and-drop document editor.  The PDF Generator API features a web API architecture, allowing you to code in the language of your choice. This API supports the JSON media type, and uses UTF-8 character encoding.  ## Base URL The base URL for all the API endpoints is `https://us1.pdfgeneratorapi.com/api/v4`  For example * `https://us1.pdfgeneratorapi.com/api/v4/templates` * `https://us1.pdfgeneratorapi.com/api/v4/workspaces` * `https://us1.pdfgeneratorapi.com/api/v4/templates/123123`  ## Editor PDF Generator API comes with a powerful drag & drop editor that allows to create any kind of document templates, from barcode labels to invoices, quotes and reports. You can find tutorials and videos from our [Support Portal](https://support.pdfgeneratorapi.com). * [Component specification](https://support.pdfgeneratorapi.com/en/category/components-1ffseaj/) * [Expression Language documentation](https://support.pdfgeneratorapi.com/en/category/expression-language-q203pa/) * [Frequently asked questions and answers](https://support.pdfgeneratorapi.com/en/category/qanda-1ov519d/)  ## Definitions  ### Organization Organization is a group of workspaces owned by your account.  ### Workspace Workspace contains templates. Each workspace has access to their own templates and organization default templates.  ### Master Workspace Master Workspace is the main/default workspace of your Organization. The Master Workspace identifier is the email you signed up with.  ### Default Template Default template is a template that is available for all workspaces by default. You can set the template access type under Page Setup. If template has \"Organization\" access then your users can use them from the \"New\" menu in the Editor.  ### Data Field Data Field is a placeholder for the specific data in your JSON data set. In this example JSON you can access the buyer name using Data Field `{paymentDetails::buyerName}`. The separator between depth levels is :: (two colons). When designing the template you don’t have to know every Data Field, our editor automatically extracts all the available fields from your data set and provides an easy way to insert them into the template. ``` {     \"documentNumber\": 1,     \"paymentDetails\": {         \"method\": \"Credit Card\",         \"buyerName\": \"John Smith\"     },     \"items\": [         {             \"id\": 1,             \"name\": \"Item one\"         }     ] } ```  ## Rate limiting Our API endpoints use IP-based rate limiting and allow you to make up to 2 requests per second and 60 requests per minute. If you make more requests, you will receive a response with HTTP code 429.  Response headers contain additional values:  | Header   | Description                    | |--------|--------------------------------| | X-RateLimit-Limit    | Maximum requests per minute                   | | X-RateLimit-Remaining    | The requests remaining in the current minute               | | Retry-After     | How many seconds you need to wait until you are allowed to make requests |  *  *  *  *  *  # Libraries and SDKs ## Postman Collection We have created a [Postman Collection](https://www.postman.com/pdfgeneratorapi/workspace/pdf-generator-api-public-workspace/overview) so you can easily test all the API endpoints without developing and code.   ## Client Libraries All our Client Libraries are auto-generated using [OpenAPI Generator](https://openapi-generator.tech/) which uses the OpenAPI v3 specification to automatically generate a client library in specific programming language.  * [PHP Client](https://github.com/pdfgeneratorapi/php-client) * [Java Client](https://github.com/pdfgeneratorapi/java-client) * [Ruby Client](https://github.com/pdfgeneratorapi/ruby-client) * [Python Client](https://github.com/pdfgeneratorapi/python-client) * [Javascript Client](https://github.com/pdfgeneratorapi/javascript-client)  We have validated the generated libraries, but let us know if you find any anomalies in the client code.  ## Model Context Protocol (MCP) Server Integrate document generation directly into your AI agents and LLM applications using our official Model Context Protocol (MCP) Server.  The MCP server provides a standardized interface that allows AI assistants (like Claude Desktop and other MCP-compatible clients) to securely interact with the PDF Generator API. With it, your AI applications can automatically fetch workspaces, retrieve templates, merge data, and generate PDF documents on the fly.  [Get PDF Generator API MCP Server](https://github.com/pdfgeneratorapi/mcp-server) *  *  *  *  *   # Authentication The PDF Generator API uses __JSON Web Tokens (JWT)__ to authenticate all API requests. These tokens offer a method to establish secure server-to-server authentication by transferring a compact JSON object with a signed payload of your account’s API Key and Secret. When authenticating to the PDF Generator API, a JWT should be generated uniquely by a __server-side application__ and included as a __Bearer Token__ in the header of each request.   <SecurityDefinitions />  ## Accessing your API Key and Secret You can find your __API Key__ and __API Secret__ from the __Account Settings__ page after you login to PDF Generator API [here](https://pdfgeneratorapi.com/login).  ## Creating a JWT JSON Web Tokens are composed of three sections: a header, a payload (containing a claim set), and a signature. The header and payload are JSON objects, which are serialized to UTF-8 bytes, then encoded using base64url encoding.  The JWT's header, payload, and signature are concatenated with periods (.). As a result, a JWT typically takes the following form: ``` {Base64url encoded header}.{Base64url encoded payload}.{Base64url encoded signature} ```  We recommend and support libraries provided on [jwt.io](https://jwt.io/). While other libraries can create JWT, these recommended libraries are the most robust.  ### Header Property `alg` defines which signing algorithm is being used. PDF Generator API users HS256. Property `typ` defines the type of token and it is always JWT. ``` {   \"alg\": \"HS256\",   \"typ\": \"JWT\" } ```  ### Payload The second part of the token is the payload, which contains the claims  or the pieces of information being passed about the user and any metadata required. It is mandatory to specify the following claims: * issuer (`iss`): Your API key * subject (`sub`): Workspace identifier * expiration time (`exp`): Timestamp (unix epoch time) until the token is valid. It is highly recommended to set the exp timestamp for a short period, i.e. a matter of seconds. This way, if a token is intercepted or shared, the token will only be valid for a short period of time.  ``` {   \"iss\": \"ad54aaff89ffdfeff178bb8a8f359b29fcb20edb56250b9f584aa2cb0162ed4a\",   \"sub\": \"demo.example@actualreports.com\",   \"exp\": 1586112639 } ```  ### Payload for Partners Our partners can send their unique identifier (provided by us) in JWT's partner_id claim. If the `partner_id` value is specified in the JWT, the organization making the request is automatically connected to the partner account. * Partner ID (`partner_id`): Unique identifier provide by PDF Generator API team  ``` {   \"iss\": \"ad54aaff89ffdfeff178bb8a8f359b29fcb20edb56250b9f584aa2cb0162ed4a\",   \"sub\": \"demo.example@actualreports.com\",   \"partner_id\": \"my-partner-identifier\",   \"exp\": 1586112639 } ```  ### Signature To create the signature part you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that. The signature is used to verify the message wasn't changed along the way, and, in the case of tokens signed with a private key, it can also verify that the sender of the JWT is who it says it is. ``` HMACSHA256(     base64UrlEncode(header) + \".\" +     base64UrlEncode(payload),     API_SECRET) ```  ### Putting all together The output is three Base64-URL strings separated by dots. The following shows a JWT that has the previous header and payload encoded, and it is signed with a secret. ``` eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhZDU0YWFmZjg5ZmZkZmVmZjE3OGJiOGE4ZjM1OWIyOWZjYjIwZWRiNTYyNTBiOWY1ODRhYTJjYjAxNjJlZDRhIiwic3ViIjoiZGVtby5leGFtcGxlQGFjdHVhbHJlcG9ydHMuY29tIn0.SxO-H7UYYYsclS8RGWO1qf0z1cB1m73wF9FLl9RCc1Q  // Base64 encoded header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 // Base64 encoded payload: eyJpc3MiOiJhZDU0YWFmZjg5ZmZkZmVmZjE3OGJiOGE4ZjM1OWIyOWZjYjIwZWRiNTYyNTBiOWY1ODRhYTJjYjAxNjJlZDRhIiwic3ViIjoiZGVtby5leGFtcGxlQGFjdHVhbHJlcG9ydHMuY29tIn0 // Signature: SxO-H7UYYYsclS8RGWO1qf0z1cB1m73wF9FLl9RCc1Q ```  ## Temporary JWTs You can create a temporary token in [Account Settings](https://pdfgeneratorapi.com/account/organization) page after you login to PDF Generator API. The generated token uses your email address as the subject (`sub`) value and is valid for __15 minutes__. You can also use [jwt.io](https://jwt.io/) to generate test tokens for your API calls. These test tokens should never be used in production applications. *  *  *  *  *  # Error codes  | Code   | Description                    | |--------|--------------------------------| | 401    | Unauthorized                   | | 402    | Payment Required               | | 403    | Forbidden                      | | 404    | Not Found                      | | 422    | Unprocessable Entity           | | 429    | Too Many Requests              | | 500    | Internal Server Error          |  ## 401 Unauthorized | Description                                                             | |-------------------------------------------------------------------------| | Authentication failed: request expired                                  | | Authentication failed: workspace missing                                | | Authentication failed: key missing                                      | | Authentication failed: property 'iss' (issuer) missing in JWT           | | Authentication failed: property 'sub' (subject) missing in JWT          | | Authentication failed: property 'exp' (expiration time) missing in JWT  | | Authentication failed: incorrect signature                              |  ## 402 Payment Required | Description                                                             | |-------------------------------------------------------------------------| | Your account is suspended, please upgrade your account                  |  ## 403 Forbidden | Description                                                             | |-------------------------------------------------------------------------| | Your account has exceeded the monthly document generation limit.        | | Access not granted: You cannot delete master workspace via API          | | Access not granted: Template is not accessible by this organization     | | Your session has expired, please close and reopen the editor.           |  ## 404 Entity not found | Description                                                             | |-------------------------------------------------------------------------| | Entity not found                                                        | | Resource not found                                                      | | None of the templates is available for the workspace.                   |  ## 422 Unprocessable Entity | Description                                                             | |-------------------------------------------------------------------------| | Unable to parse JSON, please check formatting                           | | Required parameter missing                                              | | Required parameter missing: template definition not defined             | | Required parameter missing: template not defined                        |  ## 429 Too Many Requests | Description                                                             | |-------------------------------------------------------------------------| | You can make up to 2 requests per second and 60 requests per minute.   |  *  *  *  *  * 
+ * # Introduction [PDF Generator API](https://pdfgeneratorapi.com) allows you easily generate transactional PDF documents and reduce the development and support costs by enabling your users to create and manage their document templates using a browser-based drag-and-drop document editor.  The PDF Generator API features a web API architecture, allowing you to code in the language of your choice. This API supports the JSON media type, and uses UTF-8 character encoding.  ## Base URL The base URL for all the API endpoints is `https://us1.pdfgeneratorapi.com/api/v4`  For example * `https://us1.pdfgeneratorapi.com/api/v4/templates` * `https://us1.pdfgeneratorapi.com/api/v4/workspaces` * `https://us1.pdfgeneratorapi.com/api/v4/templates/123123`  ## Editor PDF Generator API comes with a powerful drag & drop editor that allows to create any kind of document templates, from barcode labels to invoices, quotes and reports. You can find tutorials and videos from our [Support Portal](https://support.pdfgeneratorapi.com). * [Component specification](https://support.pdfgeneratorapi.com/en/category/components-1ffseaj/) * [Expression Language documentation](https://support.pdfgeneratorapi.com/en/category/expression-language-q203pa/) * [Frequently asked questions and answers](https://support.pdfgeneratorapi.com/en/category/qanda-1ov519d/)  ## Definitions  ### Organization Organization is a group of workspaces owned by your account.  ### Workspace Workspace contains templates. Each workspace has access to their own templates and organization default templates.  ### Master Workspace Master Workspace is the main/default workspace of your Organization. The Master Workspace identifier is the email you signed up with.  ### Default Template Default template is a template that is available for all workspaces by default. You can set the template access type under Page Setup. If template has \"Organization\" access then your users can use them from the \"New\" menu in the Editor.  ### Data Field Data Field is a placeholder for the specific data in your JSON data set. In this example JSON you can access the buyer name using Data Field `{paymentDetails::buyerName}`. The separator between depth levels is :: (two colons). When designing the template you don’t have to know every Data Field, our editor automatically extracts all the available fields from your data set and provides an easy way to insert them into the template. ``` {     \"documentNumber\": 1,     \"paymentDetails\": {         \"method\": \"Credit Card\",         \"buyerName\": \"John Smith\"     },     \"items\": [         {             \"id\": 1,             \"name\": \"Item one\"         }     ] } ```  ## Rate limiting Our API endpoints use IP-based rate limiting and allow you to make up to 2 requests per second and 60 requests per minute. If you make more requests, you will receive a response with HTTP code 429.  Response headers contain additional values:  | Header   | Description                    | |--------|--------------------------------| | X-RateLimit-Limit    | Maximum requests per minute                   | | X-RateLimit-Remaining    | The requests remaining in the current minute               | | Retry-After     | How many seconds you need to wait until you are allowed to make requests |  *  *  *  *  *  # Libraries and SDKs ## Postman Collection We have created a [Postman Collection](https://www.postman.com/pdfgeneratorapi/workspace/pdf-generator-api-public-workspace/overview) so you can easily test all the API endpoints without developing and code.   ## Client Libraries All our Client Libraries are auto-generated using [OpenAPI Generator](https://openapi-generator.tech/) which uses the OpenAPI v3 specification to automatically generate a client library in specific programming language.  * [PHP Client](https://github.com/pdfgeneratorapi/php-client) * [Java Client](https://github.com/pdfgeneratorapi/java-client) * [Ruby Client](https://github.com/pdfgeneratorapi/ruby-client) * [Python Client](https://github.com/pdfgeneratorapi/python-client) * [Javascript Client](https://github.com/pdfgeneratorapi/javascript-client)  We have validated the generated libraries, but let us know if you find any anomalies in the client code.  ## Model Context Protocol (MCP) Server Integrate document generation directly into your AI agents and LLM applications using our official Model Context Protocol (MCP) Server.  The MCP server provides a standardized interface that allows AI assistants (like Claude Desktop and other MCP-compatible clients) to securely interact with the PDF Generator API. With it, your AI applications can automatically fetch workspaces, retrieve templates, merge data, and generate PDF documents on the fly.  [Get PDF Generator API MCP Server](https://github.com/pdfgeneratorapi/mcp-server) *  *  *  *  *   # Authentication The PDF Generator API uses __JSON Web Tokens (JWT)__ to authenticate all API requests. These tokens offer a method to establish secure server-to-server authentication by transferring a compact JSON object with a signed payload of your account’s API Key and Secret. When authenticating to the PDF Generator API, a JWT should be generated uniquely by a __server-side application__ and included as a __Bearer Token__ in the header of each request.   <SecurityDefinitions />  ## Accessing your API Key and Secret You can find your __API Key__ and __API Secret__ from the __Account Settings__ page after you login to PDF Generator API [here](https://pdfgeneratorapi.com/login).  ## Creating a JWT JSON Web Tokens are composed of three sections: a header, a payload (containing a claim set), and a signature. The header and payload are JSON objects, which are serialized to UTF-8 bytes, then encoded using base64url encoding.  The JWT's header, payload, and signature are concatenated with periods (.). As a result, a JWT typically takes the following form: ``` {Base64url encoded header}.{Base64url encoded payload}.{Base64url encoded signature} ```  We recommend and support libraries provided on [jwt.io](https://jwt.io/). While other libraries can create JWT, these recommended libraries are the most robust.  ### Header Property `alg` defines which signing algorithm is being used. PDF Generator API users HS256. Property `typ` defines the type of token and it is always JWT. ``` {   \"alg\": \"HS256\",   \"typ\": \"JWT\" } ```  ### Payload The second part of the token is the payload, which contains the claims  or the pieces of information being passed about the user and any metadata required. It is mandatory to specify the following claims: * issuer (`iss`): Your API key * subject (`sub`): Workspace identifier * expiration time (`exp`): Timestamp (unix epoch time) until the token is valid. It is highly recommended to set the exp timestamp for a short period, i.e. a matter of seconds. This way, if a token is intercepted or shared, the token will only be valid for a short period of time.  ``` {   \"iss\": \"ad54aaff89ffdfeff178bb8a8f359b29fcb20edb56250b9f584aa2cb0162ed4a\",   \"sub\": \"demo.example@actualreports.com\",   \"exp\": 1586112639 } ```  ### Payload for Partners Our partners can send their unique identifier (provided by us) in JWT's partner_id claim. If the `partner_id` value is specified in the JWT, the organization making the request is automatically connected to the partner account. * Partner ID (`partner_id`): Unique identifier provide by PDF Generator API team  ``` {   \"iss\": \"ad54aaff89ffdfeff178bb8a8f359b29fcb20edb56250b9f584aa2cb0162ed4a\",   \"sub\": \"demo.example@actualreports.com\",   \"partner_id\": \"my-partner-identifier\",   \"exp\": 1586112639 } ```  ### Signature To create the signature part you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that. The signature is used to verify the message wasn't changed along the way, and, in the case of tokens signed with a private key, it can also verify that the sender of the JWT is who it says it is. ``` HMACSHA256(     base64UrlEncode(header) + \".\" +     base64UrlEncode(payload),     API_SECRET) ```  ### Putting all together The output is three Base64-URL strings separated by dots. The following shows a JWT that has the previous header and payload encoded, and it is signed with a secret. ``` eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhZDU0YWFmZjg5ZmZkZmVmZjE3OGJiOGE4ZjM1OWIyOWZjYjIwZWRiNTYyNTBiOWY1ODRhYTJjYjAxNjJlZDRhIiwic3ViIjoiZGVtby5leGFtcGxlQGFjdHVhbHJlcG9ydHMuY29tIn0.SxO-H7UYYYsclS8RGWO1qf0z1cB1m73wF9FLl9RCc1Q  // Base64 encoded header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 // Base64 encoded payload: eyJpc3MiOiJhZDU0YWFmZjg5ZmZkZmVmZjE3OGJiOGE4ZjM1OWIyOWZjYjIwZWRiNTYyNTBiOWY1ODRhYTJjYjAxNjJlZDRhIiwic3ViIjoiZGVtby5leGFtcGxlQGFjdHVhbHJlcG9ydHMuY29tIn0 // Signature: SxO-H7UYYYsclS8RGWO1qf0z1cB1m73wF9FLl9RCc1Q ```  ## Temporary JWTs You can create a temporary token in [Account Settings](https://pdfgeneratorapi.com/account/organization) page after you login to PDF Generator API. The generated token uses your email address as the subject (`sub`) value and is valid for __15 minutes__. You can also use [jwt.io](https://jwt.io/) to generate test tokens for your API calls. These test tokens should never be used in production applications. *  *  *  *  *  # Error codes  Every error response is a JSON object with a `message` string. Request validation failures (422) also include an `errors` object keyed by the field that failed.  ```json {   \"message\": \"The identifier field is required.\",   \"errors\": {     \"identifier\": [\"The identifier field is required.\"]   } } ```  | Code   | Description                    | |--------|--------------------------------| | 400    | Bad Request                    | | 401    | Unauthorized                   | | 402    | Payment Required               | | 403    | Forbidden                      | | 404    | Not Found                      | | 405    | Method Not Allowed             | | 409    | Conflict                       | | 410    | Gone                           | | 422    | Unprocessable Entity           | | 429    | Too Many Requests              | | 500    | Internal Server Error          | | 503    | Service Unavailable            |  ## 401 Unauthorized | Description                                                                       | |-----------------------------------------------------------------------------------| | Authentication failed: JWT Token missing.                                         | | Authentication failed: Malformed JWT Token.                                       | | Authentication failed: Expired JWT Token.                                         | | Authentication failed: Invalid workspace.                                         | | Authentication failed: Invalid organization.                                      | | Authentication failed: This application no longer has access to the workspace.   | | Authentication failed: The sub field is required. (also `iss` and `exp`)          |  ## 402 Payment Required | Description                                                                       | |-----------------------------------------------------------------------------------| | Your account is suspended, please upgrade your account or contact support@pdfgeneratorapi.com. |  ## 403 Forbidden | Description                                                                       | |-----------------------------------------------------------------------------------| | You don't have permission to access this content. Please get in touch with your organization administrator to update your access permissions. | | This application was not granted permission for this request.                    | | Deleting own user is not allowed.                                                 | | Deleting organization owner is not allowed.                                       |  ## 404 Not Found | Description                                                                       | |-----------------------------------------------------------------------------------| | Entity not found.                                                                 | | Route not found.                                                                  | | Workspace doesn’t have access to read the template.                               |  ## 422 Unprocessable Entity | Description                                                                       | |-----------------------------------------------------------------------------------| | Unable to parse JSON, please check formatting.                                    | | Template id should be a numeric value.                                            | | The per page must be at least 1. (with `errors.per_page`)                         |  ## 429 Too Many Requests | Description                                                                       | |-----------------------------------------------------------------------------------| | Per-second rate limit exceeded. Please slow down your requests.                   | | Per-minute rate limit exceeded. Please try again in a minute.                     | | Global per-second rate limit exceeded. Please slow down your requests.            | | Global per-minute rate limit exceeded. Please try again in a minute.              |  *  *  *  *  * 
  *
- * The version of the OpenAPI document: 4.0.31
+ * The version of the OpenAPI document: 4.0.34
  * Contact: support@pdfgeneratorapi.com
  *
  * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
@@ -13,34 +13,28 @@
 
 
 import ApiClient from "../ApiClient";
+import Error from '../model/Error';
 import GenerateDocumentAsynchronousRequest from '../model/GenerateDocumentAsynchronousRequest';
 import GenerateDocumentBatchAsynchronousRequest from '../model/GenerateDocumentBatchAsynchronousRequest';
 import GenerateDocumentBatchRequest from '../model/GenerateDocumentBatchRequest';
 import GenerateDocumentRequest from '../model/GenerateDocumentRequest';
 import GenerateViewerUrl200Response from '../model/GenerateViewerUrl200Response';
 import GenerateViewerUrlRequest from '../model/GenerateViewerUrlRequest';
-import InlineObject11 from '../model/InlineObject11';
-import InlineObject13 from '../model/InlineObject13';
+import InlineObject10 from '../model/InlineObject10';
+import InlineObject12 from '../model/InlineObject12';
+import InlineObject14 from '../model/InlineObject14';
 import InlineObject15 from '../model/InlineObject15';
 import InlineObject16 from '../model/InlineObject16';
 import InlineObject17 from '../model/InlineObject17';
-import InlineObject18 from '../model/InlineObject18';
-import InlineObject23 from '../model/InlineObject23';
-import InlineObject24 from '../model/InlineObject24';
-import InlineObject25 from '../model/InlineObject25';
-import InlineObject26 from '../model/InlineObject26';
-import InlineObject27 from '../model/InlineObject27';
-import InlineObject28 from '../model/InlineObject28';
-import InlineObject29 from '../model/InlineObject29';
-import InlineObject30 from '../model/InlineObject30';
-import InlineObject31 from '../model/InlineObject31';
-import InlineObject9 from '../model/InlineObject9';
+import InlineObject22 from '../model/InlineObject22';
+import InlineObject8 from '../model/InlineObject8';
 import StoreDocumentRequest from '../model/StoreDocumentRequest';
+import ValidationError from '../model/ValidationError';
 
 /**
 * Documents service.
 * @module PDFGeneratorAPI/DocumentsApi
-* @version 8.0.31
+* @version 8.0.34
 */
 export default class DocumentsApi {
 
@@ -102,7 +96,7 @@ export default class DocumentsApi {
      * Callback function to receive the result of the generateDocument operation.
      * @callback module:PDFGeneratorAPI/DocumentsApi~generateDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineObject9} data The data returned by the service call.
+     * @param {module:model/InlineObject8} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -111,7 +105,7 @@ export default class DocumentsApi {
      * Merges template with data and returns base64 encoded document or a public URL to a document. NB! When the public URL option is used, the document is stored for 30 days and automatically deleted.
      * @param {module:model/GenerateDocumentRequest} generate_document_request Request parameters, including template id, data and formats.
      * @param {module:PDFGeneratorAPI/DocumentsApi~generateDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineObject9}
+     * data is of type: {@link module:model/InlineObject8}
      */
     generateDocument(generate_document_request, callback) {
       let postBody = generate_document_request;
@@ -132,7 +126,7 @@ export default class DocumentsApi {
       let authNames = ['JSONWebTokenAuth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineObject9;
+      let returnType = InlineObject8;
       return this.apiClient.callApi(
         '/documents/generate', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -144,7 +138,7 @@ export default class DocumentsApi {
      * Callback function to receive the result of the generateDocumentAsynchronous operation.
      * @callback module:PDFGeneratorAPI/DocumentsApi~generateDocumentAsynchronousCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineObject23} data The data returned by the service call.
+     * @param {module:model/InlineObject22} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -153,7 +147,7 @@ export default class DocumentsApi {
      * Merges template with data as asynchronous job and makes POST request to callback URL defined in the request. Request uses the same format as response of synchronous generation endpoint. The job id is also added to the callback request as header PDF-API-Job-Id  *Example response from callback URL:* ``` {   \"response\": \"https://us1.pdfgeneratorapi.com/share/12821/VBERi0xLjcKJeLjz9MKNyAwIG9i\",   \"meta\": {     \"name\": \"a2bd25b8921f3dc7a440fd7f427f90a4.pdf\",     \"display_name\": \"a2bd25b8921f3dc7a440fd7f427f90a4\",     \"encoding\": \"binary\",     \"content-type\": \"application/pdf\"   } } ``` 
      * @param {module:model/GenerateDocumentAsynchronousRequest} generate_document_asynchronous_request Request parameters, including template id, data and formats.
      * @param {module:PDFGeneratorAPI/DocumentsApi~generateDocumentAsynchronousCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineObject23}
+     * data is of type: {@link module:model/InlineObject22}
      */
     generateDocumentAsynchronous(generate_document_asynchronous_request, callback) {
       let postBody = generate_document_asynchronous_request;
@@ -174,7 +168,7 @@ export default class DocumentsApi {
       let authNames = ['JSONWebTokenAuth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineObject23;
+      let returnType = InlineObject22;
       return this.apiClient.callApi(
         '/documents/generate/async', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -186,7 +180,7 @@ export default class DocumentsApi {
      * Callback function to receive the result of the generateDocumentBatch operation.
      * @callback module:PDFGeneratorAPI/DocumentsApi~generateDocumentBatchCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineObject9} data The data returned by the service call.
+     * @param {module:model/InlineObject8} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -195,7 +189,7 @@ export default class DocumentsApi {
      * Allows to merge multiple templates with data and returns base64 encoded document or public URL to a document. NB! When the public URL option is used, the document is stored for 30 days and automatically deleted.
      * @param {module:model/GenerateDocumentBatchRequest} generate_document_batch_request Request parameters, including template id, data and formats.
      * @param {module:PDFGeneratorAPI/DocumentsApi~generateDocumentBatchCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineObject9}
+     * data is of type: {@link module:model/InlineObject8}
      */
     generateDocumentBatch(generate_document_batch_request, callback) {
       let postBody = generate_document_batch_request;
@@ -216,7 +210,7 @@ export default class DocumentsApi {
       let authNames = ['JSONWebTokenAuth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineObject9;
+      let returnType = InlineObject8;
       return this.apiClient.callApi(
         '/documents/generate/batch', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -228,7 +222,7 @@ export default class DocumentsApi {
      * Callback function to receive the result of the generateDocumentBatchAsynchronous operation.
      * @callback module:PDFGeneratorAPI/DocumentsApi~generateDocumentBatchAsynchronousCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineObject23} data The data returned by the service call.
+     * @param {module:model/InlineObject22} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -237,7 +231,7 @@ export default class DocumentsApi {
      * Merges template with data as asynchronous job and makes POST request to callback URL defined in the request. Request uses the same format as response of synchronous generation endpoint. The job id is also added to the callback request as header PDF-API-Job-Id  *Example response from callback URL:* ``` {   \"response\": \"https://us1.pdfgeneratorapi.com/share/12821/VBERi0xLjcKJeLjz9MKNyAwIG9i\",   \"meta\": {     \"name\": \"a2bd25b8921f3dc7a440fd7f427f90a4.pdf\",     \"display_name\": \"a2bd25b8921f3dc7a440fd7f427f90a4\",     \"encoding\": \"binary\",     \"content-type\": \"application/pdf\"   } } ``` 
      * @param {module:model/GenerateDocumentBatchAsynchronousRequest} generate_document_batch_asynchronous_request Request parameters, including template id, data and formats.
      * @param {module:PDFGeneratorAPI/DocumentsApi~generateDocumentBatchAsynchronousCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineObject23}
+     * data is of type: {@link module:model/InlineObject22}
      */
     generateDocumentBatchAsynchronous(generate_document_batch_asynchronous_request, callback) {
       let postBody = generate_document_batch_asynchronous_request;
@@ -258,7 +252,7 @@ export default class DocumentsApi {
       let authNames = ['JSONWebTokenAuth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineObject23;
+      let returnType = InlineObject22;
       return this.apiClient.callApi(
         '/documents/generate/batch/async', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -316,7 +310,7 @@ export default class DocumentsApi {
      * Callback function to receive the result of the getAsyncJobStatus operation.
      * @callback module:PDFGeneratorAPI/DocumentsApi~getAsyncJobStatusCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineObject13} data The data returned by the service call.
+     * @param {module:model/InlineObject12} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -325,7 +319,7 @@ export default class DocumentsApi {
      * Returns status of an async job
      * @param {String} job_id Job id
      * @param {module:PDFGeneratorAPI/DocumentsApi~getAsyncJobStatusCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineObject13}
+     * data is of type: {@link module:model/InlineObject12}
      */
     getAsyncJobStatus(job_id, callback) {
       let postBody = null;
@@ -347,7 +341,7 @@ export default class DocumentsApi {
       let authNames = ['JSONWebTokenAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineObject13;
+      let returnType = InlineObject12;
       return this.apiClient.callApi(
         '/documents/async/{jobId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -359,7 +353,7 @@ export default class DocumentsApi {
      * Callback function to receive the result of the getDocument operation.
      * @callback module:PDFGeneratorAPI/DocumentsApi~getDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineObject11} data The data returned by the service call.
+     * @param {module:model/InlineObject10} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -368,7 +362,7 @@ export default class DocumentsApi {
      * Returns document stored in the Document Storage
      * @param {String} public_id Resource public id
      * @param {module:PDFGeneratorAPI/DocumentsApi~getDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineObject11}
+     * data is of type: {@link module:model/InlineObject10}
      */
     getDocument(public_id, callback) {
       let postBody = null;
@@ -390,7 +384,7 @@ export default class DocumentsApi {
       let authNames = ['JSONWebTokenAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineObject11;
+      let returnType = InlineObject10;
       return this.apiClient.callApi(
         '/documents/{publicId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -402,7 +396,7 @@ export default class DocumentsApi {
      * Callback function to receive the result of the getDocumentActions operation.
      * @callback module:PDFGeneratorAPI/DocumentsApi~getDocumentActionsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineObject18} data The data returned by the service call.
+     * @param {module:model/InlineObject17} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -411,7 +405,7 @@ export default class DocumentsApi {
      * Returns a list of actions performed on a stored document
      * @param {String} public_id Resource public id
      * @param {module:PDFGeneratorAPI/DocumentsApi~getDocumentActionsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineObject18}
+     * data is of type: {@link module:model/InlineObject17}
      */
     getDocumentActions(public_id, callback) {
       let postBody = null;
@@ -433,7 +427,7 @@ export default class DocumentsApi {
       let authNames = ['JSONWebTokenAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineObject18;
+      let returnType = InlineObject17;
       return this.apiClient.callApi(
         '/documents/{publicId}/actions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -445,7 +439,7 @@ export default class DocumentsApi {
      * Callback function to receive the result of the getDocumentSignatures operation.
      * @callback module:PDFGeneratorAPI/DocumentsApi~getDocumentSignaturesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineObject17} data The data returned by the service call.
+     * @param {module:model/InlineObject16} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -456,7 +450,7 @@ export default class DocumentsApi {
      * @param {Object} opts Optional parameters
      * @param {String} [version] Which stored version to report on. A version identifier reports on that version, `initial` on the document as first generated. Defaults to the latest version. A version is always reported on as itself: reporting the latest would describe bytes the caller is not holding. 
      * @param {module:PDFGeneratorAPI/DocumentsApi~getDocumentSignaturesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineObject17}
+     * data is of type: {@link module:model/InlineObject16}
      */
     getDocumentSignatures(public_id, opts, callback) {
       opts = opts || {};
@@ -480,7 +474,7 @@ export default class DocumentsApi {
       let authNames = ['JSONWebTokenAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineObject17;
+      let returnType = InlineObject16;
       return this.apiClient.callApi(
         '/documents/{publicId}/signatures', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -492,7 +486,7 @@ export default class DocumentsApi {
      * Callback function to receive the result of the getDocumentVersions operation.
      * @callback module:PDFGeneratorAPI/DocumentsApi~getDocumentVersionsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineObject16} data The data returned by the service call.
+     * @param {module:model/InlineObject15} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -501,7 +495,7 @@ export default class DocumentsApi {
      * Returns a list of versions for a stored document
      * @param {String} public_id Resource public id
      * @param {module:PDFGeneratorAPI/DocumentsApi~getDocumentVersionsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineObject16}
+     * data is of type: {@link module:model/InlineObject15}
      */
     getDocumentVersions(public_id, callback) {
       let postBody = null;
@@ -523,7 +517,7 @@ export default class DocumentsApi {
       let authNames = ['JSONWebTokenAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineObject16;
+      let returnType = InlineObject15;
       return this.apiClient.callApi(
         '/documents/{publicId}/versions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -535,7 +529,7 @@ export default class DocumentsApi {
      * Callback function to receive the result of the getDocuments operation.
      * @callback module:PDFGeneratorAPI/DocumentsApi~getDocumentsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineObject15} data The data returned by the service call.
+     * @param {module:model/InlineObject14} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -548,8 +542,10 @@ export default class DocumentsApi {
      * @param {String} [end_date] End date. Format: Y-m-d H:i:s. Defaults to current timestamp
      * @param {Number} [page = 1)] Pagination: page to return
      * @param {Number} [per_page = 15)] Pagination: How many records to return per page
+     * @param {String} [search] Returns documents whose name contains the search value. A numeric value also matches the template ID.
+     * @param {module:model/String} [format] Returns only documents in this format
      * @param {module:PDFGeneratorAPI/DocumentsApi~getDocumentsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineObject15}
+     * data is of type: {@link module:model/InlineObject14}
      */
     getDocuments(opts, callback) {
       opts = opts || {};
@@ -562,7 +558,9 @@ export default class DocumentsApi {
         'start_date': opts['start_date'],
         'end_date': opts['end_date'],
         'page': opts['page'],
-        'per_page': opts['per_page']
+        'per_page': opts['per_page'],
+        'search': opts['search'],
+        'format': opts['format']
       };
       let headerParams = {
       };
@@ -572,7 +570,7 @@ export default class DocumentsApi {
       let authNames = ['JSONWebTokenAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineObject15;
+      let returnType = InlineObject14;
       return this.apiClient.callApi(
         '/documents', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -584,7 +582,7 @@ export default class DocumentsApi {
      * Callback function to receive the result of the storeDocument operation.
      * @callback module:PDFGeneratorAPI/DocumentsApi~storeDocumentCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/InlineObject11} data The data returned by the service call.
+     * @param {module:model/InlineObject10} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -593,7 +591,7 @@ export default class DocumentsApi {
      * Uploads a PDF as a URL or a base64 encoded string.
      * @param {module:model/StoreDocumentRequest} store_document_request Document source and optional metadata. Exactly one of `file_base64` or `file_url` is required.
      * @param {module:PDFGeneratorAPI/DocumentsApi~storeDocumentCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineObject11}
+     * data is of type: {@link module:model/InlineObject10}
      */
     storeDocument(store_document_request, callback) {
       let postBody = store_document_request;
@@ -614,7 +612,7 @@ export default class DocumentsApi {
       let authNames = ['JSONWebTokenAuth'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = InlineObject11;
+      let returnType = InlineObject10;
       return this.apiClient.callApi(
         '/documents', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,

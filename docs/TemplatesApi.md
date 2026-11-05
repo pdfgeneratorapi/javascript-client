@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## copyTemplate
 
-> InlineObject19 copyTemplate(template_id, opts)
+> InlineObject18 copyTemplate(template_id, opts)
 
 Copy template
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject19**](InlineObject19.md)
+[**InlineObject18**](InlineObject18.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ## createTemplate
 
-> InlineObject19 createTemplate(template_definition_new)
+> InlineObject18 createTemplate(template_definition_new)
 
 Create template
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject19**](InlineObject19.md)
+[**InlineObject18**](InlineObject18.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ null (empty response body)
 
 ## getTemplate
 
-> InlineObject19 getTemplate(template_id)
+> InlineObject18 getTemplate(template_id)
 
 Get template
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject19**](InlineObject19.md)
+[**InlineObject18**](InlineObject18.md)
 
 ### Authorization
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ## getTemplateSchema
 
-> Object getTemplateSchema()
+> GetTemplateSchema200Response getTemplateSchema()
 
 Get schema
 
@@ -279,10 +279,6 @@ Returns Template JSON Schema which defines the structure of the Template Definit
 
 ```javascript
 import PDFGeneratorAPI from 'pdf-generator-api-client';
-let defaultClient = PDFGeneratorAPI.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
-let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
-JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.TemplatesApi();
 apiInstance.getTemplateSchema((error, data, response) => {
@@ -300,11 +296,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**GetTemplateSchema200Response**](GetTemplateSchema200Response.md)
 
 ### Authorization
 
-[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -335,7 +331,10 @@ let opts = {
   'tags': "tags_example", // String | Filter template by tags
   'access': "private", // String | Filter template by access type. No values returns all templates. private - returns only private templates, organization - returns only organization templates.
   'page': 1, // Number | Pagination: page to return
-  'per_page': 20 // Number | Pagination: How many records to return per page
+  'per_page': 20, // Number | Pagination: How many records to return per page
+  'order_by': "name", // String | Field to sort the templates by. Ignored when `name` or `tags` is set.
+  'order_direction': "asc", // String | Sort direction. Ignored when `name` or `tags` is set.
+  'search': "Invoice" // String | Returns templates whose ID, name, tags, creation date or modification date contains the search value. Ignored when `name` or `tags` is set.
 };
 apiInstance.getTemplates(opts, (error, data, response) => {
   if (error) {
@@ -356,6 +355,9 @@ Name | Type | Description  | Notes
  **access** | **String**| Filter template by access type. No values returns all templates. private - returns only private templates, organization - returns only organization templates. | [optional] [default to &#39;&#39;]
  **page** | **Number**| Pagination: page to return | [optional] [default to 1]
  **per_page** | **Number**| Pagination: How many records to return per page | [optional] [default to 15]
+ **order_by** | **String**| Field to sort the templates by. Ignored when &#x60;name&#x60; or &#x60;tags&#x60; is set. | [optional] [default to &#39;updated_at&#39;]
+ **order_direction** | **String**| Sort direction. Ignored when &#x60;name&#x60; or &#x60;tags&#x60; is set. | [optional] [default to &#39;desc&#39;]
+ **search** | **String**| Returns templates whose ID, name, tags, creation date or modification date contains the search value. Ignored when &#x60;name&#x60; or &#x60;tags&#x60; is set. | [optional] 
 
 ### Return type
 
@@ -373,7 +375,7 @@ Name | Type | Description  | Notes
 
 ## importTemplate
 
-> InlineObject19 importTemplate(import_template_request)
+> InlineObject18 importTemplate(import_template_request)
 
 Import template
 
@@ -408,7 +410,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject19**](InlineObject19.md)
+[**InlineObject18**](InlineObject18.md)
 
 ### Authorization
 
@@ -473,11 +475,11 @@ Name | Type | Description  | Notes
 
 ## updateTemplate
 
-> InlineObject19 updateTemplate(template_id, template_definition_new)
+> InlineObject18 updateTemplate(template_id, template_definition_update)
 
 Update template
 
-Updates template configuration. Each top-level field sent (name, layout, pages and the rest) replaces the stored one, so pages must be complete, with every component.
+Updates template configuration. Each top-level field sent (name, layout, pages and the rest) replaces the stored one, so pages must be complete, with every component. A field left out keeps its stored value, the name included.
 
 ### Example
 
@@ -490,8 +492,8 @@ JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.TemplatesApi();
 let template_id = 19375; // Number | Template unique identifier
-let template_definition_new = new PDFGeneratorAPI.TemplateDefinitionNew(); // TemplateDefinitionNew | Template configuration
-apiInstance.updateTemplate(template_id, template_definition_new, (error, data, response) => {
+let template_definition_update = new PDFGeneratorAPI.TemplateDefinitionUpdate(); // TemplateDefinitionUpdate | The template configuration to change
+apiInstance.updateTemplate(template_id, template_definition_update, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -506,11 +508,11 @@ apiInstance.updateTemplate(template_id, template_definition_new, (error, data, r
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **template_id** | **Number**| Template unique identifier | 
- **template_definition_new** | [**TemplateDefinitionNew**](TemplateDefinitionNew.md)| Template configuration | 
+ **template_definition_update** | [**TemplateDefinitionUpdate**](TemplateDefinitionUpdate.md)| The template configuration to change | 
 
 ### Return type
 
-[**InlineObject19**](InlineObject19.md)
+[**InlineObject18**](InlineObject18.md)
 
 ### Authorization
 
@@ -534,10 +536,6 @@ Validates if the provided template configuration matches the template JSON schem
 
 ```javascript
 import PDFGeneratorAPI from 'pdf-generator-api-client';
-let defaultClient = PDFGeneratorAPI.ApiClient.instance;
-// Configure Bearer (JWT) access token for authorization: JSONWebTokenAuth
-let JSONWebTokenAuth = defaultClient.authentications['JSONWebTokenAuth'];
-JSONWebTokenAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new PDFGeneratorAPI.TemplatesApi();
 let template_definition_new = new PDFGeneratorAPI.TemplateDefinitionNew(); // TemplateDefinitionNew | Template configuration
@@ -563,7 +561,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[JSONWebTokenAuth](../README.md#JSONWebTokenAuth)
+No authorization required
 
 ### HTTP request headers
 
