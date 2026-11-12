@@ -26,6 +26,8 @@ Name | Type | Description | Notes
 
 * `ja` (value: `"ja"`)
 
+* `pt` (value: `"pt"`)
+
 
 
 

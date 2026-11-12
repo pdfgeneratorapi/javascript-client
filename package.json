@@ -1,6 +1,6 @@
 {
   "name": "pdf-generator-api-client",
-  "version": "8.0.34",
+  "version": "8.0.35",
   "description": "Javascript wrapper for PDF Generator API",
   "license": "MIT",
   "main": "dist/index.js",
