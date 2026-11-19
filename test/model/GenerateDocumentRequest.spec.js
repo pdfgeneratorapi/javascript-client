@@ -114,6 +114,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property display_mode (base name: "display_mode")', function() {
+      // uncomment below and update the code to test the property display_mode
+      //var instance = new PDFGeneratorAPI.GenerateDocumentRequest();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

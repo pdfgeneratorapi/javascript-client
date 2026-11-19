@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import AttachmentsParamInner from './AttachmentsParamInner';
+import DisplayModeParam from './DisplayModeParam';
 import FormatParam from './FormatParam';
 import MetadataParam from './MetadataParam';
 import OutputParam from './OutputParam';
@@ -85,6 +86,9 @@ class GenerateDocumentBatchRequest {
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = MetadataParam.constructFromObject(data['metadata']);
             }
+            if (data.hasOwnProperty('display_mode')) {
+                obj['display_mode'] = DisplayModeParam.constructFromObject(data['display_mode']);
+            }
         }
         return obj;
     }
@@ -128,6 +132,10 @@ class GenerateDocumentBatchRequest {
         // validate the optional field `metadata`
         if (data['metadata']) { // data not null
           MetadataParam.validateJSON(data['metadata']);
+        }
+        // validate the optional field `display_mode`
+        if (data['display_mode']) { // data not null
+          DisplayModeParam.validateJSON(data['display_mode']);
         }
 
         return true;
@@ -191,6 +199,11 @@ GenerateDocumentBatchRequest.prototype['attachments'] = undefined;
  * @member {module:model/MetadataParam} metadata
  */
 GenerateDocumentBatchRequest.prototype['metadata'] = undefined;
+
+/**
+ * @member {module:model/DisplayModeParam} display_mode
+ */
+GenerateDocumentBatchRequest.prototype['display_mode'] = undefined;
 
 
 

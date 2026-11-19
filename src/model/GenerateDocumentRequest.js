@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import AttachmentsParamInner from './AttachmentsParamInner';
+import DisplayModeParam from './DisplayModeParam';
 import FormatParam from './FormatParam';
 import MetadataParam from './MetadataParam';
 import OutputParam from './OutputParam';
@@ -87,6 +88,9 @@ class GenerateDocumentRequest {
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = MetadataParam.constructFromObject(data['metadata']);
             }
+            if (data.hasOwnProperty('display_mode')) {
+                obj['display_mode'] = DisplayModeParam.constructFromObject(data['display_mode']);
+            }
         }
         return obj;
     }
@@ -118,6 +122,10 @@ class GenerateDocumentRequest {
         // validate the optional field `metadata`
         if (data['metadata']) { // data not null
           MetadataParam.validateJSON(data['metadata']);
+        }
+        // validate the optional field `display_mode`
+        if (data['display_mode']) { // data not null
+          DisplayModeParam.validateJSON(data['display_mode']);
         }
 
         return true;
@@ -188,6 +196,11 @@ GenerateDocumentRequest.prototype['attachments'] = undefined;
  * @member {module:model/MetadataParam} metadata
  */
 GenerateDocumentRequest.prototype['metadata'] = undefined;
+
+/**
+ * @member {module:model/DisplayModeParam} display_mode
+ */
+GenerateDocumentRequest.prototype['display_mode'] = undefined;
 
 
 

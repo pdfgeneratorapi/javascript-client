@@ -20,6 +20,7 @@ docs/CreateFacturXEInvoiceRequestTemplate.md
 docs/CreateFacturXEInvoiceRequestTemplateId.md
 docs/CreateWorkspaceRequest.md
 docs/CreateXRechnungEInvoiceRequest.md
+docs/DisplayModeParam.md
 docs/Document.md
 docs/DocumentAction.md
 docs/DocumentSignature.md
@@ -198,6 +199,7 @@ src/model/CreateFacturXEInvoiceRequestTemplate.js
 src/model/CreateFacturXEInvoiceRequestTemplateId.js
 src/model/CreateWorkspaceRequest.js
 src/model/CreateXRechnungEInvoiceRequest.js
+src/model/DisplayModeParam.js
 src/model/Document.js
 src/model/DocumentAction.js
 src/model/DocumentSignature.js
@@ -361,6 +363,7 @@ test/model/CreateFacturXEInvoiceRequestTemplate.spec.js
 test/model/CreateFacturXEInvoiceRequestTemplateId.spec.js
 test/model/CreateWorkspaceRequest.spec.js
 test/model/CreateXRechnungEInvoiceRequest.spec.js
+test/model/DisplayModeParam.spec.js
 test/model/Document.spec.js
 test/model/DocumentAction.spec.js
 test/model/DocumentSignature.spec.js

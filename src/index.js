@@ -28,6 +28,7 @@ import CreateFacturXEInvoiceRequestTemplate from './model/CreateFacturXEInvoiceR
 import CreateFacturXEInvoiceRequestTemplateId from './model/CreateFacturXEInvoiceRequestTemplateId';
 import CreateWorkspaceRequest from './model/CreateWorkspaceRequest';
 import CreateXRechnungEInvoiceRequest from './model/CreateXRechnungEInvoiceRequest';
+import DisplayModeParam from './model/DisplayModeParam';
 import Document from './model/Document';
 import DocumentAction from './model/DocumentAction';
 import DocumentSignature from './model/DocumentSignature';
@@ -305,6 +306,12 @@ export {
      * @property {module:model/CreateXRechnungEInvoiceRequest}
      */
     CreateXRechnungEInvoiceRequest,
+
+    /**
+     * The DisplayModeParam model constructor.
+     * @property {module:model/DisplayModeParam}
+     */
+    DisplayModeParam,
 
     /**
      * The Document model constructor.
